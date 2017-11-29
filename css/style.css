@@ -1,6 +1,11 @@
 * {
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
 }
 
 .Header {
@@ -9,7 +14,7 @@ padding: 0;
     align-items: center;
     height: 120px;
     background-color: #fff;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .Logo {
@@ -17,9 +22,69 @@ padding: 0;
     justify-content: center;
     align-items: center;
     height: 100%;
-    
 }
+
 .Logo>img {
     height: 80%;
-/*    padding: 10px;*/
+    /*    padding: 10px;*/
 }
+
+/*----------------------------------Slider----------------------------------*/
+
+.slider {
+    position: relative;
+    /* height: 50%; */
+    height: auto;
+    cursor: pointer;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+.swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    background: rgba(0, 0, 0, 0.0);
+    border: 2px solid rgba(19, 27, 29, 0.5);
+    border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    border: 2px solid orangered;
+    background: orangered;
+}
+/* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
+@media only screen and (min-width : 300px) and (max-width : 480px) {
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+    }
+}
+/*--------------------------------------------------------------------------*/
