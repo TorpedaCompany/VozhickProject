@@ -1,13 +1,21 @@
 * {
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+:root{
+    --Font: 'Roboto', sans-serif;
 }
 
 .Header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: 88px;
     background-color: #fff;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
@@ -17,9 +25,164 @@ padding: 0;
     justify-content: center;
     align-items: center;
     height: 100%;
-    
 }
+
 .Logo>img {
     height: 80%;
 /*    padding: 10px;*/
 }
+.Phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container-social {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--Font);
+    font-weight: 700;
+    font-size: 32px;
+/*    font-style: italic;*/
+}
+.container-social>img {
+    height: 20px;
+    margin: 5px;
+}
+
+    /*    padding: 10px;*/
+}
+
+
+/*------------------------------Service class-------------------------------*/
+
+.bb {
+    border: 1px solid black;
+}
+
+a {
+    all: unset;
+    margin: 0 auto;
+}
+
+body {
+    /* background: grey; */
+}
+
+
+/*----------------------------------SLIDER----------------------------------*/
+
+.slider {
+    position: relative;
+    /* height: 10%; */
+    cursor: pointer;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0);
+    /* border: 2px solid rgba(19, 27, 29, 0.5); */
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    border: 2px solid orangered;
+    background: orangered;
+}
+
+
+/* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
+
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+
+/*------------------------------TITLE---------------------------------*/
+
+.title {
+    height: 12%;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.title-text {
+    font-size: 1.5rem;
+    font-family: Calibri, sans-serif;
+    font-weight: bold;
+    color: orangered;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+    .title {
+        height: 8%;
+        margin-top: 0;
+    }
+}
+
+
+/*------------------------------LIST REST---------------------------------*/
+
+.rest {}
+
+.rest-item {
+    display: block;
+    height: 250px;
+    margin-bottom: 20px;
+    /* border: 1px solid black; */
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px solid #e2e3e0;
+    padding: 20px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+    .rest {
+        max-width: 1235px;
+    }
