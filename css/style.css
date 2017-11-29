@@ -9,6 +9,7 @@ body {
 }
 :root{
     --Font: 'Roboto', sans-serif;
+
 }
 
 .Header {
@@ -17,7 +18,7 @@ body {
     align-items: center;
     height: 88px;
     background-color: #fff;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .Logo {
@@ -29,8 +30,8 @@ body {
 
 .Logo>img {
     height: 80%;
-/*    padding: 10px;*/
 }
+
 .Phone {
     display: flex;
     flex-direction: column;
@@ -51,8 +52,6 @@ body {
     margin: 5px;
 }
 
-    /*    padding: 10px;*/
-}
 
 
 /*------------------------------Service class-------------------------------*/
@@ -186,3 +185,4 @@ body {
     .rest {
         max-width: 1235px;
     }
+}
