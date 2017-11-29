@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-grid-margins.css">
+        <link rel="stylesheet" href="../plugins/slider/css/swiper.css">
         <link rel="stylesheet" href="../css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 Header">
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 Telephone"></div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 Logo"><img src="../image/LogoTest.png"></div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 Container"></div>
+<body>
+    <div class="slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../image/slider/slider_1.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../image/slider/slider_2.jpg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../image/slider/slider_3.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../image/slider/slider_4.png">
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
-        
-    </body>
+    </div>
+    <div class="title">
+        <div class="title-text">
+            <span>Рестораны</span>
+        </div>
+    </div>
+    <div class="container-fluid rest">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-4">
+                <a href="./rest.html" class="rest-item">1</a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a href="./rest.html" class="rest-item">2</a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a href="./rest.html" class="rest-item">3</a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a href="./rest.html" class="rest-item">4</a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a href="./rest.html" class="rest-item">5</a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a href="./rest.html" class="rest-item">6</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../plugins/slider/js/swiper.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+
 </html>
