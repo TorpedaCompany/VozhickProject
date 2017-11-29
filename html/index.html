@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="../css/bootstrap-grid-margins.css">
-        <link rel="stylesheet" href="../plugins/slider/css/swiper.css">
-        <link rel="stylesheet" href="../css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+
+<head>
+    <link rel="stylesheet" href="../css/bootstrap-grid-margins.css">
+    <link rel="stylesheet" href="../plugins/slider/css/swiper.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
 <body>
     <div class="slider">
         <div class="swiper-container">
@@ -22,40 +25,91 @@
                 <div class="swiper-slide">
                     <img src="../image/slider/slider_4.png">
                 </div>
+                <div class="swiper-slide">
+                    <img src="http://via.placeholder.com/1920x450">
+                </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
     </div>
     <div class="title">
-        <div class="title-text">
-            <span>Рестораны</span>
+        <div class="swiper-category-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide noSwipingClass">Slide 10</div>
+            </div>
         </div>
+
+        <!-- <div class="title-text">
+            <span>Рестораны</span>
+        </div> -->
     </div>
     <div class="container-fluid rest">
         <div class="row justify-content-center">
             <div class="col-sm-6 col-md-4">
-                <a href="./rest.html" class="rest-item">1</a>
+                <a href="./rest.html" class="rest-item">
+                    <img class="card-img b-lazy" data-src="http://placehold.it/340x210&text=Rest" src="http://placehold.it/340x210&text=Load" />
+                    <div class="card-title">
+                        <p>РЕСТОРАН</p>
+                    </div>
+                </a>
             </div>
             <div class="col-sm-6 col-md-4">
-                <a href="./rest.html" class="rest-item">2</a>
+                <a href="./rest.html" class="rest-item">
+                    <img class="card-img b-lazy" data-src="http://placehold.it/340x210&text=Rest" src="http://placehold.it/340x210&text=Load" />
+                    <div class="card-title">
+                        <p>РЕСТОРАН</p>
+                    </div>
+                </a>
             </div>
             <div class="col-sm-6 col-md-4">
-                <a href="./rest.html" class="rest-item">3</a>
+                <a href="./rest.html" class="rest-item">
+                    <img class="card-img b-lazy" data-src="http://placehold.it/340x210&text=Rest" src="http://placehold.it/340x210&text=Load" />
+                    <div class="card-title">
+                        <p>РЕСТОРАН</p>
+                    </div>
+                </a>
             </div>
             <div class="col-sm-6 col-md-4">
-                <a href="./rest.html" class="rest-item">4</a>
+                <a href="./rest.html" class="rest-item">
+                    <img class="card-img b-lazy" data-src="http://placehold.it/340x210&text=Rest" src="http://placehold.it/340x210&text=Load" />
+                    <div class="card-title">
+                        <p>РЕСТОРАН</p>
+                    </div>
+                </a>
             </div>
             <div class="col-sm-6 col-md-4">
-                <a href="./rest.html" class="rest-item">5</a>
+                <a href="./rest.html" class="rest-item">
+                    <img class="card-img b-lazy" data-src="http://placehold.it/340x210&text=Rest" src="http://placehold.it/340x210&text=Load" />
+                    <div class="card-title">
+                        <p>РЕСТОРАН</p>
+                    </div>
+                </a>
             </div>
             <div class="col-sm-6 col-md-4">
-                <a href="./rest.html" class="rest-item">6</a>
+                <a href="./rest.html" class="rest-item">
+                    <img class="card-img b-lazy" data-src="http://placehold.it/340x210&text=Rest" src="http://placehold.it/340x210&text=Load" />
+                    <div class="card-title">
+                        <p>РЕСТОРАН</p>
+                    </div>
+                </a>
             </div>
+
+
         </div>
     </div>
 
 
     <script src="../plugins/slider/js/swiper.js"></script>
+    <script src="../plugins/lazy/blazy.js"></script>
     <script src="../js/index.js"></script>
 </body>
 

@@ -5,12 +5,30 @@ document.addEventListener("DOMContentLoaded", function (event) {
         autoHeight: true, //enable auto height
         spaceBetween: 0,
         loop: true,
-        autoplay: {
-            delay: 3000,
-        },
+        disableOnInteraction: false,
+        // autoplay: {
+        //     delay: 3000,
+        // },
+        
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
     });
+
+    var swiperCategory = new Swiper('.swiper-category-container', {
+        slidesPerView: 5,
+        spaceBetween: 10,
+        noSwiping: true
+        // freeMode: true,
+      });
+
+});
+
+
+
+
+
+var bLazy = new Blazy({
+
 });
