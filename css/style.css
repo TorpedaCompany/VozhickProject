@@ -6,19 +6,32 @@
 html,
 body {
     height: 100%;
+/*    font-family: var(--Font);*/
 }
 :root{
     --Font: 'Roboto', sans-serif;
-
+    --RedColor: #ff501c;
+    --GreyColor: #bdc3c7;
 }
 
+.grey {
+    background-color: var(--GreyColor);
+}
+.red {
+    background-color: var(--RedColor);
+}
+
+
 .Header {
+    position: fixed;
+    z-index: 99;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 88px;
     background-color: #fff;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    border-top: 10px solid transparent;
 }
 
 .Logo {
@@ -35,7 +48,7 @@ body {
 .Phone {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 .container-social {
@@ -52,8 +65,39 @@ body {
     margin: 5px;
 }
 
-
-
+.container-user{
+    
+}
+.container-user>ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-user>ul>li{
+    list-style-type: none;
+    margin: 5px;
+}
+.circle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 100px;
+    height: 35px;
+    width: 35px;
+    
+}
+.rectangle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 100px;
+    height: 35px;
+    width: 55px;
+    
+}
+.rectangle-button span {font-family: var(--Font);}
 /*------------------------------Service class-------------------------------*/
 
 .bb {
@@ -64,11 +108,6 @@ a {
     all: unset;
     margin: 0 auto;
 }
-
-body {
-    /* background: grey; */
-}
-
 
 /*----------------------------------SLIDER----------------------------------*/
 
@@ -108,6 +147,7 @@ body {
     display: block;
     margin: 0 auto;
     max-width: 100%;
+    width: 100%;
 }
 
 .swiper-pagination-bullet {
