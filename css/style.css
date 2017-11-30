@@ -20,14 +20,10 @@ body {
 .red {
     background-color: var(--RedColor);
 }
-<<<<<<< HEAD
 
-
-=======
 :root{
     --Font: 'Roboto', sans-serif;
 }
->>>>>>> Alexander
 .Header {
     position: fixed;
     z-index: 99;
