@@ -115,6 +115,7 @@ a {
 
 .slider {
     position: relative;
+    margin-top: 88px;
     /* height: 10%; */
     /* width: 100%; */
     cursor: pointer;
@@ -151,7 +152,7 @@ a {
     /* width: 100%; */
     margin: 0 auto;
     max-width: 100%;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .swiper-pagination-bullet {
