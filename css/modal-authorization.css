@@ -1,0 +1,88 @@
+
+.modal-authorization {
+    z-index: 35;
+/*    display: flex;*/
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 300px;
+    width: 320px;
+    background-color: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.ovelay {
+    position: fixed;
+    z-index: 30;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.title-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.main-container-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+}
+.container-input {
+    display: flex;
+/*    justify-content: flex-start;*/
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    padding: 5px;
+}
+.container-input>span {
+    padding: 10px;
+    font-size: 20px;
+}
+/*input::-webkit-input-placeholder { color: rgba(255, 80, 28, 0.71); }*/
+/*input::-placeholder { color:  }*/
+.container-input>div {padding: 5px;}
+.container-button-modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.button-modal {
+    height: 40px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.link {
+    cursor: pointer;
+    color: #BDBDBD;
+    text-decoration: underline;
+}
+.link:hover {
+    cursor: pointer;
+    color: #757575;
+    text-decoration: underline;
+}

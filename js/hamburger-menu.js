@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     HamburgerMenuOpen.addEventListener("click", function(){
         HamburgerMenu.classList.remove("close");
         HamburgerMenu.classList.add("open");
-//        HamburgerMenu.style.cssText = "visibility: visible; transition: top 1s ease-out 3s;";
         console.log("Меню открыто");
         
     });
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     HamburgerMenuClose.addEventListener("click", function(){
         HamburgerMenu.classList.remove("open");
         HamburgerMenu.classList.add("close");
-//        HamburgerMenu.style.cssText = "visibility: hidden; transition: top 1s ease-out 3s;";
         console.log("Меню закрыто");
     });
 });
