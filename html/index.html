@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../plugins/slider/css/swiper.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/hamburger-menu.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -18,16 +19,19 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 Header">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 header-width">
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-8 col-xs-10 Logo">
+                    <div class="hidden-lg-up hidden-md-up col-sm-1 col-xs-1 button-menubar">
+                        <div id="hamburger-menu-open" class="hamburger-menu-open"><span class="fa fa-bars fa-2x"></span></div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-9 col-xs-9 Logo">
                         <img src="../image/LogoTest.png">
                     </div>
 
-                    <div class="col-lg-5 col-md-6 hidden-sm-down hidden-xs-down Menubar">
+                    <div class="col-lg-5 col-md-5 hidden-sm-down hidden-xs-down Menuline">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 container-menubar">
                             <div class="menubar-item "><span class="fa fa-home fa-2x"></span>Главная</div>
                             <div class="menubar-item"><span class="fa fa-truck fa-2x"></span>Доставка</div>
                             <div class="menubar-item"><span class="fa fa-gift fa-2x"></span>Акции!</div>
-                            <div class="menubar-item"><span class="fa fa-question fa-2x"></span>Как заказать?</div>
+                            <div style="min-width: 108px;" class="menubar-item"><span class="fa fa-question fa-2x"></span>Как заказать?</div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-2 hidden-sm-down hidden-xs-down Phone">
@@ -36,7 +40,7 @@
                             <span style="color: black;">6750606</span>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-xs-2 shoppingcart-and-user-login">
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-2 shoppingcart-and-user-login">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 container-user">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 input-user-button"><span class="fa fa-user fa-2x"></span>Войти</div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 shopping-cart-button"><span class="fa fa-shopping-cart fa-2x"></span><span>0 р</span></div>
@@ -46,13 +50,25 @@
             </div>
         </div>
     </div>
-
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div id="hamburger-menu" class="hamburger-menu">
+                <div id="hamburger-menu-close" class="close-hamburger-menu fa fa-times fa-2x"></div>
+                <div class="hamburger-menu-item"><span class="fa fa-home"></span>Главная</div>
+                <div class="hamburger-menu-item"><span class="fa fa-truck"></span>Доставка</div>
+                <div class="hamburger-menu-item"><span class="fa fa-gift"></span>Акции</div>
+                <div class="hamburger-menu-item"><span class="fa fa-question"></span>Как заказать?</div>
+            </div>
+        </div>
+    </div>
 
 
 
     <script src="../plugins/slider/js/swiper.js"></script>
     <script src="../plugins/lazy/blazy.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/hamburger-menu.js"></script>
 </body>
 
 </html>
