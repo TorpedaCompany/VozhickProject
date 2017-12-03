@@ -152,6 +152,7 @@ a:focus, a:hover {
 .slider {
     position: relative;
     margin-top: 70px;
+    margin-bottom: 20px;
     /* height: 10%; */
     /* width: 100%; */
     cursor: pointer;
@@ -259,6 +260,9 @@ a:focus, a:hover {
 
 
 /*------------------------------LIST REST---------------------------------*/
+.rest{
+    margin-top: 20px;
+}
 .rest-item {
     
     position: relative;
@@ -330,7 +334,7 @@ a:focus, a:hover {
 }
 @media (min-width: 1200px) {
     .rest {
-        max-width: 1235px;
+        max-width: 1230px;
     }
 }
 
