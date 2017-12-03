@@ -78,4 +78,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         ModalRegistration.classList.remove("modal-active");
         Ovelay.classList.remove("ovelay-active");
     });
+    
+    document.addEventListener ('click',function (e) {
+        if(e.target.id == "ovelay") {
+            enableScroll();
+            ModalAuthorization.classList.remove("modal-active");
+            ModalRegistration.classList.remove("modal-active");
+            Ovelay.classList.remove("ovelay-active");
+        }
+    });
 });
