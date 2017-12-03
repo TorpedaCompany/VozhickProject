@@ -152,6 +152,12 @@ a:focus, a:hover {
 .slider {
     /* position: relative; */
     margin-top: 70px;
+<<<<<<< HEAD
+=======
+    margin-bottom: 20px;
+    /* height: 10%; */
+    /* width: 100%; */
+>>>>>>> dev
     cursor: pointer;
 }
 
@@ -250,6 +256,9 @@ a:focus, a:hover {
 
 
 /*------------------------------LIST REST---------------------------------*/
+.rest{
+    margin-top: 20px;
+}
 .rest-item {
     position: relative;
     display: flex;
@@ -320,7 +329,6 @@ a:focus, a:hover {
 }
 @media (min-width: 1200px) {
     .rest {
-        max-width: 1235px;
     }
 }
 
@@ -370,7 +378,6 @@ a:focus, a:hover {
     cursor: pointer;
     background-color: var(--BlackColor);
     color: #fff;
-    min-width: 105px;
 }
 .shopping-cart-button>span {color: #fff; padding: 5px;}
 .shopping-cart-button:hover {background-color: #ff501c;}
