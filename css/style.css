@@ -264,15 +264,13 @@ a:focus, a:hover {
     flex-direction: column;
     height: 300px;
     margin-bottom: 20px;
-    /* border: 1px solid black; */
-    background: #fff;
+    padding: 0;
+
     box-sizing: border-box;
+    background: #fff;
     border: 1px solid #e2e3e0;
-    padding: 20px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
-
-    padding: 0 !important;
 }
 .rest-item .card-img{
     position: relative;
