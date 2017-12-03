@@ -18,3 +18,8 @@
 .button-registration {
     width: 150px;
 }
+
+
+.modal-active {
+    display: flex;
+}

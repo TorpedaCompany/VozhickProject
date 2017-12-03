@@ -1,8 +1,8 @@
 
 .modal-authorization {
     z-index: 35;
-    display: flex;
-/*    display: none;*/
+/*    display: flex;*/
+    display: none;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -25,7 +25,9 @@
     background-color: black;
     opacity: 0.5;
 }
-
+.ovelay-active {
+    display: block;
+}
 .title-modal {
     display: flex;
     justify-content: center;
@@ -86,4 +88,7 @@
     cursor: pointer;
     color: #757575;
     text-decoration: underline;
+}
+.modal-active {
+    display: flex;
 }
