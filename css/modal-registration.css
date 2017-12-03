@@ -1,7 +1,7 @@
 
 .modal-registration {
     z-index: 35;
-    display: flex;
+    display: none;
     position: absolute;
     left: 50%;
     top: 50%;
