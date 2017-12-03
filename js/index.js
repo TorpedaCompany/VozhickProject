@@ -15,20 +15,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             clickable: true,
         },
     });
-
-    var swiperCategory = new Swiper('.swiper-category-container', {
-        slidesPerView: 5,
-        spaceBetween: 10,
-        noSwiping: true
-        // freeMode: true,
-      });
-
 });
 
-
-
-
-
 var bLazy = new Blazy({
-
 });
