@@ -4,11 +4,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         slidesPerView: 1,
         autoHeight: true, //enable auto height
         spaceBetween: 0,
+        // setWrapperSize: true,
         loop: true,
         disableOnInteraction: false,
-        // autoplay: {
-        //     delay: 3000,
-        // },
+        autoplay: {
+            delay: 3000,
+        },
         
         pagination: {
             el: '.swiper-pagination',

@@ -150,18 +150,17 @@ a:focus, a:hover {
 /*----------------------------------SLIDER----------------------------------*/
 
 .slider {
-    position: relative;
+    /* position: relative; */
     margin-top: 70px;
-    /* height: 10%; */
-    /* width: 100%; */
     cursor: pointer;
 }
 
 .swiper-container {
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid black;
 }
 
 .swiper-slide {
@@ -185,9 +184,9 @@ a:focus, a:hover {
 
 .swiper-slide img {
     display: block;
-    /* width: 100%; */
-    margin: 0 auto;
     max-width: 100%;
+    margin: 0 auto;
+    /* max-width: 100%; */
     /* width: 100%; */
 }
 
@@ -207,20 +206,6 @@ a:focus, a:hover {
     background: orangered;
 }
 
-.swiper-category-container{
-    /* width: 100%; */
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.swiper-category-container .swiper-slide{
-    height: 100%;
-    border: 1px solid black;
-}
-.swiper-category-container{
-    cursor: pointer;
-}
-
 /* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
 
 @media only screen and (min-width: 300px) and (max-width: 480px) {
@@ -228,8 +213,14 @@ a:focus, a:hover {
         width: 12px;
         height: 12px;
     }
+    .swiper-container-horizontal > .swiper-pagination-bullets {
+        bottom: 5px;
+    }
+    .swiper-slide img {
+        max-width: 100%;
+        min-height: 190px;
+    }
 }
-
 
 /*------------------------------TITLE---------------------------------*/
 
@@ -260,7 +251,6 @@ a:focus, a:hover {
 
 /*------------------------------LIST REST---------------------------------*/
 .rest-item {
-    
     position: relative;
     display: flex;
     flex-direction: column;
