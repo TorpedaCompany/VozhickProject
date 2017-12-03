@@ -14,6 +14,7 @@
     width: 320px;
     background-color: #fff;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    opacity: 1;
 }
 
 .ovelay {
@@ -22,8 +23,8 @@
     z-index: 30;
     height: 100%;
     width: 100%;
-    background-color: black;
-    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.35);
+/*    opacity: 0.5;*/
 }
 .ovelay-active {
     display: block;
