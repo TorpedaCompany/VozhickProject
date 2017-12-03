@@ -339,7 +339,7 @@ a {
     cursor: pointer;
     background-color: var(--BlackColor);
     color: #fff;
-    min-width: 105px;
+    min-width: 100px;
 }
 .shopping-cart-button>span {color: #fff; padding: 5px;}
 .shopping-cart-button:hover {background-color: #ff501c;}
