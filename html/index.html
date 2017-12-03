@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-2 shoppingcart-and-user-login">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 container-user">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 input-user-button"><span class="fa fa-user fa-2x"></span>Войти</div>
+                            <div id="modal-authorization-open" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 input-user-button"><span class="fa fa-user fa-2x"></span>Войти</div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 shopping-cart-button"><span class="fa fa-shopping-cart fa-2x"></span><span>0 р</span></div>
                         </div>
                     </div>
@@ -65,19 +65,22 @@
             </div>
         </div>
     </div>
-    <div class="ovelay"></div>
-    <div class="modal-authorization">
+    
+    <div id="ovelay" class="ovelay"></div>
+    <div id="modal-authorization" class="modal-authorization">
         <div class="title-modal">
             <h1>Авторизация</h1>
         </div>
         <div class="main-container-input">
             <div class="container-input">
+                <span class="fa fa-mobile"></span>
                 <div class="group">
-                    <input placeholder="Логин" class='input-style input-login-authorization' type='text' required>
+                    <input placeholder="Номер телефона" class='input-style input-login-authorization' type='text' required>
                     <span class="bar"></span>
                 </div>
             </div>
             <div class="container-input">
+                <span class="fa fa-lock"></span>
                 <div class="group">
                     <input placeholder="Пароль" class='input-style input-login-authorization' type='password' required>
                     <span class="bar"></span>
@@ -86,12 +89,12 @@
         </div>
         <div class="container-button-modal">
             <div class="button-modal button-authorization">Войти</div>
-            <div class="button-modaln button-close-modal">Закрыть</div>
+            <div id="modal-authorization-close" class="button-modal button-close-modal">Закрыть</div>
         </div>
-        <a href="" class="link link-registation">Регистрация</a>
+        <span id="modal-registration-open" class="link link-registation">Регистрация</span>
     </div>
     
-    <div class="modal-registration">
+    <div id="modal-registration" class="modal-registration">
         <div class="title-modal">
             <h1>Регистрация</h1>
         </div>
@@ -140,9 +143,9 @@
             </div>
             <div class="container-button-modal">
                 <div class="button-modal button-registration">Зарегистрироватся</div>
-                <div class="button-modal button-close-modal">Закрыть</div>
+                <div id="modal-registration-close" class="button-modal button-close-modal">Закрыть</div>
             </div>
-            <a href="" class="link link-authorization">Войти</a>
+            <span id="modal-authorization-open-two" class="link link-authorization">Войти</span>
         </div>
     </div>
 
@@ -233,6 +236,7 @@
     <script src="../plugins/lazy/blazy.js"></script>
     <script src="../js/index.js"></script>
     <script src="../js/hamburger-menu.js"></script>
+    <script src="../js/open-modal.js"></script>
 </body>
 
 </html>
