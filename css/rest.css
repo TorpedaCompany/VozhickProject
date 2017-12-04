@@ -43,7 +43,7 @@ body{
 }
 
 .rest-filter {
-    height: 350px;    
+    height: 540px;    
     flex: 0 0 280px;
     max-width: 280px;
 
@@ -85,7 +85,7 @@ body{
     backface-visibility: hidden;
 }
 .rest-card-dish .card-dish-content {
-    height: 95px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -178,7 +178,7 @@ body{
 }
 
 
-@media (min-width: 280px) and (max-width: 544px) {
+@media (max-width: 544px) {
     .rest-line {
         margin-top: 75px;
         margin-bottom: 5px;
@@ -240,9 +240,25 @@ body{
 
 
 /* // Очень больших устройств (большие компьютеры, 1200px и выше)   */
+@media (min-width: 1200px) and (max-width: 1220px) {
+    .rest-card-dish .card-dish-action .addToCard{
+        margin-left: 0px;
+    }
+}
+
 @media (min-width: 1200px) {
     .rest {
         max-width: 1920px;
         margin: 0 auto;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1560px) {
+    .rest-catalog-dish{
+        /* background: grey; */
+        /* max-width: 50%; */
+        /* margin: 0 auto; */
+    }
+    .rest-filter {
+        display: none;
     }
 }
