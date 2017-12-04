@@ -1,5 +1,5 @@
 body{
-    background: rgba(128, 128, 128, 0.63);
+    /* background: rgba(128, 128, 128, 0.63); */
 }
 .rest-line {
     display: flex;
@@ -65,7 +65,7 @@ body{
 .rest-card-dish {
     display: flex;
     flex-direction: column;
-    min-height: 245px;
+    height: 260px;
     margin-bottom: 20px;
     padding: 10px;
     background: #fff;
@@ -91,7 +91,8 @@ body{
     justify-content: space-between;
 
     padding: 0;
-    border: 1px solid blue;
+
+    /* border: 1px solid blue; */
 }
 .rest-card-dish .card-dish-description {
     display: flex;
@@ -100,7 +101,8 @@ body{
     padding-top: 5px;
     font-size: 15px;
     text-align: center;
-    border: 1px solid black;
+
+    /* border: 1px solid red; */
 }
 .rest-card-dish .card-dish-footer{
     display: flex;
@@ -213,6 +215,22 @@ body{
         height: 160px;
         width: 240px;
     }
+    .rest-card-dish {
+        min-height: 275px;
+    }
+    .rest-card-dish .card-dish-footer{
+        flex-direction: column;
+    }
+    .rest-card-dish .card-dish-content{
+        
+    }
+    .rest-card-dish .card-dish-info{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
 }
 
 
