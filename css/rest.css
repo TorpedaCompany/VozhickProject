@@ -1,3 +1,6 @@
+body{
+    background: rgba(128, 128, 128, 0.63);
+}
 .rest-line {
     display: flex;
     flex-direction: row;
@@ -62,7 +65,7 @@
 .rest-card-dish {
     display: flex;
     flex-direction: column;
-    height: 240px;
+    min-height: 245px;
     margin-bottom: 20px;
     padding: 10px;
     background: #fff;
@@ -72,14 +75,108 @@
 }
 .rest-card-dish .card-dish-img img{
     display: block;
-    height: 100%;
-    width: 100%;
+    height: 140px;
+    max-width: 100%;
+    margin: 0 auto;
+    /* width: auto; */
+    /* max-width: 100%; */
     border-radius: 0;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.10);
     backface-visibility: hidden;
 }
+.rest-card-dish .card-dish-content {
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-@media (min-width: 320px) and (max-width: 544px) {
+    padding: 0;
+    border: 1px solid blue;
+}
+.rest-card-dish .card-dish-description {
+    display: flex;
+    align-self: center;
+    vertical-align: middle;
+    padding-top: 5px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid black;
+}
+.rest-card-dish .card-dish-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    /* align-items: flex-end; */
+    /* border: 1px solid red; */
+    /* vertical-align: middle; */
+}
+.rest-card-dish .card-dish-info {
+    min-width: 85px;
+}
+.rest-card-dish .card-dish-info .dish-grams{
+    font-size: 12px;
+}
+.rest-card-dish .card-dish-info .dish-price{
+    /* margin-top: -5px; */
+    font-size: 19px;
+}
+.rest-card-dish .card-dish-action{
+    height: inherit;
+    /* width: 100%; */
+    line-height: 30px;
+    text-align: center;
+    align-self: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* text-align: center; */
+    
+    /* align-content: center; */
+    /* align-items: baseline; */
+}
+.rest-card-dish .card-dish-action .inpPlus,
+.rest-card-dish .card-dish-action .inpMinus{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border: 1px solid #e2e3e0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+.rest-card-dish .card-dish-action input{
+    display: inline-block;
+    height: inherit;
+    width: 32px;
+    text-align: center;
+    -webkit-appearance: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    /* width: 30%; */
+}
+.rest-card-dish .card-dish-action
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.rest-card-dish .card-dish-action .addToCard{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    font-size: 16px;
+
+    background-color: var(--RedColor);
+    border: 1px solid #e2e3e0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+
+@media (min-width: 280px) and (max-width: 544px) {
     .rest-line {
         margin-top: 75px;
         margin-bottom: 5px;
@@ -98,8 +195,11 @@
 @media (min-width: 544px) and (max-width: 768px) {
     .rest-line {
         margin-top: 120px;
+        margin-bottom: 45px;
     }
     .rest-main-img {
+        margin-left: 32px;
+        margin-right: 60px;
         height: 130px;
         width: 210px;
     }
