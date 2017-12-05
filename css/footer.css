@@ -42,7 +42,7 @@
 .container-social-footer {
     display: flex;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: flex-start;
     padding-top: 3%;
 }
 
@@ -92,7 +92,7 @@
 .container-connection-button {
     display: flex;
     justify-content: flex-end;
-    flex-grow: 1;
+/*    flex-grow: 1;*/
     padding-top: 3%;
 }
 
