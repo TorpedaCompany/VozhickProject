@@ -212,6 +212,7 @@ a:focus, a:hover {
     .swiper-pagination-bullet {
         width: 12px;
         height: 12px;
+        
     }
     .swiper-container-horizontal > .swiper-pagination-bullets {
         bottom: 5px;
