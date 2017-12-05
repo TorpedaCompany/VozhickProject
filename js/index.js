@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-    // addEventCtgRest();
+    addEventCtgRest();
 });
 
 // document.querySelectorAll("[data-id-rest='1']")[0].parentNode.nodeName;
@@ -65,26 +65,25 @@ let listRest = [{
 ]
 
 
-let selectCtg = function(buttonCtgRest){
-    console.log("SELECTCTG");
-        buttonCtgRest.classList.toggle("active_type-restaurant");
-        let hiddenItems = document.querySelectorAll("[data-rest-display='hide'");
-        if( hiddenItems.length == 0 ){
-            findRest(listRest, buttonCtgRest.id);
-        }else{
-            for(let i = 0; i < hiddenItems.length; i++)
-                fadeIn(hiddenItems[i], "block");
-        }
-}
+
 
 function addEventCtgRest(){
     let arrCtgRest = document.querySelectorAll("#ctgRest > div");
 
+    function selectCtg (){
+        this.classList.toggle("active_type-restaurant");
+        let hiddenItems = document.querySelectorAll("[data-rest-display='hide'");
+        if( hiddenItems.length == 0 ){
+            findRest(listRest,this.id);
+        }else{
+            for(let i = 0; i < hiddenItems.length; i++)
+                fadeIn(hiddenItems[i], "block");
+        }
+    }
     for(let i = 0; i < arrCtgRest.length; i++){
-        arrCtgRest[i].addEventListener("click", selectCtg(arrCtgRest[i]), false);
+        arrCtgRest[i].addEventListener("click", selectCtg, false);
     }
 }
-
 
 // document.getElementById('Суши').addEventListener('click', function () {
 //         document.getElementById('Суши').classList.add("active_type-restaurant");
