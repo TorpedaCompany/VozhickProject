@@ -25,6 +25,11 @@
 .type-restaurant>img {
     height: 50px;
 }
+
+.active_type-restaurant{
+    border: 2px solid var(--RedColor);
+}
+
 /*
 .type-restaurant:hover>span {
     border-bottom: 1px solid red;
