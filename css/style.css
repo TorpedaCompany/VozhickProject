@@ -153,20 +153,14 @@ a:focus, a:hover {
 /*----------------------------------SLIDER----------------------------------*/
 
 .slider {
-    /* position: relative; */
     margin-top: 70px;
     margin-bottom: 20px;
-    /* height: 10%; */
-    /* width: 100%; */
     cursor: pointer;
 }
 
 .swiper-container {
-    /* width: 100%; */
-    /* height: 100%; */
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black;
 }
 
 .swiper-slide {
