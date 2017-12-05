@@ -135,10 +135,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     padding: 0;
-
-    /* border: 1px solid blue; */
 }
 .rest-card-dish .card-dish-description {
     display: flex;
@@ -154,10 +151,6 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
-    /* align-items: flex-end; */
-    /* border: 1px solid red; */
-    /* vertical-align: middle; */
 }
 .rest-card-dish .card-dish-info {
     min-width: 85px;
@@ -166,7 +159,6 @@ body{
     font-size: 12px;
 }
 .rest-card-dish .card-dish-info .dish-price{
-    /* margin-top: -5px; */
     font-size: 19px;
 }
 .rest-card-dish .card-dish-action{
@@ -175,12 +167,6 @@ body{
     line-height: 30px;
     text-align: center;
     align-self: center;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* text-align: center; */
-    
-    /* align-content: center; */
-    /* align-items: baseline; */
 }
 .rest-card-dish .card-dish-action .inpPlus,
 .rest-card-dish .card-dish-action .inpMinus{
@@ -201,7 +187,6 @@ body{
     border: none;
     padding: 0;
     margin: 0;
-    /* width: 30%; */
 }
 .rest-card-dish .card-dish-action
     input::-webkit-outer-spin-button,
@@ -216,7 +201,6 @@ body{
     height: 32px;
     margin-left: 10px;
     font-size: 16px;
-
     background-color: var(--RedColor);
     border: 1px solid #e2e3e0;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
