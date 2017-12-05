@@ -39,18 +39,12 @@ body{
     line-height: 70px;
 }
 
-.rest-container {
-    /* border: 1px solid black; */
-}
-
 .rest-filter {
     flex: 0 0 280px;
     max-width: 280px;
     margin: 0;
     margin-left: 50px;
     top: 0;
-    /* border: 1px solid black; */
-    
 }
 .rest-filter-container{
     width: 280px;
@@ -58,7 +52,6 @@ body{
     border: 1px solid #e2e3e0;
     transition: all .3s ease-out;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
-    /* margin-bottom: 500px; */
 }
 .sticky{
     position: fixed;
@@ -106,18 +99,19 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    
+    /* align-items: center; */
 }
 
 .rest-card-dish {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     height: 260px;
     width: 260px;
     margin: 0 10px;
-
+    margin-bottom: 20px;
     padding: 10px;
     background: #fff;
     box-sizing: border-box;
