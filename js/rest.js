@@ -1,4 +1,3 @@
-// Initialize Swiper
 document.addEventListener("DOMContentLoaded", function (event) {
 
     let rest_filter = document.querySelector(".rest-filter-container");

@@ -19,11 +19,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     addEventCtgRest();
 });
-
-
 var bLazy = new Blazy({});
 
-
+//Имитация БД
 let listRest = [{
         'numRest': 1,
         'category': ['Суши', 'Здоровая']
@@ -38,6 +36,7 @@ let listRest = [{
     }
 ]
 
+//Обработчики на кнопки категорий выбора ресторана по их ID
 function addEventCtgRest(){
     let arrCtgRest = document.querySelectorAll("#ctgRest > div");
 
@@ -60,6 +59,7 @@ function addEventCtgRest(){
         }
     }
 }
+//Поиск ресторанов, скрытие лишних
 let findRest = function (ctgRest, ctg = '') {
     console.log("findRest....")
     let result = [];
@@ -71,15 +71,14 @@ let findRest = function (ctgRest, ctg = '') {
     let arrRest = document.querySelectorAll("[data-id-rest]");
     for (i = 0; i < arrRest.length; i++) {
         if (result.indexOf(parseInt(arrRest[i].getAttribute("data-id-rest"))) == -1) {
-            // arrRest[i].classList.toggle('hideRest');
             fadeOut(arrRest[i]);
-            // arrRest[i].style.display = 'none';
         }
     }
-    // .getAttribute("data-id-rest")
-    // document.querySelectorAll("[data-id-rest='1']")
+    //Возврат массива с номерами ресторанов
     return result;
 }
+
+//Функции анимации
 function fadeOut(el) {
     el.style.opacity = 1;
     el.setAttribute("data-rest-display","hide");
