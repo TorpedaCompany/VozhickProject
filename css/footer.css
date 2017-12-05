@@ -113,6 +113,10 @@
 }
 
 @media (max-width: 645px) {
+    .menu-link-footer>li {
+        display: flex;
+        justify-content: center;
+    }
     .container-connection-button {
         justify-content: center;
     }
