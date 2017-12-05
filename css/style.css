@@ -212,7 +212,7 @@ a:focus, a:hover {
     .swiper-pagination-bullet {
         width: 12px;
         height: 12px;
-        background: blue;
+        
     }
     .swiper-container-horizontal > .swiper-pagination-bullets {
         bottom: 5px;
@@ -298,13 +298,7 @@ a:focus, a:hover {
         max-width: 1230px;
     }
 }
-/* @media screen and (max-width: 319px) {
-    
-        body{
-            width: 260px;		
-        }
-    
-    } */
+
 .container-menubar {
     display: flex;
     align-items: center;
