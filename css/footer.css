@@ -91,7 +91,7 @@
 
 .container-connection-button {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-grow: 1;
     padding-top: 3%;
 }
