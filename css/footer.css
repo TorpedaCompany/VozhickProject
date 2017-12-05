@@ -1,0 +1,113 @@
+
+.main-container-footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-top: 30px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    height: auto;
+    
+}
+.container-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.menu-link-footer {
+    list-style-type: none;
+    width: 50%;
+    padding-top: 0;
+    font-size: 14px;
+}
+.menu-link-footer>li {padding-bottom: 5px;}
+.menu-link-footer>li>a {text-decoration: underline; cursor: pointer;}
+
+.container-link-footer {
+    display: flex;
+    padding-top: 40px;
+    flex-grow: 1;
+    padding-top: 3%;
+}
+
+.container-social-footer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding-top: 3%;
+}
+
+.square-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    color: #fff;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.square-social>a {}
+
+.square-vk {
+    background-color: #4a76a8;
+}
+
+.square-facebook {
+    background-color: #3b5998;
+}
+
+.square-odnoklassniki {
+    background-color: #ee8208;
+}
+
+.square-instagram {
+    background-color: #ea504a;
+}
+
+.report-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--RedColor);
+    height: 35px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.report-button>span {padding-right: 10px; font-size: 20px;}
+
+.container-connection-button {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    padding-top: 3%;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.copyright>span {
+    padding: 5px;
+}
+.copyright>img {
+    height: 15px;
+    margin: 5px;
+}

@@ -1,6 +1,7 @@
 * {
     margin: 0 ;
     padding: 0;
+    
 }
 
 html,
@@ -332,7 +333,9 @@ a:focus, a:hover {
     color: var(--BlackColor);
 }
 .menubar-item:hover>span {
+    
     color: #ff501c;
+    transition: .2s ease;
 }
 
 .input-user-button {
@@ -345,7 +348,7 @@ a:focus, a:hover {
     cursor: pointer;
 }
 .input-user-button>span {color: var(--BlackColor);}
-.input-user-button:hover>span {color: #ff501c;}
+.input-user-button:hover>span {transition: .2s ease; color: #ff501c;}
 
 .shopping-cart-button {
     display: flex;
@@ -359,7 +362,7 @@ a:focus, a:hover {
     min-width: 100px;
 }
 .shopping-cart-button>span {color: #fff; padding: 5px;}
-.shopping-cart-button:hover {background-color: #ff501c;}
+.shopping-cart-button:hover {background-color: #ff501c;    transition: .2s ease;}
 
 .shoppingcart-and-user-login {
     display: flex;
