@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             clickable: true,
         },
     });
+
+
+
+    // addEventCtgRest();
 });
 
 // document.querySelectorAll("[data-id-rest='1']")[0].parentNode.nodeName;
@@ -32,8 +36,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-var bLazy = new Blazy({
-});
+var bLazy = new Blazy({});
 
 // let findRest = function() {
 //     let el = document.querySelectorAll(".container-type-restaurant .type-restaurant");
@@ -47,8 +50,7 @@ var bLazy = new Blazy({
 //     }
 // }
 
-let listRest = [
-    {
+let listRest = [{
         'numRest': 1,
         'category': ['Суши', 'Здоровая']
     },
@@ -61,10 +63,41 @@ let listRest = [
         'category': ['Десерты', 'Европейская']
     }
 ]
-document.getElementById('sushi').addEventListener('click', function () {
-    document.getElementById('sushi').classList.add("active_type-restaurant");
-    findRest(listRest, "Суши");
-}, false);
+
+
+let selectCtg = function(buttonCtgRest){
+    console.log("SELECTCTG");
+        buttonCtgRest.classList.toggle("active_type-restaurant");
+        let hiddenItems = document.querySelectorAll("[data-rest-display='hide'");
+        if( hiddenItems.length == 0 ){
+            findRest(listRest, buttonCtgRest.id);
+        }else{
+            for(let i = 0; i < hiddenItems.length; i++)
+                fadeIn(hiddenItems[i], "block");
+        }
+}
+
+function addEventCtgRest(){
+    let arrCtgRest = document.querySelectorAll("#ctgRest > div");
+
+    for(let i = 0; i < arrCtgRest.length; i++){
+        arrCtgRest[i].addEventListener("click", selectCtg(arrCtgRest[i]), false);
+    }
+}
+
+
+// document.getElementById('Суши').addEventListener('click', function () {
+//         document.getElementById('Суши').classList.add("active_type-restaurant");
+        
+//         let hiddenItems = document.querySelectorAll("[data-rest-display='hide'");
+//         if( hiddenItems.length == 0 ){
+//             findRest(listRest, "Суши");
+//         }else{
+//             for(let i = 0; i < hiddenItems.length; i++)
+//                 fadeIn(hiddenItems[i], "block");
+//         }
+
+// }, false);
 
 let findRest = function (ctgRest, ctg = '') {
     console.log("findRest....")
@@ -77,10 +110,51 @@ let findRest = function (ctgRest, ctg = '') {
     let arrRest = document.querySelectorAll("[data-id-rest]");
     for (i = 0; i < arrRest.length; i++) {
         if (result.indexOf(parseInt(arrRest[i].getAttribute("data-id-rest"))) == -1) {
-            arrRest[i].style.display = 'none';
+            // arrRest[i].classList.toggle('hideRest');
+            fadeOut(arrRest[i]);
+            // arrRest[i].style.display = 'none';
         }
     }
     // .getAttribute("data-id-rest")
     // document.querySelectorAll("[data-id-rest='1']")
     return result;
 }
+
+function fadeOut(el) {
+    el.style.opacity = 1;
+    el.setAttribute("data-rest-display","hide");
+    (function fade() {
+        if ((el.style.opacity -= .1) < 0) {
+            el.style.display = "none";
+        } else {
+            requestAnimationFrame(fade);
+        }
+    })();
+}
+
+// fade in
+
+function fadeIn(el, display) {
+    el.style.opacity = 0;
+    el.style.display = display || "block";
+    el.removeAttribute("data-rest-display");
+
+    (function fade() {
+        var val = parseFloat(el.style.opacity);
+        if (!((val += .1) > 1)) {
+            el.style.opacity = val;
+            requestAnimationFrame(fade);
+        }
+    })();
+}
+
+var el = document.querySelector("[data-id-rest='1']");
+
+//   fadeOut(el);
+//   fadeIn(el);
+//   fadeIn(el, "inline-block");
+// document.querySelector('.js-btn1').addEventListener('click', function () {
+//     scrollIt(document.querySelector('#ListRest'), 300, 'easeOutQuad', function () {
+//       return console.log('Just finished scrolling to ' + window.pageYOffset + 'px');
+//     });
+//   });

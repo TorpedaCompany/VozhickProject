@@ -232,6 +232,10 @@ a:focus, a:hover {
 .rest{
     margin-top: 20px;
 }
+.hideRest{
+    /* opacity: 0; */
+    transition: all ease 0.8s;
+}
 .rest-item {
     position: relative;
     display: flex;
