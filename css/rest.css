@@ -98,20 +98,26 @@ body{
 .rest-filter .filter-item:hover svg {
     fill: #ff501c;
     transition: .2s ease;
-    
 }
 
 
 
 .rest-catalog-dish {
-    padding: 0px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .rest-card-dish {
+    flex-grow: 1;
+    flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     height: 260px;
-    margin-bottom: 20px;
+    width: 260px;
+    margin: 0 10px;
+
     padding: 10px;
     background: #fff;
     box-sizing: border-box;
@@ -235,8 +241,6 @@ body{
         width: 210px;
     }
 }
-
-
 /* // Устройствах среднего (планшеты, 768px и выше)   */
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -245,6 +249,7 @@ body{
         width: 240px;
     }
     .rest-card-dish {
+        /* width: 200px; */
         min-height: 275px;
     }
     .rest-card-dish .card-dish-footer{
@@ -261,8 +266,6 @@ body{
     }
 
 }
-
-
 /* // Крупных устройств (настольных компьютеров, 992px и выше)   */
 
 @media (min-width: 992px) {}
