@@ -23,10 +23,10 @@
     cursor: pointer;
 }
 
-.type-restaurant>img {
+.type-restaurant>svg {
     height: 50px;
 }
-/*
-.type-restaurant:hover>span {
-    border-bottom: 1px solid red;
-}*/
+.type-restaurant:hover>svg {
+    fill: #ff501c;
+    transition: .2s ease;
+}
