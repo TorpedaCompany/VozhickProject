@@ -30,6 +30,7 @@ body{
     padding: 5px;
     background: white;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    /* z-index: 10; */
 }
 
 .rest-caption {
@@ -43,28 +44,45 @@ body{
 }
 
 .rest-filter {
-    height: 540px;    
     flex: 0 0 280px;
     max-width: 280px;
-
+    margin: 0;
     margin-left: 50px;
+    top: 0;
+    /* border: 1px solid black; */
+    
+}
+.rest-filter-container{
+    width: 280px;
     padding: 10px 20px;
     border: 1px solid #e2e3e0;
+    transition: all .3s ease-out;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+    /* margin-bottom: 500px; */
+}
+.sticky{
+    position: fixed;
+    top: 25%;
+    /* transform: translate(0,-10%); */
+    transition: top bottom .3s linear;
 }
 .rest-filter .filter-item{
-    /* width: 100%; */
     height: 45px;
     line-height: 35px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: center; */
     padding-left: 15%;
     margin-bottom: 3%;
     cursor: pointer;
     /* border: 1px solid black; */
 }
+.no-gutters-cust>[class*="rest-filter"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
 .OnePx{
     height: 1px;
     background-color: rgba(0, 0, 0, 0.3);
@@ -83,10 +101,7 @@ body{
     
 }
 
-.no-gutters-cust>[class*="rest-filter"] {
-    /* padding-right: 0; */
-    /* padding-left: 0; */
-}
+
 
 .rest-catalog-dish {
     padding: 0px 30px;

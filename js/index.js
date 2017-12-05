@@ -17,38 +17,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
         },
     });
 
+    let rest_filter = document.querySelector(".rest-filter-container");
+    if (document.documentElement.scrollTop != 0) {
+        rest_filter.classList.add("sticky");
+    }
 
+    window.addEventListener('scroll', function() {
+        if (document.documentElement.scrollTop > 100) {
+            rest_filter.classList.add("sticky");
+        } else {
+            rest_filter.classList.remove("sticky");
+        }
+        // console.log(document.documentElement.scrollTop);
+    });
+    
 
     addEventCtgRest();
 });
 
-// document.querySelectorAll("[data-id-rest='1']")[0].parentNode.nodeName;
-// document.getElementById('sushi').addEventListener('click', function () {
-//     let visible = document.querySelectorAll("[data-id-rest='1']")[0].parentNode.style.display;
-//     if (visible == "") {
-//         document.querySelectorAll("[data-id-rest='1']")[0].parentNode.style.display = 'none';
-//     } else {
-//         document.querySelectorAll("[data-id-rest='1']")[0].parentNode.style.display = '';
-//     }
-
-//     // document.querySelectorAll("[data-list-rest]")[0].parentNode.style.display = 'none';
-// }, false);
-
-
 
 var bLazy = new Blazy({});
 
-// let findRest = function() {
-//     let el = document.querySelectorAll(".container-type-restaurant .type-restaurant");
-
-//     let addEvent = function(){
-
-//     }
-//     // document.querySelectorAll("[data-list-rest]")
-//     for(i=0 ; i<els.length ; i++){
-//         els[i].addEventListener("click", addEvent, false);
-//     }
-// }
 
 let listRest = [{
         'numRest': 1,
@@ -70,8 +59,16 @@ let listRest = [{
 function addEventCtgRest(){
     let arrCtgRest = document.querySelectorAll("#ctgRest > div");
 
+    for(let i = 0; i < arrCtgRest.length; i++){
+        arrCtgRest[i].addEventListener("click", selectCtg, false);
+    }
+
     function selectCtg (){
-        this.classList.toggle("active_type-restaurant");
+        let activeCl = document.querySelector(".type-restaurant_active") || false; 
+            if(activeCl)
+                activeCl.classList.remove("type-restaurant_active");
+                
+        this.classList.add("type-restaurant_active");
         let hiddenItems = document.querySelectorAll("[data-rest-display='hide'");
         if( hiddenItems.length == 0 ){
             findRest(listRest,this.id);
@@ -80,24 +77,7 @@ function addEventCtgRest(){
                 fadeIn(hiddenItems[i], "block");
         }
     }
-    for(let i = 0; i < arrCtgRest.length; i++){
-        arrCtgRest[i].addEventListener("click", selectCtg, false);
-    }
 }
-
-// document.getElementById('Суши').addEventListener('click', function () {
-//         document.getElementById('Суши').classList.add("active_type-restaurant");
-        
-//         let hiddenItems = document.querySelectorAll("[data-rest-display='hide'");
-//         if( hiddenItems.length == 0 ){
-//             findRest(listRest, "Суши");
-//         }else{
-//             for(let i = 0; i < hiddenItems.length; i++)
-//                 fadeIn(hiddenItems[i], "block");
-//         }
-
-// }, false);
-
 let findRest = function (ctgRest, ctg = '') {
     console.log("findRest....")
     let result = [];
@@ -118,7 +98,6 @@ let findRest = function (ctgRest, ctg = '') {
     // document.querySelectorAll("[data-id-rest='1']")
     return result;
 }
-
 function fadeOut(el) {
     el.style.opacity = 1;
     el.setAttribute("data-rest-display","hide");
@@ -130,9 +109,6 @@ function fadeOut(el) {
         }
     })();
 }
-
-// fade in
-
 function fadeIn(el, display) {
     el.style.opacity = 0;
     el.style.display = display || "block";
@@ -146,14 +122,3 @@ function fadeIn(el, display) {
         }
     })();
 }
-
-var el = document.querySelector("[data-id-rest='1']");
-
-//   fadeOut(el);
-//   fadeIn(el);
-//   fadeIn(el, "inline-block");
-// document.querySelector('.js-btn1').addEventListener('click', function () {
-//     scrollIt(document.querySelector('#ListRest'), 300, 'easeOutQuad', function () {
-//       return console.log('Just finished scrolling to ' + window.pageYOffset + 'px');
-//     });
-//   });
