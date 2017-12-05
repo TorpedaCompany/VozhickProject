@@ -93,6 +93,7 @@
     display: flex;
 /*    justify-content: flex-end;*/
     justify-content: center;
+    justify-content: flex-end;
     flex-grow: 1;
     padding-top: 3%;
 }
@@ -111,4 +112,14 @@
 .copyright>img {
     height: 15px;
     margin: 5px;
+}
+
+@media (max-width: 645px) {
+    .menu-link-footer>li {
+        display: flex;
+        justify-content: center;
+    }
+    .container-connection-button {
+        justify-content: center;
+    }
 }

@@ -136,7 +136,7 @@ body {
 /*------------------------------Service class-------------------------------*/
 
 .bb {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .pd {
     padding: 10px;
@@ -153,20 +153,14 @@ a:focus, a:hover {
 /*----------------------------------SLIDER----------------------------------*/
 
 .slider {
-    /* position: relative; */
-    margin-top: 70px;
+    margin-top: 90px;
     margin-bottom: 20px;
-    /* height: 10%; */
-    /* width: 100%; */
     cursor: pointer;
 }
 
 .swiper-container {
-    /* width: 100%; */
-    /* height: 100%; */
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black;
 }
 
 .swiper-slide {
@@ -214,46 +208,20 @@ a:focus, a:hover {
 
 /* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
 
-@media only screen and (min-width: 300px) and (max-width: 480px) {
+@media (max-width: 480px) {
     .swiper-pagination-bullet {
         width: 12px;
         height: 12px;
+        
     }
     .swiper-container-horizontal > .swiper-pagination-bullets {
         bottom: 5px;
     }
     .swiper-slide img {
         max-width: 100%;
-        min-height: 190px;
+        min-height: 160px;
     }
 }
-
-/*------------------------------TITLE---------------------------------*/
-
-.title {
-    height: 12%;
-    margin: 15px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-}
-
-.title-text {
-    font-size: 1.5rem;
-    font-family: Calibri, sans-serif;
-    font-weight: bold;
-    color: orangered;
-}
-
-@media only screen and (min-width: 300px) and (max-width: 480px) {
-    .title {
-        height: 8%;
-        margin-top: 0;
-    }
-}
-
 
 /*------------------------------LIST REST---------------------------------*/
 .rest{
@@ -314,7 +282,7 @@ a:focus, a:hover {
     margin: 0 20px;
     /* font-family: Roboto; */
 }
-@media only screen and (min-width: 300px) and (max-width: 480px) {
+@media (max-width: 480px) {
     .rest-item {
         height: 250px;
     }
