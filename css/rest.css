@@ -37,18 +37,22 @@
     max-width: 280px;
     margin: 0;
     margin-left: 50px;
-    top: 0;
+
+    position: relative;
 }
 .rest-filter-container{
-    width: 280px;
+    position: sticky;
+    top: 19%;
+    width: 100%;
     padding: 10px 20px;
+    padding-left: 20%;
     border: 1px solid #e2e3e0;
     transition: all .3s ease-out;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 }
 .sticky{
-    position: fixed;
-    top: 25%;
+    /* position: fixed;
+    top: 25%; */
     /* transform: translate(0,-10%); */
     transition: top bottom .3s linear;
 }
@@ -58,10 +62,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 15%;
-    margin-bottom: 3%;
+    /* padding-left: 15%; */
+    /* margin-bottom: 2%; */
     cursor: pointer;
     /* border: 1px solid black; */
+}
+.rest-filter .filter-item span{
+    margin-left: 15px;
 }
 .no-gutters-cust > [class*="rest-filter"] {
     padding-right: 0;
@@ -69,7 +76,7 @@
 }
 .rest-filter svg{
     height: 65%;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     /* border: 1px solid black; */
 }
 .rest-filter .filter-item:hover svg {
@@ -177,6 +184,14 @@
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
 }
+@media (max-width: 335px){
+    .rest-card-dish {
+        margin: 0 0 10px 0;
+    }
+    .rest-filter {
+        margin-left: 0px;
+    }
+}
 @media (max-width: 544px) {
     .rest-line {
         margin-top: 75px;
@@ -203,6 +218,33 @@
         height: 130px;
         width: 210px;
     }
+    .rest-filter{
+        flex: 0 0 210px;
+        max-width: 210px;
+        margin-left: 32px;
+    }
+
+}
+@media (max-width: 767px){
+    .rest-filter{
+        margin-left: 5px;
+        flex: 0 0 50px;
+        max-width: 45px;
+    }
+     .rest-filter-container .filter-item span{
+        display: none;
+    }
+    .rest-filter .rest-filter-container .filter-item {
+       justify-content: center;
+    }
+    
+    .rest-filter-container{
+        padding:0 ;
+        display: block;
+        z-index: 10;
+        background: white;
+    }
+
 }
 /* Устройствах среднего (планшеты, 768px и выше)  */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -210,8 +252,13 @@
         height: 160px;
         width: 240px;
     }
+    .rest-filter{
+        flex: 0 0 240px;
+        max-width: 240px;
+    }
     .rest-card-dish {
-        /* width: 200px; */
+        width: 225px;
+        margin: 0 5px;
         min-height: 275px;
     }
     .rest-card-dish .card-dish-footer{
