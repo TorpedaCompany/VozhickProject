@@ -1,6 +1,3 @@
-body{
-    /* background: rgba(128, 128, 128, 0.63); */
-}
 .rest-line {
     display: flex;
     flex-direction: row;
@@ -12,7 +9,6 @@ body{
     width: 100%;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
-
 .rest-main-img {
     position: relative;
     margin-left: 50px;
@@ -20,7 +16,6 @@ body{
     height: 200px;
     /* border: 1px solid black; */
 }
-
 .rest-main-img img {
     position: absolute;
     display: block;
@@ -32,30 +27,32 @@ body{
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
     /* z-index: 10; */
 }
-
 .rest-caption {
     font-size: 1.5rem;
     margin-left: 30px;
     line-height: 70px;
 }
-
 .rest-filter {
     flex: 0 0 280px;
     max-width: 280px;
     margin: 0;
     margin-left: 50px;
-    top: 0;
+
+    position: relative;
 }
 .rest-filter-container{
-    width: 280px;
+    position: sticky;
+    top: 19%;
+    width: 100%;
     padding: 10px 20px;
+    padding-left: 20%;
     border: 1px solid #e2e3e0;
     transition: all .3s ease-out;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 }
 .sticky{
-    position: fixed;
-    top: 25%;
+    /* position: fixed;
+    top: 25%; */
     /* transform: translate(0,-10%); */
     transition: top bottom .3s linear;
 }
@@ -65,46 +62,33 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 15%;
-    margin-bottom: 3%;
+    /* padding-left: 15%; */
+    /* margin-bottom: 2%; */
     cursor: pointer;
     /* border: 1px solid black; */
 }
-.no-gutters-cust>[class*="rest-filter"] {
+.rest-filter .filter-item span{
+    margin-left: 15px;
+}
+.no-gutters-cust > [class*="rest-filter"] {
     padding-right: 0;
     padding-left: 0;
 }
-
-
-.OnePx{
-    height: 1px;
-    background-color: rgba(0, 0, 0, 0.3);
-    margin: 10px;
-    width: 50px;
-}
 .rest-filter svg{
-    /* width: 25%; */
     height: 65%;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     /* border: 1px solid black; */
 }
 .rest-filter .filter-item:hover svg {
     fill: #ff501c;
     transition: .2s ease;
 }
-
-
-
 .rest-catalog-dish {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
-    /* align-items: center; */
 }
-
 .rest-card-dish {
-    /* flex-grow: 1; */
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
@@ -123,8 +107,6 @@ body{
     height: 140px;
     max-width: 100%;
     margin: 0 auto;
-    /* width: auto; */
-    /* max-width: 100%; */
     border-radius: 0;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.10);
     backface-visibility: hidden;
@@ -143,8 +125,6 @@ body{
     padding-top: 5px;
     font-size: 15px;
     text-align: center;
-
-    /* border: 1px solid red; */
 }
 .rest-card-dish .card-dish-footer{
     display: flex;
@@ -162,7 +142,6 @@ body{
 }
 .rest-card-dish .card-dish-action{
     height: inherit;
-    /* width: 100%; */
     line-height: 30px;
     text-align: center;
     align-self: center;
@@ -181,18 +160,18 @@ body{
     display: inline-block;
     height: inherit;
     width: 32px;
-    text-align: center;
-    -webkit-appearance: none;
-    border: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    text-align: center;
+    border: none;
+    -webkit-appearance: none;
 }
 .rest-card-dish .card-dish-action
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    -webkit-appearance: none;
 }
 .rest-card-dish .card-dish-action .addToCard{
     display: inline-block;
@@ -205,8 +184,14 @@ body{
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
 }
-
-
+@media (max-width: 335px){
+    .rest-card-dish {
+        margin: 0 0 10px 0;
+    }
+    .rest-filter {
+        margin-left: 0px;
+    }
+}
 @media (max-width: 544px) {
     .rest-line {
         margin-top: 75px;
@@ -222,7 +207,6 @@ body{
         margin: 0 auto;
     }
 }
-
 @media (min-width: 544px) and (max-width: 768px) {
     .rest-line {
         margin-top: 120px;
@@ -234,16 +218,47 @@ body{
         height: 130px;
         width: 210px;
     }
-}
-/* // Устройствах среднего (планшеты, 768px и выше)   */
+    .rest-filter{
+        flex: 0 0 210px;
+        max-width: 210px;
+        margin-left: 32px;
+    }
 
+}
+@media (max-width: 767px){
+    .rest-filter{
+        margin-left: 5px;
+        flex: 0 0 50px;
+        max-width: 45px;
+    }
+     .rest-filter-container .filter-item span{
+        display: none;
+    }
+    .rest-filter .rest-filter-container .filter-item {
+       justify-content: center;
+    }
+    
+    .rest-filter-container{
+        padding:0 ;
+        display: block;
+        z-index: 10;
+        background: white;
+    }
+
+}
+/* Устройствах среднего (планшеты, 768px и выше)  */
 @media (min-width: 768px) and (max-width: 991px) {
     .rest-main-img {
         height: 160px;
         width: 240px;
     }
+    .rest-filter{
+        flex: 0 0 240px;
+        max-width: 240px;
+    }
     .rest-card-dish {
-        /* width: 200px; */
+        width: 225px;
+        margin: 5px;
         min-height: 275px;
     }
     .rest-card-dish .card-dish-footer{
@@ -260,18 +275,14 @@ body{
     }
 
 }
-/* // Крупных устройств (настольных компьютеров, 992px и выше)   */
-
+/* Крупных устройств (настольных компьютеров, 992px и выше)   */
 @media (min-width: 992px) {}
-
-
-/* // Очень больших устройств (большие компьютеры, 1200px и выше)   */
+/* Очень больших устройств (большие компьютеры, 1200px и выше)   */
 @media (min-width: 1200px) and (max-width: 1220px) {
     .rest-card-dish .card-dish-action .addToCard{
         margin-left: 0px;
     }
 }
-
 @media (min-width: 1200px) {
     .rest {
         max-width: 1920px;
@@ -280,11 +291,7 @@ body{
 }
 @media (min-width: 1200px) and (max-width: 1560px) {
     .rest-catalog-dish{
-        /* background: grey; */
-        /* max-width: 50%; */
-        /* margin: 0 auto; */
     }
     .rest-filter {
-        /* display: none; */
     }
 }
