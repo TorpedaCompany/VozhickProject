@@ -1,3 +1,11 @@
+:root{
+    --Font: 'Roboto', sans-serif;
+    --RedColor: #ff501c;
+    --GreyColor: #BDBDBD;
+    --BlackColor: black;
+    
+}
+
 * {
     margin: 0 ;
     padding: 0;
@@ -10,14 +18,6 @@ body {
     font-family: var(--Font);
     font-size: 14px;
 }
-:root{
-/*    --Font: 'Roboto', sans-serif;*/
-    --Font: 'PT Sans Narrow', sans-serif;
-    --RedColor: #ff501c;
-    --GreyColor: #BDBDBD;
-    --BlackColor: black;
-    
-}
 
 .grey {
     background-color: var(--GreyColor);
@@ -26,113 +26,6 @@ body {
     background-color: var(--RedColor);
 }
 
-:root{
-    --Font: 'Roboto', sans-serif;
-}
-.Header {
-    position: fixed;
-    z-index: 9;
-    
-/*
-    display: flex;
-    justify-content: center;
-    align-items: center;
-*/
-    height: 70px;
-    background-color: #fff;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-    padding: 0;
-}
-.header-width {
-    margin: 0 auto;
-    display: flex;
-/*    flex-direction: column;*/
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    height: 100%;
-    padding: 0;
-}
-
-.Logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0;
-}
-
-.Logo>img {
-    height: 70%;
-}
-
-.Menuline {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.Phone {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-.container-social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--Font);
-    font-weight: 700;
-    font-size: 24px;
-/*    font-style: italic;*/
-}
-.container-social>span {padding: 5px; color: #ff501c}
-.container-social>img {
-    height: 20px;
-    margin: 5px;
-}
-
-.container-user{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0;
-}
-.container-user>ul{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.container-user>ul>li{
-    list-style-type: none;
-    margin: 5px;
-}
-.circle-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    border-radius: 100px;
-    height: 35px;
-    width: 35px;
-    
-}
-.rectangle-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    border-radius: 100px;
-    height: 35px;
-    width: 55px;
-    
-}
-.rectangle-button span {font-family: var(--Font);}
 /*------------------------------Service class-------------------------------*/
 
 .bb {
@@ -301,76 +194,4 @@ a:focus, a:hover {
     .rest {
         max-width: 1230px;
     }
-}
-
-.container-menubar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 0;
-}
-
-.menubar-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    height: 100%;
-/*    width: auto;*/
-    cursor: pointer;
-}
-.menubar-item>span {
-    color: var(--BlackColor);
-}
-.menubar-item:hover>span {
-    
-    color: #ff501c;
-    transition: .2s ease;
-}
-
-.input-user-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    height: 100%;
-    cursor: pointer;
-}
-.input-user-button>span {color: var(--BlackColor);}
-.input-user-button:hover>span {transition: .2s ease; color: #ff501c;}
-
-.shopping-cart-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    height: 100%;
-    cursor: pointer;
-    background-color: var(--BlackColor);
-    color: #fff;
-    min-width: 100px;
-}
-.shopping-cart-button>span {color: #fff; padding: 5px;}
-.shopping-cart-button:hover {background-color: #ff501c;    transition: .2s ease;}
-
-.shoppingcart-and-user-login {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 100%;
-    padding: 0;
-}
-
-
-.button-menubar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0;
-    max-width: 70px;
-    
 }
