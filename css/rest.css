@@ -258,7 +258,7 @@
     }
     .rest-card-dish {
         width: 225px;
-        margin: 0 5px;
+        margin: 5px;
         min-height: 275px;
     }
     .rest-card-dish .card-dish-footer{
