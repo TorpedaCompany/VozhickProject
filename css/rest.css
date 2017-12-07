@@ -223,7 +223,6 @@
         max-width: 210px;
         margin-left: 32px;
     }
-
 }
 @media (max-width: 767px){
     .rest-filter{
@@ -237,14 +236,11 @@
     .rest-filter .rest-filter-container .filter-item {
        justify-content: center;
     }
-    
     .rest-filter-container{
         padding:0 ;
         display: block;
-        z-index: 10;
         background: white;
     }
-
 }
 /* Устройствах среднего (планшеты, 768px и выше)  */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -264,16 +260,12 @@
     .rest-card-dish .card-dish-footer{
         flex-direction: column;
     }
-    .rest-card-dish .card-dish-content{
-        
-    }
     .rest-card-dish .card-dish-info{
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
     }
-
 }
 /* Крупных устройств (настольных компьютеров, 992px и выше)   */
 @media (min-width: 992px) {}
@@ -290,8 +282,8 @@
     }
 }
 @media (min-width: 1200px) and (max-width: 1560px) {
-    .rest-catalog-dish{
+    /* .rest-catalog-dish{
     }
     .rest-filter {
-    }
+    } */
 }
