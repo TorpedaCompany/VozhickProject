@@ -10,9 +10,10 @@
         <link rel="stylesheet" href="../css/modal-authorization.css">
         <link rel="stylesheet" href="../css/modal-registration.css">
         <link rel="stylesheet" href="../css/input.css">
-<!--        <link rel="stylesheet" href="../css/style.css">-->
+        <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/cart-style.css">
+        <link rel="stylesheet" href="../css/rest.css">
 
         <link rel="stylesheet" href="../plugins/vanilla-js-carousel.css">
 
@@ -60,7 +61,99 @@
         </div>
 <!--        <div cont></div>-->
         <div class="container-cart">
-            dsfdf
+            <div class="title-cart">Оформление заказа</div>
+            <div class="main-eat-container-cart">
+                <div class="card-dish-cart">
+                    <div class="card-dish-img">
+                        <img class="bb b-lazy" data-src="../image/dishes/dish_1.jpg" src="../image/rest/rest_placeholder.svg">
+                    </div>
+                    <div class="card-dish-content-cart">
+                        <div class="card-dish-description-cart">
+                            <span>Феттучини с креветками и кальмарами</span>
+                        </div>
+                        <div class="card-dish-footer-cart bb">
+                            <div class="card-dish-info bb">
+                                <div class="dish-grams">110/100 грамм</div>
+                                <div class="dish-price">5.50 р.</div>
+                            </div>
+                            <div class="card-dish-action-cart bb">
+                                <div class="inpMinus">-</div>
+                                <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                <div class="inpPlus">+</div>
+                                <div class="addToCard">
+                                    <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-data-cart">
+                <div class="container-input">
+                    <span class="fa fa-location-arrow"></span>
+                    <div class="group">
+                        <input placeholder="Улица" class='input-style input-login-authorization' type='text' required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="container-input">
+                    <span class="fa fa-home"></span>
+                    <div class="group">
+                        <input placeholder="Дом" class='input-style input-login-authorization' type='text' required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="container-input">
+                    <span class="fa fa-angle-right"></span>
+                    <div class="group">
+                        <input placeholder="Подъезд" class='input-style input-login-authorization' type='text' required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="container-input">
+                    <span class="fa fa-angle-right"></span>
+                    <div class="group">
+                        <input placeholder="Этаж" class='input-style input-login-authorization' type='text' required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="container-input">
+                    <span class="fa fa-angle-right"></span>
+                    <div class="group">
+                        <input placeholder="Квартира" class='input-style input-login-authorization' type='text' required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="container-input">
+                    <span class="fa fa-mobile"></span>
+                    <div class="group">
+                        <input placeholder="Телефон" class='input-style input-login-authorization' type='text' required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="container-input">
+                    <span class="fa fa-envelope"></span>
+                    <div class="group">
+                        <input placeholder="Email" class='input-style input-login-authorization' type='text' required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="container-input">
+                    <span class="fa fa-comments"></span>
+                    <div class="group">
+                        <input placeholder="Коментарий" class='input-style input-login-authorization' type='text' required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="container-input">
+                    <span class="fa fa-ticket"></span>
+                    <div class="group">
+                        <input placeholder="Промокод" class='input-style input-login-authorization' type='text' required>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
     </body>
 </html>
