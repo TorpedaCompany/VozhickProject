@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         function displayModalDish(e){
             e = e || event;
             target = e.target.parentNode.className || e.srcElement.parentNode.className;
+            
             if(target != "card-dish-action" && target != "addToCard"){
                 disableScroll();
                 let cloneDishes = this.cloneNode(true);
@@ -104,9 +105,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
     
     document.addEventListener ('click',function (e) {
-        if(e.target.id == "ovelay" || e.target.parentNode.className == "closeBtn") {
+        if(e.target.id == "ovelay" || e.target.parentNode.className == "closeBtn" || e.target.className == "closeBtn") {
             enableScroll();
             console.log(e.target);
+            console.log(e.target.parentNode.className);
             ModalAuthorization.classList.remove("modal-active");
             ModalRegistration.classList.remove("modal-active");
             Ovelay.classList.remove("ovelay-active");
