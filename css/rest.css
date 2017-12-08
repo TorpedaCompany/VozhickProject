@@ -4,7 +4,6 @@
     justify-content: flex-start;
     margin-top: 140px;
     margin-bottom: 80px;
-    /* margin: 140px 30px 80px -15px; */
     height: 70px;
     width: 100%;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
@@ -14,7 +13,6 @@
     margin-left: 50px;
     width: 280px;
     height: 200px;
-    /* border: 1px solid black; */
 }
 .rest-main-img img {
     position: absolute;
@@ -25,7 +23,6 @@
     padding: 5px;
     background: white;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
-    /* z-index: 10; */
 }
 .rest-caption {
     font-size: 1.5rem;
@@ -37,7 +34,6 @@
     max-width: 280px;
     margin: 0;
     margin-left: 50px;
-
     position: relative;
 }
 .rest-filter-container{
@@ -50,22 +46,13 @@
     transition: all .3s ease-out;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 }
-.sticky{
-    /* position: fixed;
-    top: 25%; */
-    /* transform: translate(0,-10%); */
-    transition: top bottom .3s linear;
-}
 .rest-filter .filter-item{
     height: 45px;
     line-height: 35px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* padding-left: 15%; */
-    /* margin-bottom: 2%; */
     cursor: pointer;
-    /* border: 1px solid black; */
 }
 .rest-filter .filter-item span{
     margin-left: 15px;
@@ -76,8 +63,6 @@
 }
 .rest-filter svg{
     height: 65%;
-    /* margin-right: 15px; */
-    /* border: 1px solid black; */
 }
 .rest-filter .filter-item:hover svg {
     fill: #ff501c;
@@ -89,14 +74,13 @@
     justify-content: center;
     position: relative;
 }
-
-
 .rest-card-dish {
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     height: 260px;
     width: 260px;
+    position: relative;
     margin: 0 10px;
     margin-bottom: 20px;
     padding: 10px;
@@ -105,11 +89,7 @@
     border: 1px solid #e2e3e0;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
-    /* transition: all 0.3 linear; */
-    transition: all .3s ease-out;
 }
-
-
 .rest-card-dish .card-dish-img img{
     display: block;
     height: 140px;
@@ -120,10 +100,10 @@
     backface-visibility: hidden;
 }
 .modalDish{
-    width: 800px;
+    width: 745px;
     height: auto;
     padding: 20px;
-    margin: 0;
+    margin: 0 auto;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -138,8 +118,23 @@
     height: 180px;
     margin-right: 20px;
 }
+.modalDish .closeBtn,
 .modalDish .card-dish-description p {
     display: block !important;
+}
+
+.rest-card-dish .closeBtn,
+.rest-card-dish .card-dish-description p {
+    display: none;
+}
+
+.rest-card-dish .closeBtn{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 24px;
+    font-size: 16px;
+    text-align: center;
 }
 
 .rest-card-dish .card-dish-content {
@@ -156,9 +151,7 @@
     font-size: 15px;
     text-align: center;
 }
-.rest-card-dish .card-dish-description p {
-    display: none;
-}
+
 .rest-card-dish .card-dish-footer{
     display: flex;
     flex-direction: row;
@@ -173,14 +166,14 @@
 .rest-card-dish .card-dish-info .dish-price{
     font-size: 19px;
 }
-.rest-card-dish .card-dish-action{
+.card-dish-action{
     height: inherit;
     line-height: 30px;
     text-align: center;
     align-self: center;
 }
-.rest-card-dish .card-dish-action .inpPlus,
-.rest-card-dish .card-dish-action .inpMinus{
+.card-dish-action .inpPlus,
+.card-dish-action .inpMinus{
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -189,7 +182,7 @@
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
 }
-.rest-card-dish .card-dish-action input{
+.card-dish-action input{
     display: inline-block;
     height: inherit;
     width: 32px;
@@ -199,14 +192,14 @@
     border: none;
     -webkit-appearance: none;
 }
-.rest-card-dish .card-dish-action
+.card-dish-action
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
     -webkit-appearance: none;
 }
-.rest-card-dish .card-dish-action .addToCard{
+.card-dish-action .addToCard{
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -274,6 +267,18 @@
         display: block;
         background: white;
     }
+    .modalDish {
+        display: block;
+        width: 90%;
+        max-height: 90%;
+        overflow: auto;
+        padding: 20px;
+        margin: 0 auto;
+        flex-direction: row;
+    }
+    .modalDish .card-dish-img img {
+        margin: 0 auto;
+    }
 }
 /* Устройствах среднего (планшеты, 768px и выше)  */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -285,7 +290,7 @@
         flex: 0 0 240px;
         max-width: 240px;
     }
-    .rest-card-dish {
+    .rest-card-dish:not(.modalDish) {
         width: 225px;
         margin: 5px;
         min-height: 275px;
@@ -315,8 +320,5 @@
     }
 }
 @media (min-width: 1200px) and (max-width: 1560px) {
-    /* .rest-catalog-dish{
-    }
-    .rest-filter {
-    } */
 }
+

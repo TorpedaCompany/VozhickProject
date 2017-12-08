@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
     
-
+    //События открытия модального окна
     function addEventModalDish(){
         let modalDish = document.querySelectorAll(".rest-card-dish");
     
@@ -104,8 +104,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
     
     document.addEventListener ('click',function (e) {
-        if(e.target.id == "ovelay") {
+        if(e.target.id == "ovelay" || e.target.parentNode.className == "closeBtn") {
             enableScroll();
+            console.log(e.target);
             ModalAuthorization.classList.remove("modal-active");
             ModalRegistration.classList.remove("modal-active");
             Ovelay.classList.remove("ovelay-active");
