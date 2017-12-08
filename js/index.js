@@ -44,7 +44,7 @@ function addEventCtgRest(){
         arrCtgRest[i].addEventListener("click", selectCtg, false);
     }
 
-    function selectCtg (){
+    function selectCtg(){
         let activeCl = document.querySelector(".type-restaurant_active") || false; 
             if(activeCl)
                 activeCl.classList.remove("type-restaurant_active");
