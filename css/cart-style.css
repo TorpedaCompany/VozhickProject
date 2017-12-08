@@ -20,19 +20,31 @@
     width: 100%;
     padding: 10px;
     height: 40px;
+    color: var(--RedColor);
+    font-size: 19px;
+/*    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);*/
 }
 
-.container-data-cart {
+.main-container-data-cart {
     display: flex;
-    flex-direction: column;
+/*    flex-direction: column;*/
     justify-content: center;
-    align-items: center;   
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
 }
-
-.main-eat-container-cart {
+.container-button-cart {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 100%;
     padding: 20px;
+}
+.main-eat-container-cart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
 }
 
 .container-eat-cart {
@@ -40,16 +52,73 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #e2e3e0;
+/*    border-bottom: 1px solid;*/
 }
 .container-image-eat-cart {
     display: flex;
+    height: 50px;    
 }
 .container-image-eat-cart>img {
-    height: 30%;
-/*    width: 100%;*/
+    height: 100%;
+}
+.container-name-eat-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    flex-grow: 1;
+}
+.container-price-eat-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+.container-button-eat-cart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
 }
 
-
+.container-button-cancel-eat-cart {
+    display: inline-block;
+    text-align: center;
+    align-self: center;
+    width: 32px;
+    height: 32px;
+    
+    cursor: pointer;
+}
+.container-button-cancel-eat-cart>span {
+    font-size: 20px;
+}
+.container-data-cart {
+    display: flex;
+    flex-direction: column;
+    flex: 1 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    min-width: 250px;
+}
+.button-cart {
+    height: 40px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+}
+.button-cart-red{
+    background-color: var(--RedColor);
+}
 
 .card-dish-cart {
     display: flex;
@@ -100,4 +169,55 @@
     border: 1px solid #e2e3e0;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
+}
+
+.card-dish-action input{
+    display: inline-block;
+    height: inherit;
+    width: 32px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: none;
+    -webkit-appearance: none;
+}
+.card-dish-action
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    -webkit-appearance: none;
+}
+
+@media (max-width: 590px) {
+    
+    .container-button-cart {
+        justify-content: center;
+    }
+    .container-eat-cart {
+        font-size: 16px;
+        flex-direction: column;
+    }
+    .container-image-eat-cart {
+        height: 30px;
+        padding: 5px;
+    }
+    .container-button-eat-cart {
+        width: 100%;
+        padding: 10px;
+        flex-direction: row-reverse;
+    }
+    .container-price-eat-cart {
+        justify-content: flex-end;
+    }
+}
+.container-all-price-eat-cart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
 }
