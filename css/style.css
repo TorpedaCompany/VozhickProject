@@ -29,7 +29,7 @@ body {
 /*------------------------------Service class-------------------------------*/
 
 .bb {
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 .pd {
     padding: 10px;
@@ -47,7 +47,7 @@ a:focus, a:hover {
 
 .slider {
     margin-top: 90px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
     cursor: pointer;
 }
 
@@ -119,6 +119,10 @@ a:focus, a:hover {
 /*------------------------------LIST REST---------------------------------*/
 .rest{
     margin-top: 20px;
+}
+.hideRest{
+    /* opacity: 0; */
+    transition: all ease 0.8s;
 }
 .rest-item {
     position: relative;

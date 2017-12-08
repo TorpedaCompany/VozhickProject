@@ -30,3 +30,6 @@
     fill: #ff501c;
     transition: .2s ease;
 }
+.type-restaurant_active >svg {
+    fill: #ff501c;
+}
