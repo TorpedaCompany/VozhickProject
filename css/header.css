@@ -41,8 +41,12 @@ body {
     height: 100%;
     padding: 0;
 }
-.Logo>img {
+.Logo>a{
     height: 70%;
+    cursor: pointer;
+}
+.Logo>a>img {
+    height: 100%;
 }
 
 .button-menubar {
@@ -68,12 +72,25 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+/*    flex-grow: 1;*/
+    text-align: center;
+/*    padding: 10px;*/
+    height: 100%;
+    cursor: pointer;
+}
+
+.menubar-item-a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
     text-align: center;
     padding: 10px;
     height: 100%;
     cursor: pointer;
 }
+
 
 .container-menubar {
     display: flex;
