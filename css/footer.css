@@ -7,7 +7,7 @@
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
     padding: 0;
     height: auto;
-    
+    width: 100%;
 }
 .container-footer {
     display: flex;
