@@ -1,6 +1,7 @@
 .news{
     margin: 0 auto;
     max-width: 1200px;
+    flex: 1 0 auto;
 }
 .news-line{
     width: 100%;

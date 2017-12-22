@@ -1,17 +1,20 @@
 
 .container-type-restaurant {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-/*    max-height: 120px;*/
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
     margin-top: 20px;
     margin-bottom: 20px;
     max-width: 1200px;
+/*    height: 100px;;*/
     margin: 0 auto;
     
 }
+
+
 
 .type-restaurant {
     display: flex;
@@ -21,6 +24,18 @@
     align-items: center;
     padding: 4%;
     cursor: pointer;
+}
+
+@-moz-document url-prefix() {
+	.type-restaurant {
+		padding: 20px;
+	}
+}
+
+@supports (-ms-ime-align:auto) {
+	.type-restaurant {
+		padding: 20px;
+	}
 }
 
 .type-restaurant>svg {

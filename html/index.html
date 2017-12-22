@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/type-restaurant.css">
     <link rel="stylesheet" href="../css/input.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -23,6 +24,7 @@
 </head>
 
 <body>
+    <div class="wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 Header">
@@ -33,19 +35,19 @@
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-9 col-xs-9 Logo">
-                        <img src="../image/LogoTest.png">
+                        <a href="index.html"><img src="../image/LogoTest.png"></a>
                     </div>
 
                     <div class="col-lg-5 col-md-5 hidden-sm-down hidden-xs-down Menuline">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 container-menubar">
-                            <div class="menubar-item">
-                                <span class="fa fa-home fa-2x"></span>Главная</div>
-                            <div class="menubar-item">
-                                <span class="fa fa-truck fa-2x"></span>Доставка</div>
-                            <div class="menubar-item">
-                                <span class="fa fa-gift fa-2x"></span>Акции!</div>
-                            <div style="min-width: 108px;" class="menubar-item">
-                                <span class="fa fa-question fa-2x"></span>Как заказать?</div>
+                            <a href="index.html" class="menubar-item-a"><div class="menubar-item">
+                                <span class="fa fa-home fa-2x"></span>Главная</div></a>
+                            <a href="delivery.html" class="menubar-item-a"><div class="menubar-item">
+                                <span class="fa fa-truck fa-2x"></span>Доставка</div></a>
+                            <a href="news.html" class="menubar-item-a"><div class="menubar-item">
+                                <span class="fa fa-gift fa-2x"></span>Акции!</div></a>
+                            <a href="help.html" class="menubar-item-a"><div style="min-width: 108px;" class="menubar-item">
+                                <span class="fa fa-question fa-2x"></span>Как заказать?</div></a>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-2 hidden-sm-down hidden-xs-down Phone">
@@ -58,10 +60,12 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 container-user">
                             <div id="modal-authorization-open" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 input-user-button">
                                 <span class="fa fa-user fa-2x"></span>Войти</div>
+                            <a style="height: 100%;" href="cart.html">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 shopping-cart-button">
                                 <span class="fa fa-shopping-cart fa-2x"></span>
                                 <span>0 р</span>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -599,28 +603,28 @@
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 main-container-footer">
+<!--    <div class="container-fluid">-->
+<!--        <div class="row">-->
+            <div class="main-container-footer">
                 <div class=" container-footer">
                     <div class="container-link-footer">
                         <ul class="menu-link-footer">
                             <li>
-                                <a href="">Акции</a>
+                                <a href="news.html">Акции</a>
                             </li>
                             <li>
-                                <a href="">Доставка</a>
+                                <a href="delivery.html">Доставка</a>
                             </li>
                             <li>
-                                <a href="">Как заказать?</a>
+                                <a href="help.html">Как заказать?</a>
                             </li>
                         </ul>
                         <ul class="menu-link-footer">
                             <li>
-                                <a href="">Как заказать?</a>
+                                <a href="info.html">О компании</a>
                             </li>
                             <li>
-                                <a href="">О компании</a>
+                                <a href=""></a>
                             </li>
                             <li>
                                 <a href=""></a>
@@ -629,16 +633,16 @@
                     </div>
                     <div class="container-social-footer">
                         <div class="square-social square-vk">
-                            <a class="fa fa-vk fa-2x"></a>
+                            <a href="https://vk.com/vozhyksol" target="_blank" class="fa fa-vk fa-2x"></a>
                         </div>
                         <div class="square-social square-facebook">
-                            <a class="fa fa-facebook fa-2x"></a>
+                            <a target="_blank" class="fa fa-facebook fa-2x"></a>
                         </div>
                         <div class="square-social square-odnoklassniki">
-                            <a class="fa fa-odnoklassniki fa-2x"></a>
+                            <a href="https://ok.ru/profile/576793096418" target="_blank" class="fa fa-odnoklassniki fa-2x"></a>
                         </div>
                         <div class="square-social square-instagram">
-                            <a class="fa fa-instagram fa-2x"></a>
+                            <a href="https://www.instagram.com/vozhyk_sol/" target="_blank" class="fa fa-instagram fa-2x"></a>
                         </div>
                     </div>
                     <div class="container-connection-button">
@@ -653,7 +657,7 @@
                 </div>
             </div>
 
-        </div>
+<!--        </div>-->
     </div>
 
     <script src="../plugins/slider/js/swiper.js"></script>

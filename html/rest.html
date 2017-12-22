@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../css/type-restaurant.css">
     <link rel="stylesheet" href="../css/input.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/rest.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -33,19 +35,27 @@
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-9 col-xs-9 Logo">
-                        <img src="../image/LogoTest.png">
+                        <a href="index.html"><img src="../image/LogoTest.png"></a>
                     </div>
 
                     <div class="col-lg-5 col-md-5 hidden-sm-down hidden-xs-down Menuline">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 container-menubar">
-                            <div class="menubar-item">
-                                <span class="fa fa-home fa-2x"></span>Главная</div>
-                            <div class="menubar-item">
-                                <span class="fa fa-truck fa-2x"></span>Доставка</div>
-                            <div class="menubar-item">
-                                <span class="fa fa-gift fa-2x"></span>Акции!</div>
-                            <div style="min-width: 108px;" class="menubar-item">
-                                <span class="fa fa-question fa-2x"></span>Как заказать?</div>
+                            <a href="index.html" class="menubar-item-a">
+                                <div class="menubar-item">
+                                    <span class="fa fa-home fa-2x"></span>Главная</div>
+                            </a>
+                            <a href="delivery.html" class="menubar-item-a">
+                                <div class="menubar-item">
+                                    <span class="fa fa-truck fa-2x"></span>Доставка</div>
+                            </a>
+                            <a href="news.html" class="menubar-item-a">
+                                <div class="menubar-item">
+                                    <span class="fa fa-gift fa-2x"></span>Акции!</div>
+                            </a>
+                            <a href="help.html" class="menubar-item-a">
+                                <div style="min-width: 108px;" class="menubar-item">
+                                    <span class="fa fa-question fa-2x"></span>Как заказать?</div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-2 hidden-sm-down hidden-xs-down Phone">
@@ -58,10 +68,12 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 container-user">
                             <div id="modal-authorization-open" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 input-user-button">
                                 <span class="fa fa-user fa-2x"></span>Войти</div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 shopping-cart-button">
-                                <span class="fa fa-shopping-cart fa-2x"></span>
-                                <span>0 р</span>
-                            </div>
+                            <a style="height: 100%;" href="cart.html">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 shopping-cart-button">
+                                    <span class="fa fa-shopping-cart fa-2x"></span>
+                                    <span>0 р</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -186,8 +198,7 @@
                     <!-- hidden-md-down -->
                     <div class="rest-filter-container">
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
                                 <g>
                                     <path d="M37.5,20.997c-0.952,0-1.893,0.141-2.794,0.418c-0.528,0.163-0.824,0.723-0.662,1.25c0.133,0.43,0.528,0.706,0.956,0.706
                                     c0.097,0,0.196-0.014,0.294-0.044c0.711-0.219,1.453-0.33,2.206-0.33c0.553,0,1-0.447,1-1S38.053,20.997,37.5,20.997z"
@@ -218,8 +229,7 @@
                             <span>Завтрак</span>
                         </div>
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
                                 <g>
                                     <path d="M18.35,20.805c0.195,0.195,0.451,0.293,0.707,0.293c0.256,0,0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414
                                                     c-1.015-1.016-1.015-2.668,0-3.684c0.87-0.87,1.35-2.026,1.35-3.256s-0.479-2.386-1.35-3.256c-0.391-0.391-1.023-0.391-1.414,0
@@ -254,8 +264,7 @@
                             <span>Горячие блюда</span>
                         </div>
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve">
                                 <path d="M54,27.069V25.12c0-0.596-0.179-1.076-0.531-1.426c-0.593-0.589-1.419-0.587-2.212-0.575l-24.006,0L6.447,1.824
                                 c-1.08-1.081-2.822-1.271-3.863-0.383L2.327,1.563L2.205,1.686c-1.1,1.101-1.101,3.343-0.009,4.435l16.6,17L3,23.12H2.744
                                 c-0.796,0-1.62-0.015-2.212,0.575C0.179,24.045,0,24.525,0,25.12v2c0,0.033,0.008,0.07,0.009,0.103l-0.004,0l0.023,0.217
@@ -276,8 +285,7 @@
                             <span>Супы</span>
                         </div>
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
                                 <g>
                                     <path d="M1.501,53h4v5h6v-5h36v5h6v-5h4v-7h-56V53z" />
                                     <ellipse cx="29.501" cy="35.5" rx="2" ry="1.5" />
@@ -311,8 +319,7 @@
                             <span>Суши</span>
                         </div>
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 59 59" style="enable-background:new 0 0 59 59;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 59 59" style="enable-background:new 0 0 59 59;" xml:space="preserve">
                                 <g>
                                     <path d="M52.417,14.576l-0.95-0.783L34.094,28.424l-0.984,0.828l0.001,0.001l-0.004,0.003l0.85,0.756l14.966,13.412l0.066-0.056
                                     l2.765,2.457l0.662-0.563C56.601,41.708,59,36.115,59,29.919S56.601,18.13,52.417,14.576z M44,33.5c0-2.206,1.794-4,4-4
@@ -355,8 +362,7 @@
                             <span>Пицца</span>
                         </div>
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 58.622 58.622" style="enable-background:new 0 0 58.622 58.622;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 58.622 58.622" style="enable-background:new 0 0 58.622 58.622;" xml:space="preserve">
                                 <g>
                                     <path d="M57.595,11.606c-0.391-0.391-1.023-0.391-1.414,0l-3.536,3.536l-1.061-1.061c-1.318-1.318-3.631-1.318-4.949,0
                                     c-1.365,1.364-1.365,3.585,0,4.95l0.303,0.303h-5.07c-1.103,0-2,0.897-2,2v4.444c-0.655-0.241-1.352-0.373-2.071-0.373
@@ -400,8 +406,7 @@
                             <span>Шашлык</span>
                         </div>
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
                                 <g>
                                     <polygon points="26,13 28,13 28,17 31,17 31,13 33,13 33,17 37,17 37,13 37,11.799 36.665,11 32.05,0 27.95,0 23.335,11 23,11.799 
                                     23,13 23,17 26,17 	" />
@@ -414,8 +419,7 @@
                             <span>Соусы</span>
                         </div>
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 58.758 58.758" style="enable-background:new 0 0 58.758 58.758;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 58.758 58.758" style="enable-background:new 0 0 58.758 58.758;" xml:space="preserve">
                                 <path d="M57.29,19.325c0.592-1.844,0.106-3.888-1.312-5.282c-1.011-0.992-2.362-1.542-3.784-1.524
                                 c-0.235-0.624-0.604-1.19-1.09-1.667c-0.745-0.732-1.698-1.169-2.723-1.301c-0.006,0.581-0.064,1.157-0.181,1.723
                                 c0.618,0.92,0.958,2.008,0.958,3.122c0,1.096-0.329,2.167-0.928,3.077c0.104,0.483,0.155,0.977,0.155,1.476
@@ -468,8 +472,7 @@
                             <span>Салаты</span>
                         </div>
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 59.706 59.706" style="enable-background:new 0 0 59.706 59.706;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 59.706 59.706" style="enable-background:new 0 0 59.706 59.706;" xml:space="preserve">
                                 <g>
                                     <path d="M41.63,5.999l2,2l-1.414,1.414l-2-2L41.63,5.999z M44.217,7.415l-2-2l1.414-1.414l2,2L44.217,7.415z M46.217,5.415l-2-2
                                     l1.414-1.414l2,2L46.217,5.415z M46.216,1.414L47.631,0l2,2l-1.414,1.414L46.216,1.414z"
@@ -502,8 +505,7 @@
                             <span>Напитки</span>
                         </div>
                         <div class="filter-item">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 52.476 52.476" style="enable-background:new 0 0 52.476 52.476;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 52.476 52.476" style="enable-background:new 0 0 52.476 52.476;" xml:space="preserve">
                                 <g>
                                     <path d="M11.289,28.749c3.035-1.733,7.008-1.732,10.043-0.005c3.009-1.726,6.947-1.729,9.957-0.004
                                     c3.009-1.723,6.945-1.723,9.954,0.002c1.51-0.862,3.212-1.313,4.996-1.313c0.987,0,1.952,0.143,2.873,0.414
@@ -550,14 +552,49 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
-                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/422/100172000_1.jpg" src="../image/rest/rest_placeholder.svg">
+                                <!--                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/422/100172000_1.jpg" src="../image/rest/rest_placeholder.svg">   -->
+                                <img class="b-lazy" data-src="../image/sushi_1/Аводельфия@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Цезарь с куриной грудкой</span>
-                                    <p>Микс из листьев Ромейна и Айсберга, помидоры, гренки из тосканского хлеба ручной работы, перепелиные яйца под фирменной заправкой "Цезарь" от нашего шеф-повара
+                                    <span>Аводельфия</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nulla odit magnam, molestiae accusamus voluptatem. Illo quam in iusto dolores at libero voluptate architecto provident beatae sunt, qui sapiente dicta
+                                        voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав: Жмых, вода, папирус, тростник
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">8.30 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <img class="b-lazy" data-src="../image/sushi_1/Авокадо маки@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Авокадо маки</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
                                         </p>
                                     </p>
                                 </div>
@@ -582,14 +619,16 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
+                                <!--
                                 <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/30a/574_370_240cd750bba9870f18aada2478b24840a/4800001008_1.jpg"
                                     src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Акула@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Парма и Моцарелла</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Акула</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -616,14 +655,16 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
+                                <!--
                                 <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/1eb/574_370_240cd750bba9870f18aada2478b24840a/100175961_1.jpg"
                                     src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Аляска@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Феттучини с креветками и кальмарами</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Аляска</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -650,15 +691,16 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
+                                <!--
                                 <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
-                                    src="../image/rest/rest_placeholder.svg">
+                                    src="../image/rest/rest_placeholder.svg">      
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Аризона@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Спагетти</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio
-                                        doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit
-                                        aliquam?
+                                    <span>Аризона</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -685,13 +727,13 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
-                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/283/100179745_1.jpg" src="../image/rest/rest_placeholder.svg">
+                                <!--                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/283/100179745_1.jpg" src="../image/rest/rest_placeholder.svg">-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Асури@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Феттучини с цыппленком и песто</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Асури</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -718,13 +760,13 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
-                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/f47/100179350_1.jpg" src="../image/rest/rest_placeholder.svg">
+                                <!--                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/f47/100179350_1.jpg" src="../image/rest/rest_placeholder.svg">-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Бонито@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Пицца Примавера на тонком тесте</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Бонито</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -751,13 +793,13 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
-                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/dd3/100179320_1.jpg" src="../image/rest/rest_placeholder.svg">
+                                <!--                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/dd3/100179320_1.jpg" src="../image/rest/rest_placeholder.svg">-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Бостон@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Салат с курицей и йогуртовой заправкой</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Бостон</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -784,14 +826,16 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
+                                <!--
                                 <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/957/574_370_240cd750bba9870f18aada2478b24840a/100179300_1.jpg"
                                     src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Гавана@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Мерлуццо</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Гавана</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -818,13 +862,13 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
-                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/422/100172000_1.jpg" src="../image/rest/rest_placeholder.svg">
+                                <!--                                <img class="b-lazy" data-src="http://ilpatio.by/upload/iblock/422/100172000_1.jpg" src="../image/rest/rest_placeholder.svg">-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Динамит@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Цезарь с куриной грудкой</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Динамит</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -851,14 +895,16 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
+                                <!--
                                 <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/30a/574_370_240cd750bba9870f18aada2478b24840a/4800001008_1.jpg"
                                     src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Дракон@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Парма и Моцарелла</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Дракон</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -885,14 +931,16 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
+                                <!--
                                 <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/1eb/574_370_240cd750bba9870f18aada2478b24840a/100175961_1.jpg"
                                     src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Калифорния@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Феттучини с креветками и кальмарами</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Калифорния</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -919,14 +967,16 @@
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </div>
                             <div class="card-dish-img">
+                                <!--
                                 <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
                                     src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Каппа маки@2x.jpg" src="../image/rest/rest_placeholder.svg">
                             </div>
                             <div class="card-dish-content">
                                 <div class="card-dish-description">
-                                    <span>Спагетти</span>
-                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque
-                                        temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                    <span>Каппа маки</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
                                         <p>
                                             Состав:
                                         </p>
@@ -948,6 +998,619 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Карай@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Карай</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Кияри@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Кияри</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Майами@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Майами</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Нью-Джерси@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Нью-Джерси</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Спайси кунсей маки@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Спайси кунсей маки</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Спайси сяке маки@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Спайси сяке маки</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Сэндай@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Сэндай</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Сяке маки@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Сяке маки</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Тасуна@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Тасуна</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Текка маки@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Текка маки</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Тори@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Тори</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Унаги маки@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Унаги маки</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Филадельфия@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Филадельфия</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Цветущая вишня@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Цветущая вишня</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Эби маки@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Эби маки</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Ямато@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Ямато</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rest-card-dish">
+                            <div class="closeBtn">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-dish-img">
+                                <!--
+                                <img class="b-lazy" data-src="http://ilpatio.by/upload/resize_cache/iblock/08c/574_370_240cd750bba9870f18aada2478b24840a/30100000145_1.jpg"
+                                    src="../image/rest/rest_placeholder.svg">
+-->
+                                <img class="b-lazy" data-src="../image/sushi_1/Ясай@2x.jpg" src="../image/rest/rest_placeholder.svg">
+                            </div>
+                            <div class="card-dish-content">
+                                <div class="card-dish-description">
+                                    <span>Ясай</span>
+                                    <p> voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
+                                        <p>
+                                            Состав:
+                                        </p>
+                                    </p>
+                                </div>
+                                <div class="card-dish-footer">
+                                    <div class="card-dish-info">
+                                        <div class="dish-grams">110/100 г.</div>
+                                        <div class="dish-price">3 р.</div>
+                                    </div>
+                                    <div class="card-dish-action">
+                                        <div class="inpMinus">-</div>
+                                        <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
+                                        <div class="inpPlus">+</div>
+                                        <div class="addToCard">
+                                            <i class="fa fa-inverse fa-shopping-cart" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
 
@@ -956,7 +1619,62 @@
         </div>
     </div>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 main-container-footer">
+                <div class=" container-footer">
+                    <div class="container-link-footer">
+                        <ul class="menu-link-footer">
+                            <li>
+                                <a href="news.html">Акции</a>
+                            </li>
+                            <li>
+                                <a href="delivery.html">Доставка</a>
+                            </li>
+                            <li>
+                                <a href="help.html">Как заказать?</a>
+                            </li>
+                        </ul>
+                        <ul class="menu-link-footer">
+                            <li>
+                                <a href="info.html">О компании</a>
+                            </li>
+                            <li>
+                                <a href=""></a>
+                            </li>
+                            <li>
+                                <a href=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container-social-footer">
+                        <div class="square-social square-vk">
+                            <a href="https://vk.com/vozhyksol" target="_blank" class="fa fa-vk fa-2x"></a>
+                        </div>
+                        <div class="square-social square-facebook">
+                            <a target="_blank" class="fa fa-facebook fa-2x"></a>
+                        </div>
+                        <div class="square-social square-odnoklassniki">
+                            <a href="https://ok.ru/profile/576793096418" target="_blank" class="fa fa-odnoklassniki fa-2x"></a>
+                        </div>
+                        <div class="square-social square-instagram">
+                            <a href="https://www.instagram.com/vozhyk_sol/" target="_blank" class="fa fa-instagram fa-2x"></a>
+                        </div>
+                    </div>
+                    <div class="container-connection-button">
+                        <div class="report-button">
+                            <span class="fa fa-bullhorn fa-2x"></span>Возникла проблема?</div>
+                    </div>
+                </div>
+                <div class=" container-footer">
+                    <div class="copyright">
+                        <span class="fa fa-copyright"></span>2017-2018
+                        <img src="../image/LogoTest.png"> Вожык</div>
+                </div>
+            </div>
 
+        </div>
+    </div>
 
     <script src="../plugins/slider/js/swiper.js"></script>
     <script src="../plugins/lazy/blazy.js"></script>

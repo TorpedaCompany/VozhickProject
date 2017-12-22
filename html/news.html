@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="../css/input.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/news.css">
+    <link rel="stylesheet" href="../css/wrapper.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
@@ -25,8 +27,10 @@
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
+   <div class="wrapper">
+   
+<!--    <div class="container-fluid">-->
+<!--        <div class="row">-->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 Header">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 header-width">
                     <div class="hidden-lg-up hidden-md-up col-sm-1 col-xs-1 button-menubar">
@@ -35,19 +39,19 @@
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-9 col-xs-9 Logo">
-                        <img src="../image/LogoTest.png">
+                        <a href="index.html"><img src="../image/LogoTest.png"></a>
                     </div>
 
                     <div class="col-lg-5 col-md-5 hidden-sm-down hidden-xs-down Menuline">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 container-menubar">
-                            <div class="menubar-item">
-                                <span class="fa fa-home fa-2x"></span>Главная</div>
-                            <div class="menubar-item">
-                                <span class="fa fa-truck fa-2x"></span>Доставка</div>
-                            <div class="menubar-item">
-                                <span class="fa fa-gift fa-2x"></span>Акции!</div>
-                            <div style="min-width: 108px;" class="menubar-item">
-                                <span class="fa fa-question fa-2x"></span>Как заказать?</div>
+                            <a href="index.html" class="menubar-item-a"><div class="menubar-item">
+                                <span class="fa fa-home fa-2x"></span>Главная</div></a>
+                            <a href="delivery.html" class="menubar-item-a"><div class="menubar-item">
+                                <span class="fa fa-truck fa-2x"></span>Доставка</div></a>
+                            <a href="news.html" class="menubar-item-a"><div class="menubar-item">
+                                <span class="fa fa-gift fa-2x"></span>Акции!</div></a>
+                            <a href="help.html" class="menubar-item-a"><div style="min-width: 108px;" class="menubar-item">
+                                <span class="fa fa-question fa-2x"></span>Как заказать?</div></a>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-2 hidden-sm-down hidden-xs-down Phone">
@@ -60,16 +64,18 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 container-user">
                             <div id="modal-authorization-open" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 input-user-button">
                                 <span class="fa fa-user fa-2x"></span>Войти</div>
+                            <a style="height: 100%;" href="cart.html">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 shopping-cart-button">
                                 <span class="fa fa-shopping-cart fa-2x"></span>
                                 <span>0 р</span>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+<!--        </div>-->
+<!--    </div>-->
 
     <div class="container-fluid">
         <div class="row">
@@ -177,9 +183,11 @@
             <span>Акции</span>
         </div>
 
+<!--
         <div class="news-item news_no-available clearfix" style="display: block;">
             <div> В данный момент нет доступных акций :( </div>
         </div>
+-->
         <div class="news-item clearfix">
             <div class="news-date-time">07.12.2017</div>
             <img src="../image/slider/slider_2.png" alt="">
@@ -213,8 +221,65 @@
     </div>
 
 
+<!--    <div class="container-fluid">-->
+<!--        <div class="row">-->
+            <div class="col-md-12 main-container-footer">
+                <div class=" container-footer">
+                    <div class="container-link-footer">
+                        <ul class="menu-link-footer">
+                            <li>
+                                <a href="news.html">Акции</a>
+                            </li>
+                            <li>
+                                <a href="delivery.html">Доставка</a>
+                            </li>
+                            <li>
+                                <a href="help.html">Как заказать?</a>
+                            </li>
+                        </ul>
+                        <ul class="menu-link-footer">
+                            <li>
+                                <a href="info.html">О компании</a>
+                            </li>
+                            <li>
+                                <a href=""></a>
+                            </li>
+                            <li>
+                                <a href=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container-social-footer">
+                        <div class="square-social square-vk">
+                            <a href="https://vk.com/vozhyksol" target="_blank" class="fa fa-vk fa-2x"></a>
+                        </div>
+                        <div class="square-social square-facebook">
+                            <a target="_blank" class="fa fa-facebook fa-2x"></a>
+                        </div>
+                        <div class="square-social square-odnoklassniki">
+                            <a href="https://ok.ru/profile/576793096418" target="_blank" class="fa fa-odnoklassniki fa-2x"></a>
+                        </div>
+                        <div class="square-social square-instagram">
+                            <a href="https://www.instagram.com/vozhyk_sol/" target="_blank" class="fa fa-instagram fa-2x"></a>
+                        </div>
+                    </div>
+                    <div class="container-connection-button">
+                        <div class="report-button">
+                            <span class="fa fa-bullhorn fa-2x"></span>Возникла проблема?</div>
+                    </div>
+                </div>
+                <div class=" container-footer">
+                    <div class="copyright">
+                        <span class="fa fa-copyright"></span>2017-2018
+                        <img src="../image/LogoTest.png"> Вожык</div>
+                </div>
+            </div>
 
-
+<!--        </div>-->
+<!--    </div>-->
+    
+    
+    </div>
 
     <script src="../plugins/slider/js/swiper.js"></script>
     <script src="../plugins/lazy/blazy.js"></script>
