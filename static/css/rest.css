@@ -2,18 +2,23 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-top: 140px;
+    /* margin-top: 140px; */
     margin-bottom: 80px;
     height: 70px;
     width: 100%;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {     
+@media screen and (-webkit-min-device-pixel-ratio:0) {
     .rest-line {
-        padding-top: 140px;
-        margin-top: 0;
+        /* padding-top: 140px; */
+        /* margin-top: 0; */
     }
+}
+
+.rest {
+    padding-top: 140px;
+    margin: 0;
 }
 
 .rest-main-img {
@@ -22,6 +27,7 @@
     width: 280px;
     height: 200px;
 }
+
 .rest-main-img img {
     position: absolute;
     display: block;
@@ -32,11 +38,13 @@
     background: white;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
+
 .rest-caption {
     font-size: 1.5rem;
     margin-left: 30px;
     line-height: 70px;
 }
+
 .rest-filter {
     flex: 0 0 280px;
     max-width: 280px;
@@ -44,7 +52,8 @@
     margin-left: 50px;
     position: relative;
 }
-.rest-filter-container{
+
+.rest-filter-container {
     position: sticky;
     top: 19%;
     width: 100%;
@@ -54,7 +63,8 @@
     transition: all .3s ease-out;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 }
-.rest-filter .filter-item{
+
+.rest-filter .filter-item {
     height: 45px;
     line-height: 35px;
     display: flex;
@@ -62,26 +72,32 @@
     align-items: center;
     cursor: pointer;
 }
-.rest-filter .filter-item span{
+
+.rest-filter .filter-item span {
     margin-left: 15px;
 }
-.no-gutters-cust > [class*="rest-filter"] {
+
+.no-gutters-cust>[class*="rest-filter"] {
     padding-right: 0;
     padding-left: 0;
 }
-.rest-filter svg{
+
+.rest-filter svg {
     height: 65%;
 }
+
 .rest-filter .filter-item:hover svg {
     fill: #ff501c;
     transition: .2s ease;
 }
+
 .rest-catalog-dish {
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: relative;
 }
+
 .rest-card-dish {
     flex-wrap: wrap;
     display: flex;
@@ -98,16 +114,18 @@
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
 }
-.rest-card-dish .card-dish-img img{
+
+.rest-card-dish .card-dish-img img {
     display: block;
     height: 140px;
     max-width: 100%;
     margin: 0 auto;
     border-radius: 0;
-/*    box-shadow: 0 0 25px rgba(0, 0, 0, 0.10);*/
+    /*    box-shadow: 0 0 25px rgba(0, 0, 0, 0.10);*/
     backface-visibility: hidden;
 }
-.modalDish{
+
+.modalDish {
     width: 745px;
     height: auto;
     padding: 20px;
@@ -115,17 +133,20 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
-    flex-direction: row; 
+    transform: translate(-50%, -50%);
+    flex-direction: row;
 }
-.modalDish .card-dish-img{
+
+.modalDish .card-dish-img {
     display: flex;
     align-items: center
 }
+
 .modalDish .card-dish-img img {
     height: 180px;
     margin-right: 20px;
 }
+
 .modalDish .closeBtn,
 .modalDish .card-dish-description p {
     display: block !important;
@@ -136,7 +157,7 @@
     display: none;
 }
 
-.rest-card-dish .closeBtn{
+.rest-card-dish .closeBtn {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -154,7 +175,8 @@
     justify-content: space-between;
     padding: 0;
 }
-.rest-card-dish .card-dish-description span{
+
+.rest-card-dish .card-dish-description span {
     display: block;
     margin: 0 auto;
     padding-top: 5px;
@@ -162,28 +184,33 @@
     text-align: center;
 }
 
-.rest-card-dish .card-dish-footer{
+.rest-card-dish .card-dish-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .rest-card-dish .card-dish-info {
     min-width: 85px;
 }
-.rest-card-dish .card-dish-info .dish-grams{
+
+.rest-card-dish .card-dish-info .dish-grams {
     font-size: 12px;
 }
-.rest-card-dish .card-dish-info .dish-price{
+
+.rest-card-dish .card-dish-info .dish-price {
     font-size: 19px;
 }
-.card-dish-action{
+
+.card-dish-action {
     height: inherit;
     line-height: 30px;
     text-align: center;
     align-self: center;
 }
+
 .card-dish-action .inpPlus,
-.card-dish-action .inpMinus{
+.card-dish-action .inpMinus {
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -192,7 +219,8 @@
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
 }
-.card-dish-action input{
+
+.card-dish-action input {
     display: inline-block;
     height: inherit;
     width: 32px;
@@ -202,14 +230,16 @@
     border: none;
     -webkit-appearance: none;
 }
-.card-dish-action
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
+
+.card-dish-action input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
     -webkit-appearance: none;
 }
-.card-dish-action .addToCard{
+
+.card-dish-action .addToCard {
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -220,7 +250,8 @@
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
 }
-@media (max-width: 335px){
+
+@media (max-width: 335px) {
     .rest-card-dish {
         margin: 0 0 10px 0;
     }
@@ -228,17 +259,20 @@
         margin-left: 0px;
     }
 }
+
 @media (max-width: 544px) {
+    .rest {
+        padding-top: 75px;
+    }
     .rest-line {
-        margin-top: 75px;
         margin-bottom: 5px;
     }
-    @media screen and (-webkit-min-device-pixel-ratio:0) {     
+    /* @media screen and (-webkit-min-device-pixel-ratio:0) {
         .rest-line {
             padding-top: 75px;
             margin-top: 0;
         }
-    }
+    } */
     .rest-main-img {
         display: none;
         margin-left: 10%;
@@ -249,43 +283,47 @@
         margin: 0 auto;
     }
 }
+
 @media (min-width: 544px) and (max-width: 768px) {
+    .rest {
+        padding-top: 120px;
+    }
     .rest-line {
-        margin-top: 120px;
         margin-bottom: 45px;
     }
-    @media screen and (-webkit-min-device-pixel-ratio:0) {     
+    /* @media screen and (-webkit-min-device-pixel-ratio:0) {
         .rest-line {
             padding-top: 120px;
             margin-top: 0;
         }
-    }
+    } */
     .rest-main-img {
         margin-left: 32px;
         margin-right: 60px;
         height: 130px;
         width: 210px;
     }
-    .rest-filter{
+    .rest-filter {
         flex: 0 0 210px;
         max-width: 210px;
         margin-left: 32px;
     }
 }
-@media (max-width: 767px){
-    .rest-filter{
+
+@media (max-width: 767px) {
+    .rest-filter {
         margin-left: 5px;
         flex: 0 0 50px;
         max-width: 45px;
     }
-     .rest-filter-container .filter-item span{
+    .rest-filter-container .filter-item span {
         display: none;
     }
     .rest-filter .rest-filter-container .filter-item {
-       justify-content: center;
+        justify-content: center;
     }
-    .rest-filter-container{
-        padding:0 ;
+    .rest-filter-container {
+        padding: 0;
         display: block;
         background: white;
     }
@@ -302,13 +340,16 @@
         margin: 0 auto;
     }
 }
+
+
 /* Устройствах среднего (планшеты, 768px и выше)  */
+
 @media (min-width: 768px) and (max-width: 991px) {
     .rest-main-img {
         height: 160px;
         width: 240px;
     }
-    .rest-filter{
+    .rest-filter {
         flex: 0 0 240px;
         max-width: 240px;
     }
@@ -317,30 +358,36 @@
         margin: 5px;
         min-height: 275px;
     }
-    .rest-card-dish .card-dish-footer{
+    .rest-card-dish .card-dish-footer {
         flex-direction: column;
     }
-    .rest-card-dish .card-dish-info{
+    .rest-card-dish .card-dish-info {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
     }
 }
+
+
 /* Крупных устройств (настольных компьютеров, 992px и выше)   */
+
 @media (min-width: 992px) {}
+
+
 /* Очень больших устройств (большие компьютеры, 1200px и выше)   */
+
 @media (min-width: 1200px) and (max-width: 1220px) {
-    .rest-card-dish .card-dish-action .addToCard{
+    .rest-card-dish .card-dish-action .addToCard {
         margin-left: 0px;
     }
 }
+
 @media (min-width: 1200px) {
     .rest {
         max-width: 1920px;
         margin: 0 auto;
     }
 }
-@media (min-width: 1200px) and (max-width: 1560px) {
-}
 
+@media (min-width: 1200px) and (max-width: 1560px) {}
