@@ -1,13 +1,3 @@
-// var express = require('express');
-// var path = require('path');
-// var serveStatic = require('serve-static');
-// app = express();
-// // console.log(__dirname + '\html\index.html');
-// app.use(serveStatic('./static'));
-// var port = process.env.PORT || 5000;
-// app.listen(port);
-// console.log('server started ' + port);
-
 const express = require("express");
 const path = require('path')
 const port = 5000;
@@ -15,7 +5,8 @@ const app = express();
 
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
-const db_connect = require('./db');
+const db_connect = 'mongodb://User_client:1234509@localhost:27017/order';
+// const db_connect = 'mongodb://User_client:1234509@178.159.46.250:27017/order';
 // var ObjectID = require('mongodb').ObjectID;
 // const mongoose = require('mongoose');
 
@@ -27,10 +18,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 })
 
-console.log(path.join(__dirname, '..', './static/index.html'));
-MongoClient.connect(db_connect.url, function(err, db) {
+MongoClient.connect(db_connect, function(err, db) {
     if (err) {
-        throw error;
+        console.log(err)
     } else
         console.log('Connect DB success')
         //-----------------------------------------------------
@@ -38,7 +28,7 @@ MongoClient.connect(db_connect.url, function(err, db) {
         db.collection('pending_orders').find({}).toArray(function(error, documents) {
             if (err) throw error;
             res.send(documents);
-            console.log("Записи получены");
+            console.log("Отправлены данные --" + new Date());
         });
     })
     app.post('/sendOrder', (req, res) => {
@@ -49,7 +39,7 @@ MongoClient.connect(db_connect.url, function(err, db) {
             } else {
                 res.send(result.ops[0]);
             }
-            console.log("Добавлена запись");
+            console.log("Добавлена запись  --" + new Date());
         });
     });
 

@@ -6,7 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 
 #files
-db.js
+#db.js
 
 # Editor directories and files
 .idea
