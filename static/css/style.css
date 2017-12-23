@@ -52,7 +52,7 @@ a:focus, a:hover {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {     
-    ::i-block-chrome,    .slider {
+    .slider {
         padding-top: 90px;
         margin-top: 0;
     }
