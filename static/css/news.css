@@ -17,6 +17,8 @@
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
+
+
 .news .news-item{
     padding: 5px 10px 20px 10px;
     margin-bottom: 20px;
@@ -59,5 +61,12 @@
 @media (max-width: 1200px){
     .news .news-item{
         margin: 10px 15px;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {     
+    .news-line {
+        padding-top: 85px;
+        margin-top: 0;
     }
 }
