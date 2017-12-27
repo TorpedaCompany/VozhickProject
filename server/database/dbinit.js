@@ -9,10 +9,10 @@ const config = require('../config');
 
 mongoose.connect(config.mongoUri, {
     useMongoClient: true,
-    poolSize: 10
-        // Поставим количество подключений в пуле
-        // 10 рекомендуемое количество для моего проекта.
-        // Вам возможно понадобится и то меньше...
+    // poolSize: 10
+    // Поставим количество подключений в пуле
+    // 10 рекомендуемое количество для моего проекта.
+    // Вам возможно понадобится и то меньше...
 
 });
 
@@ -28,5 +28,4 @@ mongoose.connection.on('connected', () => {
     logger.info("Succesfully connected to MongoDB Database");
     // В дальнейшем здесь мы будем запускать сервер.
 });
-console.log(mongoose.connection);
 require('./models'); // Попытка проиницилизировать модели (скомпилировать)

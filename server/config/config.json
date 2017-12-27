@@ -1,4 +1,5 @@
 {
     "port": 5000,
-    "mongoUri": "mongodb://User_client:1234509@178.159.46.250:27017/order"
+    "mongoUri": "mongodb://User_client:1234509@178.159.46.250:27017/order",
+    "mongoUri2": "mongodb://User_client:1234509@localhost:27017/order"
 }
