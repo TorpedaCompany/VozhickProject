@@ -1,0 +1,4 @@
+{
+    "port": 5000,
+    "mongoUri": "mongodb://User_client:1234509@178.159.46.250:27017/order"
+}

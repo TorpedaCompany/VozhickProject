@@ -19,8 +19,11 @@
     },
     "homepage": "https://github.com/TorpedaCompany/VozhickProject#readme",
     "dependencies": {
+        "body-parser": "^1.18.2",
+        "chalk": "^2.3.0",
         "express": "^4.16.2",
         "mongodb": "^2.2.33",
-        "body-parser": "^1.18.2"
+        "mongoose": "^4.13.7",
+        "stack-trace": "0.0.10"
     }
 }
