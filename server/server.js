@@ -7,7 +7,11 @@ const Logger = require('./logger');
 const logger = new Logger(); //  Загрузить логгер!
 const mongoose = require('mongoose');
 
-// app.use(cors({ origin: 'http://127.0.0.1:5000' }));
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.use(require('./database/rt')); //время выполения запросов
 
@@ -27,7 +31,6 @@ app.get('/', (req, res) => {
 app.use(require('./controllers')); //Инициализация контролллеров post/get/..
 
 app.use(require('./errorHandler'));
-
 
 app.listen(config.port, (err) => {
     if (err) throw err;
@@ -65,3 +68,29 @@ app.listen(config.port, (err) => {
 //     })
 
 // })
+
+
+
+// axios.get('http://127.0.0.1:5000/users', {
+//     headers: {
+//         'Access-Control-Allow-Origin': '*',
+//         'Content-Type': 'application/json',
+//     }
+// })
+
+
+
+// axios({
+//         method: 'get',
+//         headers: {
+//             'Access-Control-Allow-Origin': '*',
+//             'Content-Type': 'application/json',
+//         },
+//         url: 'http://127.0.0.1:5000/users',
+//     })
+//     .then(function(response) {
+//         console.log(response);
+//     })
+//     .catch(function(error) {
+//         console.log(error);
+//     });

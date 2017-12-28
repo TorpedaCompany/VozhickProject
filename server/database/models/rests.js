@@ -12,11 +12,10 @@ let restsSchema = new mongoose.Schema({
         lowercase: true, // Always convert `test` to lowercase
         // required: true
     },
-    restDishes: [{
-        name: String,
-        category: String,
-        price: Number
-    }],
+    restDishes: {
+        type: Array,
+        default: []
+    },
     restImage: {
         type: String,
         default: './image/rest/rest_placeholder.svg'

@@ -8,6 +8,7 @@ module.exports = function(req, res, next) {
     res.on('finish', () => {
         var d = Date.now(); // получить дату в мс
         logger.log('Reponse time: ' + (d - beginTime), {
+            method: req.method,
             url: req.url, // записать в лог куда пришел запрос (Включает urlencode string :)
             time: (d - beginTime) // сколько прошло времени
         });
