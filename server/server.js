@@ -1,20 +1,24 @@
 const express = require("express");
 const path = require('path');
+// const cors = require('cors')
 const app = express();
 const config = require('./config');
 const Logger = require('./logger');
 const logger = new Logger(); //  Загрузить логгер!
 const mongoose = require('mongoose');
 
+// app.use(cors({ origin: 'http://127.0.0.1:5000' }));
+
 app.use(require('./database/rt')); //время выполения запросов
 
 const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 
 require('./database/dbinit'); // Инициализация датабазы
 
 app.use(express.static(path.join(__dirname, '../static')))
 
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
@@ -23,6 +27,7 @@ app.get('/', (req, res) => {
 app.use(require('./controllers')); //Инициализация контролллеров post/get/..
 
 app.use(require('./errorHandler'));
+
 
 app.listen(config.port, (err) => {
     if (err) throw err;

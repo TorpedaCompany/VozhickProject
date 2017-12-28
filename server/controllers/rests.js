@@ -16,7 +16,6 @@ app.get('/rests/:name', (req, res) => {
     });
 })
 app.post('/rests', (req, res) => {
-    // console.log(req.body.restName);
     var newRest = new models.rests({
         restName: req.body.restName,
     });

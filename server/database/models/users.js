@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 // Улица 
 // Подъезд 
 // Этаж 
-// Квартира 
+// Квартира
 let usersSchema = new mongoose.Schema({
     firstName: {
         type: String, // тип: String
@@ -17,6 +17,7 @@ let usersSchema = new mongoose.Schema({
         maxlength: [32, "tooLongFirstName"],
         // Максимальная длинна 32 Юникод символа (Unicode symbol != byte)
         minlength: [3, "tooShortFirstName"],
+        trim: true,
         // Слишком короткий Логин!
         // match: [/^[a-z0-9]+$/, "usernameIncorrect"],
         // Мой любимй формат! ЗАПРЕТИТЬ НИЖНЕЕ ТИРЕ!
@@ -28,8 +29,16 @@ let usersSchema = new mongoose.Schema({
         maxlength: [32, "tooLongLastName"],
         // Максимальная длинна 32 Юникод символа (Unicode symbol != byte)
         minlength: [3, "tooShortLastName"],
-        // Слишком короткий Логин!
-        // match: [/^[a-z0-9]+$/, "usernameIncorrect"],
+        trim: true
+            // Слишком короткий Логин!
+            // match: [/^[a-z0-9]+$/, "usernameIncorrect"],
+    },
+    middleName: {
+        type: String,
+        required: [true, "middleNameRequired"],
+        maxlength: [32, "tooLongMiddleName"],
+        minlength: [3, "tooShortMiddleName"],
+        trim: true
     },
     phone: {
         type: String, // тип: String
@@ -38,8 +47,9 @@ let usersSchema = new mongoose.Schema({
         maxlength: [14, "tooLongPhone"],
         minlength: [7, "tooShortPhone"],
         // Слишком короткий Логин!
-        // match: [/^[a-z0-9]+$/, "usernameIncorrect"],
-        // Мой любимй формат! ЗАПРЕТИТЬ НИЖНЕЕ ТИРЕ!
+        match: [/^\+375[0-9]{2}[0-9]{7}$/, "phoneIncorrect"],
+        unique: true
+            // Мой любимй формат! ЗАПРЕТИТЬ НИЖНЕЕ ТИРЕ!
     },
     email: {
         type: String, // тип: String
