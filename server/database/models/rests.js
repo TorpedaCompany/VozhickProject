@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-let restSchema = new mongoose.Schema({
+let restsSchema = new mongoose.Schema({
     restName: {
         type: String, // тип: String
         required: [true, "restNameRequired"],
@@ -10,7 +10,7 @@ let restSchema = new mongoose.Schema({
     restCategory: {
         type: [String],
         lowercase: true, // Always convert `test` to lowercase
-        required: true
+        // required: true
     },
     restDishes: [{
         name: String,
@@ -49,4 +49,4 @@ let restSchema = new mongoose.Schema({
     },
 
 });
-module.exports = mongoose.model('rest', restSchema, 'rest');
+module.exports = mongoose.model('rests', restsSchema, 'rests');

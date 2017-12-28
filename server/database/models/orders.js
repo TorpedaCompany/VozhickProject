@@ -18,9 +18,6 @@ let ordersSchema = new mongoose.Schema({
     dateTimeOut: Date
 });
 
-// Теперь подключим плагины (внешнии модули)
-
-
 
 // Компилируем и Экспортируем модель
 module.exports = mongoose.model('orders', ordersSchema, 'orders');

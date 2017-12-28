@@ -2,8 +2,9 @@ module.exports = {
     // Загрузить модель юзера (пользователя)
     // На *nix-ах все файлы чуствительны к регистру
     users: require('./users'),
-    rest: require('./rest'),
+    rests: require('./rests'),
     orders: require('./orders'),
+    drivers: require('./drivers'),
 };
 
 
