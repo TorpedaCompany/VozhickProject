@@ -10,7 +10,53 @@
 
 <body>
     <h1>TEST</h1>
+    <input type="button" onclick="ddos()" value="DDOS">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        function ddos() {
+            for (let i = 0; i < 500; i++) {
+
+                axios.post('http://178.159.46.250:4500/rests', {
+                        restName: "TopRestT" + i,
+                        restCategory: ["Шляпы", "Килька"],
+                        restDishes: {
+                            name: "якорь",
+                            category: "вода",
+                            price: 10
+                        },
+                        restOpenTime: "8:00",
+                        restCloseTime: "20:00",
+                        ordersOfDay: 2340,
+                        ordersOfMonth: 3450,
+                        ordersOfYear: 6780,
+                        ordersOfTotal: 23234,
+                    })
+                    .then(function(response) {
+                        console.log(response);
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+
+                // axios.get('http://178.159.46.250:4500/rests', {})
+                //     .then(function(response) {
+                //         console.log(response);
+                //     })
+                //     .catch(function(error) {
+                //         console.log(error);
+                //     });
+                axios.get('http://178.159.46.250:4500/', {})
+                    .then(function(response) {
+                        // console.log(response);
+                    })
+                    .catch(function(error) {
+                        // console.log(error);
+                    });
+            }
+        }
+    </script>
+
 </body>
 
 </html>
