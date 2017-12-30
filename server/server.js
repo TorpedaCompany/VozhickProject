@@ -2,10 +2,14 @@ const express = require("express");
 const path = require('path');
 // const cors = require('cors')
 const app = express();
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session);
 const config = require('./config');
 const Logger = require('./logger');
 const logger = new Logger(); //  Загрузить логгер!
 const mongoose = require('mongoose');
+
+
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -20,6 +24,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 require('./database/dbinit'); // Инициализация датабазы
+app.use(session({ //Сессии
+    secret: 'your secret here',
+    resave: true,
+    saveUninitialized: true,
+    key: 'jsessionid',
+    cookie: {
+        maxAge: null, //1800000), 
+        expires: null //1800000) 
+    },
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
 
 app.use(express.static(path.join(__dirname, '../static')))
 
