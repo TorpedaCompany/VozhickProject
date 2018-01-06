@@ -1,7 +1,8 @@
 const Logger = require('../logger');
 const logger = new Logger();
 
-let app = new(require('express').Router)();
+const app = new(require('express').Router)();
+
 
 app.use(require('./users'));
 app.use(require('./rests'));

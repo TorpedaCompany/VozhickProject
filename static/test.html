@@ -15,22 +15,12 @@
 
     <script>
         function ddos() {
-            for (let i = 0; i < 500; i++) {
+            for (let i = 0; i < 1; i++) {
 
-                axios.post('http://178.159.46.250:4500/rests', {
-                        restName: "TopRestT" + i,
-                        restCategory: ["Шляпы", "Килька"],
-                        restDishes: {
-                            name: "якорь",
-                            category: "вода",
-                            price: 10
-                        },
-                        restOpenTime: "8:00",
-                        restCloseTime: "20:00",
-                        ordersOfDay: 2340,
-                        ordersOfMonth: 3450,
-                        ordersOfYear: 6780,
-                        ordersOfTotal: 23234,
+                axios.post('https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=h3t31rp3d95sevedhq8f2p66ddwvdc&redirect_uri=http://localhost:5001&scope=viewing_activity_read&state=c3ab8aa609ea11e793ae92361f002671', {
+                        headers: {
+                            'Authorization': 'OAuth cfabdegwdoklmawdzdo98xt2fo512y'
+                        }
                     })
                     .then(function(response) {
                         console.log(response);
@@ -46,13 +36,13 @@
                 //     .catch(function(error) {
                 //         console.log(error);
                 //     });
-                axios.get('http://178.159.46.250:4500/', {})
-                    .then(function(response) {
-                        // console.log(response);
-                    })
-                    .catch(function(error) {
-                        // console.log(error);
-                    });
+                // axios.get('http://178.159.46.250:4500/', {})
+                //     .then(function(response) {
+                //         // console.log(response);
+                //     })
+                //     .catch(function(error) {
+                //         // console.log(error);
+                //     });
             }
         }
     </script>

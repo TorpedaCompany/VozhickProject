@@ -1,14 +1,5 @@
 const mongoose = require('mongoose');
-// Информация о пользователе:
-// Имя 
-// Фамилия 
-// Номер телефона 
-// Email 
-// Пароль 
-// Улица 
-// Подъезд 
-// Этаж 
-// Квартира
+const bCrypt = require('bcryptjs')
 let usersSchema = new mongoose.Schema({
     firstName: {
         type: String, // тип: String
@@ -66,6 +57,10 @@ let usersSchema = new mongoose.Schema({
         match: [/^[A-Za-z0-9]+$/, "passwordIncorrect"],
         required: [true, "passwordRequired"]
     },
+    dateCreated: {
+        type: Date,
+        default: Date.now
+    },
     street: { //Улица
         type: String, // тип String
         // В дальнейшем мы добавим сюда хеширование
@@ -99,10 +94,27 @@ let usersSchema = new mongoose.Schema({
         // required: [true, "passwordRequired"]
     },
 });
-
-// Теперь подключим плагины (внешнии модули)
-
-
+usersSchema.pre('save', function(next) {
+    const user = this;
+    if (this.isModified('password') || this.isNew) {
+        bCrypt.genSalt(10, (error, salt) => {
+            if (error) return next(error);
+            bCrypt.hash(user.password, salt, (error, hash) => {
+                if (error) return next(error);
+                user.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
+    }
+});
+usersSchema.methods.comparePassword = function(password, callback) {
+    bCrypt.compare(password, this.password, (error, matches) => {
+        if (error) return callback(error);
+        callback(null, matches);
+    });
+};
 
 // Компилируем и Экспортируем модель
 module.exports = mongoose.model('users', usersSchema, 'users');

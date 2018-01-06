@@ -1,6 +1,7 @@
 // Инициализация датабазы!
 // Загрузим mongoose
 var mongoose = require('mongoose');
+mongoose.Promise = Promise;
 const Logger = require('../logger');
 const logger = new Logger(); //  Загрузить логгер!
 // Подключимся к серверу MongoDB
