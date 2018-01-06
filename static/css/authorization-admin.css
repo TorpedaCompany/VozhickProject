@@ -1,0 +1,90 @@
+:root{
+    --Font: 'Roboto', sans-serif;
+    --RedColor: #ff501c;
+    --GreyColor: #BDBDBD;
+    --BlackColor: black;
+    
+}
+
+.main-container-authorization {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.container-authorization {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 350px;
+    width: 300px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.container-logo-authorization {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    font-family: var(--Font);
+    font-weight: 600;
+/*    margin-right: 20px;*/
+}
+.container-logo-authorization>img {
+    width: 90px;
+}
+.main-container-input-authorization {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    flex: 1;
+}
+
+.container-input-authorization {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    padding: 5px;
+}
+.container-input-authorization>span {
+    padding: 10px;
+    font-size: 20px;
+}
+.main-container-button-authorization {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+}
+
+.button-admin-authorization {
+    height: 40px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.container-title-authorization {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: var(--Font);
+}
