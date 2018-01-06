@@ -5,21 +5,6 @@ const bCrypt = require('bcryptjs');
 
 module.exports = function(passport) {
 
-    // passport.use(new LocalStrategy(
-    //     function(username, password, done) {
-    //         User.findOne({ username: username }, function(err, user) {
-    //             if (err) { return done(err); }
-    //             if (!user) {
-    //                 return done(null, false, { message: 'Incorrect username.' });
-    //             }
-    //             if (!user.validPassword(password)) {
-    //                 return done(null, false, { message: 'Incorrect password.' });
-    //             }
-    //             return done(null, user);
-    //         });
-    //     }
-    // ));
-
     passport.use('login', new LocalStrategy({
             usernameField: 'phone',
             passwordField: 'password',
@@ -34,10 +19,10 @@ module.exports = function(passport) {
                         return done(err);
                     // Username does not exist, log the error and redirect back
                     if (!user) {
-                        console.log('User Not Found with username ' + phone);
+                        console.log('User Not Found with user ' + phone);
                         return done(null, false, req.flash('message', 'User Not found.'));
                     }
-                    // User exists but wrong password, log the error 
+                    // User exists but wrong password, log the error
                     if (!isValidPassword(user, password)) {
                         console.log('Invalid Password');
                         return done(null, false, req.flash('message', 'Invalid Password')); // redirect back to login page
@@ -54,6 +39,13 @@ module.exports = function(passport) {
     var isValidPassword = function(user, password) {
         return bCrypt.compareSync(password, user.password);
     }
+
+    // var isAuthenticated = function(req, res, next) {
+    //     if (req.isAuthenticated())
+    //         return next();
+    //     res.redirect('/');
+    // }
+
     passport.serializeUser(function(user, done) {
         console.log('serializing user: ');
         console.log(user);
@@ -62,7 +54,7 @@ module.exports = function(passport) {
 
     passport.deserializeUser(function(id, done) {
         User.findById(id, function(err, user) {
-            console.log('deserializing user:', user);
+            console.log('deserializing user:', user.firstName);
             done(err, user);
         });
     });

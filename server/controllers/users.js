@@ -32,33 +32,7 @@ app.post('/users', (req, res) => {
             return res.status(200).send(data._id);
     })
 })
-app.post('/login', passport.authenticate('login', {
-    successRedirect: '/success',
-    failureRedirect: '/error',
-    failureFlash: true
-}));
-// router.post('/login', passport.authenticate('login', {
-//     successRedirect: '/home',
-//     failureRedirect: '/',
-//     failureFlash: true
-// }));
-// app.post('/users/lg', (req, res) => {
-//     models.users.findOne({ email: req.body.email }, (error, user) => {
-//         if (error) throw error;
 
-//         if (!user) res.status(401).send({ success: false, message: 'Authentication failed. User not found.' });
-//         else {
-//             user.comparePassword(req.body.password, (error, matches) => {
-//                 if (matches && !error) {
-//                     // const token = jwt.sign({ user }, config.secret);
-//                     res.json({ success: true });
-//                 } else {
-//                     res.status(401).send({ success: false, message: 'Authentication failed. Wrong password.' });
-//                 }
-//             });
-//         }
-//     });
-// })
 app.put('/users/:id', (req, res) => {
     models.users.findById(req.params.id, function(err, data) {
         if (err)
@@ -90,5 +64,26 @@ app.delete('/users/:id', (req, res) => {
         });
     });
 })
+
+app.post('/login', passport.authenticate('login', {
+    successRedirect: '/success',
+    failureRedirect: '/error',
+    failureFlash: true
+}));
+var isAuthenticated = function(req, res, next) {
+    // if user is authenticated in the session, call the next() to call the next request handler 
+    // Passport adds this method to request object. A middleware is allowed to add properties to
+    // request and response objects
+    if (req.isAuthenticated())
+        return next();
+    // if the user is not authenticated then redirect him to the login page
+    res.redirect('/');
+}
+app.get('/rest.html', isAuthenticated, function(req, res) {
+    if (req.isAuthenticated())
+        return next();
+    // if the user is not authenticated then redirect him to the login page
+    res.redirect('/');
+});
 
 module.exports = app;
