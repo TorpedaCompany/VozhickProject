@@ -65,11 +65,16 @@ app.delete('/users/:id', (req, res) => {
     });
 })
 
-app.post('/login', passport.authenticate('login', {
-    successRedirect: '/success',
-    failureRedirect: '/error',
+app.post('/admin', passport.authenticate('login', {
+    successRedirect: '/admin.html',
+    failureRedirect: '/fail',
     failureFlash: true
 }));
+const path = require('path');
+app.get('/fail', (req, res) => {
+    res.render('http://localhost:5000');
+})
+
 var isAuthenticated = function(req, res, next) {
     // if user is authenticated in the session, call the next() to call the next request handler 
     // Passport adds this method to request object. A middleware is allowed to add properties to
