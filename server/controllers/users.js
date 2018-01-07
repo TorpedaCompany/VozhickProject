@@ -76,14 +76,18 @@ app.post('/login', passport.authenticate('login', {
 }));
 app.get('/login/admin', (req, res) => {
     // res.render('ad.pug', { title: 'Hey', message: 'Hello there!' });
-    res.render('index2');
+    res.render('admin_orders');
 })
 
-app.get('/rest.html', isAuthenticated, function(req, res) {
-    if (req.isAuthenticated())
-        return next();
+app.get('/rest', isAuthenticated, function(req, res) {
+    // if (req.isAuthenticated()) {
+    res.render('rest', { profileName: 'Tobi' }, function(err, html) {
+        res.send(html);
+        console.log(err);
+    });
+    // }
     // if the user is not authenticated then redirect him to the login page
-    res.redirect('/error');
+    // res.redirect('/error');
 });
 
 module.exports = app;

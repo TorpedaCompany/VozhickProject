@@ -5,8 +5,9 @@ app.get('/rests', (req, res) => {
     models.rests.find({}, function(err, data) {
         if (err)
             return res.status(500).send({ error: err });
-        else
+        else {
             return res.status(200).send(data);
+        }
     });
 })
 app.get('/rests/:name', (req, res) => {
@@ -16,7 +17,10 @@ app.get('/rests/:name', (req, res) => {
         if (!data)
             return res.status(404).send({ error: "Not found" });
         else
-            return res.status(200).send(data);
+            return res.render('rest', { dataRest: data }, function(err, html) {
+                res.send(html);
+                console.log(err);
+            });
     });
 })
 app.post('/rests', (req, res) => {
