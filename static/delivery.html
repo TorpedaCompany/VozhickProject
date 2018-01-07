@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/wrapper.css">
     <link rel="stylesheet" href="./css/delivery-style.css">
+    <link rel="stylesheet" href="./css/input.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
@@ -37,7 +38,7 @@
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-9 col-xs-9 Logo">
                     <a href="index.html"><img src="./image/LogoTest.png"></a>
                 </div>
-
+               
                 <div class="col-lg-5 col-md-5 hidden-sm-down hidden-xs-down Menuline">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 container-menubar">
                         <a href="index.html" class="menubar-item-a">
@@ -81,6 +82,111 @@
         <!--            </div>-->
         <!--        </div>-->
 
+                <div id="hamburger-menu" class="hamburger-menu">
+                    <div id="hamburger-menu-close" class="close-hamburger-menu fa fa-times fa-2x"></div>
+
+                    <a href="index.html">
+                        <div class="hamburger-menu-item">
+                            <span class="fa fa-home"></span>Главная</div>
+                    </a>
+                    <a href="delivery.html">
+                        <div class="hamburger-menu-item">
+                            <span class="fa fa-truck"></span>Доставка</div>
+                    </a>
+                    <a href="news.html">
+                        <div class="hamburger-menu-item">
+                            <span class="fa fa-gift"></span>Акции</div>
+                    </a>
+                    <a href="help.html">
+                        <div class="hamburger-menu-item">
+                            <span class="fa fa-question"></span>Как заказать?</div>
+                    </a>
+                </div>
+       
+                <div id="ovelay" class="ovelay">
+                    <div id="modal-authorization" class="modal-authorization">
+                        <div class="title-modal">
+                            <h1>Авторизация</h1>
+                        </div>
+                        <div class="main-container-input">
+                            <div class="container-input">
+                                <span class="fa fa-mobile"></span>
+                                <div class="group">
+                                    <input placeholder="Номер телефона" class='input-style input-login-authorization' type='text' required>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="container-input">
+                                <span class="fa fa-lock"></span>
+                                <div class="group">
+                                    <input placeholder="Пароль" class='input-style input-login-authorization' type='password' required>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-button-modal">
+                            <div class="button-modal button-authorization">Войти</div>
+                            <div id="modal-authorization-close" class="button-modal button-close-modal">Закрыть</div>
+                        </div>
+                        <span id="modal-registration-open" class="link link-registation">Регистрация</span>
+                    </div>
+
+                    <div id="modal-registration" class="modal-registration">
+                        <div class="title-modal">
+                            <h1>Регистрация</h1>
+                        </div>
+                        <div class="main-container-input">
+                            <div class="container-input">
+                                <span class="fa fa-user"></span>
+                                <div class="group">
+                                    <input placeholder="Имя" class='input-style input-name-registration' type='text' required>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="container-input">
+                                <span class="fa fa-user"></span>
+                                <div class="group">
+                                    <input placeholder="Фамилия" class='input-style input-surname-registration' type='text' required>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="container-input">
+                                <span class="fa fa-mobile"></span>
+                                <div class="group">
+                                    <input placeholder="Номер телефона" class='input-style input-login-registration' type='text' required>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="container-input">
+                                <span class="fa fa-envelope"></span>
+                                <div class="group">
+                                    <input placeholder="Email" class='input-style input-email-registration' type='text' required>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="container-input">
+                                <span class="fa fa-lock"></span>
+                                <div class="group">
+                                    <input placeholder="Пароль" class='input-style input-passwordone-registration' type='password' required>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="container-input">
+                                <span class="fa fa-lock"></span>
+                                <div class="group">
+                                    <input placeholder="Повторите пароль" class='input-style input-passwordtwo-registration' type='password' required>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="container-button-modal">
+                                <div class="button-modal button-registration">Зарегистрироватся</div>
+                                <div id="modal-registration-close" class="button-modal button-close-modal">Закрыть</div>
+                            </div>
+                            <span id="modal-authorization-open-two" class="link link-authorization">Войти</span>
+                        </div>
+                    </div>
+                </div>
+       
         <div style="flex: 1;" class="container-fluid">
             <div class="row">
                 <div class="container-info-delivery">
