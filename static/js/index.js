@@ -1,5 +1,7 @@
+import { json } from "./C:/Users/Alexander/AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/body-parser";
+
 // Initialize Swiper
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function(event) {
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 1,
         autoHeight: true, //enable auto height
@@ -37,33 +39,33 @@ let listRest = [{
 ]
 
 //Обработчики на кнопки категорий выбора ресторана по их ID
-function addEventCtgRest(){
+function addEventCtgRest() {
     let arrCtgRest = document.querySelectorAll("#ctgRest > div");
 
-    for(let i = 0; i < arrCtgRest.length; i++){
+    for (let i = 0; i < arrCtgRest.length; i++) {
         arrCtgRest[i].addEventListener("click", selectCtg, false);
     }
 
-    function selectCtg(){
-        let activeCl = document.querySelector(".type-restaurant_active") || false; 
-            if(activeCl)
-                activeCl.classList.remove("type-restaurant_active");
-                
+    function selectCtg() {
+        let activeCl = document.querySelector(".type-restaurant_active") || false;
+        if (activeCl)
+            activeCl.classList.remove("type-restaurant_active");
+
         this.classList.add("type-restaurant_active");
         let hiddenItems = document.querySelectorAll("[data-rest-display='hide'");
-        if( hiddenItems.length == 0 ){
-            findRest(listRest,this.id);
-        }else{
-            for(let i = 0; i < hiddenItems.length; i++)
+        if (hiddenItems.length == 0) {
+            findRest(listRest, this.id);
+        } else {
+            for (let i = 0; i < hiddenItems.length; i++)
                 fadeIn(hiddenItems[i], "block");
         }
     }
 }
 //Поиск ресторанов, скрытие лишних
-let findRest = function (ctgRest, ctg = '') {
+let findRest = function(ctgRest, ctg = '') {
     console.log("findRest....")
     let result = [];
-    ctgRest.forEach(function (item) {
+    ctgRest.forEach(function(item) {
         if (item.category.indexOf(ctg) != -1) {
             result.push(item.numRest);
         }
@@ -76,12 +78,14 @@ let findRest = function (ctgRest, ctg = '') {
     }
     //Возврат массива с номерами ресторанов
     return result;
+    JSON.stringify();
 }
+
 
 //Функции анимации
 function fadeOut(el) {
     el.style.opacity = 1;
-    el.setAttribute("data-rest-display","hide");
+    el.setAttribute("data-rest-display", "hide");
     (function fade() {
         if ((el.style.opacity -= .1) < 0) {
             el.style.display = "none";
@@ -90,6 +94,7 @@ function fadeOut(el) {
         }
     })();
 }
+
 function fadeIn(el, display) {
     el.style.opacity = 0;
     el.style.display = display || "block";

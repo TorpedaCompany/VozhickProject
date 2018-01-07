@@ -13,8 +13,8 @@ let restsSchema = new mongoose.Schema({
         // required: true
     },
     restDishes: {
-        type: Array,
-        default: []
+        type: Object,
+        // default: []
     },
     restImage: {
         type: String,

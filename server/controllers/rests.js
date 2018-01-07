@@ -19,6 +19,7 @@ app.get('/rests/:name', (req, res) => {
         else
             return res.render('rest', { dataRest: data }, function(err, html) {
                 res.send(html);
+                // res.send("asd");
                 console.log(err);
             });
     });
