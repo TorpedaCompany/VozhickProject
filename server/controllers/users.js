@@ -64,31 +64,26 @@ app.delete('/users/:id', (req, res) => {
         });
     });
 })
-
-app.post('/admin', passport.authenticate('login', {
-    successRedirect: '/admin.html',
-    failureRedirect: '/fail',
-    failureFlash: true
-}));
-const path = require('path');
-app.get('/fail', (req, res) => {
-    res.render('http://localhost:5000');
-})
-
 var isAuthenticated = function(req, res, next) {
-    // if user is authenticated in the session, call the next() to call the next request handler 
-    // Passport adds this method to request object. A middleware is allowed to add properties to
-    // request and response objects
     if (req.isAuthenticated())
         return next();
-    // if the user is not authenticated then redirect him to the login page
     res.redirect('/');
 }
+app.post('/login', passport.authenticate('login', {
+    successRedirect: '/login/admin',
+    failureRedirect: '/fail',
+    // failureFlash: true
+}));
+app.get('/login/admin', (req, res) => {
+    // res.render('ad.pug', { title: 'Hey', message: 'Hello there!' });
+    res.render('index');
+})
+
 app.get('/rest.html', isAuthenticated, function(req, res) {
     if (req.isAuthenticated())
         return next();
     // if the user is not authenticated then redirect him to the login page
-    res.redirect('/');
+    res.redirect('/error');
 });
 
 module.exports = app;

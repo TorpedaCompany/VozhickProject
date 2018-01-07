@@ -1,5 +1,8 @@
 const express = require("express");
 const path = require('path');
+
+const pug = require('pug');
+
 // const cors = require('cors')
 const app = express();
 // Configuring Passport
@@ -19,6 +22,10 @@ app.use(function(req, res, next) {
 });
 var flash = require('connect-flash');
 app.use(flash());
+
+
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
@@ -44,10 +51,9 @@ initPassport(passport);
 app.use(require('./database/rt')); //время выполения запросов
 require('./database/dbinit'); // Инициализация датабазы
 
-
-
-
 app.use(express.static(path.join(__dirname, '../static')))
+app.set('views', __dirname + '../../static')
+app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
