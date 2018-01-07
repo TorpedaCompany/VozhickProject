@@ -76,7 +76,7 @@ app.post('/login', passport.authenticate('login', {
 }));
 app.get('/login/admin', (req, res) => {
     // res.render('ad.pug', { title: 'Hey', message: 'Hello there!' });
-    res.render('index');
+    res.render('index2');
 })
 
 app.get('/rest.html', isAuthenticated, function(req, res) {
