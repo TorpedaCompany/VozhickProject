@@ -447,43 +447,36 @@ html(lang='ru')
                     c0.146-0.533,0.693-0.847,1.228-0.702C41.034,35.61,41.348,36.16,41.203,36.692z')
                 span Десерты
           .col
+            if dataRest
+              .row.rest-catalog-dish  
+                mixin dish(item)
+                  .rest-card-dish(data-id-dish= item._id)
+                    .closeBtn
+                      i.fa.fa-times(aria-hidden='true')
+                    .card-dish-img
+                      img.b-lazy(data-src= item.img, src='../image/rest/rest_placeholder.svg')
+                    .card-dish-content
+                      .card-dish-description
+                        span= item.name
+                        p= item.description
+                          p= 'Состав: ' + item.composition
+                        p
+                      .card-dish-footer
+                        .card-dish-info
+                          .dish-grams= item.grams + ' г.'
+                          .dish-price= item.price + ' р.'
+                        .card-dish-action
+                          .inpMinus -
+                          input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
+                          .inpPlus +
+                          .addToCard
+                            i.fa.fa-inverse.fa-shopping-cart(aria-hidden='true')
+                for item in dataRest.restDishes
+                  +dish(item)
+            else
+              .rest-catalog-dish_error Произошла ошибка блюд или блюда отсутствуют :(
 
 
-            mixin dish(item)
-              ul
-                li= item.name
-
-            for item in dataRest.restDishes
-              +dish(item)
-
-            #{dataRest}
-            //#{JSON.parse(dataRest)}
-
-            .row.rest-catalog-dish  
-              .rest-card-dish
-                .closeBtn
-                  i.fa.fa-times(aria-hidden='true')
-                .card-dish-img
-                  img.b-lazy(data-src='../image/sushi_1/Аводельфия@2x.jpg', src='../image/rest/rest_placeholder.svg')
-                .card-dish-content
-                  .card-dish-description
-                    span Аводельфия
-                    p
-                      | Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nulla odit magnam, molestiae accusamus voluptatem. Illo quam in iusto dolores at libero voluptate architecto provident beatae sunt, qui sapiente dicta
-                      | voluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?
-                    p
-                      | Состав: Жмых, вода, папирус, тростник
-                    p
-                  .card-dish-footer
-                    .card-dish-info
-                      .dish-grams 110/100 г.
-                      .dish-price 8.30 р.
-                    .card-dish-action
-                      .inpMinus -
-                      input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
-                      .inpPlus +
-                      .addToCard
-                        i.fa.fa-inverse.fa-shopping-cart(aria-hidden='true')
     .container-fluid
       .row
         .col-md-12.main-container-footer

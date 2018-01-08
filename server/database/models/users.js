@@ -54,7 +54,7 @@ let usersSchema = new mongoose.Schema({
         // В дальнейшем мы добавим сюда хеширование
         maxlength: [32, "tooLong"],
         minlength: [6, "tooShort"],
-        match: [/^[A-Za-z0-9]+$/, "passwordIncorrect"],
+        match: [/[A-Za-z0-9]+$/, "passwordIncorrect"],
         required: [true, "passwordRequired"]
     },
     dateCreated: {
@@ -115,6 +115,5 @@ usersSchema.methods.comparePassword = function(password, callback) {
         callback(null, matches);
     });
 };
-
 // Компилируем и Экспортируем модель
 module.exports = mongoose.model('users', usersSchema, 'users');

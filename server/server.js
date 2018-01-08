@@ -1,11 +1,7 @@
 const express = require("express");
 const path = require('path');
-
 const pug = require('pug');
-
-// const cors = require('cors')
-const app = express();
-// Configuring Passport
+var fs = require("fs");
 var passport = require('passport');
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session);
@@ -14,17 +10,18 @@ const Logger = require('./logger');
 const logger = new Logger(); //  Загрузить логгер!
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const multer = require('multer');
+
+const app = express();
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
 var flash = require('connect-flash');
 app.use(flash());
-
-
-
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -59,9 +56,41 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 })
 
+app.use(multer({ dest: './tmp/', fieldSize: '2' }).single('avatar'));
+
+app.post('/file_upload', function(req, res) {
+    console.log(req.file);
+    let extension = req.file.mimetype.split(/[/ ]/).pop();
+
+    let allowedMimeTypes = ["image/jpeg", "image/pjpeg", "image/png"];
+    if (allowedMimeTypes.indexOf(req.file.mimetype) == -1) {
+        console.log(req.file.mimetype + ' FALSE');
+    } else {
+        console.log(req.file.mimetype + ' TRUE')
+    }
+
+    var file = __dirname + "/tmp" + req.file.name + '.png';
+
+    fs.readFile(req.file.path, function(err, data) {
+        fs.writeFile(file, data, function(err) {
+            if (err) {
+                console.log(err);
+            } else {
+                response = {
+                    message: 'File uploaded successfully',
+                    filename: req.file.name
+                };
+            }
+            console.log(response);
+            res.end(JSON.stringify(response));
+        });
+    });
+})
+
 app.use(require('./controllers')); //Инициализация контролллеров post/get/..
 // var routes = require('./router')(passport);
 // app.use('/', routes);
+
 app.use(require('./errorHandler'));
 
 app.listen(config.port, (err) => {

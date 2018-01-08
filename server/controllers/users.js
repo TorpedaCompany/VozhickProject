@@ -64,30 +64,6 @@ app.delete('/users/:id', (req, res) => {
         });
     });
 })
-var isAuthenticated = function(req, res, next) {
-    if (req.isAuthenticated())
-        return next();
-    res.redirect('/');
-}
-app.post('/login', passport.authenticate('login', {
-    successRedirect: '/login/admin',
-    failureRedirect: '/fail',
-    // failureFlash: true
-}));
-app.get('/login/admin', (req, res) => {
-    // res.render('ad.pug', { title: 'Hey', message: 'Hello there!' });
-    res.render('admin_orders');
-})
 
-app.get('/rest', isAuthenticated, function(req, res) {
-    // if (req.isAuthenticated()) {
-    res.render('rest', { profileName: 'Tobi' }, function(err, html) {
-        res.send(html);
-        console.log(err);
-    });
-    // }
-    // if the user is not authenticated then redirect him to the login page
-    // res.redirect('/error');
-});
 
 module.exports = app;

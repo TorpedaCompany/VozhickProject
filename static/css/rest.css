@@ -202,6 +202,12 @@
     font-size: 19px;
 }
 
+.rest-catalog-dish_error {
+    text-align: center;
+    font-size: 16px;
+    color: var(--RedColor);
+}
+
 .card-dish-action {
     height: inherit;
     line-height: 30px;
