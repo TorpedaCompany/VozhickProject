@@ -54,7 +54,11 @@ app.set('views', __dirname + '../../static/pug')
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    // res.sendFile(path.join(__dirname, 'index.html'));
+    res.render('index', function(err, html) {
+        res.send(html);
+        logger.error(err);
+    });
 })
 
 app.use(require('./controllers')); //Инициализация контролллеров post/get/..
