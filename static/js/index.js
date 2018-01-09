@@ -1,5 +1,3 @@
-import { json } from "./C:/Users/Alexander/AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/body-parser";
-
 // Initialize Swiper
 document.addEventListener("DOMContentLoaded", function(event) {
     var swiper = new Swiper('.swiper-container', {

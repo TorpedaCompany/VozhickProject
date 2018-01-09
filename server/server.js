@@ -49,41 +49,15 @@ app.use(require('./database/rt')); //время выполения запрос�
 require('./database/dbinit'); // Инициализация датабазы
 
 app.use(express.static(path.join(__dirname, '../static')))
+
 app.set('views', __dirname + '../../static/pug')
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-})
-
-app.use(multer({ dest: './tmp/', fieldSize: '2' }).single('avatar'));
-
-app.post('/file_upload', function(req, res) {
-    console.log(req.file);
-    let extension = req.file.mimetype.split(/[/ ]/).pop();
-
-    let allowedMimeTypes = ["image/jpeg", "image/pjpeg", "image/png"];
-    if (allowedMimeTypes.indexOf(req.file.mimetype) == -1) {
-        console.log(req.file.mimetype + ' FALSE');
-    } else {
-        console.log(req.file.mimetype + ' TRUE')
-    }
-
-    var file = __dirname + "/tmp" + req.file.name + '.png';
-
-    fs.readFile(req.file.path, function(err, data) {
-        fs.writeFile(file, data, function(err) {
-            if (err) {
-                console.log(err);
-            } else {
-                response = {
-                    message: 'File uploaded successfully',
-                    filename: req.file.name
-                };
-            }
-            console.log(response);
-            res.end(JSON.stringify(response));
-        });
+    // res.sendFile(path.join(__dirname, 'index.html'));
+    res.render('index', function(err, html) {
+        res.send(html);
+        logger.error(err);
     });
 })
 

@@ -10,7 +10,7 @@ app.use(require('./admin'));
 app.use(require('./orders'));
 
 app.use('*', function(req, res) {
-    res.render('404', { dataAdmin: null }, function(err, html) {
+    res.render('404', { data404: null }, function(err, html) {
         res.send(html);
         console.log(err);
     });
