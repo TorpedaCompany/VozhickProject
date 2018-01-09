@@ -18,12 +18,29 @@ html
           .container-input-authorization
             span.fa.fa-user
             .group
-              input.input-style.input-name-registration(placeholder='Логин', type='text', required='')
+              input#name.input-style.input-name-registration(placeholder='Логин', type='text', required='')
               span.bar
           .container-input-authorization
             span.fa.fa-lock
             .group
-              input.input-style.input-surname-registration(placeholder='Пароль', type='password', required='')
+              input#password.input-style.input-surname-registration(placeholder='Пароль', type='password', required='')
               span.bar
         .main-container-button-authorization
-          .button-admin-authorization Войти
+          .button-admin-authorization(onclick='auth()') Войти
+  script(src='../plugins/axios.min.js')
+  script.
+      function auth() {
+      let ph = document.getElementById("name").value;
+      let pwd = document.getElementById("password").value;
+      console.log(ph + " - " + pwd);
+      axios.post('/adm', {
+      phone: ph,
+      password: pwd
+      })
+      .then(function(response) {
+      window.location.href = "/adm/dashboard";
+      })
+      .catch(function(error) {
+      console.log(error);
+      });
+      }

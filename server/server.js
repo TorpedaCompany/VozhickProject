@@ -49,7 +49,7 @@ app.use(require('./database/rt')); //время выполения запрос�
 require('./database/dbinit'); // Инициализация датабазы
 
 app.use(express.static(path.join(__dirname, '../static')))
-app.set('views', __dirname + '../../static')
+app.set('views', __dirname + '../../static/pug')
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {

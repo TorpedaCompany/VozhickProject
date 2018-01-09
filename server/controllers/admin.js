@@ -7,6 +7,15 @@ var isAuthenticated = function(req, res, next) {
         return next();
     res.redirect('/');
 }
+
+app.get('/adm', function(req, res) {
+    // if (req.isAuthenticated()) {
+    res.render('authAdmin', function(err, html) {
+        res.send(html);
+        console.log(err);
+    });
+});
+
 app.post('/adm', passport.authenticate('login', {
     successRedirect: '/adm/dashboard',
     failureRedirect: '/',
@@ -16,7 +25,7 @@ app.get('/adm/dashboard', isAuthenticated, function(req, res) {
     // if (req.isAuthenticated()) {
     res.render('admin_orders', { dataAdmin: null }, function(err, html) {
         res.send(html);
-        console.log(err);
+        // console.log(err);
     });
     // }
     // if the user is not authenticated then redirect him to the login page
