@@ -1,0 +1,57 @@
+#ovelay.ovelay
+	#modal-authorization.modal-authorization
+		.title-modal
+			h1 Авторизация
+		.main-container-input
+			.container-input
+				span.fa.fa-mobile
+				.group
+					input.input-style.input-login-authorization(placeholder='Номер телефона', type='text', required='')
+					span.bar
+			.container-input
+				span.fa.fa-lock
+				.group
+					input.input-style.input-login-authorization(placeholder='Пароль', type='password', required='')
+					span.bar
+		.container-button-modal
+			.button-modal.button-authorization Войти
+			#modal-authorization-close.button-modal.button-close-modal Закрыть
+		span#modal-registration-open.link.link-registation Регистрация
+	#modal-registration.modal-registration
+		.title-modal
+			h1 Регистрация
+		.main-container-input
+			.container-input
+				span.fa.fa-user
+				.group
+					input.input-style.input-name-registration(placeholder='Имя', type='text', required='')
+					span.bar
+			.container-input
+				span.fa.fa-user
+				.group
+					input.input-style.input-surname-registration(placeholder='Фамилия', type='text', required='')
+					span.bar
+			.container-input
+				span.fa.fa-mobile
+				.group
+					input.input-style.input-login-registration(placeholder='Номер телефона', type='text', required='')
+					span.bar
+			.container-input
+				span.fa.fa-envelope
+				.group
+					input.input-style.input-email-registration(placeholder='Email', type='text', required='')
+					span.bar
+			.container-input
+				span.fa.fa-lock
+				.group
+					input.input-style.input-passwordone-registration(placeholder='Пароль', type='password', required='')
+					span.bar
+			.container-input
+				span.fa.fa-lock
+				.group
+					input.input-style.input-passwordtwo-registration(placeholder='Повторите пароль', type='password', required='')
+					span.bar
+			.container-button-modal
+				.button-modal.button-registration Зарегистрироватся
+				#modal-registration-close.button-modal.button-close-modal Закрыть
+			span#modal-authorization-open-two.link.link-authorization Войти
