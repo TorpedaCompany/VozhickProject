@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="./css/input.css">
     <link rel="stylesheet" href="./css/authorization-admin.css">
     <link rel="stylesheet" href="./css/style.css">
-    <!--<link rel="stylesheet" href="./css/modal-authorization.css">-->
-    <!--    <link rel="stylesheet" href="./css/modal-registration.css">-->
 </head>
 
 <body>
@@ -22,23 +20,27 @@
                 <div class="container-input-authorization">
                     <span class="fa fa-user"></span>
                     <div class="group">
-                        <input placeholder="Логин" id="name" class='input-style input-name-registration' type='text' required>
+                        <input placeholder="Логин" class='input-style input-name-registration' type='text' required>
                         <span class="bar"></span>
                     </div>
                 </div>
                 <div class="container-input-authorization">
                     <span class="fa fa-lock"></span>
                     <div class="group">
-                        <input placeholder="Пароль" id="password" class='input-style input-surname-registration' type='password' required>
+                        <input placeholder="Пароль" class='input-style input-surname-registration' type='password' required>
                         <span class="bar"></span>
                     </div>
                 </div>
             </div>
             <div class="main-container-button-authorization">
-                <!--                    <div class="button-admin-authorization">Отмена</div>-->
-                <div class="button-admin-authorization" onclick="auth()">Войти</div>
+                <div class="button-admin-authorization">Войти</div>
             </div>
         </div>
+        <div class="main-container-button-authorization">
+            <!--                    <div class="button-admin-authorization">Отмена</div>-->
+            <div class="button-admin-authorization" onclick="auth()">Войти</div>
+        </div>
+    </div>
     </div>
 
     <script src="./plugins/axios.min.js"></script>

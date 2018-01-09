@@ -1,0 +1,94 @@
+doctype html
+html(lang='ru')
+	head
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		link(rel='stylesheet', href='../css/bootstrap.css')
+		link(rel='stylesheet', href='../css/normalize.css')
+		link(rel='stylesheet', href='../css/hamburger-menu.css')
+		link(rel='stylesheet', href='../css/modal-authorization.css')
+		link(rel='stylesheet', href='../css/modal-registration.css')
+		link(rel='stylesheet', href='../css/input.css')
+		link(rel='stylesheet', href='../css/style.css')
+		link(rel='stylesheet', href='../css/header.css')
+		link(rel='stylesheet', href='../css/footer.css')
+		link(rel='stylesheet', href='../css/cart-style.css')
+		link(rel='stylesheet', href='../css/rest.css')
+		link(rel='stylesheet', href='../css/wrapper.css')
+		link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow', rel='stylesheet')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
+	body
+		.wrapper
+			div(style='flex: 1;')
+				.container-cart
+					.title-cart Оформление заказа
+					.main-eat-container-cart
+						.container-eat-cart
+							.container-image-eat-cart
+								img(src='../image/dishes/цезарь.jpg')
+								.container-name-eat-cart
+									span Цезарь с куриной грудкой
+							.container-button-eat-cart
+								.container-price-eat-cart
+									span 8.30 р.
+								.card-dish-action
+									.inpMinus -
+									input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
+									.inpPlus +
+									.container-button-cancel-eat-cart
+										span.fa.fa-times
+					.container-all-price-eat-cart Общая стоимость: 8.30 р.
+					.main-container-data-cart
+						.container-data-cart
+							.container-input
+								span.fa.fa-location-arrow
+								.group
+									input.input-style.input-login-authorization(placeholder='Улица', type='text', required='')
+									span.bar
+							.container-input
+								span.fa.fa-home
+								.group
+									input.input-style.input-login-authorization(placeholder='Дом', type='text', required='')
+									span.bar
+							.container-input
+								span.fa.fa-angle-right
+								.group
+									input.input-style.input-login-authorization(placeholder='Подъезд', type='text', required='')
+									span.bar
+						.container-data-cart
+							.container-input
+								span.fa.fa-angle-right
+								.group
+									input.input-style.input-login-authorization(placeholder='Этаж', type='text', required='')
+									span.bar
+							.container-input
+								span.fa.fa-angle-right
+								.group
+									input.input-style.input-login-authorization(placeholder='Квартира', type='text', required='')
+									span.bar
+							.container-input
+								span.fa.fa-mobile
+								.group
+									input.input-style.input-login-authorization(placeholder='Телефон', type='text', required='')
+									span.bar
+						.container-data-cart
+							.container-input
+								span.fa.fa-envelope
+								.group
+									input.input-style.input-login-authorization(placeholder='Email', type='text', required='')
+									span.bar
+							.container-input
+								span.fa.fa-comments
+								.group
+									input.input-style.input-login-authorization(placeholder='Коментарий', type='text', required='')
+									span.bar
+							.container-input
+								span.fa.fa-ticket
+								.group
+									input.input-style.input-login-authorization(placeholder='Промокод', type='text', required='')
+									span.bar
+					.container-button-cart
+						.button-cart Очистить корзину
+						.button-cart.button-cart-red Оформить
+		script(src='../js/hamburger-menu.js')
+		script(src='../js/open-modal.js')
