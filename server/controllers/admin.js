@@ -21,6 +21,7 @@ app.post('/adm', passport.authenticate('login', {
     failureRedirect: '/',
     // failureFlash: true
 }));
+
 app.get('/adm/dashboard', isAuthenticated, function(req, res) {
     // if (req.isAuthenticated()) {
     res.render('admin_orders', { dataAdmin: null }, function(err, html) {
