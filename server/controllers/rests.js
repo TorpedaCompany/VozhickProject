@@ -1,6 +1,7 @@
 let app = new(require('express').Router)();
-const models = require('../database/models');
-
+// const models = require('../database/models');
+const models = require('../database/models/rests');
+// console.log(models.dish);
 app.get('/rests', (req, res) => {
     models.rests.find({}, function(err, data) {
         if (err)
@@ -25,34 +26,73 @@ app.get('/rests/:name', (req, res) => {
     });
 })
 app.post('/rests', (req, res) => {
-    let rest = new models.rests();
-    for (key in req.body) {
-        rest[key] = req.body[key];
-    }
-    rest.save(function(err, data) {
-        if (err)
-            return res.status(500).send({ error: err.message });
-        else
-            return res.status(200).send(data._id);
-    });
-})
-app.put('/rests/:id', (req, res) => {
-    models.rests.findById(req.params.id, function(err, data) {
-        if (err)
-            return res.status(500).send({ error: err.message });
-        if (!data)
-            return res.status(404).send({ error: "Not found" });
+        let rest = new models.rests();
         for (key in req.body) {
-            data[key] = req.body[key];
+            rest[key] = req.body[key];
         }
-        data.save(function(err, data) {
+        rest.save(function(err, data) {
             if (err)
                 return res.status(500).send({ error: err.message });
             else
                 return res.status(200).send(data._id);
         });
     })
+    // app.post('/rests/:name', (req, res) => {
+    //     models.rests.findOne({ "restName": req.params.name }, function(err, data) {
+    //         if (err)
+    //             return res.status(500).send({ error: err.message });
+    //         if (!data)
+    //             return res.status(404).send({ error: "Not found" });
+    //         // for (key in req.body) {
+    //         //     data[key] = req.body[key];
+    //         // }
+    //         data.restDishes.push(req.body.restDishes.test = { $inc: { dishID: 1 } });
+    //         // data.restDishes.push({ "name": "Хито3", "category": "суши", "img": "../image/sushi_1/Авокадо маки@2x.jpg", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nulla odit magnam, molestiae accusamus voluptatem. Illo quam in iusto dolores at libero voluptate architecto provident beatae sunt, qui sapiente dictavoluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?", "composition": "Жмых, вода, папирус, тростник", "grams": "110/100", "price": 8.30 })
+
+//         data.save(function(err, data) {
+//             if (err)
+//                 return res.status(500).send({ error: err.message });
+//             else
+//                 return res.status(200).send(data._id);
+//         });
+
+//     })
+// })
+
+app.post('/rests/:name', (req, res) => {
+    models.rests.findOne({ "restName": req.params.name }, function(err, data) {
+        if (err)
+            return res.status(500).send({ error: err.message });
+        if (!data)
+            return res.status(404).send({ error: "Not found" });
+        // for (key in req.body) {
+        //     data[key] = req.body[key];
+        // }
+        // data.restDishes.push(req.body.restDishes["dishID"] = data.restName + (data.restDishes[data.restDishes.length - 1].dishID || 0) + 1);
+        // data.restDishes.push(req.body.restDishes);
+
+        // // data.restDishes.push({ "name": "Хито3", "category": "суши", "img": "../image/sushi_1/Авокадо маки@2x.jpg", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nulla odit magnam, molestiae accusamus voluptatem. Illo quam in iusto dolores at libero voluptate architecto provident beatae sunt, qui sapiente dictavoluptatum deserunt hic necessitatibus nemo distinctio eveniet, ea, nostrum optio doloremque temporibus esse rerum? Optio quidem non repudiandae reprehenderit aliquam?", "composition": "Жмых, вода, папирус, тростник", "grams": "110/100", "price": 8.30 })
+        // console.log(data.restDishes);
+
+        let dd = new models.dish({
+            name: req.body.name
+        })
+        console.log(dd);
+        data.restDishes.push(dd);
+
+        console.log(req.body);
+
+        data.save(function(err, data) {
+            if (err)
+                return res.status(500).send({ error: err.message });
+            // console.log("asd");
+            else
+                return res.status(200).send(data._id);
+        });
+
+    })
 })
+
 app.delete('/rests/:id', (req, res) => {
     models.rests.findById(req.params.id, function(err, data) {
         if (err)

@@ -1,24 +1,43 @@
 const mongoose = require('mongoose');
+
+var ObjectId = mongoose.Schema.Types.ObjectId;
+
+let dishSchema = new mongoose.Schema({
+    dishID: {
+        type: ObjectId,
+        ref: 'dish'
+    },
+    name: String,
+    // category: String,
+    // img: {
+    //     type: String,
+    //     default: "../image/rest/rest_placeholder.svg"
+    // },
+    // description: String,
+    // composition: String,
+    // grams: String,
+    // price: Number
+})
+
 let restsSchema = new mongoose.Schema({
     restName: {
-        type: String, // тип: String
+        type: String,
         required: [true, "restNameRequired"],
         maxlength: [20, "tooLongRestName"],
         minlength: [2, "tooShortRestName"],
-        unique: true // Оно должно быть уникальным
+        unique: true
     },
     restCategory: {
         type: [String],
-        lowercase: true, // Always convert `test` to lowercase
-        // required: true
+        lowercase: true,
     },
     restDishes: {
-        type: Object,
-        // default: []
+        type: [dishSchema],
+        default: []
     },
     restImage: {
         type: String,
-        default: './image/rest/rest_placeholder.svg'
+        default: '../image/rest/rest_placeholder.svg'
     },
     restOpenTime: {
         type: String
@@ -48,4 +67,25 @@ let restsSchema = new mongoose.Schema({
     },
 
 });
-module.exports = mongoose.model('rests', restsSchema, 'rests');
+
+restsSchema.pre('save', function(next) {
+    const user = this;
+    if (this.isModified('password') || this.isNew) {
+        bCrypt.genSalt(10, (error, salt) => {
+            if (error) return next(error);
+            bCrypt.hash(user.password, salt, (error, hash) => {
+                if (error) return next(error);
+                user.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
+    }
+});
+
+module.exports = {
+        rests: mongoose.model('rests', restsSchema, 'rests'),
+        dish: mongoose.model('dish', dishSchema, 'rests')
+    }
+    // module.exports = mongoose.model('rests', restsSchema, 'rests');
