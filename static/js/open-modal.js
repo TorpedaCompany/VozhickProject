@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     //События открытия модального окна
     function addEventModalDish(){
-        let modalDish = document.querySelectorAll(".rest-card-dish");
+        let modalDish = document.querySelectorAll(".rest-card-dish:not(.rest-card-dish-constructor)");
     
         for(let i = 0; i < modalDish.length; i++){
             modalDish[i].addEventListener("click", displayModalDish, false);
@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         function displayModalDish(e){
             e = e || event;
             target = e.target.parentNode.className || e.srcElement.parentNode.className;
+            target_id = e.target.parentNode.Id || e.srcElement.parentNode.Id;
             
-            if(target != "card-dish-action" && target != "addToCard"){
+            if(target != "card-dish-action" && target != "addToCard" && target_id != "rest-card-dish-constructor"){
                 disableScroll();
                 let cloneDishes = this.cloneNode(true);
                 cloneDishes.classList.add('modalDish');

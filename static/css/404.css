@@ -1,12 +1,21 @@
 * {
     margin: 0;
-    padding: 0;   
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
 }
 
 .wrapper {
     display: flex;
+    width: 100%; 
     min-height: 100vh;
-    width: 100%;
+    top: 0; right: 0; bottom: 0; left: 0;
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -14,18 +23,57 @@
 
 .container-404 {
     display: flex;
-/*    flex-direction: column;*/
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
+    width: 90%;
+    padding: 10px;
 }
 
 .border-404 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 150px;
     width: 500px;
-    border: 3px solid;
+    border: 5px solid;
     border-color: #ff501c;
+   
 }
 
+.text-404 {
+    font-size: 70px;
+    color: #ff501c;
+}
 
+.text-404-info {
+    color: #ff501c;
+    font-weight: 600;
+}
+
+.button-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    background-color: #ff501c;
+    height: 50px;
+    width: 150px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.img-coffee {
+    width: 150px;
+    position: fixed;
+    left: 58%;
+    top: 43%;
+}
+
+@media (max-width: 520px) {
+    .border-404 {
+        width: 100%;
+    }
+}
