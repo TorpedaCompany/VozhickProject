@@ -1,22 +1,21 @@
 const mongoose = require('mongoose');
 
-var ObjectId = mongoose.Schema.Types.ObjectId;
+// var ObjectId = mongoose.Schema.Types.ObjectId;
 
 let dishSchema = new mongoose.Schema({
     dishID: {
-        type: ObjectId,
-        ref: 'dish'
+        type: mongoose.Schema.Types.ObjectId
     },
     name: String,
-    // category: String,
-    // img: {
-    //     type: String,
-    //     default: "../image/rest/rest_placeholder.svg"
-    // },
-    // description: String,
-    // composition: String,
-    // grams: String,
-    // price: Number
+    category: String,
+    img: {
+        type: String,
+        default: "../image/rest/rest_placeholder.svg"
+    },
+    description: String,
+    composition: String,
+    grams: String,
+    price: Number
 })
 
 let restsSchema = new mongoose.Schema({
@@ -68,21 +67,21 @@ let restsSchema = new mongoose.Schema({
 
 });
 
-restsSchema.pre('save', function(next) {
-    const user = this;
-    if (this.isModified('password') || this.isNew) {
-        bCrypt.genSalt(10, (error, salt) => {
-            if (error) return next(error);
-            bCrypt.hash(user.password, salt, (error, hash) => {
-                if (error) return next(error);
-                user.password = hash;
-                next();
-            });
-        });
-    } else {
-        return next();
-    }
-});
+// restsSchema.pre('save', function(next) {
+//     const user = this;
+//     if (this.isModified('password') || this.isNew) {
+//         bCrypt.genSalt(10, (error, salt) => {
+//             if (error) return next(error);
+//             bCrypt.hash(user.password, salt, (error, hash) => {
+//                 if (error) return next(error);
+//                 user.password = hash;
+//                 next();
+//             });
+//         });
+//     } else {
+//         return next();
+//     }
+// });
 
 module.exports = {
         rests: mongoose.model('rests', restsSchema, 'rests'),

@@ -1,8 +1,15 @@
 let app = new(require('express').Router)();
 // const mongoose = require('mongoose');
 const models = require('../database/models');
+const passport = require('passport');
 
-app.get('/orders', (req, res) => {
+var isAuthenticated = function(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/');
+}
+
+app.get('/orders', isAuthenticated, (req, res) => {
     models.orders.find({}, function(err, data) {
         if (err)
             return res.status(500).send({ error: err });
@@ -10,7 +17,8 @@ app.get('/orders', (req, res) => {
             return res.status(200).send(data);
     });
 })
-app.get('/orders/:id', (req, res) => {
+
+app.get('/orders/:id', isAuthenticated, (req, res) => {
     models.orders.findById(req.params.id, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
@@ -32,7 +40,7 @@ app.post('/orders', (req, res) => {
             return res.status(200).send(data._id);
     })
 })
-app.put('/orders/:id', (req, res) => {
+app.put('/orders/:id', isAuthenticated, (req, res) => {
     models.orders.findById(req.params.id, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
@@ -49,7 +57,7 @@ app.put('/orders/:id', (req, res) => {
         });
     })
 })
-app.delete('/orders/:id', (req, res) => {
+app.delete('/orders/:id', isAuthenticated, (req, res) => {
     models.orders.findById(req.params.id, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
