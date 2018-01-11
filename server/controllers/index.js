@@ -10,8 +10,13 @@ app.use(require('./orders'));
 
 app.use('*', function(req, res) {
     res.render('404', { data404: null }, function(err, html) {
-        res.send(html);
-        console.log(err);
+        if (err) {
+            logger.error(err);
+            return res.status(500).res.end()
+        } else {
+            res.send(html);
+        }
+
     });
 });
 
