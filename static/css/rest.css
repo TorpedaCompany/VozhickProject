@@ -397,3 +397,26 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 1200px) and (max-width: 1560px) {}
+.card-dish-button-constructor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.dish-button-constructor {
+    height: 40px;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--RedColor);
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+}
+.dish-button-constructor>span {
+    padding-right: 10px;
+}
