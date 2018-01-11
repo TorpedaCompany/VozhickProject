@@ -13,6 +13,14 @@ app.get('/delivery', function(req, res) {
         console.log(err);
     });
 });
+// app.get('/constructor', function(req, res) {
+//     res.render('constructor', function(err, html) {
+//         res.send(html);
+//         console.log(err);
+//     });
+// });
+
+
 // app.get('/adm', function(req, res) {
 //     res.render('authAdmin', function(err, html) {
 //         res.send(html);

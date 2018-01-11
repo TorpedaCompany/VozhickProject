@@ -19,6 +19,7 @@ html(lang='ru')
     link(href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow', rel='stylesheet')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
   body
+    include header.pug
     .rest
       .rest-line
         .rest-main-img
@@ -359,19 +360,19 @@ html(lang='ru')
                             i.fa.fa-inverse.fa-shopping-cart(aria-hidden='true')
                 for item, index in dataRest.restDishes
                   +dish(item)
-            else if dataRest.constructor
-                .rest-card-dish-constructor.rest-card-dish
-                    .closeBtn
-                        i.fa.fa-times(aria-hidden='true')
-                    .card-dish-img
-                        img.b-lazy(data-src='./image/sushi_1/Ясай@2x.jpg', src='./image/rest/rest_placeholder.svg')
-                    .card-dish-content
-                        a(href='../constructor.html')
-                            .card-dish-button-constructor
-                                .dish-button-constructor
-                                    span.fa.fa-cube
-                                    | Создать свой
-            else if
+            if dataRest.restConstructor
+              .rest-card-dish-constructor.rest-card-dish
+                  .closeBtn
+                      i.fa.fa-times(aria-hidden='true')
+                  .card-dish-img
+                      img.b-lazy(data-src='../image/sushi_1/Ясай@2x.jpg', src='../image/rest/rest_placeholder.svg')
+                  .card-dish-content
+                      a(href='../constructor.html')
+                          .card-dish-button-constructor
+                              .dish-button-constructor
+                                  span.fa.fa-cube
+                                  | Создать свой
+            else
               .rest-catalog-dish_error Произошла ошибка блюд или блюда отсутствуют :(
             
     script(src='../plugins/slider/js/swiper.js')
