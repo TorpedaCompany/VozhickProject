@@ -334,46 +334,47 @@ html(lang='ru')
                     c0.146-0.533,0.693-0.847,1.228-0.702C41.034,35.61,41.348,36.16,41.203,36.692z')
                 span Десерты
           .col
-            if (dataRest && dataRest != undefined)
-              .row.rest-catalog-dish  
-                mixin dish(item)
-                  .rest-card-dish(data-id-dish= item._id)
-                    .closeBtn
-                      i.fa.fa-times(aria-hidden='true')
-                    .card-dish-img
-                      img.b-lazy(data-src= item.img, src='../image/rest/rest_placeholder.svg')
-                    .card-dish-content
-                      .card-dish-description
-                        span= item.name
-                        p= item.description
-                          p= 'Состав: ' + item.composition
-                        p
-                      .card-dish-footer
-                        .card-dish-info
-                          .dish-grams= item.grams + ' г.'
-                          .dish-price= item.price + ' р.'
-                        .card-dish-action
-                          .inpMinus -
-                          input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
-                          .inpPlus +
-                          .addToCard
-                            i.fa.fa-inverse.fa-shopping-cart(aria-hidden='true')
-                for item, index in dataRest.restDishes
-                  +dish(item)
-            if dataRest.restConstructor
-              .rest-card-dish-constructor.rest-card-dish
-                  .closeBtn
-                      i.fa.fa-times(aria-hidden='true')
-                  .card-dish-img
-                      img.b-lazy(data-src='../image/sushi_1/Ясай@2x.jpg', src='../image/rest/rest_placeholder.svg')
-                  .card-dish-content
-                      a(href='../constructor.html')
-                          .card-dish-button-constructor
-                              .dish-button-constructor
-                                  span.fa.fa-cube
-                                  | Создать свой
-            else
-              .rest-catalog-dish_error Произошла ошибка блюд или блюда отсутствуют :(
+            
+              .row.rest-catalog-dish
+                if (dataRest && dataRest != undefined)
+                    mixin dish(item)
+                      .rest-card-dish(data-id-dish= item._id)
+                        .closeBtn
+                          i.fa.fa-times(aria-hidden='true')
+                        .card-dish-img
+                          img.b-lazy(data-src= item.img, src='../image/rest/rest_placeholder.svg')
+                        .card-dish-content
+                          .card-dish-description
+                            span= item.name
+                            p= item.description
+                              p= 'Состав: ' + item.composition
+                            p
+                          .card-dish-footer
+                            .card-dish-info
+                              .dish-grams= item.grams + ' г.'
+                              .dish-price= item.price + ' р.'
+                            .card-dish-action
+                              .inpMinus -
+                              input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
+                              .inpPlus +
+                              .addToCard
+                                i.fa.fa-inverse.fa-shopping-cart(aria-hidden='true')
+                    for item, index in dataRest.restDishes
+                      +dish(item)
+                if dataRest.restConstructor
+                  .rest-card-dish-constructor.rest-card-dish
+                      .closeBtn
+                          i.fa.fa-times(aria-hidden='true')
+                      .card-dish-img
+                          img.b-lazy(data-src='../image/sushi_1/Ясай@2x.jpg', src='../image/rest/rest_placeholder.svg')
+                      .card-dish-content
+                          a(href='../constructor.html')
+                              .card-dish-button-constructor
+                                  .dish-button-constructor
+                                      span.fa.fa-cube
+                                      | Создать свой
+                else
+                  .rest-catalog-dish_error Произошла ошибка блюд или блюда отсутствуют :(
             
     script(src='../plugins/slider/js/swiper.js')
     script(src='../plugins/lazy/blazy.js')
