@@ -27,7 +27,7 @@ let restsSchema = new mongoose.Schema({
         unique: true
     },
     restCategory: {
-        type: [String],
+        type: String,
         lowercase: true,
     },
     restDishes: {

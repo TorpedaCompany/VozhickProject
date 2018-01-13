@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     addEventCtgRest();
+    console.log(window.rests);
 });
 var bLazy = new Blazy({});
 
@@ -44,40 +45,40 @@ function addEventCtgRest() {
         arrCtgRest[i].addEventListener("click", selectCtg, false);
     }
 
-    function selectCtg() {
-        let activeCl = document.querySelector(".type-restaurant_active") || false;
-        if (activeCl)
-            activeCl.classList.remove("type-restaurant_active");
-
-        this.classList.add("type-restaurant_active");
-        let hiddenItems = document.querySelectorAll("[data-rest-display='hide'");
-        if (hiddenItems.length == 0) {
-            findRest(listRest, this.id);
-        } else {
-            for (let i = 0; i < hiddenItems.length; i++)
-                fadeIn(hiddenItems[i], "block");
+    function rmActive() {
+        let activeArr = document.querySelectorAll(".type-restaurant_active");
+        for (i = 0; i < activeArr.length; i++) {
+            activeArr[i].classList.remove("type-restaurant_active");
         }
+    }
+
+    function restCtg() {
+        let id_rest = document.querySelectorAll("[data-id-rest]");
+        let ctg = [];
+        for (i = 0; i < id_rest.length; i++) {
+            ctg.push({
+                numRest: id_rest[i].dataset.idRest,
+                category: id_rest[i].dataset.ctgRest.split(',')
+            })
+        }
+        return ctg;
+    }
+
+    function selectCtg() {
+        rmActive();
+        this.classList.toggle("type-restaurant_active");
+
+        let ctg = restCtg();
+        let result = [];
+
+        ctg.forEach(function(item) {
+            item.category.forEach(function(subctg) {
+                console.log(subctg);
+            })
+        })
     }
 }
 //Поиск ресторанов, скрытие лишних
-let findRest = function(ctgRest, ctg = '') {
-    console.log("findRest....")
-    let result = [];
-    ctgRest.forEach(function(item) {
-        if (item.category.indexOf(ctg) != -1) {
-            result.push(item.numRest);
-        }
-    })
-    let arrRest = document.querySelectorAll("[data-id-rest]");
-    for (i = 0; i < arrRest.length; i++) {
-        if (result.indexOf(parseInt(arrRest[i].getAttribute("data-id-rest"))) == -1) {
-            fadeOut(arrRest[i]);
-        }
-    }
-    //Возврат массива с номерами ресторанов
-    return result;
-    JSON.stringify();
-}
 
 
 //Функции анимации
