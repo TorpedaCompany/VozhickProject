@@ -1,4 +1,3 @@
-
 .container-type-restaurant {
     display: flex;
     flex-direction: row;
@@ -9,12 +8,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
     max-width: 1200px;
-/*    height: 100px;;*/
+    /*    height: 100px;;*/
     margin: 0 auto;
-    
 }
-
-
 
 .type-restaurant {
     display: flex;
@@ -22,29 +18,31 @@
     flex: 1 10%;
     justify-content: center;
     align-items: center;
-    padding: 4%;
+    padding: 3%;
     cursor: pointer;
 }
 
 @-moz-document url-prefix() {
-	.type-restaurant {
-		padding: 20px;
-	}
+    .type-restaurant {
+        padding: 20px;
+    }
 }
 
 @supports (-ms-ime-align:auto) {
-	.type-restaurant {
-		padding: 20px;
-	}
+    .type-restaurant {
+        padding: 20px;
+    }
 }
 
 .type-restaurant>svg {
     height: 50px;
 }
+
 .type-restaurant:hover>svg {
     fill: #ff501c;
     transition: .2s ease;
 }
-.type-restaurant_active >svg {
+
+.type-restaurant_active>svg {
     fill: #ff501c;
 }

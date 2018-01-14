@@ -12,9 +12,12 @@ a {
 
 .wrapper {
     display: flex;
-    width: 100%; 
+    width: 100%;
     min-height: 100vh;
-    top: 0; right: 0; bottom: 0; left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     overflow: hidden;
     flex-direction: column;
     align-items: center;
@@ -40,7 +43,6 @@ a {
     width: 500px;
     border: 5px solid;
     border-color: #ff501c;
-   
 }
 
 .text-404 {

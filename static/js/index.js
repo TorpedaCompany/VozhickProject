@@ -18,24 +18,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     addEventCtgRest();
-    console.log(window.rests);
 });
 var bLazy = new Blazy({});
-
-//Имитация БД
-let listRest = [{
-        'numRest': 1,
-        'category': ['Суши', 'Здоровая']
-    },
-    {
-        'numRest': 2,
-        'category': ['Бургеры', 'Пицца']
-    },
-    {
-        'numRest': 3,
-        'category': ['Десерты', 'Европейская']
-    }
-]
 
 //Обработчики на кнопки категорий выбора ресторана по их ID
 function addEventCtgRest() {
@@ -58,52 +42,51 @@ function addEventCtgRest() {
         for (i = 0; i < id_rest.length; i++) {
             ctg.push({
                 numRest: id_rest[i].dataset.idRest,
-                category: id_rest[i].dataset.ctgRest.split(',')
+                category: id_rest[i].dataset.ctgRest.toLowerCase().split(',')
             })
         }
         return ctg;
     }
 
     function selectCtg() {
+        //Удалить все активные классы 
         rmActive();
+        //Добавить активный класс
         this.classList.toggle("type-restaurant_active");
+        //Показать все рестораны
+        fadeIn();
 
         let ctg = restCtg();
         let result = [];
+        let _id = this.id.toLowerCase();
 
-        ctg.forEach(function(item) {
-            item.category.forEach(function(subctg) {
-                console.log(subctg);
+        //Проверка на категорию
+        if (this.id != "Все") {
+            ctg.forEach(function(item) {
+                if (!(item.category.indexOf(_id) != -1)) {
+                    // Скрыть ресторан если не подходит
+                    fadeOut(item.numRest);
+                }
             })
-        })
+        }
     }
 }
-//Поиск ресторанов, скрытие лишних
-
-
 //Функции анимации
-function fadeOut(el) {
-    el.style.opacity = 1;
+function fadeOut(num) {
+    let el = document.querySelector("[data-id-rest='" + num + "']");
+    el.style.opacity = 0.3;
+    el.style.pointerEvents = "none";
     el.setAttribute("data-rest-display", "hide");
-    (function fade() {
-        if ((el.style.opacity -= .1) < 0) {
-            el.style.display = "none";
-        } else {
-            requestAnimationFrame(fade);
-        }
-    })();
 }
 
 function fadeIn(el, display) {
-    el.style.opacity = 0;
-    el.style.display = display || "block";
-    el.removeAttribute("data-rest-display");
-
-    (function fade() {
-        var val = parseFloat(el.style.opacity);
-        if (!((val += .1) > 1)) {
-            el.style.opacity = val;
-            requestAnimationFrame(fade);
+    let hiddenItems = document.querySelectorAll("[data-rest-display='hide'");
+    if (hiddenItems.length != 0) {
+        for (let i = 0; i < hiddenItems.length; i++) {
+            hiddenItems[i].style.opacity = 1;
+            hiddenItems[i].style.pointerEvents = "all";
+            // el.style.display = display || "block";
+            hiddenItems[i].removeAttribute("data-rest-display");
         }
-    })();
+    }
 }
