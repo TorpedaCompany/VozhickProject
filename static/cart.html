@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../plugins/axios.min.js"></script>
 </head>
 
 <body>
@@ -185,29 +186,9 @@
             <div class="container-cart">
                 <div class="title-cart">Оформление заказа</div>
                 <div id="main-eat-container-cart" class="main-eat-container-cart">
-<!--
-                    <div class="container-eat-cart">
-                        <div class="container-image-eat-cart">
-                            <img src="./image/dishes/цезарь.jpg">
-                            <div class="container-name-eat-cart">
-                                <span>Цезарь с куриной грудкой</span>
-                            </div>
-                        </div>
-                        <div class="container-button-eat-cart">
-                            <div class="container-price-eat-cart">
-                                <span>8.30 р.</span>
-                            </div>
-                            <div class="card-dish-action">
-                                <div class="inpMinus">-</div>
-                                <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
-                                <div class="inpPlus">+</div>
-                                <div class="container-button-cancel-eat-cart"><span class="fa fa-times"></span></div>
-                            </div>
-                        </div>
-                    </div>
--->
+                    <div class="clear-cart">Ваша корзина пуста</div>
                 </div>
-                <div class="container-all-price-eat-cart">Общая стоимость: 8.30 р.</div>
+                <div id="container-all-price-eat-cart" class="container-all-price-eat-cart">Общая стоимость: 0 руб.</div>
                 <div class="main-container-data-cart">
                     <div class="container-data-cart">
                         <div class="container-input">
@@ -280,8 +261,8 @@
                     </div>
                 </div>
                 <div class="container-button-cart">
-                    <div class="button-cart">Очистить корзину</div>
-                    <div class="button-cart button-cart-red">Оформить</div>
+                    <div id="button-cart-clear" class="button-cart">Очистить корзину</div>
+                    <div id="button-cart-post" class="button-cart button-cart-red">Оформить</div>
                 </div>
             </div>
         </div>
@@ -340,6 +321,10 @@
     <script src="./js/hamburger-menu.js"></script>
     <script src="./js/open-modal.js"></script>
     <script src="./js/cart-generate-block.js"></script>
+    <script src="./js/delete-dish-cart.js"></script>
+    <script src="./js/plus-and-minus.js"></script>
+    <script src="./js/clear-cart.js"></script>
+    <script src="./js/ajax-cart.js"></script>
 </body>
 
 </html>

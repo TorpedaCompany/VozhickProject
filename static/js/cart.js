@@ -21,12 +21,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let PriceDishBlock = Parent.querySelectorAll(".card-dish-footer > .card-dish-info > .dish-price");
         let CountDishBlock = Parent.querySelectorAll(".card-dish-footer > .card-dish-action > .dishCount");
         let IdDish = Parent.getAttribute('data-id-dish');
-        console.log(IdDish);
         let NameDish = NameDishBlock[0].innerText;
         let ImgDish = ImgDishBlock[0].src;
         let PriceDish = PriceDishBlock[0].innerText;
         let CountDish = CountDishBlock[0].value;
-        
+        PriceDish = PriceDish.substr(0, PriceDish.length - 3)
         Cart.push({
             "id": IdDish,
             "Name": NameDish,
