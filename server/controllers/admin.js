@@ -1,3 +1,5 @@
+const Logger = require('../logger');
+const logger = new Logger();
 let app = new(require('express').Router)();
 const models = require('../database/models');
 const passport = require('passport');
@@ -23,13 +25,15 @@ app.post('/adm', passport.authenticate('login', {
 }));
 
 app.get('/adm/dashboard', isAuthenticated, function(req, res) {
-    // if (req.isAuthenticated()) {
-    res.render('admin_orders', { dataAdmin: null }, function(err, html) {
-        res.send(html);
-        // console.log(err);
+    models.orders.find({}, function(err, data) {
+        if (err)
+            return res.status(500).send({ error: err });
+        else
+            return res.render('admin_orders', { dataAdmin: data }, function(err, html) {
+                if (!err)
+                    res.status(200).send(html);
+                logger.error(err);
+            });
     });
-    // }
-    // if the user is not authenticated then redirect him to the login page
-    // res.redirect('/error');
 });
 module.exports = app;

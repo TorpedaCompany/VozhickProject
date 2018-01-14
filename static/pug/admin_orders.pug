@@ -12,7 +12,7 @@ html
       .main-container-admin
         .admin-side-panel
           .admin-side-panel-logo-container
-            img(src='../image/LogoTest.png')
+            img(src='../image/Logo/LogoTest.png')
             span Стол заказов
           .admin-side-panel-item-button
             span.admin-panel-span-icon.fa.fa-shopping-cart
@@ -24,36 +24,43 @@ html
           .container-order-panel
             .title-order-panel Новые заказы
             .clearfix.container-items-order-panel
-              .main-items-order-panel
-                .container-date-and-time
-                  .items-order.date-and-time-items-order Получено: 03.01.2018/21:49
-                .container-row
-                  .container-customer
-                    .items-order.name-items-order Имя: Иван
-                    .items-order.surname-items-order Фамилия: Бурбас
-                    .items-order.patronymic-items-order Отчество: Юрьевич
-                    .items-order.phone-items-order Телефон: +375291399115
-                  .container-address
-                    .items-order.street-items-order Улица: Октрябрьская 8
-                    .items-order.home-items-order Дом: 8
-                    .items-order.porch-items-order Подъезд: 2
-                    .items-order.apartment-items-order Квартира: 27
-                .name-restaurant Заведение: Паутина
-                .spoiler-items-order-panel.spoiler(id='')
-                  .title-spoiler
-                    .icon-basket.fa.fa-shopping-basket
-                    .name-spoiler Заказанные блюда
-                    .icon-spoiler.fa.fa-chevron-down
-                  .content-spoiler.close-spoiler
-                    .container-item-spoiler
-                      .name-dish Куриный суп
-                      .count-dish 1
-                    .container-item-spoiler
-                      .name-dish Бургер
-                      .count-dish 1
-                .container-count-and-price
-                  div Кол-во: 2
-                  div Общая стоимость: 3,5 руб.
+              //- #{dataAdmin}
+              mixin order(item)
+                .main-items-order-panel
+                  .container-date-and-time
+                    .items-order.date-and-time-items-order= "Получено: " + item.dateTimeIn
+                  .container-row
+                    .container-customer
+                      .items-order.name-items-order= "Имя: " + item.firstName
+                      .items-order.surname-items-order= "Фамилия: " + item.lastName
+                      .items-order.patronymic-items-order= "Отчество: " + item.lastName
+                      .items-order.phone-items-order= "Телефон: " + item.phone
+                    .container-address
+                      .items-order.street-items-order= "Улица: " + item.street
+                      .items-order.home-items-order= "Дом: " + item.house
+                      .items-order.porch-items-order= "Подъезд: " + item.entrance
+                      .items-order.porch-items-order= "Этаж: " + item.floor
+                      .items-order.apartment-items-order= "Квартира: " + item.apartment
+                  .name-restaurant= "Заведение: " + item.rest
+                  .spoiler-items-order-panel.spoiler(id='')
+                    .title-spoiler
+                      .icon-basket.fa.fa-shopping-basket
+                      .name-spoiler Заказанные блюда
+                      .icon-spoiler.fa.fa-chevron-down
+                    .content-spoiler.close-spoiler
+                      mixin dishes(dish)
+                        .container-item-spoiler
+                          .name-dish= dish.name
+                          .count-dish= dish.count
+                      for dish in item.dishes
+                        +dishes(dish)   
+                  .container-count-and-price
+                    div= "Кол-во: "
+                      span.redBoldText= item.dishes.length
+                    div= "Общая стоимость: "
+                      span.redBoldText= item.totalPrice + " руб."
+              for item, index in dataAdmin
+                +order(item)    
               .main-items-order-panel
                 .container-date-and-time
                   .items-order.date-and-time-items-order Получено: 03.01.2018/21:49

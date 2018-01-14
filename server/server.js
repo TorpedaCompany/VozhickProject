@@ -50,7 +50,7 @@ require('./database/dbinit'); // Инициализация датабазы
 
 app.use(express.static(path.join(__dirname, '../static')))
 
-app.set('views', __dirname + '../../static/pug')
+app.set('views', __dirname + '/../static/pug')
 app.set('view engine', 'pug')
 
 app.use(require('./controllers')); //Инициализация контролллеров post/get/..
