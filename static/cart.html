@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="./css/rest.css">
     <link rel="stylesheet" href="./css/wrapper.css">
 
-    <link rel="stylesheet" href="./plugins/vanilla-js-carousel.css">
-
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
@@ -35,7 +33,7 @@
                     <div id="hamburger-menu-open" class="hamburger-menu-open"><span class="fa fa-bars fa-2x"></span></div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-9 col-xs-9 Logo">
-                    <a href="index.html"><img src="./image/LogoTest.png"></a>
+                    <a href="index.html"><img src="../image/Logo/LogoTest.png"></a>
                 </div>
 
                 <div class="col-lg-5 col-md-5 hidden-sm-down hidden-xs-down Menuline">
@@ -186,7 +184,8 @@
         <div style="flex: 1;">
             <div class="container-cart">
                 <div class="title-cart">Оформление заказа</div>
-                <div class="main-eat-container-cart">
+                <div id="main-eat-container-cart" class="main-eat-container-cart">
+<!--
                     <div class="container-eat-cart">
                         <div class="container-image-eat-cart">
                             <img src="./image/dishes/цезарь.jpg">
@@ -206,6 +205,7 @@
                             </div>
                         </div>
                     </div>
+-->
                 </div>
                 <div class="container-all-price-eat-cart">Общая стоимость: 8.30 р.</div>
                 <div class="main-container-data-cart">
@@ -333,12 +333,13 @@
             <div class=" container-footer">
                 <div class="copyright">
                     <span class="fa fa-copyright"></span>2017-2018
-                    <img src="./image/LogoTest.png"> Вожык</div>
+                    <img src="../image/Logo/LogoTest.png"> Вожык</div>
             </div>
         </div>
     </div>
     <script src="./js/hamburger-menu.js"></script>
     <script src="./js/open-modal.js"></script>
+    <script src="./js/cart-generate-block.js"></script>
 </body>
 
 </html>
