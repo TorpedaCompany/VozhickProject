@@ -17,13 +17,12 @@
     <link rel="stylesheet" href="./css/rest.css">
     <link rel="stylesheet" href="./css/wrapper.css">
 
-    <link rel="stylesheet" href="./plugins/vanilla-js-carousel.css">
-
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../plugins/axios.min.js"></script>
 </head>
 
 <body>
@@ -35,7 +34,7 @@
                     <div id="hamburger-menu-open" class="hamburger-menu-open"><span class="fa fa-bars fa-2x"></span></div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-9 col-xs-9 Logo">
-                    <a href="index.html"><img src="./image/LogoTest.png"></a>
+                    <a href="index.html"><img src="../image/Logo/LogoTest.png"></a>
                 </div>
 
                 <div class="col-lg-5 col-md-5 hidden-sm-down hidden-xs-down Menuline">
@@ -186,28 +185,10 @@
         <div style="flex: 1;">
             <div class="container-cart">
                 <div class="title-cart">Оформление заказа</div>
-                <div class="main-eat-container-cart">
-                    <div class="container-eat-cart">
-                        <div class="container-image-eat-cart">
-                            <img src="./image/dishes/цезарь.jpg">
-                            <div class="container-name-eat-cart">
-                                <span>Цезарь с куриной грудкой</span>
-                            </div>
-                        </div>
-                        <div class="container-button-eat-cart">
-                            <div class="container-price-eat-cart">
-                                <span>8.30 р.</span>
-                            </div>
-                            <div class="card-dish-action">
-                                <div class="inpMinus">-</div>
-                                <input class="dishCount" type="number" step="1" min="1" max="50" name="dishCount" value="1" readonly>
-                                <div class="inpPlus">+</div>
-                                <div class="container-button-cancel-eat-cart"><span class="fa fa-times"></span></div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="main-eat-container-cart" class="main-eat-container-cart">
+                    <div class="clear-cart">Ваша корзина пуста</div>
                 </div>
-                <div class="container-all-price-eat-cart">Общая стоимость: 8.30 р.</div>
+                <div id="container-all-price-eat-cart" class="container-all-price-eat-cart">Общая стоимость: 0 руб.</div>
                 <div class="main-container-data-cart">
                     <div class="container-data-cart">
                         <div class="container-input">
@@ -280,8 +261,8 @@
                     </div>
                 </div>
                 <div class="container-button-cart">
-                    <div class="button-cart">Очистить корзину</div>
-                    <div class="button-cart button-cart-red">Оформить</div>
+                    <div id="button-cart-clear" class="button-cart">Очистить корзину</div>
+                    <div id="button-cart-post" class="button-cart button-cart-red">Оформить</div>
                 </div>
             </div>
         </div>
@@ -333,12 +314,17 @@
             <div class=" container-footer">
                 <div class="copyright">
                     <span class="fa fa-copyright"></span>2017-2018
-                    <img src="./image/LogoTest.png"> Вожык</div>
+                    <img src="../image/Logo/LogoTest.png"> Вожык</div>
             </div>
         </div>
     </div>
     <script src="./js/hamburger-menu.js"></script>
     <script src="./js/open-modal.js"></script>
+    <script src="./js/cart-generate-block.js"></script>
+    <script src="./js/delete-dish-cart.js"></script>
+    <script src="./js/plus-and-minus.js"></script>
+    <script src="./js/clear-cart.js"></script>
+    <script src="./js/ajax-cart.js"></script>
 </body>
 
 </html>

@@ -119,6 +119,12 @@
     top: 0;
     color: var(--RedColor);
 }
+.minus-ingredients {
+    position: relative;
+    left: 30px;
+    top: 0;
+    color: var(--RedColor);
+}
 
 .card-dish-action {
     padding-left: 10px;

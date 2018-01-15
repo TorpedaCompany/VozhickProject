@@ -17,27 +17,16 @@ html(lang='ru')
 		link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
 		link(href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow', rel='stylesheet')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
+        script(src='../plugins/axios.min.js')
 	body
 		.wrapper
 			div(style='flex: 1;')
 				.container-cart
 					.title-cart Оформление заказа
 					.main-eat-container-cart
-						.container-eat-cart
-							.container-image-eat-cart
-								img(src='../image/dishes/цезарь.jpg')
-								.container-name-eat-cart
-									span Цезарь с куриной грудкой
-							.container-button-eat-cart
-								.container-price-eat-cart
-									span 8.30 р.
-								.card-dish-action
-									.inpMinus -
-									input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
-									.inpPlus +
-									.container-button-cancel-eat-cart
-										span.fa.fa-times
-					.container-all-price-eat-cart Общая стоимость: 8.30 р.
+                        #main-eat-container-cart.main-eat-container-cart
+                            .clear-cart Ваша корзина пуста
+                        #container-all-price-eat-cart.container-all-price-eat-cart Общая стоимость: 0 руб.
 					.main-container-data-cart
 						.container-data-cart
 							.container-input
@@ -92,3 +81,8 @@ html(lang='ru')
 						.button-cart.button-cart-red Оформить
 		script(src='../js/hamburger-menu.js')
 		script(src='../js/open-modal.js')
+        script(src='../js/cart-generate-block.js')
+        script(src='../js/delete-dish-cart.js')
+        script(src='../js/plus-and-minus.js')
+        script(src='../js/clear-cart.js')
+        script(src='../js/ajax-cart.js')
