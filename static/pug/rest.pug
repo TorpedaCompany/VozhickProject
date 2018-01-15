@@ -338,7 +338,7 @@ html(lang='ru')
             if (dataRest && dataRest != undefined)
               .row.rest-catalog-dish
                 mixin dish(item)
-                  .rest-card-dish(data-id-dish= item._id)
+                  .rest-card-dish(data-category-dish= item.category data-id-dish= item._id)
                     .closeBtn
                       i.fa.fa-times(aria-hidden='true')
                     .card-dish-img
@@ -368,7 +368,7 @@ html(lang='ru')
                     .card-dish-img
                         img.b-lazy(data-src='../image/sushi_1/Ясай@2x.jpg', src='../image/rest/rest_placeholder.svg')
                     .card-dish-content
-                        a(href='../constructor.html')
+                        a(href='../rests/Фальварак/constrPancake')
                             .card-dish-button-constructor
                                 .dish-button-constructor
                                     span.fa.fa-cube

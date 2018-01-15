@@ -17,39 +17,51 @@ html(lang='ru')
 		link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
 		link(href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow', rel='stylesheet')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
-	body
-		.wrapper
-			.main-container-constructor
-				.container-title-page
-					span Конструктор блинчиков
-				.container-constructor
-				#{dataConstr}
-					.container-constructor-section
-						.container-ingredients
-							.container-title
-								h4 Ингридиенты
-							#ingredients.container-ingredients-items
-								.ingredients-items-plus.ingredients-items
+body
+	.wrapper
+		include header.pug
+		include modal.pug
+		.main-container-constructor
+			.container-title-page
+				span Конструктор блинчиков
+			.container-constructor
+				.container-constructor-section
+					.container-ingredients
+						.container-title
+							h4 Ингридиенты
+						#ingredients.container-ingredients-items
+							mixin ingr(item)  
+								.ingredients-items-plus.ingredients-items(data-id-ingredients= item._id)
 									span.plus-ingredients.fa.fa-plus-square
-									img(src="../../image/constructor/demo.jpeg")
-									span Ингредиент1
-									span 2,5 руб.
-						.container-my-food
-							.container-title
-								h4 Ваш блинчик
-							#my-ingredients.container-ingredients-items
-								.ingredients-items-minus.ingredients-items
+									img.b-lazy(data-src= item.img, src='../image/rest/rest_placeholder.svg')
+									span= item.name
+									span= item.price+' руб.'
+							for item, index in dataConstr
+								+ingr(item)
+					.container-my-food
+						.container-title
+							h4 Ваш блинчик
+						#my-ingredients.container-ingredients-items
+							mixin ingr(item)
+								.ingredients-items-minus.ingredients-items.ingredients-items-hidden(data-id-ingredients= item._id)
 									span.minus-ingredients.fa.fa-minus-square
-									img(src="../../image/constructor/demo.jpeg")
-									span Ингредиент10
-									span 2,5 руб.
-					.container-constructor-button
-						span Кол-во блинчиков:
-						.card-dish-action
-							.inpMinus -
-							input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
-							.inpPlus +
-						.button-remove-pancake Очистить
-						.button-add-pancake Добавить
-		script(src='../../js/hamburger-menu.js')
-		script(src='../../js/open-modal.js')
+									img.b-lazy(src=item.img)
+									span= item.name
+									span= item.price+' руб.'
+							for item, index in dataConstr
+								+ingr(item)
+				.container-constructor-button
+					span Кол-во блинчиков:
+					.card-dish-action
+						.inpMinus -
+						input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
+						.inpPlus +
+					#button-remove-pancake.button-remove-pancake Очистить
+					.button-add-pancake Добавить
+		include footer.pug
+	script(src='../../js/hamburger-menu.js')
+	script(src='../../plugins/lazy/blazy.js')
+	script(src='../../js/rest.js')
+	script(src='../../js/open-modal.js')
+	script(src='../../js/plus-and-minus.js')
+	script(src='../../js/constructor.js')
