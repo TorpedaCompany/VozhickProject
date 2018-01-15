@@ -31,17 +31,13 @@ function Update() {
     }
 	
 	ButtonClearCunstructor.addEventListener("click", function () {
-//		console.log(MinusIngredients);
 		let ActiveIngredients = ContainerCunstructor.querySelectorAll('.ingredients-items-hidden');
 		let ActiveIngredientsMy = ContainerCunstructorMy.querySelectorAll('.ingredients-items-active');
-		let Input = document.getElementsByClassName('dishCount');
-		console.log(Input);
+		let Input = document.querySelector('.dishCount');
 		for(let i =0; i<ActiveIngredientsMy.length; i++){
 			ActiveIngredientsMy[i].classList.remove('ingredients-items-active');
 			ActiveIngredients[i].classList.remove('ingredients-items-hidden');
-			
 		}
 		Input.value = 1;
-//		ActiveIngredients.classList.remove('ingredients-items-active');
 	});
 }
