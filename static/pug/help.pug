@@ -12,16 +12,19 @@ html(lang='ru')
 		link(rel='stylesheet', href='../css/modal-registration.css')
 		link(rel='stylesheet', href='../css/footer.css')
 		link(rel='stylesheet', href='../css/wrapper.css')
-		link(rel='stylesheet', href='../css/help-style.css')
+		link(rel='stylesheet', href='../css/delivery-style.css')
 		link(rel='stylesheet', href='../css/input.css')
 		link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
 		link(href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow', rel='stylesheet')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
 	body
+		include header.pug
+		include modal.pug
 		.wrapper
 			.container-fluid(style='flex: 1;')
 				.row
-					.container-info-help
+					.container-info-delivery
 						| Здесь будет ваша инструкция как заказать.
+		include footer.pug
 		script(src='../js/hamburger-menu.js')
 		script(src='../js/open-modal.js')

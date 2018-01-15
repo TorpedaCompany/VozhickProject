@@ -75,6 +75,7 @@ let ordersSchema = new mongoose.Schema({
     rest: String,
     dishes: [{
         idDish: String,
+        name: String,
         count: Number
     }],
     totalPrice: Number,
