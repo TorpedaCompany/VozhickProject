@@ -17,10 +17,13 @@ html(lang='ru')
 		link(href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow', rel='stylesheet')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
 	body
+		include header.pug
+		include modal.pug
 		.wrapper
 			.container-fluid(style='flex: 1;')
 				.row
 					.container-info-legal
 						| Здесь будет ваша юридическая информация.
+		include footer.pug
 		script(src='../js/hamburger-menu.js')
 		script(src='../js/open-modal.js')
