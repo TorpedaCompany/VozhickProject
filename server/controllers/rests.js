@@ -34,7 +34,40 @@ app.get('/rests/:name', (req, res) => {
             });
     });
 })
-
+app.get('/rests/:name/constrPancake', (req, res) => {
+    models.rests.findOne({ "restName": req.params.name }, function(err, data) {
+        if (err)
+            return res.status(500).send({ error: err.message });
+        if (!data)
+            return res.status(404).send({ error: "Not found" });
+        else
+            return res.render('constructor', { dataConstr: data.constructorPancake }, function(err, html) {
+                if (!err)
+                    res.status(200).send(html);
+                else {
+                    res.status(500).end();
+                    logger.error(err);
+                }
+            });
+    });
+})
+app.get('/rests/:name/constrPizza', (req, res) => {
+    models.rests.findOne({ "restName": req.params.name }, function(err, data) {
+        if (err)
+            return res.status(500).send({ error: err.message });
+        if (!data)
+            return res.status(404).send({ error: "Not found" });
+        else
+            return res.render('constructor', { dataConstr: data.constructorPizza }, function(err, html) {
+                if (!err)
+                    res.status(200).send(html);
+                else {
+                    res.status(500).end();
+                    logger.error(err);
+                }
+            });
+    });
+})
 app.post('/rests', isAuthenticated, (req, res) => {
     let rest = new models.rests();
     for (key in req.body) {

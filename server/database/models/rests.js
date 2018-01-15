@@ -42,6 +42,14 @@ let restsSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    constructorPancake: {
+        type: Array,
+        default: []
+    },
+    constructorPizza: {
+        type: Array,
+        default: []
+    },
     restOpenTime: {
         type: String
     },

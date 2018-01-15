@@ -17,6 +17,19 @@ app.get('/', (req, res) => {
         }
     });
 })
+app.get('/constructor', (req, res) => {
+    models.rests.rests.find({}, function(err, data) {
+        if (err)
+            return res.status(500).send({ error: err });
+        else {
+            return res.render('constructor', { rests: data }, function(err, html) {
+                if (!err)
+                    res.status(200).send(html);
+                logger.error(err);
+            });
+        }
+    });
+})
 app.get('/cart', function(req, res) {
     res.render('cart', function(err, html) {
         res.send(html);
