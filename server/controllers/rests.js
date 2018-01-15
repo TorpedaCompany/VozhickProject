@@ -1,3 +1,5 @@
+const Logger = require('../logger');
+const logger = new Logger();
 let app = new(require('express').Router)();
 // const models = require('../database/models');
 const models = require('../database/models/rests');
@@ -42,9 +44,10 @@ app.get('/rests/:name/constrPancake', (req, res) => {
             return res.status(404).send({ error: "Not found" });
         else
             return res.render('constructor', { dataConstr: data.constructorPancake }, function(err, html) {
-                if (!err)
+                if (!err) {
+                    console.log(data.constructorPancake);
                     res.status(200).send(html);
-                else {
+                } else {
                     res.status(500).end();
                     logger.error(err);
                 }
