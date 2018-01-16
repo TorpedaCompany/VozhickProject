@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		let CountDishBlock = Parent.querySelectorAll(".card-dish-footer > .card-dish-action > .dishCount");
 		let IdDish = Parent.getAttribute('data-id-dish');
 		let NameDish = NameDishBlock[0].innerText;
+		let NameRest = document.querySelector(".rest-caption").innerText;
 		let ImgDish = ImgDishBlock[0].src;
 		let PriceDish = PriceDishBlock[0].innerText;
 		let CountDish = CountDishBlock[0].value;
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		Cart.push({
 			"id": IdDish,
 			"Name": NameDish,
+			"NameRest": NameRest,
 			"Image": ImgDish,
 			"Price": PriceDish,
 			"CountDish": CountDish

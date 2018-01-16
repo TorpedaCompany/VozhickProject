@@ -63,6 +63,12 @@
     transition: all .3s ease-out;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 }
+.active-filter-item {
+	fill: #ff501c;
+}
+.active-filter-item svg {
+	
+}
 
 .rest-filter .filter-item {
     height: 45px;
@@ -416,4 +422,8 @@
 
 .dish-button-constructor>span {
     padding-right: 10px;
+}
+
+.rest-card-dish-hidden{
+	display: none;
 }

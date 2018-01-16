@@ -27,13 +27,13 @@ html(lang='ru')
           img(src='../image/rest/rest_1.jpg', alt='')
         .rest-caption
           img(src='../image/other_icon/icon-knife.png', alt='')
-          |  Фальварак
+          |  #{dataRest.restName}
       .container-fluid.rest-container
         .row.no-gutters-cust
           .col.rest-filter
             // hidden-md-down
-            .rest-filter-container
-              .filter-item
+            #rest-filter-container.rest-filter-container
+              .filter-item.active-filter-item(data-category-dish='Все')
                 svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 59 59', style='enable-background:new 0 0 59 59;', xml:space='preserve')
                   g
                     path(d='M26.489,0c-0.553,0-1,0.447-1,1v13c0,1.302-0.839,2.402-2,2.816V1c0-0.553-0.447-1-1-1s-1,0.447-1,1v15.816\
@@ -48,7 +48,7 @@ html(lang='ru')
                     M39.506,12.344L39.5,14.561c0.002,7.034-0.005,11.743-2.491,14.491C36.841,29.03,36.674,29,36.5,29c-0.347,0-0.678,0.058-1,0.142\
                     V2.059c1.11,0.124,1.943,0.46,2.513,1.033C39.546,4.634,39.528,8.036,39.506,12.344z')
                 span Все
-              .filter-item
+              .filter-item(data-category-dish='Завтрак')
                 svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 60 60', style='enable-background:new 0 0 60 60;', xml:space='preserve')
                   g
                     path(d='M37.5,20.997c-0.952,0-1.893,0.141-2.794,0.418c-0.528,0.163-0.824,0.723-0.662,1.25c0.133,0.43,0.528,0.706,0.956,0.706\
@@ -74,7 +74,7 @@ html(lang='ru')
                     c0.396,2.291,2.521,3.88,4.851,3.625l0.149-0.017c0.554-0.068,1.048,0.32,1.116,0.868S26.672,51.836,26.124,51.904z M37.5,43.997\
                     c-7.444,0-13.5-6.056-13.5-13.5s6.056-13.5,13.5-13.5S51,23.053,51,30.497S44.944,43.997,37.5,43.997z')
                 span Завтрак
-              .filter-item
+              .filter-item(data-category-dish='Горячие блюда')
                 svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 60 60', style='enable-background:new 0 0 60 60;', xml:space='preserve')
                   g
                     path(d='M18.35,20.805c0.195,0.195,0.451,0.293,0.707,0.293c0.256,0,0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414\
@@ -103,7 +103,7 @@ html(lang='ru')
                     c0-0.558-0.024-1.109-0.058-1.658c-0.004-0.057-0.002-0.113-0.006-0.17C57.526,47.371,58,48.215,58,48.598\
                     C58,50.829,47.096,55.098,30,55.098z')
                 span Горячие блюда
-              .filter-item
+              .filter-item(data-category-dish='Супы')
                 svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 54 54', style='enable-background:new 0 0 54 54;', xml:space='preserve')
                   path(d='M54,27.069V25.12c0-0.596-0.179-1.076-0.531-1.426c-0.593-0.589-1.419-0.587-2.212-0.575l-24.006,0L6.447,1.824\
                   c-1.08-1.081-2.822-1.271-3.863-0.383L2.327,1.563L2.205,1.686c-1.1,1.101-1.101,3.343-0.009,4.435l16.6,17L3,23.12H2.744\
@@ -185,7 +185,7 @@ html(lang='ru')
                     c-9.747,9.747-9.747,25.608,0,35.355c4.722,4.722,11,7.322,17.678,7.322c6.343,0,12.323-2.351,16.953-6.632l1.419,1.418\
                     C42.363,53.946,35.878,56.5,29,56.5z')
                 span Пицца
-              .filter-item
+              .filter-item(data-category-dish='Шашлык')
                 svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 58.622 58.622', style='enable-background:new 0 0 58.622 58.622;', xml:space='preserve')
                   g
                     path(d='M57.595,11.606c-0.391-0.391-1.023-0.391-1.414,0l-3.536,3.536l-1.061-1.061c-1.318-1.318-3.631-1.318-4.949,0\
@@ -225,7 +225,7 @@ html(lang='ru')
                     c-0.001,0-0.002,0-0.003,0l-0.001,0.002l-2.823-2.824c-0.002-0.002-0.003-0.004-0.005-0.005s-0.004-0.003-0.005-0.005l-2.823-2.823\
                     L22.239,18.678z M11.633,29.284l5.657,5.657l-2.119,2.119c0,0-0.001,0-0.003,0v0.002l-5.656-5.657L11.633,29.284z')
                 span Шашлык
-              .filter-item
+              .filter-item(data-category-dish='Соусы')
                 svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 60 60', style='enable-background:new 0 0 60 60;', xml:space='preserve')
                   g
                     polygon(points='26,13 28,13 28,17 31,17 31,13 33,13 33,17 37,17 37,13 37,11.799 36.665,11 32.05,0 27.95,0 23.335,11 23,11.799 \
@@ -235,7 +235,7 @@ html(lang='ru')
                     path(d='M16,19v37.869C16,58.596,17.404,60,19.131,60h21.738C42.596,60,44,58.596,44,56.869V19H16z M30,48c-6.065,0-11-4.935-11-11\
                     s4.935-11,11-11s11,4.935,11,11S36.065,48,30,48z')
                 span Соусы
-              .filter-item
+              .filter-item(data-category-dish='Салаты')
                 svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 58.758 58.758', style='enable-background:new 0 0 58.758 58.758;', xml:space='preserve')
                   path(d='M57.29,19.325c0.592-1.844,0.106-3.888-1.312-5.282c-1.011-0.992-2.362-1.542-3.784-1.524\
                   c-0.235-0.624-0.604-1.19-1.09-1.667c-0.745-0.732-1.698-1.169-2.723-1.301c-0.006,0.581-0.064,1.157-0.181,1.723\
@@ -285,7 +285,7 @@ html(lang='ru')
                   c-0.579,0.227-1.185,0.34-1.789,0.34C24.612,24.397,23.946,24.26,23.317,23.985z')
                   g
                 span Салаты
-              .filter-item
+              .filter-item(data-category-dish='Напитки')
                 svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 59.706 59.706', style='enable-background:new 0 0 59.706 59.706;', xml:space='preserve')
                   g
                     path(d='M41.63,5.999l2,2l-1.414,1.414l-2-2L41.63,5.999z M44.217,7.415l-2-2l1.414-1.414l2,2L44.217,7.415z M46.217,5.415l-2-2\
@@ -313,7 +313,7 @@ html(lang='ru')
                     c1.158-1.083,3.158-1.017,4.24,0.144l2.048,2.192c0.316,0.338,0.532,0.739,0.664,1.169l4.208-10.988h2.141L31.874,35.132z\
                     M33.924,40.379c0,0.552-0.448,1-1,1s-1-0.448-1-1s0.448-1,1-1S33.924,39.827,33.924,40.379z')
                 span Напитки
-              .filter-item
+              .filter-item(data-category-dish='Десерты')
                 svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 52.476 52.476', style='enable-background:new 0 0 52.476 52.476;', xml:space='preserve')
                   g
                     path(d='M11.289,28.749c3.035-1.733,7.008-1.732,10.043-0.005c3.009-1.726,6.947-1.729,9.957-0.004\
@@ -351,7 +351,7 @@ html(lang='ru')
                 span Десерты
           .col
             if (dataRest && dataRest != undefined)
-              .row.rest-catalog-dish
+              #rest-catalog-dish.row.rest-catalog-dish
                 mixin dish(item)
                   .rest-card-dish(data-category-dish= item.category data-id-dish= item._id)
                     .closeBtn
@@ -398,3 +398,4 @@ html(lang='ru')
   script(src='../js/open-modal.js')
   script(src='../js/plus-and-minus.js')
   script(src='../js/cart.js')
+  script(src='../js/filter-category-dish.js')

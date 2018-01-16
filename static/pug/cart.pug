@@ -32,55 +32,71 @@ html(lang='ru')
 					.main-container-data-cart
 						.container-data-cart
 							.container-input
+								span.fa.fa-user
+								.group
+									input.input-style.input-login-authorization.input-name(placeholder='Имя*', type='text', required='')
+									span.bar
+							.container-input
+								span.fa.fa-user
+								.group
+									input.input-style.input-login-authorization.input-surname(placeholder='Фамилия*', type='text', required='')
+									span.bar
+							.container-input
+								span.fa.fa-user
+								.group
+									input.input-style.input-login-authorization.input-patronymic(placeholder='Отчество', type='text', required='')
+									span.bar
+						.container-data-cart
+							.container-input
 								span.fa.fa-location-arrow
 								.group
-									input.input-style.input-login-authorization(placeholder='Улица', type='text', required='')
+									input.input-style.input-login-authorization.input-street(placeholder='Улица*', type='text', required='')
 									span.bar
 							.container-input
 								span.fa.fa-home
 								.group
-									input.input-style.input-login-authorization(placeholder='Дом', type='text', required='')
+									input.input-style.input-login-authorization.input-house(placeholder='Дом*', type='text', required='')
 									span.bar
 							.container-input
 								span.fa.fa-angle-right
 								.group
-									input.input-style.input-login-authorization(placeholder='Подъезд', type='text', required='')
+									input.input-style.input-login-authorization.input-entrance(placeholder='Подъезд', type='text', required='')
 									span.bar
 						.container-data-cart
 							.container-input
 								span.fa.fa-angle-right
 								.group
-									input.input-style.input-login-authorization(placeholder='Этаж', type='text', required='')
+									input.input-style.input-login-authorization.input-level(placeholder='Этаж', type='text', required='')
 									span.bar
 							.container-input
 								span.fa.fa-angle-right
 								.group
-									input.input-style.input-login-authorization(placeholder='Квартира', type='text', required='')
+									input.input-style.input-login-authorization.input-apartment(placeholder='Квартира*', type='text', required='')
 									span.bar
 							.container-input
 								span.fa.fa-mobile
 								.group
-									input.input-style.input-login-authorization(placeholder='Телефон', type='text', required='')
+									input.input-style.input-login-authorization.input-phone(placeholder='Телефон*', type='tel', required='')
 									span.bar
 						.container-data-cart
 							.container-input
 								span.fa.fa-envelope
 								.group
-									input.input-style.input-login-authorization(placeholder='Email', type='text', required='')
+									input.input-style.input-login-authorization.input-email(placeholder='Email*', type='text', required='')
 									span.bar
 							.container-input
 								span.fa.fa-comments
 								.group
-									input.input-style.input-login-authorization(placeholder='Коментарий', type='text', required='')
+									input.input-style.input-login-authorization.input-comment(placeholder='Коментарий', type='text', required='')
 									span.bar
 							.container-input
 								span.fa.fa-ticket
 								.group
-									input.input-style.input-login-authorization(placeholder='Промокод', type='text', required='')
+									input.input-style.input-login-authorization.input-promocode(placeholder='Промокод', type='text', required='')
 									span.bar
 					.container-button-cart
 						#button-cart-clear.button-cart Очистить корзину
-						.button-cart.button-cart-red Оформить
+						#button-cart-post.button-cart.button-cart-red Оформить
 			include footer.pug
 		script(src='../js/hamburger-menu.js')
 		script(src='../js/open-modal.js')
@@ -89,3 +105,4 @@ html(lang='ru')
 		script(src='../js/plus-and-minus.js')
 		script(src='../js/clear-cart.js')
 		script(src='../js/ajax-cart.js')
+		script(src='../js/input-check.js')
