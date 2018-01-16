@@ -236,14 +236,8 @@
     text-align: center;
     border: none;
     -webkit-appearance: none;
-}
-
-.card-dish-action input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    margin: 0;
-    /* <-- Apparently some margin are still there even though it's hidden */
-    -webkit-appearance: none;
+	-moz-appearance: textfield;	
+	pointer-events: none;
 }
 
 .card-dish-action .addToCard {
