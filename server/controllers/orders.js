@@ -29,17 +29,53 @@ app.get('/orders/:id', isAuthenticated, (req, res) => {
     });
 })
 app.post('/orders', (req, res) => {
-    let order = new models.orders();
-    for (key in req.body) {
-        order[key] = req.body[key];
-    }
-    order.save(function(err, data) {
+    models.rests.rests.findOne({ "restName": req.body.restName }, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
-        else
-            return res.status(200).send(data._id);
-    })
+        if (!data)
+            return res.status(404).send({ error: "Not found" });
+        else {
+            let ordDishes = req.body.dishes;
+            let arr = [];
+            // console.log(ordDishes);
+            ordDishes.forEach(function(ord) {
+                data.restDishes.forEach(function(obj) {
+                    if (obj._id == ord.idDish) {
+                        obj.count = ord.count
+                        arr.push(obj);
+                    }
+                });
+            })
+            let order = new models.orders();
+            for (key in req.body) {
+                if (key != "dishes") {
+                    order[key] = req.body[key];
+                    // console.log(key + "  " + req.body[key]);
+                }
+            }
+            order.dishes = arr;
+
+            let tmpPrice = 0;
+            order.dishes.forEach(function(item) {
+                tmpPrice += (parseInt(item.price) * parseInt(item.count))
+            })
+            order.totalPrice = tmpPrice;
+
+            order.save(function(err, data) {
+                if (err)
+                    return res.status(500).send({ error: err.message });
+                else {
+                    if (ordDishes.length != arr.length)
+                        return res.status(500).send({ message: "Некоторые блюда не были обработаны" });
+                    else
+                        return res.status(200).send(data._id);
+                }
+            })
+
+        }
+    });
 })
+
 app.put('/orders/:id', isAuthenticated, (req, res) => {
     models.orders.findById(req.params.id, function(err, data) {
         if (err)
