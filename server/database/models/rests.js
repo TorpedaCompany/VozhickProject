@@ -15,7 +15,11 @@ let dishSchema = new mongoose.Schema({
     description: String,
     composition: String,
     grams: String,
-    price: Number
+    price: Number,
+    count: {
+        type: Number,
+        default: 1
+    }
 })
 
 let restsSchema = new mongoose.Schema({

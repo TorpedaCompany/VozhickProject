@@ -54,7 +54,7 @@ let ordersSchema = new mongoose.Schema({
         min: [0, "incorrectNumEntrance"],
     },
     house: {
-        type: Number,
+        type: String,
         max: [999, "tooBigNumberFloor"],
         min: [0, "incorrectNumFloor"],
     },
@@ -72,19 +72,19 @@ let ordersSchema = new mongoose.Schema({
         type: String,
         default: new Date().toLocaleDateString() + "  " + new Date().toLocaleTimeString()
     },
-    rest: String,
-    dishes: [{
-        idDish: String,
-        name: String,
-        count: Number
-    }],
+    restName: String,
+    dishes: Array,
     totalPrice: Number,
     status: {
         type: String,
         default: "Новый"
     },
     driver: String,
-    dateTimeOut: Date
+    dateTimeOut: Date,
+    comment: {
+        type: String,
+        maxlength: [90, "tooLongСomment"],
+    }
 });
 // Компилируем и Экспортируем модель
 module.exports = mongoose.model('orders', ordersSchema, 'orders');
