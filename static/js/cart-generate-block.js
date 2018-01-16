@@ -19,7 +19,7 @@ function ShowCart() {
         BlockContainer.innerHTML = div;
     } else {
         for (var i = 0; i < Bly.length; i++) {
-            Price += parseInt(Bly[i].Price);
+            Price += parseFloat(Bly[i].Price);
         }
     }
     var StrPrice = "Общая стоимость: " + Price + " руб."
