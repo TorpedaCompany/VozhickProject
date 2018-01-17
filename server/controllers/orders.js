@@ -2,6 +2,7 @@ let app = new(require('express').Router)();
 // const mongoose = require('mongoose');
 const models = require('../database/models');
 const passport = require('passport');
+var io = require('socket.io');
 
 var isAuthenticated = function(req, res, next) {
     if (req.isAuthenticated())
@@ -13,8 +14,10 @@ app.get('/orders', isAuthenticated, (req, res) => {
     models.orders.find({}, function(err, data) {
         if (err)
             return res.status(500).send({ error: err });
-        else
+        else {
+            req.app.io.emit("lucky", "/orders :22");
             return res.status(200).send(data);
+        }
     });
 })
 
@@ -67,8 +70,9 @@ app.post('/orders', (req, res) => {
                 else {
                     if (ordDishes.length != arr.length)
                         return res.status(500).send({ message: "Некоторые блюда не были обработаны" });
-                    else
-                        return res.status(200).send(data._id);
+                    else {
+                        return res.status(200).send(data);
+                    }
                 }
             })
 

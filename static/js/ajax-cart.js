@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     let dataErr = {}
-
     var PostButton = document.getElementById("button-cart-post");
+
+
     var Cart = [];
     PostButton.addEventListener("click", function() {
         let Arr = JSON.parse(localStorage.getItem('Cart'));
@@ -61,4 +62,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
     });
+    var socket = io.connect('http://localhost:5000');
+    socket.on('connect', function(data) {
+
+    });
+
+    var SockButton = document.getElementById("button-cart-sock");
+    SockButton.addEventListener("click", function() {
+        socket.emit('order', 'Что за хуйня?');
+        // alert("asdasd");
+    })
+    socket.on('lucky', function(data) {
+        console.log(data);
+    });
+
 });

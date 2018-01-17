@@ -59,7 +59,39 @@ app.use(require('./controllers')); //Инициализация контролл
 
 app.use(require('./errorHandler'));
 
-app.listen(config.port, (err) => {
+// app.io = require('socket.io')();
+
+// app.io.on('connection', function(socket) {
+//     console.log("000000000000000000000000000000000000000000");
+//     console.log("Connect");
+//     socket.on('SocketEm', function(data) {
+//         console.log("000000000000000000000000000000000000000000");
+//         console.log(data);
+//     });
+//     socket.on('disconnect', function() {
+//         console.log('user disconnected');
+//     });
+// });
+
+
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+app.io = io;
+io.on('connection', function(client) {
+    console.log('Client connected...');
+
+    client.on('order', function(data) {
+        console.log(data);
+        // client.emit('messages', 'Hello from server');
+    });
+    // client.on('lucky', function(data) {
+    //     console.log(data);
+    // });
+
+});
+
+
+server.listen(config.port, (err) => {
     if (err) throw err;
     logger.info('Server start http://localhost:' + config.port);
 })
