@@ -12,13 +12,13 @@ function Update() {
         if (Cart.length == 0) {
             localStorage.removeItem("Cart");
             ShowCart(event);
-            Update()
+            Update();
         } else {
             localStorage.removeItem("Cart");
             var serialObj = JSON.stringify(Cart);
             localStorage.setItem("Cart", serialObj);
             ShowCart(event);
-            Update()
+            Update();
         }
     }
     for (let i = 0; i < DeleteButton.length; i++) {

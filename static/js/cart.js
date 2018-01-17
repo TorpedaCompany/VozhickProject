@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	}
 
 	function cart() {
+		
 		let Parent = this.parentElement.parentElement.parentElement.parentElement;
 		let NameDishBlock = Parent.querySelectorAll(".card-dish-description > span");
 		let ImgDishBlock = Parent.querySelectorAll(".card-dish-img > img");
@@ -25,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		let ImgDish = ImgDishBlock[0].src;
 		let PriceDish = PriceDishBlock[0].innerText;
 		let CountDish = CountDishBlock[0].value;
-		PriceDish = PriceDish.substr(0, PriceDish.length - 3)
+		PriceDish = PriceDish.substr(0, PriceDish.length - 3);
 		Cart.push({
 			"id": IdDish,
 			"Name": NameDish,
@@ -34,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			"Price": PriceDish,
 			"CountDish": CountDish
 		});
-
+		
 		var serialObj = JSON.stringify(Cart);
 		localStorage.setItem('Cart', serialObj);
-
+		CountAndPriceCart();
 	}
 
 	for (let i = 0; i < AddCardButton.length; i++) {
