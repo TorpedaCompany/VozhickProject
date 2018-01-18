@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", UpdatePlusAndMinus());
 						Arr[a].CountDish = CountDishArr;
 						TotalPriceDish = Arr[a].Price * CountDishArr;
 						Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
-						console.log(Arr);
 					}
 				}
 				serialObj = JSON.stringify(Arr);
@@ -38,6 +37,7 @@ document.addEventListener("DOMContentLoaded", UpdatePlusAndMinus());
 				val++;
 				MyInput[i].value = val;
 				CountAndPriceCart();
+				TotalCart();
 			}
 		}
 	}
@@ -59,9 +59,7 @@ document.addEventListener("DOMContentLoaded", UpdatePlusAndMinus());
 						CountDishArr--;
 						Arr[a].CountDish = CountDishArr;
 						TotalPriceDish = Arr[a].TotalPriceDish - Arr[a].Price;
-						console.log(TotalPriceDish);
 						Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
-						console.log(Arr);
 					}
 				}
 				serialObj = JSON.stringify(Arr);
@@ -69,6 +67,7 @@ document.addEventListener("DOMContentLoaded", UpdatePlusAndMinus());
 				val--;
 				MyInput[i].value = val;
 				CountAndPriceCart();
+				TotalCart();
 			}
 		}
 	}
