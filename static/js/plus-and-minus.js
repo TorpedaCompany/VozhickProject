@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (val == 50) {} else {
                 val++;
                 MyInput[i].value = val;
+				CountAndPriceCart();
             }
 
         }
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (val == 1) {} else {
                 val--;
                 MyInput[i].value = val;
+				CountAndPriceCart();
             }
         }
     }

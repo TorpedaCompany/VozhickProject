@@ -4,6 +4,7 @@ html(lang='ru')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='../css/bootstrap.css')
+    link(rel='stylesheet', href='../css/swal-style.css')
     link(rel='stylesheet', href='../plugins/slider/css/swiper.css')
     link(rel='stylesheet', href='../css/normalize.css')
     link(rel='stylesheet', href='../css/hamburger-menu.css')
@@ -391,6 +392,7 @@ html(lang='ru')
             else
               .rest-catalog-dish_error Произошла ошибка блюд или блюда отсутствуют :(
     include footer.pug
+  script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
   script(src='../plugins/slider/js/swiper.js')
   script(src='../plugins/lazy/blazy.js')
   script(src='../js/rest.js')

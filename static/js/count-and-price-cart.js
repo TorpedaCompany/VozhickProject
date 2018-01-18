@@ -11,10 +11,10 @@ function CountAndPriceCart() {
 		CartCount.innerText = '0';
 	} else {
 		for (var i = 0; i < Arr.length; i++) {
-			Price += parseFloat(Arr[i].Price);
+			Price += parseFloat(Arr[i].TotalPriceDish);
 			Count += parseInt(Arr[i].CountDish);
 		}
-		CartPrice.innerText = Price + ' руб.';
+		CartPrice.innerText = Price.toFixed(2) + ' руб.';
 		CartCount.innerText = Count;
 	}
 }
