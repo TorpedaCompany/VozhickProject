@@ -77,7 +77,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
+    width: 150px;
 }
 .container-button-eat-cart {
     display: flex;
@@ -92,7 +92,7 @@
     align-self: center;
     width: 32px;
     height: 32px;
-    
+	margin-left: 20px;
     cursor: pointer;
 }
 .container-button-cancel-eat-cart>span {
@@ -211,6 +211,12 @@
     .container-price-eat-cart {
         justify-content: flex-end;
     }
+	.container-button-cancel-eat-cart {
+/*		margin-left: 0;*/
+	}
+	.container-price-eat-cart{
+		width: auto;
+	}
 }
 .container-all-price-eat-cart {
     display: flex;

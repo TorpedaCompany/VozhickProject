@@ -241,9 +241,12 @@
     padding: 0;
     text-align: center;
     border: none;
-    -webkit-appearance: none;
 	-moz-appearance: textfield;	
 	pointer-events: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .card-dish-action .addToCard {

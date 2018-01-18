@@ -7,6 +7,7 @@ function Update() {
 	var ContainerCunstructor = document.getElementById("ingredients");
 	var ButtonClearCunstructor = document.getElementById("button-remove-pancake");
 	var ButtonPostCunstructor = document.getElementById("button-cart-post");
+
 	function PlusIngridient() {
 		let Elem = this;
 		let ElemId = Elem.getAttribute('data-id-ingredients');
@@ -45,47 +46,90 @@ function Update() {
 		let ActiveIngredientsMy = ContainerCunstructorMy.querySelectorAll('.ingredients-items-active');
 		let NameIngredients = '';
 		let PriceIngredients = 0;
+		let TotalPriceDish = 0;
 		let Cart = [];
 		let Arr = JSON.parse(localStorage.getItem('Cart'));
 		let Price = 0;
 		let Input = document.querySelector('.dishCount');
 		let CountDish = 0;
+
 		if (Arr == null) {
-			for (let i = 0; i < ActiveIngredientsMy.length; i++) {
-				NameIngredients += ActiveIngredientsMy[i].querySelector('.name-ingredients').innerText.concat(',');
-				Price = ActiveIngredientsMy[i].querySelector('.price-ingredients').innerText;
-				Price = Price.substr(0, Price.length - 5);
-				PriceIngredients += parseFloat(Price);
-
+			if (ActiveIngredientsMy.length == 0) {
+				swal({
+					text: "Выберите ингредиенты",
+					icon: "error",
+				});
+			} else {
+				for (let i = 0; i < ActiveIngredientsMy.length; i++) {
+					NameIngredients += ActiveIngredientsMy[i].querySelector('.name-ingredients').innerText.concat(',');
+					Price = ActiveIngredientsMy[i].querySelector('.price-ingredients').innerText;
+					Price = Price.substr(0, Price.length - 5);
+					PriceIngredients += parseFloat(Price);
+				}
+				NameIngredients = NameIngredients.slice(0, -1);
+				NameIngredients = 'Блинчик (' + NameIngredients + ')';
+				CountDish = Input.value;
+				TotalPriceDish = PriceIngredients*CountDish;
+				Cart.push({
+					"Name": NameIngredients,
+					"Image": '../image/constructor/const_pancake.png',
+					"Price": PriceIngredients,
+					"TotalPriceDish": TotalPriceDish,
+					"CountDish": CountDish,
+					"id": NameIngredients
+				});
+				var serialObj = JSON.stringify(Cart);
+				localStorage.setItem('Cart', serialObj);
+				console.log(NameIngredients);
+				console.log(PriceIngredients);
+				console.log(Cart);
+				swal({
+					text: "" + NameIngredients + " добавлена ;)",
+					button: false,
+					timer: 650,
+				});
+				CountAndPriceCart();
 			}
-			NameIngredients = NameIngredients.slice(0, -1);
-			NameIngredients = 'Блинчик ('+NameIngredients+')';
-			CountDish = Input.value;
-			Cart.push({
-				"Name": NameIngredients,
-				"Image": '../image/constructor/const_pancake.png',
-				"Price": PriceIngredients,
-				"CountDish": CountDish
-			});
-			var serialObj = JSON.stringify(Cart);
-			localStorage.setItem('Cart', serialObj);
-			console.log(NameIngredients);
-			console.log(PriceIngredients);
-			console.log(Cart);
 		} else {
-			let length = Arr.length;
-			for (let a = 0; a < length; a++) {
-				Cart.push(Arr[a]);
+			if (ActiveIngredientsMy.length == 0) {
+				swal({
+					text: "Выберите ингредиенты",
+					icon: "error",
+				});
+			} else {
+				let length = Arr.length;
+				for (let a = 0; a < length; a++) {
+					Cart.push(Arr[a]);
+				}
+				for (let i = 0; i < ActiveIngredientsMy.length; i++) {
+					NameIngredients += ActiveIngredientsMy[i].querySelector('.name-ingredients').innerText.concat(',');
+					Price = ActiveIngredientsMy[i].querySelector('.price-ingredients').innerText;
+					Price = Price.substr(0, Price.length - 5);
+					PriceIngredients += parseFloat(Price);
+				}
+				NameIngredients = NameIngredients.slice(0, -1);
+				NameIngredients = 'Блинчик (' + NameIngredients + ')';
+				CountDish = Input.value;
+				TotalPriceDish = PriceIngredients*CountDish;
+				Cart.push({
+					"Name": NameIngredients,
+					"Image": '../image/constructor/const_pancake.png',
+					"Price": PriceIngredients,
+					"TotalPriceDish": TotalPriceDish,
+					"CountDish": CountDish,
+					"id": NameIngredients
+				});
+				var serialObj = JSON.stringify(Cart);
+				localStorage.setItem('Cart', serialObj);
+				console.log(NameIngredients);
+				console.log(PriceIngredients);
+				swal({
+					text: "" + NameIngredients + " добавлена ;)",
+					button: false,
+					timer: 650,
+				});
+				CountAndPriceCart();
 			}
-			for (let i = 0; i < ActiveIngredientsMy.length; i++) {
-				NameIngredients += ActiveIngredientsMy[i].querySelector('.name-ingredients').innerText.concat(',');
-				Price = ActiveIngredientsMy[i].querySelector('.price-ingredients').innerText;
-				Price = Price.substr(0, Price.length - 5);
-				PriceIngredients += parseFloat(Price);
-
-			}
-			console.log(NameIngredients);
-			console.log(PriceIngredients);
 		}
 	});
 }

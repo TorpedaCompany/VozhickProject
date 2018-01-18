@@ -1,0 +1,26 @@
+.swal-text {
+	font-size: 22px;
+	color: #61534e;
+	text-align: center;
+}
+
+.swal-modal {
+	border-radius: 0px;
+}
+
+.swal-button {
+	border-radius: 0px;
+	background-color: var(--RedColor);
+}
+.swal-button[not:disabled]:hover {
+	background-color: #ff501c;
+}
+
+.swal-button:active {
+	background-color: #ff5a29;
+}
+
+.swal-button:focus {
+	outline: none;
+	box-shadow: none;
+}

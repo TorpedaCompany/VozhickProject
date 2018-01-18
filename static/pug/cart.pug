@@ -3,6 +3,7 @@ html(lang='ru')
 	head
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		link(rel='stylesheet', href='../css/bootstrap.css')
+		link(rel='stylesheet', href='../css/swal-style.css')
 		link(rel='stylesheet', href='../css/normalize.css')
 		link(rel='stylesheet', href='../css/hamburger-menu.css')
 		link(rel='stylesheet', href='../css/modal-authorization.css')
@@ -99,11 +100,12 @@ html(lang='ru')
 						#button-cart-clear.button-cart Очистить корзину
 						#button-cart-post.button-cart.button-cart-red Оформить
 			include footer.pug
+		script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
 		script(src='../js/hamburger-menu.js')
 		script(src='../js/open-modal.js')
 		script(src='../js/cart-generate-block.js')
 		script(src='../js/delete-dish-cart.js')
-		script(src='../js/plus-and-minus.js')
+		script(src='../js/plus-and-minus-cart.js')
 		script(src='../js/clear-cart.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js')
 		script(src='../js/ajax-cart.js')

@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     let dataErr = {}
+
     var PostButton = document.getElementById("button-cart-post");
-
-
     var Cart = [];
     PostButton.addEventListener("click", function() {
         let Arr = JSON.parse(localStorage.getItem('Cart'));
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 Cart.push({
                     "idDish": IdDish,
                     "Count": Count
-
                 });
             }
             //        var serialObj = JSON.stringify(Cart);
@@ -53,28 +51,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 .then(function(response) {
                     console.log(response);
                     Cart = [];
+                    swal({
+                        text: "Ваш заказ отправлен ;)",
+                        icon: "success",
+                    });
                 })
                 .catch(function(error) {
                     console.log(error);
                     console.log(error.response.data);
                     Cart = [];
+                    swal({
+                        text: "" + error + "",
+                        icon: "error",
+                    });
                 });
         }
-
     });
-    var socket = io.connect('http://localhost:5000');
-    socket.on('connect', function(data) {
-        console.log(data);
-        socket.emit('socketTest', '/ajax-cart');
-    });
-
-    // var SockButton = document.getElementById("button-cart-sock");
-    // SockButton.addEventListener("click", function() {
-    //     socket.emit('order', 'Что за хуйня?');
-    //     // alert("asdasd");
-    // })
-    // socket.on('lucky', function(data) {
-    //     console.log(data);
-    // });
-
 });

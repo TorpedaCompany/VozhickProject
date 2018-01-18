@@ -30,10 +30,12 @@
         span(style='color: black;') 6750606
     .col-xl-2.col-lg-2.col-md-3.col-sm-2.col-xs-2.shoppingcart-and-user-login
       .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12.container-user
-        #modal-authorization-open.col-xl-6.col-lg-6.col-md-6.col-sm-6.col-xs-6.input-user-button
+        #count-dish-circle.count-dish-circle
+        #modal-authorization-open.col-md-5.input-user-button
           span.fa.fa-user.fa-2x
           | Войти
         a(style='height: 100%;', href='../../cart')
-          .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-xs-6.shopping-cart-button
+          .shopping-cart-button
             span.fa.fa-shopping-cart.fa-2x
-            span 0 р
+            span#shopping-cart-price 0 руб.
+    script(src='../../js/count-and-price-cart.js')

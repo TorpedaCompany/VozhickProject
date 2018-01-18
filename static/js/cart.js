@@ -23,21 +23,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		let NameDish = NameDishBlock[0].innerText;
 		let NameRest = document.querySelector(".rest-caption").innerText;
 		let ImgDish = ImgDishBlock[0].src;
-		let PriceDish = PriceDishBlock[0].innerText;
-		let CountDish = CountDishBlock[0].value;
-		PriceDish = PriceDish.substr(0, PriceDish.length - 3)
+		let PriceDish = parseFloat(PriceDishBlock[0].innerText);
+		let CountDish = parseInt(CountDishBlock[0].value);
+		let TotalPriceDish = 0;
+		TotalPriceDish = PriceDish*CountDish;
+		TotalPriceDish = parseFloat(TotalPriceDish);
+		
+		
 		Cart.push({
 			"id": IdDish,
 			"Name": NameDish,
 			"NameRest": NameRest,
 			"Image": ImgDish,
 			"Price": PriceDish,
-			"CountDish": CountDish
+			"CountDish": CountDish,
+			"TotalPriceDish": TotalPriceDish
 		});
-
+		
 		var serialObj = JSON.stringify(Cart);
 		localStorage.setItem('Cart', serialObj);
-
+		CountAndPriceCart();
+		CountDishBlock[0].value = 1;
+		swal({
+			text: ""+NameDish+" добавлена ;)",
+			button: false,
+			timer: 650,
+		});
 	}
 
 	for (let i = 0; i < AddCardButton.length; i++) {
