@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         Spoiler[i].addEventListener("click", spoilerfunc, false);
     }
 
-    let socket = io.connect('http://127.0.0.1:5000');
+    let socket = io.connect();
     socket.on('msg', function(data) {
         console.log("in msg admin-panel");
         console.log(data);
