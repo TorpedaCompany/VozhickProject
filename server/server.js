@@ -53,11 +53,7 @@ app.use(express.static(path.join(__dirname, '../static')))
 app.set('views', __dirname + '/../static/pug')
 app.set('view engine', 'pug')
 
-app.use(require('./controllers')); //Инициализация контролллеров post/get/..
-// var routes = require('./router')(passport);
-// app.use('/', routes);
 
-app.use(require('./errorHandler'));
 
 // app.io = require('socket.io')();
 
@@ -73,23 +69,56 @@ app.use(require('./errorHandler'));
 //     });
 // });
 
+// const models = require('./database/models');
+// // const passport = require('passport');
+// var isAuthenticated = function(req, res, next) {
+//     if (req.isAuthenticated())
+//         return next();
+//     res.redirect('/');
+// }
+// app.get('/orders', isAuthenticated, (req, res) => {
+//     // console.log(req.app.io);
+//     var io = req.app.get('socketio');
+//     io.emit("msg", "/orders :Emit");
+//     // console.log(res.io.emit("socketToMe", "users"));
+//     models.orders.find({}, function(err, data) {
+//         if (err)
+//             return res.status(500).send({ error: err });
+//         else {
+//             return res.status(200).send(data);
+//         }
+//     });
+// })
+
 
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
+// app.set('socketio', io);
 app.io = io;
 io.on('connection', function(client) {
-    console.log('Client connected...');
+    console.log('Client connected... Слушаю события: [socketTest,msg,orders]');
 
-    client.on('order', function(data) {
-        console.log(data);
+    client.on('socketTest', function(data) {
+        console.log(":ON socketTest " + data);
         // client.emit('messages', 'Hello from server');
     });
-    // client.on('lucky', function(data) {
-    //     console.log(data);
-    // });
-
+    client.on('msg', function(data) {
+        console.log(":ON msg " + data);
+    });
+    client.on('orders', function(data) {
+        console.log(":ON orders1 " + data);
+    });
 });
 
+
+
+
+
+app.use(require('./controllers')); //Инициализация контролллеров post/get/..
+// var routes = require('./router')(passport);
+// app.use('/', routes);
+
+app.use(require('./errorHandler'));
 
 server.listen(config.port, (err) => {
     if (err) throw err;

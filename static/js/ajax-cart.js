@@ -64,16 +64,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     var socket = io.connect('http://localhost:5000');
     socket.on('connect', function(data) {
-
-    });
-
-    var SockButton = document.getElementById("button-cart-sock");
-    SockButton.addEventListener("click", function() {
-        socket.emit('order', 'Что за хуйня?');
-        // alert("asdasd");
-    })
-    socket.on('lucky', function(data) {
         console.log(data);
+        socket.emit('socketTest', '/ajax-cart');
     });
+
+    // var SockButton = document.getElementById("button-cart-sock");
+    // SockButton.addEventListener("click", function() {
+    //     socket.emit('order', 'Что за хуйня?');
+    //     // alert("asdasd");
+    // })
+    // socket.on('lucky', function(data) {
+    //     console.log(data);
+    // });
 
 });

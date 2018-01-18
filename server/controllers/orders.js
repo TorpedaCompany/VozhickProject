@@ -2,7 +2,7 @@ let app = new(require('express').Router)();
 // const mongoose = require('mongoose');
 const models = require('../database/models');
 const passport = require('passport');
-var io = require('socket.io');
+
 
 var isAuthenticated = function(req, res, next) {
     if (req.isAuthenticated())
@@ -11,11 +11,13 @@ var isAuthenticated = function(req, res, next) {
 }
 
 app.get('/orders', isAuthenticated, (req, res) => {
+    // console.log();
+    // var io = req.app.get('socketio');
+
     models.orders.find({}, function(err, data) {
         if (err)
             return res.status(500).send({ error: err });
         else {
-            req.app.io.emit("lucky", "/orders :22");
             return res.status(200).send(data);
         }
     });
@@ -32,6 +34,7 @@ app.get('/orders/:id', isAuthenticated, (req, res) => {
     });
 })
 app.post('/orders', (req, res) => {
+    // req.app.io.emit('msg', '/orders [app.post]');
     models.rests.rests.findOne({ "restName": req.body.restName }, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
@@ -71,7 +74,8 @@ app.post('/orders', (req, res) => {
                     if (ordDishes.length != arr.length)
                         return res.status(500).send({ message: "Некоторые блюда не были обработаны" });
                     else {
-                        return res.status(200).send(data);
+                        req.app.io.emit("msg", data);
+                        return res.status(200).send("OK");
                     }
                 }
             })
