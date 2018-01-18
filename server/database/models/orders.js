@@ -75,6 +75,7 @@ let ordersSchema = new mongoose.Schema({
     restName: String,
     dishes: Array,
     totalPrice: Number,
+    totalCount: Number,
     status: {
         type: String,
         default: "Новый"

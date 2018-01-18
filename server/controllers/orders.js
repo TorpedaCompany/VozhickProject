@@ -35,7 +35,7 @@ app.get('/orders/:id', isAuthenticated, (req, res) => {
 })
 app.post('/orders', (req, res) => {
     // req.app.io.emit('msg', '/orders [app.post]');
-    models.rests.rests.findOne({ "restName": req.body.restName }, function(err, data) {
+    models.rests.rests.findOne({ "restName": req.body.restName.trim() }, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
         if (!data)
@@ -48,6 +48,7 @@ app.post('/orders', (req, res) => {
                 data.restDishes.forEach(function(obj) {
                     if (obj._id == ord.idDish) {
                         obj.count = ord.count
+                        console.log(ord.count);
                         arr.push(obj);
                     }
                 });
@@ -56,16 +57,16 @@ app.post('/orders', (req, res) => {
             for (key in req.body) {
                 if (key != "dishes") {
                     order[key] = req.body[key];
-                    // console.log(key + "  " + req.body[key]);
                 }
             }
             order.dishes = arr;
-
+            order.totalCount = arr.length;
             let tmpPrice = 0;
             order.dishes.forEach(function(item) {
                 tmpPrice += (parseInt(item.price) * parseInt(item.count))
             })
             order.totalPrice = tmpPrice;
+            // order.totalPrice = 435;
 
             order.save(function(err, data) {
                 if (err)
@@ -74,6 +75,7 @@ app.post('/orders', (req, res) => {
                     if (ordDishes.length != arr.length)
                         return res.status(500).send({ message: "Некоторые блюда не были обработаны" });
                     else {
+                        console.log(data);
                         req.app.io.emit("msg", data);
                         return res.status(200).send("OK");
                     }

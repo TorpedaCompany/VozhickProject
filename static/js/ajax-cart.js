@@ -27,12 +27,31 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(RestName);
                 Cart.push({
                     "idDish": IdDish,
-                    "Count": Count
+                    "count": Count
                 });
             }
             //        var serialObj = JSON.stringify(Cart);
             //			console.log(serialObj);
-            axios.post('http://178.159.44.211:5000/orders', {
+            // axios.post('http://178.159.44.211:5000/orders', {
+
+            console.log({
+                "dishes": Cart,
+                "restName": RestName,
+                "firstName": Name,
+                "lastName": Surname,
+                "middleName": Patronymic,
+                "street": Street,
+                "house": House,
+                "entrance": Entrance,
+                "floor": Level,
+                "apartment": Apartment,
+                "phone": Phone,
+                "email": Email,
+                "comment": Comment,
+                "promocode": Promocode
+            });
+
+            axios.post('http://localhost:5000/orders', {
                     "dishes": Cart,
                     "restName": RestName,
                     "firstName": Name,
