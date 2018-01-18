@@ -36,12 +36,14 @@ let ordersSchema = new mongoose.Schema({
         maxlength: [14, "tooLongPhone"],
         minlength: [7, "tooShortPhone"],
         match: [/^\+375[0-9]{2}[0-9]{7}$/, "phoneIncorrect"],
-        unique: true
+        trim: true,
+        unique: false
     },
     email: {
         type: String,
         required: [true, "emailRequired"],
         match: [/@/, "emailIncorrect"],
+        trim: true
     },
     street: {
         type: String,
@@ -52,6 +54,7 @@ let ordersSchema = new mongoose.Schema({
         type: Number,
         max: [999, "tooBigNumberEntrance"],
         min: [0, "incorrectNumEntrance"],
+        trim: true
     },
     house: {
         type: String,
