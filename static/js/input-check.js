@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 var Phone = document.querySelector(".input-phone");
 var PhoneV = '';
-var Re = /^\+375[0-9]{2}[0-9]{7}$/;
+var Re = /^[a-zA-Zа-яёА-ЯЁ\s\-]+$/;
 Phone.oninput = function () {
 	PhoneV = Phone.value;
 	console.log(PhoneV);
