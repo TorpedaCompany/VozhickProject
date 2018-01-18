@@ -27,14 +27,16 @@ document.addEventListener("DOMContentLoaded", function() {
             var Number = /^\d+$/;
             var Re = /^\+375[0-9]{2}[0-9]{7}$/;
 
-            if (Re.test(Phone) && ReName.test(Name) && ReName.test(Surname) && ReName.test(Street) && Number.test(House) && Re.test(Entrance) && Re.test(Apartment) && ) { console.log('e') } else {
+            if (Re.test(Phone) && ReName.test(Name) && ReName.test(Surname) && ReName.test(Street) && Number.test(House) && Re.test(Entrance) && Re.test(Apartment)) {
+                console.log('e')
+            } else {
                 for (var i = 0; i < DeleteButton.length; i++) {
                     let IdDish = DeleteButton[i].getAttribute("data-id-dish");
                     let Count = DishCount[i].value;
                     console.log(RestName);
                     Cart.push({
                         "idDish": IdDish,
-                        "Count": Count
+                        "count": Count
                     });
                 }
                 //        var serialObj = JSON.stringify(Cart);
