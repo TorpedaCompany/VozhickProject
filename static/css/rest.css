@@ -220,6 +220,7 @@
     text-align: center;
     align-self: center;
     -webkit-user-select: none;
+	min-width: 150px;
 }
 
 .card-dish-action .inpPlus,

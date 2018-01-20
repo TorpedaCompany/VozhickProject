@@ -21,6 +21,7 @@ html(lang='ru')
 		script(src='../plugins/axios.min.js')
 	body
 		include header.pug
+		include hamburger-menu.pug
 		include modal.pug
 		.wrapper
 			div(style='flex: 1;')
@@ -35,65 +36,65 @@ html(lang='ru')
 							.container-input
 								span.fa.fa-user
 								.group
-									input.input-style.input-login-authorization.input-name(placeholder='Имя*', type='text', required='' value="ИГость")
+									input.input-style.input-login-authorization.input-name(placeholder='Имя*', type='text', required='' )
 									span.bar
 							.container-input
 								span.fa.fa-user
 								.group
-									input.input-style.input-login-authorization.input-surname(placeholder='Фамилия*', type='text', required='' value="ФГость")
+									input.input-style.input-login-authorization.input-surname(placeholder='Фамилия*', type='text', required='' )
 									span.bar
 							.container-input
 								span.fa.fa-user
 								.group
-									input.input-style.input-login-authorization.input-patronymic(placeholder='Отчество', type='text', required='' value="ОГость")
+									input.input-style.input-login-authorization.input-patronymic(placeholder='Отчество', type='text', required='' )
 									span.bar
 						.container-data-cart
 							.container-input
 								span.fa.fa-location-arrow
 								.group
-									input.input-style.input-login-authorization.input-street(placeholder='Улица*', type='text', required='' value="Улица")
+									input.input-style.input-login-authorization.input-street(placeholder='Улица*', type='text', required='' )
 									span.bar
 							.container-input
 								span.fa.fa-home
 								.group
-									input.input-style.input-login-authorization.input-house(placeholder='Дом*', type='text', required='' value="00")
+									input.input-style.input-login-authorization.input-house(placeholder='Дом*', type='text', required='' )
 									span.bar
 							.container-input
 								span.fa.fa-angle-right
 								.group
-									input.input-style.input-login-authorization.input-entrance(placeholder='Подъезд', type='text', required='' value="1")
+									input.input-style.input-login-authorization.input-entrance(placeholder='Подъезд', type='text', required='' )
 									span.bar
 						.container-data-cart
 							.container-input
 								span.fa.fa-angle-right
 								.group
-									input.input-style.input-login-authorization.input-level(placeholder='Этаж', type='text', required='' value="1")
+									input.input-style.input-login-authorization.input-level(placeholder='Этаж', type='text', required='' )
 									span.bar
 							.container-input
 								span.fa.fa-angle-right
 								.group
-									input.input-style.input-login-authorization.input-apartment(placeholder='Квартира*', type='text', required='' value="10")
+									input.input-style.input-login-authorization.input-apartment(placeholder='Квартира*', type='text', required='' )
 									span.bar
 							.container-input
 								span.fa.fa-mobile
 								.group
-									input.input-style.input-login-authorization.input-phone(placeholder='Телефон*', type='tel', required='' value="+375291111111")
+									input.input-style.input-login-authorization.input-phone(placeholder='Телефон*', type='tel', required='' )
 									span.bar
 						.container-data-cart
 							.container-input
 								span.fa.fa-envelope
 								.group
-									input.input-style.input-login-authorization.input-email(placeholder='Email*', type='text', required='' value="mail@gmail.com")
+									input.input-style.input-login-authorization.input-email(placeholder='Email*', type='text', required='' )
 									span.bar
 							.container-input
 								span.fa.fa-comments
 								.group
-									input.input-style.input-login-authorization.input-comment(placeholder='Коментарий', type='text', required='' value="Коментарий")
+									input.input-style.input-login-authorization.input-comment(placeholder='Коментарий', type='text', required='' )
 									span.bar
 							.container-input
 								span.fa.fa-ticket
 								.group
-									input.input-style.input-login-authorization.input-promocode(placeholder='Промокод', type='text', required='' value="32346")
+									input.input-style.input-login-authorization.input-promocode(placeholder='Промокод', type='text', required='' )
 									span.bar
 					.container-button-cart
 						#button-cart-sock.button-cart Socket
@@ -109,4 +110,4 @@ html(lang='ru')
 		script(src='../js/clear-cart.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js')
 		script(src='../js/ajax-cart.js')
-		script(src='../js/input-check.js')
+		script(src='../js/input-cart-localstorage-check.js')

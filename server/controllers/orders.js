@@ -34,7 +34,6 @@ app.get('/orders/:id', isAuthenticated, (req, res) => {
     });
 })
 app.post('/orders', (req, res) => {
-    // req.app.io.emit('msg', '/orders [app.post]');
     models.rests.rests.findOne({ "restName": req.body.restName.trim() }, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
@@ -59,6 +58,7 @@ app.post('/orders', (req, res) => {
                     order[key] = req.body[key];
                 }
             }
+
             order.dishes = arr;
             order.totalCount = arr.length;
             let tmpPrice = 0;
