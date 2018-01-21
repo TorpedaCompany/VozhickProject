@@ -162,6 +162,11 @@ document.addEventListener("DOMContentLoaded", function () {
 				ArrValueInput[i].classList.remove("input-error");
 				ArrValueInput[i].value = "";
 			}
+			Patronymic.value = "";
+			House.value = "";
+			Level.value = "";
+			Comment.value = "";
+			Promocode.value = "";
 			PostAjaxCart();
 		} else {
 			StringError = StringError.slice(0, -2);
