@@ -71,7 +71,7 @@ app.get('/rests/:name/constrPizza', (req, res) => {
             });
     });
 })
-app.post('/rests', isAuthenticated, (req, res) => {
+app.post('/rests', passport.isAuthenticated, (req, res) => {
     let rest = new models.rests();
     for (key in req.body) {
         rest[key] = req.body[key];
@@ -84,7 +84,7 @@ app.post('/rests', isAuthenticated, (req, res) => {
     });
 })
 
-app.post('/rests/:name/dishes', isAuthenticated, (req, res) => {
+app.post('/rests/:name/dishes', passport.isAuthenticated, (req, res) => {
     models.rests.findOne({ "restName": req.params.name }, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });

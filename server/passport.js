@@ -1,3 +1,4 @@
+const app = new(require('express').Router)();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./database/models').users;
@@ -40,12 +41,6 @@ module.exports = function(passport) {
         return bCrypt.compareSync(password, user.password);
     }
 
-    // var isAuthenticated = function(req, res, next) {
-    //     if (req.isAuthenticated())
-    //         return next();
-    //     res.redirect('/');
-    // }
-
     passport.serializeUser(function(user, done) {
         console.log('serializing user: ');
         console.log(user);
@@ -58,4 +53,9 @@ module.exports = function(passport) {
             done(err, user);
         });
     });
+    passport.isAuthenticated = function(req, res, next) {
+        if (req.isAuthenticated())
+            return next();
+        res.redirect('/');
+    }
 }
