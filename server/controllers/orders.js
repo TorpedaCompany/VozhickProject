@@ -4,16 +4,13 @@ const models = require('../database/models');
 const passport = require('passport');
 
 
-var isAuthenticated = function(req, res, next) {
-    if (req.isAuthenticated())
-        return next();
-    res.redirect('/');
-}
+// var isAuthenticated = function(req, res, next) {
+//     if (req.isAuthenticated())
+//         return next();
+//     res.redirect('/');
+// }
 
-app.get('/orders', isAuthenticated, (req, res) => {
-    // console.log();
-    // var io = req.app.get('socketio');
-
+app.get('/orders', passport.isAuthenticated, (req, res) => {
     models.orders.find({}, function(err, data) {
         if (err)
             return res.status(500).send({ error: err });
@@ -23,7 +20,7 @@ app.get('/orders', isAuthenticated, (req, res) => {
     });
 })
 
-app.get('/orders/:id', isAuthenticated, (req, res) => {
+app.get('/orders/:id', passport.isAuthenticated, (req, res) => {
     models.orders.findById(req.params.id, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
@@ -42,32 +39,33 @@ app.post('/orders', (req, res) => {
         else {
             let ordDishes = req.body.dishes;
             let arr = [];
-            // console.log(ordDishes);
+            //Сравнение блюд с клиента с сервером, выборка с сервера
             ordDishes.forEach(function(ord) {
                 data.restDishes.forEach(function(obj) {
                     if (obj._id == ord.idDish) {
                         obj.count = ord.count
-                        console.log(ord.count);
                         arr.push(obj);
                     }
                 });
             })
             let order = new models.orders();
+            //Перебор полей с клиента, формирование заказа
             for (key in req.body) {
                 if (key != "dishes") {
                     order[key] = req.body[key];
                 }
             }
-
-            order.dishes = arr;
-            order.totalCount = arr.length;
+            //Подсчет итоговой цены заказа
             let tmpPrice = 0;
             order.dishes.forEach(function(item) {
-                tmpPrice += (parseInt(item.price) * parseInt(item.count))
-            })
+                    tmpPrice += (parseInt(item.price) * parseInt(item.count))
+                })
+                //Добавить проверенные блюда в заказ
+            order.dishes = arr;
+            order.totalCount = arr.length;
             order.totalPrice = tmpPrice;
-            // order.totalPrice = 435;
 
+            //Сохранение блюда в БД
             order.save(function(err, data) {
                 if (err)
                     return res.status(500).send({ error: err.message });
@@ -75,7 +73,6 @@ app.post('/orders', (req, res) => {
                     if (ordDishes.length != arr.length)
                         return res.status(500).send({ message: "Некоторые блюда не были обработаны" });
                     else {
-                        console.log(data);
                         req.app.io.emit("msg", data);
                         return res.status(200).send("OK");
                     }
@@ -85,36 +82,54 @@ app.post('/orders', (req, res) => {
         }
     });
 })
-
-app.put('/orders/:id', isAuthenticated, (req, res) => {
-    models.orders.findById(req.params.id, function(err, data) {
-        if (err)
-            return res.status(500).send({ error: err.message });
-        if (!data)
-            return res.status(404).send({ error: "Not found" });
-        for (key in req.body) {
-            data[key] = req.body[key];
-        }
-        data.save(function(err, data) {
+app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
+        models.orders.findById(req.params.id, function(err, data) {
             if (err)
                 return res.status(500).send({ error: err.message });
-            else
-                return res.status(200).send(data._id);
+            if (!data)
+                return res.status(404).send({ error: "Not found" });
+            else {
+                data.status = "Принят";
+                data.save(function(err, data) {
+                    if (err)
+                        return res.status(500).send({ error: err.message });
+                    else
+                        return res.status(200).send(data._id);
+                });
+            }
+
+            // return res.status(200).send(data);
         });
     })
-})
-app.delete('/orders/:id', isAuthenticated, (req, res) => {
-    models.orders.findById(req.params.id, function(err, data) {
-        if (err)
-            return res.status(500).send({ error: err.message });
-        if (!data)
-            return res.status(404).send({ error: "Not found" });
-        data.remove(function(err, data) {
-            if (err)
-                return res.status(500).send({ error: err.message });
-            else
-                return res.status(200).send(data._id);
-        });
-    });
-})
+    // app.put('/orders/:id', passport.isAuthenticated, (req, res) => {
+    //     models.orders.findById(req.params.id, function(err, data) {
+    //         if (err)
+    //             return res.status(500).send({ error: err.message });
+    //         if (!data)
+    //             return res.status(404).send({ error: "Not found" });
+    //         for (key in req.body) {
+    //             data[key] = req.body[key];
+    //         }
+    //         data.save(function(err, data) {
+    //             if (err)
+    //                 return res.status(500).send({ error: err.message });
+    //             else
+    //                 return res.status(200).send(data._id);
+    //         });
+    //     })
+    // })
+    // app.delete('/orders/:id', passport.isAuthenticated, (req, res) => {
+    //     models.orders.findById(req.params.id, function(err, data) {
+    //         if (err)
+    //             return res.status(500).send({ error: err.message });
+    //         if (!data)
+    //             return res.status(404).send({ error: "Not found" });
+    //         data.remove(function(err, data) {
+    //             if (err)
+    //                 return res.status(500).send({ error: err.message });
+    //             else
+    //                 return res.status(200).send(data._id);
+    //         });
+    //     });
+    // })
 module.exports = app;

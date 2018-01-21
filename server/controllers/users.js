@@ -3,13 +3,13 @@ const passport = require('passport');
 const models = require('../database/models');
 // res.header("Access-Control-Allow-Origin", "*");
 
-var isAuthenticated = function(req, res, next) {
-    if (req.isAuthenticated())
-        return next();
-    res.redirect('/');
-}
+// var isAuthenticated = function(req, res, next) {
+//     if (req.isAuthenticated())
+//         return next();
+//     res.redirect('/');
+// }
 
-// app.get('/users', isAuthenticated, (req, res) => {
+// app.get('/users', passport.isAuthenticated, (req, res) => {
 //     models.users.find({}, function(err, data) {
 //         if (err)
 //             return res.status(500).send({ error: err });
@@ -18,7 +18,7 @@ var isAuthenticated = function(req, res, next) {
 //     });
 // })
 
-app.get('/users/:id', isAuthenticated, (req, res) => {
+app.get('/users/:id', passport.isAuthenticated, (req, res) => {
     models.users.findById(req.params.id, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
@@ -29,7 +29,7 @@ app.get('/users/:id', isAuthenticated, (req, res) => {
     });
 })
 
-// app.post('/users', isAuthenticated, (req, res) => {
+// app.post('/users', passport.isAuthenticated, (req, res) => {
 //     let user = new models.users();
 //     for (key in req.body) {
 //         user[key] = req.body[key];
@@ -42,7 +42,7 @@ app.get('/users/:id', isAuthenticated, (req, res) => {
 //     })
 // })
 
-// app.put('/users/:id', isAuthenticated, (req, res) => {
+// app.put('/users/:id', passport.isAuthenticated, (req, res) => {
 //     models.users.findById(req.params.id, function(err, data) {
 //         if (err)
 //             return res.status(500).send({ error: err.message });
@@ -59,7 +59,7 @@ app.get('/users/:id', isAuthenticated, (req, res) => {
 //         });
 //     })
 // })
-// app.delete('/users/:id', isAuthenticated, (req, res) => {
+// app.delete('/users/:id', passport.isAuthenticated, (req, res) => {
 //     models.users.findById(req.params.id, function(err, data) {
 //         if (err)
 //             return res.status(500).send({ error: err.message });

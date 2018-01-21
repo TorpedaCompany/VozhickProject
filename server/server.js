@@ -10,15 +10,15 @@ const Logger = require('./logger');
 const logger = new Logger(); //  Загрузить логгер!
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const multer = require('multer');
+const multer = require('multer'); //Для загрузки файлов на сервер
 
 const app = express();
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// });
 
 var flash = require('connect-flash');
 app.use(flash());
@@ -28,13 +28,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 app.use(session({ //Сессии
-    secret: 'your secret here',
+    secret: 'mkvGLHUp',
     resave: true,
     saveUninitialized: true,
     key: 'jsessionid',
     cookie: {
-        maxAge: null, //1800000), 
-        expires: null //1800000) 
+        maxAge: 60000, //1800000), 
+        expires: 60000 //1800000) 
     },
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
@@ -53,46 +53,8 @@ app.use(express.static(path.join(__dirname, '../static')))
 app.set('views', __dirname + '/../static/pug')
 app.set('view engine', 'pug')
 
-
-
-// app.io = require('socket.io')();
-
-// app.io.on('connection', function(socket) {
-//     console.log("000000000000000000000000000000000000000000");
-//     console.log("Connect");
-//     socket.on('SocketEm', function(data) {
-//         console.log("000000000000000000000000000000000000000000");
-//         console.log(data);
-//     });
-//     socket.on('disconnect', function() {
-//         console.log('user disconnected');
-//     });
-// });
-
-// const models = require('./database/models');
-// // const passport = require('passport');
-// var isAuthenticated = function(req, res, next) {
-//     if (req.isAuthenticated())
-//         return next();
-//     res.redirect('/');
-// }
-// app.get('/orders', isAuthenticated, (req, res) => {
-//     // console.log(req.app.io);
-//     var io = req.app.get('socketio');
-//     io.emit("msg", "/orders :Emit");
-//     // console.log(res.io.emit("socketToMe", "users"));
-//     models.orders.find({}, function(err, data) {
-//         if (err)
-//             return res.status(500).send({ error: err });
-//         else {
-//             return res.status(200).send(data);
-//         }
-//     });
-// })
-
-
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+let server = require('http').createServer(app);
+let io = require('socket.io')(server);
 // app.set('socketio', io);
 app.io = io;
 io.on('connection', function(client) {
@@ -110,15 +72,9 @@ io.on('connection', function(client) {
     });
 });
 
-
-
-
-
 app.use(require('./controllers')); //Инициализация контролллеров post/get/..
-// var routes = require('./router')(passport);
-// app.use('/', routes);
 
-app.use(require('./errorHandler'));
+app.use(require('./errorHandler')); //Обработка ошибок
 
 server.listen(config.port, (err) => {
     if (err) throw err;

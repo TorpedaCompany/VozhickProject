@@ -1,6 +1,6 @@
 {
     "port": 5000,
-    "mongoUri": "mongodb://clientDB:5xQxKjlV@127.0.0.1:27017/delivery",
     "mongoUri2": "mongodb://clientDB:5xQxKjlV@178.159.44.211:27017/delivery",
+    "mongoUri": "mongodb://clientDB:5xQxKjlV@127.0.0.1:27017/delivery",
     "mongoUri3": "mongodb://djoni:01020304@ds245687.mlab.com:45687/mlabdelivery"
 }

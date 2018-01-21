@@ -26,7 +26,6 @@ app.get('/cart', function(req, res) {
             res.status(200).send(html);
         else {
             logger.error(err);
-            res.redirect("/error");
         }
     });
 });
@@ -36,7 +35,6 @@ app.get('/delivery', function(req, res) {
             res.status(200).send(html);
         else {
             logger.error(err);
-            res.redirect("/error");
         }
     });
 });
@@ -46,7 +44,6 @@ app.get('/news', function(req, res) {
             res.status(200).send(html);
         else {
             logger.error(err);
-            res.redirect("/error");
         }
     });
 });
@@ -56,7 +53,15 @@ app.get('/help', function(req, res) {
             res.status(200).send(html);
         else {
             logger.error(err);
-            res.redirect("/error");
+        }
+    });
+});
+app.get('/info', function(req, res) {
+    res.render('info', function(err, html) {
+        if (!err)
+            res.status(200).send(html);
+        else {
+            logger.error(err);
         }
     });
 });
@@ -73,31 +78,5 @@ app.use('*', function(req, res) {
 
     });
 });
-// app.get('/constructor', function(req, res) {
-//     res.render('constructor', function(err, html) {
-//         res.send(html);
-//         console.log(err);
-//     });
-// });
-
-
-// app.get('/adm', function(req, res) {
-//     res.render('authAdmin', function(err, html) {
-//         res.send(html);
-//         console.log(err);
-//     });
-// });
-// app.get('/adm', function(req, res) {
-//     res.render('authAdmin', function(err, html) {
-//         res.send(html);
-//         console.log(err);
-//     });
-// });
-// app.get('/adm', function(req, res) {
-//     res.render('authAdmin', function(err, html) {
-//         res.send(html);
-//         console.log(err);
-//     });
-// });
 
 module.exports = app;

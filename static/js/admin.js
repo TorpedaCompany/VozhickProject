@@ -73,8 +73,28 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-    let ord = document.getElementById("newOr");
-    ord.addEventListener("click", notif, false)
+    // var email = require("./path/to/emailjs/email");
+    // let em = document.getElementById("sendEm");
+    // em.addEventListener("click", function() {
+    //     var server = email.server.connect({
+    //         user: "vozadm@yandex.by",
+    //         password: "01020304",
+    //         host: "smtp.yandex.ru",
+    //         ssl: true
+    //     });
+
+    //     // send the message and get a callback with an error or details of the message that was sent
+    //     server.send({
+    //         text: "i hope this works",
+    //         from: "vozadm@yandex.by",
+    //         to: "djcrosss1@gmail.com",
+    //         cc: "else <else@your-email.com>",
+    //         subject: "testing emailjs"
+    //     }, function(err, message) { console.log(err || message); });
+    // }, false);
+
+
+
 
 
 });
