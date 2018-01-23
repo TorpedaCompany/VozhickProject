@@ -14,11 +14,11 @@ const multer = require('multer'); //Для загрузки файлов на с
 
 const app = express();
 
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-// });
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 var flash = require('connect-flash');
 app.use(flash());
@@ -33,8 +33,8 @@ app.use(session({ //Сессии
     saveUninitialized: true,
     key: 'jsessionid',
     cookie: {
-        maxAge: 60000, //1800000), 
-        expires: 60000 //1800000) 
+        maxAge: null, //1800000), 
+        expires: null //1800000) 
     },
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
