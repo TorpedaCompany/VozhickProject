@@ -14,15 +14,15 @@ html
           .admin-side-panel-logo-container
             img(src='../image/Logo/LogoTest.png')
             span Стол заказов
-          #newOr.admin-side-panel-item-button
+          #newOr.active-admin-side-panel-item-button.admin-side-panel-item-button(data-tab='1')
             span.admin-panel-span-icon.fa.fa-shopping-cart
             span.admin-panel-span-text Новые заказы
-          .admin-side-panel-item-button
+          .admin-side-panel-item-button(data-tab='2')
             span.admin-panel-span-icon.fa.fa-shopping-cart
             span.admin-panel-span-text Выполненные заказы
             input(id="sendEm" type="button", value="EMAIL")
         .admin-main-panel
-          .container-order-panel
+          .container-active-order-panel.active-panel
             .title-order-panel Новые заказы
             .clearfix.container-items-order-panel
               //- #{dataAdmin}
@@ -62,7 +62,8 @@ html
                       span.redBoldText= item.totalPrice + " руб."
               for item, index in dataAdmin
                 +order(item)    
-          .container-restaurants-panel
+          .container-done-order-panel
+            .title-order-panel Выполненные заказы
           .container-users-panel
           .container-money-panel
     script(src='../js/spoiler.js')
@@ -73,4 +74,5 @@ html
     audio(src='../js/Elara.mp3')
     //- audio(src='../js/Rhea.ogg')
     script(src='../js/admin.js')
+    script(src='../js/active-tab-admin.js')
 
