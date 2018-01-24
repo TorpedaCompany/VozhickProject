@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+<<<<<<< HEAD
 	PostButton.addEventListener("click", function () {
 		var ArrValueInput = [Name, Surname, Street, Entrance, Apartment, Phone, Email];
 		var Status = true;
@@ -179,6 +180,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	});
 
+=======
+>>>>>>> 1f04e2d704f93d6651b33f6aff4fb1aa5058816f
     PostButton.addEventListener("click", function() {
         var ArrValueInput = [Name, Surname, Street, Entrance, Apartment, Phone, Email];
         var Status = true;
@@ -270,6 +273,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 ArrValueInput[i].classList.remove("input-error");
                 ArrValueInput[i].value = "";
             }
+            Patronymic.value = "";
+            House.value = "";
+            Level.value = "";
+            Comment.value = "";
+            Promocode.value = "";
         } else {
             StringError = StringError.slice(0, -2);
             StringError = 'Поля заполнены не верно (' + StringError + ')';
