@@ -20,7 +20,6 @@ html
           .admin-side-panel-item-button(data-tab='2')
             span.admin-panel-span-icon.fa.fa-shopping-cart
             span.admin-panel-span-text Выполненные заказы
-            input(id="sendEm" type="button", value="EMAIL")
         .admin-main-panel
           .container-active-order-panel.active-panel
             .title-order-panel Новые заказы
@@ -29,7 +28,7 @@ html
               mixin order(item)
                 .main-items-order-panel
                   .container-date-and-time
-                    .items-order.date-and-time-items-order= "Получено: " + item.dateTimeIn
+                    .items-order.date-and-time-items-order= "Получено: " + item.dateTimeIn + "  -  " + item.status
                   .container-row
                     .container-customer
                       .items-order.name-items-order= "Имя: " + item.firstName
@@ -60,6 +59,7 @@ html
                       span.redBoldText= item.totalCount
                     div= "Общая стоимость: "
                       span.redBoldText= item.totalPrice + " руб."
+                  button(class="acceptOrd" type='submit' data-id-order= item._id) Подвердить заказ
               for item, index in dataAdmin
                 +order(item)    
           .container-done-order-panel
@@ -68,7 +68,7 @@ html
           .container-money-panel
     script(src='../js/spoiler.js')
     //script(src='../js/plugins/socket.js')
-
+    script(src='../plugins/axios.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js')
     script(src='../js/push.min.js')
     audio(src='../js/Elara.mp3')

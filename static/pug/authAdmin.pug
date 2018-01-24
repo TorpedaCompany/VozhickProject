@@ -32,7 +32,6 @@ html
       function auth() {
       let ph = document.getElementById("name").value;
       let pwd = document.getElementById("password").value;
-      console.log(ph + " - " + pwd);
       axios.post('/adm', {
       phone: ph,
       password: pwd
