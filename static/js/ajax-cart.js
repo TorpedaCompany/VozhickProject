@@ -72,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
         }
     }
-
-<<<<<<< HEAD
 	PostButton.addEventListener("click", function () {
 		var ArrValueInput = [Name, Surname, Street, Entrance, Apartment, Phone, Email];
 		var Status = true;
@@ -180,8 +178,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	});
 
-=======
->>>>>>> 1f04e2d704f93d6651b33f6aff4fb1aa5058816f
     PostButton.addEventListener("click", function() {
         var ArrValueInput = [Name, Surname, Street, Entrance, Apartment, Phone, Email];
         var Status = true;
