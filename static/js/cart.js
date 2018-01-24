@@ -23,6 +23,7 @@ function CheckVariables() {
 			for (let a = 0; a < length; a++) {
 				Cart.push(Arr[a]);
 			}
+			
 			for (let i = 0; i < AddCardButton.length; i++) {
 				AddCardButton[i].addEventListener("click", cart, false);
 			}
@@ -32,6 +33,8 @@ function CheckVariables() {
 	}
 
 	function cart() {
+		var Arr = JSON.parse(localStorage.getItem('Cart'));
+		if
 		let Parent = this.parentElement.parentElement.parentElement.parentElement;
 		let NameDishBlock = Parent.querySelectorAll(".card-dish-description > span");
 		let ImgDishBlock = Parent.querySelectorAll(".card-dish-img > img");
@@ -43,8 +46,10 @@ function CheckVariables() {
 		let PriceDish = parseFloat(PriceDishBlock[0].innerText);
 		let CountDish = parseInt(CountDishBlock[0].value);
 		let TotalPriceDish = 0;
+		let CountDishArr = 0;
 		TotalPriceDish = PriceDish * CountDish;
 		TotalPriceDish = parseFloat(TotalPriceDish);
+
 		Cart.push({
 			"id": IdDish,
 			"Name": NameDish,
@@ -58,10 +63,27 @@ function CheckVariables() {
 		localStorage.setItem('Cart', serialObj);
 		CountAndPriceCart();
 		CountDishBlock[0].value = 1;
+
+		if (Arr != null) {
+			var length = Arr.length;
+			for (let i = 0; i < length; i++) {
+				if (Arr[i].id === IdDish) {
+					CountDishArr = Arr[i].CountDish;
+					CountDishArr += CountDish;
+					Arr[i].CountDish = CountDishArr;
+					TotalPriceDish = Arr[i].Price * CountDishArr;
+					Arr[i].TotalPriceDish = parseFloat(TotalPriceDish);
+					serialObj = JSON.stringify(Arr);
+					localStorage.setItem('Cart', serialObj);
+					console.log(JSON.parse(localStorage.getItem('Cart')));
+				}
+			}
+		}
 		swal({
 			text: "" + NameDish + " добавлена ;)",
 			button: false,
 			timer: 650,
 		});
+
 	}
 }

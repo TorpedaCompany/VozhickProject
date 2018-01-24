@@ -33,8 +33,8 @@ app.use(session({ //Сессии
     saveUninitialized: true,
     key: 'jsessionid',
     cookie: {
-        maxAge: 60000, //1800000), 
-        expires: 60000 //1800000) 
+        maxAge: null, //1800000), 
+        expires: null //1800000) 
     },
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));

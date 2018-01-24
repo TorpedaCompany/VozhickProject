@@ -69,7 +69,7 @@ function Update() {
 				NameIngredients = NameIngredients.slice(0, -1);
 				NameIngredients = 'Блинчик (' + NameIngredients + ')';
 				CountDish = Input.value;
-				TotalPriceDish = PriceIngredients*CountDish;
+				TotalPriceDish = PriceIngredients * CountDish;
 				Cart.push({
 					"Name": NameIngredients,
 					"Image": '../image/constructor/const_pancake.png',
@@ -110,7 +110,8 @@ function Update() {
 				NameIngredients = NameIngredients.slice(0, -1);
 				NameIngredients = 'Блинчик (' + NameIngredients + ')';
 				CountDish = Input.value;
-				TotalPriceDish = PriceIngredients*CountDish;
+				TotalPriceDish = PriceIngredients * CountDish;
+
 				Cart.push({
 					"Name": NameIngredients,
 					"Image": '../image/constructor/const_pancake.png',
@@ -123,6 +124,22 @@ function Update() {
 				localStorage.setItem('Cart', serialObj);
 				console.log(NameIngredients);
 				console.log(PriceIngredients);
+//				if (Arr != null) {
+//					var lengthB = Arr.length;
+//					let CountDishArr = 0;
+//					for (let i = 0; i < lengthB; i++) {
+//						if (Arr[i].id === NameIngredients) {
+//							CountDishArr = parseInt(Arr[i].CountDish);
+//							CountDishArr += parseInt(CountDish);
+//							Arr[i].CountDish = CountDishArr;
+//							TotalPriceDish = Arr[i].Price * CountDishArr;
+//							Arr[i].TotalPriceDish = parseFloat(TotalPriceDish);
+//							serialObj = JSON.stringify(Arr);
+//							localStorage.setItem('Cart', serialObj);
+//							console.log(JSON.parse(localStorage.getItem('Cart')));
+//						}
+//					}
+//				}
 				swal({
 					text: "" + NameIngredients + " добавлена ;)",
 					button: false,
