@@ -2,13 +2,7 @@ let app = new(require('express').Router)();
 // const mongoose = require('mongoose');
 const models = require('../database/models');
 const passport = require('passport');
-
-
-// var isAuthenticated = function(req, res, next) {
-//     if (req.isAuthenticated())
-//         return next();
-//     res.redirect('/');
-// }
+const sendMail = require('./sendMail');
 
 app.get('/orders', passport.isAuthenticated, (req, res) => {
     models.orders.find({}, function(err, data) {
@@ -37,6 +31,9 @@ app.post('/orders', (req, res) => {
         if (!data)
             return res.status(404).send({ error: "Not found" });
         else {
+            if (req.body.dishes.length <= 0)
+                return res.status(500).send({ message: "Блюда не были обработаны" });
+
             let ordDishes = req.body.dishes;
             let arr = [];
             //Сравнение блюд с клиента с сервером, выборка с сервера
@@ -55,16 +52,17 @@ app.post('/orders', (req, res) => {
                     order[key] = req.body[key];
                 }
             }
+            //Добавить проверенные блюда в заказ
+            order.dishes = arr;
+
             //Подсчет итоговой цены заказа
             let tmpPrice = 0;
             order.dishes.forEach(function(item) {
-                    tmpPrice += (parseInt(item.price) * parseInt(item.count))
-                })
-                //Добавить проверенные блюда в заказ
-            order.dishes = arr;
+                tmpPrice += (parseInt(item.price) * parseInt(item.count));
+            })
+
             order.totalCount = arr.length;
             order.totalPrice = tmpPrice;
-
             //Сохранение блюда в БД
             order.save(function(err, data) {
                 if (err)
@@ -74,6 +72,7 @@ app.post('/orders', (req, res) => {
                         return res.status(500).send({ message: "Некоторые блюда не были обработаны" });
                     else {
                         req.app.io.emit("msg", data);
+                        // sendMail(data.dishes, data.totalPrice);
                         return res.status(200).send("OK");
                     }
                 }
@@ -82,6 +81,7 @@ app.post('/orders', (req, res) => {
         }
     });
 })
+
 app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
         models.orders.findById(req.params.id, function(err, data) {
             if (err)

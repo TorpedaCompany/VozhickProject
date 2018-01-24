@@ -36,13 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     "count": Count
                 });
             }
-<<<<<<< Updated upstream
-            axios.post('http://178.159.44.211:5000/orders', {
-                    // axios.post('http://127.0.0.1:5000/orders', {
-=======
             // axios.post('https://voztest.ga/orders', {
             axios.post('http://127.0.0.1:5000/orders', {
->>>>>>> Stashed changes
                     "dishes": Cart,
                     "restName": RestName,
                     "firstName": Name.value,
