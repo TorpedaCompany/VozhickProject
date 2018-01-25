@@ -76,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var acceptOrd = document.getElementsByClassName("acceptOrd");
     for (let i = 0; i < acceptOrd.length; i++) {
         acceptOrd[i].addEventListener("click", function() {
-            axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
+            // axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
+            axios.post('https://voztest.ga/orders/' + this.dataset.idOrder + '/accept', {})
                 .then(function(response) {
                     console.log(response);
                 })
