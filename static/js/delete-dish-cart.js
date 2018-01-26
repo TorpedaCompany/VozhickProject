@@ -18,7 +18,8 @@ function DeleteDish() {
 		ShowCart();
 		Update();
 		CountAndPriceCart();
-		UpdatePlusAndMinus()
+		UpdatePlusAndMinus();
+		TotalCart();
 	} else {
 		localStorage.removeItem("Cart");
 		var serialObj = JSON.stringify(Cart);
@@ -26,6 +27,6 @@ function DeleteDish() {
 		ShowCart();
 		Update();
 		CountAndPriceCart();
-		UpdatePlusAndMinus()
+		UpdatePlusAndMinus();
 	}
 }

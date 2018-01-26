@@ -18,13 +18,20 @@ function ShowCart() {
 	//        BlockContainer.innerHTML = div;
 	//    } else {
 }
-	function TotalCart() {
-		let Bly = JSON.parse(localStorage.getItem('Cart'));
-		let BlockPriceContainer = document.getElementById("container-all-price-eat-cart");
-		let Price = 0;
+
+function TotalCart() {
+	let Bly = JSON.parse(localStorage.getItem('Cart'));
+	var StrPrice = '';
+	let BlockPriceContainer = document.getElementById("container-all-price-eat-cart");
+	let Price = 0;
+	if (Bly == null) {
+		StrPrice = "Общая стоимость: 0 руб."
+		BlockPriceContainer.innerText = StrPrice;
+	} else {
 		for (var i = 0; i < Bly.length; i++) {
 			Price += parseFloat(Bly[i].TotalPriceDish);
 		}
-		var StrPrice = "Общая стоимость: " + Price.toFixed(2) + " руб."
+		StrPrice = "Общая стоимость: " + Price.toFixed(2) + " руб."
 		BlockPriceContainer.innerText = StrPrice;
 	}
+}

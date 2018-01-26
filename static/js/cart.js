@@ -34,7 +34,7 @@ function CheckVariables() {
 
 	function cart() {
 		var Arr = JSON.parse(localStorage.getItem('Cart'));
-		if
+
 		let Parent = this.parentElement.parentElement.parentElement.parentElement;
 		let NameDishBlock = Parent.querySelectorAll(".card-dish-description > span");
 		let ImgDishBlock = Parent.querySelectorAll(".card-dish-img > img");

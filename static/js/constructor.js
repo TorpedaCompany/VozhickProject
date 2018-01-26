@@ -124,22 +124,7 @@ function Update() {
 				localStorage.setItem('Cart', serialObj);
 				console.log(NameIngredients);
 				console.log(PriceIngredients);
-//				if (Arr != null) {
-//					var lengthB = Arr.length;
-//					let CountDishArr = 0;
-//					for (let i = 0; i < lengthB; i++) {
-//						if (Arr[i].id === NameIngredients) {
-//							CountDishArr = parseInt(Arr[i].CountDish);
-//							CountDishArr += parseInt(CountDish);
-//							Arr[i].CountDish = CountDishArr;
-//							TotalPriceDish = Arr[i].Price * CountDishArr;
-//							Arr[i].TotalPriceDish = parseFloat(TotalPriceDish);
-//							serialObj = JSON.stringify(Arr);
-//							localStorage.setItem('Cart', serialObj);
-//							console.log(JSON.parse(localStorage.getItem('Cart')));
-//						}
-//					}
-//				}
+
 				swal({
 					text: "" + NameIngredients + " добавлена ;)",
 					button: false,
@@ -147,6 +132,23 @@ function Update() {
 				});
 				CountAndPriceCart();
 			}
+			if (Arr != null) {
+				var lengthB = Arr.length;
+				let CountDishArr = 0;
+				for (let i = 0; i < lengthB; i++) {
+					if (Arr[i].id === NameIngredients) {
+						CountDishArr = parseInt(Arr[i].CountDish);
+						CountDishArr += parseInt(CountDish);
+						Arr[i].CountDish = CountDishArr;
+						TotalPriceDish = Arr[i].Price * CountDishArr;
+						Arr[i].TotalPriceDish = parseFloat(TotalPriceDish);
+						serialObj = JSON.stringify(Arr);
+						localStorage.setItem('Cart', serialObj);
+						console.log(JSON.parse(localStorage.getItem('Cart')));
+					}
+				}
+			}
 		}
+
 	});
 }
