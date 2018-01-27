@@ -13,7 +13,7 @@ app.get('/adm', function(req, res) {
 
 app.post('/adm', passport.authenticate('login', {
     successRedirect: '/adm/dashboard',
-    failureRedirect: '/',
+    failureRedirect: '/adm',
     // failureFlash: true
 }));
 

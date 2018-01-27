@@ -379,17 +379,30 @@ html(lang='ru')
                 for item, index in dataRest.restDishes
                   +dish(item)
                 if dataRest.restConstructor
-                  .rest-card-dish-constructor.rest-card-dish
-                    .closeBtn
-                        i.fa.fa-times(aria-hidden='true')
-                    .card-dish-img
-                        img.b-lazy(data-src='../image/sushi_1/Ясай@2x.jpg', src='../image/rest/rest_placeholder.svg')
-                    .card-dish-content
-                        a(href='../rests/Фальварак/constrPancake')
-                            .card-dish-button-constructor
-                                .dish-button-constructor
-                                    span.fa.fa-cube
-                                    | Создать свой
+                  if(dataRest.constructorPancake)
+                    .rest-card-dish-constructor.rest-card-dish
+                      .closeBtn
+                          i.fa.fa-times(aria-hidden='true')
+                      .card-dish-img
+                          img.b-lazy(data-src='../image/constructor/const_pancake.png', src='../image/rest/rest_placeholder.svg')
+                      .card-dish-content
+                          a(href='../rests/Фальварак/constrPancake')
+                              .card-dish-button-constructor
+                                  .dish-button-constructor
+                                      span.fa.fa-cube
+                                      | Создать свой
+                  if(dataRest.constructorPizza)
+                    .rest-card-dish-constructor.rest-card-dish
+                      .closeBtn
+                          i.fa.fa-times(aria-hidden='true')
+                      .card-dish-img
+                          img.b-lazy(data-src='../image/constructor/constr_pizza.png', src='../image/rest/rest_placeholder.svg')
+                      .card-dish-content
+                          a(href='../rests/Фальварак/constrPizza')
+                              .card-dish-button-constructor
+                                  .dish-button-constructor
+                                      span.fa.fa-cube
+                                      | Создать свой
             else
               .rest-catalog-dish_error Произошла ошибка блюд или блюда отсутствуют :(
     include footer.pug

@@ -43,9 +43,8 @@ app.get('/rests/:name/constrPancake', (req, res) => {
         if (!data)
             return res.status(404).send({ error: "Not found" });
         else
-            return res.render('constructor', { dataConstr: data.constructorPancake }, function(err, html) {
+            return res.render('constructor', { dataConstr: data.constructorPancake, titles: ["Конструктор блинчиков", "Ваш блинчик"] }, function(err, html) {
                 if (!err) {
-                    console.log(data.constructorPancake);
                     res.status(200).send(html);
                 } else {
                     res.status(500).end();
@@ -61,7 +60,7 @@ app.get('/rests/:name/constrPizza', (req, res) => {
         if (!data)
             return res.status(404).send({ error: "Not found" });
         else
-            return res.render('constructor', { dataConstr: data.constructorPizza }, function(err, html) {
+            return res.render('constructor', { dataConstr: data.constructorPizza, titles: ["Конструктор пиццы", "Ваша пицца"] }, function(err, html) {
                 if (!err)
                     res.status(200).send(html);
                 else {

@@ -1,3 +1,5 @@
+const Logger = require('../logger');
+const logger = new Logger();
 let app = new(require('express').Router)();
 // const mongoose = require('mongoose');
 const models = require('../database/models');
@@ -35,9 +37,26 @@ app.post('/orders', (req, res) => {
                 return res.status(500).send({ message: "Блюда не были обработаны" });
 
             let ordDishes = req.body.dishes;
-            let arr = [];
+            let arr = [],
+                arrIngred = [];
+            console.log(ordDishes);
+            console.log("CONST");
+            console.log(data.constructorPancake);
             //Сравнение блюд с клиента с сервером, выборка с сервера
             ordDishes.forEach(function(ord) {
+                if (ord.idDish.split(" ")[0] == "Блинчик" || ord.idDish.split(" ")[0] == "Пицца") {
+                    let priceIng = 0;
+                    arrIngred = ord.idDish.substring(9).slice(0, -1).split(",");
+                    for (let i = 0; i < arrIngred.length; i++)
+                        data.constructorPancake.forEach(function(item) {
+                            if (item.name == arrIngred[i]) {
+                                priceIng += item.price;
+                            }
+                        })
+                    ord.name = ord.idDish;
+                    ord.price = priceIng;
+                    arr.push(ord);
+                }
                 data.restDishes.forEach(function(obj) {
                     if (obj._id == ord.idDish) {
                         obj.count = ord.count
@@ -45,6 +64,8 @@ app.post('/orders', (req, res) => {
                     }
                 });
             })
+            console.log("-----------------asdasd");
+            console.log(arr);
             let order = new models.orders();
             //Перебор полей с клиента, формирование заказа
             for (key in req.body) {
@@ -58,11 +79,11 @@ app.post('/orders', (req, res) => {
             //Подсчет итоговой цены заказа
             let tmpPrice = 0;
             order.dishes.forEach(function(item) {
-                tmpPrice += (parseInt(item.price) * parseInt(item.count));
+                tmpPrice += (parseFloat(item.price) * parseFloat(item.count));
             })
 
             order.totalCount = arr.length;
-            order.totalPrice = tmpPrice;
+            order.totalPrice = tmpPrice.toFixed(2);
             //Сохранение блюда в БД
             order.save(function(err, data) {
                 if (err)
@@ -72,7 +93,13 @@ app.post('/orders', (req, res) => {
                         return res.status(500).send({ message: "Некоторые блюда не были обработаны" });
                     else {
                         req.app.io.emit("msg", data);
-                        // sendMail(data.dishes, data.totalPrice);
+                        sendMail(data.email, data.dishes, data.totalPrice, function(callback) {
+                            if (!callback.status) {
+                                logger.error(callback.message);
+                            } else
+                                logger.info(callback.message);
+
+                        });
                         return res.status(200).send("OK");
                     }
                 }
