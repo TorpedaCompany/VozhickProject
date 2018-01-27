@@ -42,8 +42,11 @@ app.get('/rests/:name/constrPancake', (req, res) => {
             return res.status(500).send({ error: err.message });
         if (!data)
             return res.status(404).send({ error: "Not found" });
-        else
-            return res.render('constructor', { dataConstr: data.constructorPancake, titles: ["Конструктор блинчиков", "Ваш блинчик"] }, function(err, html) {
+        else {
+            let dataConstr = data.constructorPancake;
+            dataConstr.titles = ["Конструктор блинчиков", "Ваш блинчик"];
+            dataConstr.restName = data.restName;
+            return res.render('constructor', { "dataConstr": dataConstr }, function(err, html) {
                 if (!err) {
                     res.status(200).send(html);
                 } else {
@@ -51,6 +54,8 @@ app.get('/rests/:name/constrPancake', (req, res) => {
                     logger.error(err);
                 }
             });
+        }
+
     });
 })
 app.get('/rests/:name/constrPizza', (req, res) => {
@@ -59,8 +64,11 @@ app.get('/rests/:name/constrPizza', (req, res) => {
             return res.status(500).send({ error: err.message });
         if (!data)
             return res.status(404).send({ error: "Not found" });
-        else
-            return res.render('constructor', { dataConstr: data.constructorPizza, titles: ["Конструктор пиццы", "Ваша пицца"] }, function(err, html) {
+        else {
+            let dataConstr = data.constructorPizza;
+            dataConstr.titles = ["Конструктор пиццы", "Ваша пицца"];
+            dataConstr.restName = data.restName;
+            return res.render('constructor', { "dataConstr": dataConstr }, function(err, html) {
                 if (!err)
                     res.status(200).send(html);
                 else {
@@ -68,6 +76,7 @@ app.get('/rests/:name/constrPizza', (req, res) => {
                     logger.error(err);
                 }
             });
+        }
     });
 })
 app.post('/rests', passport.isAuthenticated, (req, res) => {
