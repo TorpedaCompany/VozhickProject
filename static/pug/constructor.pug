@@ -25,7 +25,7 @@ body
 		include modal.pug
 		.main-container-constructor
 			.container-title-page
-				span Конструктор блинчиков
+				span= titles[0]
 			.container-constructor
 				.container-constructor-section
 					.container-ingredients
@@ -42,7 +42,7 @@ body
 								+ingr(item)
 					.container-my-food
 						.container-title
-							h4 Ваш блинчик
+							h4= titles[1]
 						#my-ingredients.container-ingredients-items
 							mixin ingr(item)
 								.ingredients-items-minus.ingredients-items.ingredients-items-hidden(data-id-ingredients= item._id)
