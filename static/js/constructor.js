@@ -72,7 +72,7 @@ function Update() {
                 TotalPriceDish = PriceIngredients * CountDish;
                 Cart.push({
                     "Name": NameIngredients,
-                    "Image": '../image/constructor/const_pancake.png',
+                    "Image": '../image/constructor/constr_pancake.png',
                     "Price": PriceIngredients,
                     "TotalPriceDish": TotalPriceDish,
                     "CountDish": CountDish,
@@ -114,7 +114,7 @@ function Update() {
 
                 Cart.push({
                     "Name": NameIngredients,
-                    "Image": '../image/constructor/const_pancake.png',
+                    "Image": '../image/constructor/constr_pancake.png',
                     "Price": PriceIngredients,
                     "TotalPriceDish": TotalPriceDish,
                     "CountDish": CountDish,

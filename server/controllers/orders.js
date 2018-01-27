@@ -42,7 +42,6 @@ app.post('/orders', (req, res) => {
             console.log(ordDishes);
             console.log("CONST");
             console.log(data.constructorPancake);
-
             //Сравнение блюд с клиента с сервером, выборка с сервера
             ordDishes.forEach(function(ord) {
                 if (ord.idDish.split(" ")[0] == "Блинчик" || ord.idDish.split(" ")[0] == "Пицца") {
@@ -56,6 +55,7 @@ app.post('/orders', (req, res) => {
                         })
                     ord.name = ord.idDish;
                     ord.price = priceIng;
+                    arr.push(ord);
                 }
                 data.restDishes.forEach(function(obj) {
                     if (obj._id == ord.idDish) {
