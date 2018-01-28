@@ -24,7 +24,7 @@ body
 		include hamburger-menu.pug
 		include modal.pug
 		.main-container-constructor
-			.container-title-page
+			.container-title-page(data-name-rest-constructor=dataConstr.restName)
 				span= dataConstr.titles[0] + ' - ' + dataConstr.restName
 			.container-constructor
 				.container-constructor-section
