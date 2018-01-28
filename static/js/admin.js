@@ -1,14 +1,113 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    var Spoiler = document.getElementsByClassName("spoiler");
 
-    function spoilerfunc() {
+    let spoiler = document.getElementsByClassName("spoiler");
+    //Функция для открытия спойлера
+    function spoilerFunc() {
         let Child = this.querySelector('.content-spoiler');
         Child.classList.toggle('open-spoiler');
     }
-    for (let i = 0; i < Spoiler.length; i++) {
-        Spoiler[i].addEventListener("click", spoilerfunc, false);
+    for (let i = 0; i < spoiler.length; i++) {
+        spoiler[i].addEventListener("click", spoilerFunc, false);
     }
+
+    let btn_order = document.getElementsByClassName("btn-order");
+    let accepted_ord_container = document.querySelector(".container-done-order-panel .container-items-order-panel");
+    //Функция подтверждения заказа
+    function btn_orderFunc() {
+
+        let node = this.parentNode;
+
+        if (this.dataset.typeOrder == "accept") {
+            swal({
+                    title: "Вы хотите подтвердить данный заказ?",
+                    text: "",
+                    icon: "warning",
+                    dangerMode: true,
+                    buttons: {
+                        not: {
+                            text: "Отмена",
+                            value: false
+                        },
+                        ok: {
+                            text: "Подтвердить",
+                            className: "swal-btn-accept",
+                            value: true
+                        }
+                    }
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Заказ был подтвержден!", {
+                            icon: "success",
+                        });
+                        axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
+                            // axios.post('https://voztest.ga/orders/' + this.dataset.idOrder + '/accept', {})
+                            .then(function(response) {
+                                console.log(response);
+                            })
+                            .catch(function(error) {
+                                console.log(error);
+                                console.log(error.response.data);
+                            });
+                        //Переместить блок заказа в другой раздел
+                        node.removeChild(this);
+                        accepted_ord_container.insertBefore(node, accepted_ord_container.firstChild);
+                    } else {
+                        swal("Заказ не подтвержден");
+                    }
+                });
+
+        }
+        if (this.dataset.typeOrder == "delete") {
+            swal({
+                    title: "Вы хотите удалить данный заказ?",
+                    text: "",
+                    icon: "warning",
+                    dangerMode: true,
+                    buttons: {
+                        not: {
+                            text: "Отмена",
+                            value: false
+                        },
+                        ok: {
+                            text: "Удалить",
+                            className: "swal-btn-delete",
+                            value: true
+                        }
+                    },
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Заказ был удален!", {
+                            icon: "success",
+                        });
+                        axios.delete('http://localhost:5000/orders/' + this.dataset.idOrder, {})
+                            // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
+                            .then(function(response) {
+                                console.log(response);
+                            })
+                            .catch(function(error) {
+                                console.log(error);
+                                console.log(error.response.data);
+                            });
+                        //НЕ РАБОТАЕТ В IE11
+                        node.remove();
+                    } else {
+                        swal("Удаление отменено");
+                    }
+                });
+
+        }
+    }
+    for (let i = 0; i < btn_order.length; i++) {
+        btn_order[i].addEventListener("click", btn_orderFunc, false);
+    }
+
+
+
+
+
 
     let socket = io.connect();
     socket.on('msg', function(data) {
@@ -32,22 +131,55 @@ document.addEventListener("DOMContentLoaded", function() {
 
         cardOrder = document.createElement('div');
         cardOrder.className = "main-items-order-panel";
-        cardOrder.innerHTML = '<div class="container-date-and-time"><div class="items-order date-and-time-items-order">Получено: ' + data.dateTimeIn + ' </div></div><div class="container-row"><div class="container-customer"><div class="items-order name-items-order">Имя: ' + data.firstName + ' </div><div class="items-order surname-items-order">Фамилия: ' + data.lastName + ' </div><div class="items-order patronymic-items-order">Отчество: ' + data.middleName + ' </div><div class="items-order phone-items-order">Телефон: ' + data.phone + ' </div></div><div class="container-address"><div class="items-order street-items-order">Улица: ' + data.street + '</div><div class="items-order home-items-order">Дом: ' + data.house + '</div><div class="items-order porch-items-order">Подъезд: ' + data.entrance + '</div><div class="items-order porch-items-order">Этаж: ' + data.floor + '</div><div class="items-order apartment-items-order">Квартира: ' + data.apartment + '</div></div></div><div class="name-restaurant">Заведение: ' + data.restName + '</div><div id="" class="spoiler-items-order-panel spoiler"><div class="title-spoiler"><div class="icon-basket fa fa-shopping-basket"></div><div class="name-spoiler">Заказанные блюда</div><div class="icon-spoiler fa fa-chevron-down"></div></div><div class="content-spoiler close-spoiler">' + listDish + '</div></div><div class="container-count-and-price"><div>Кол-во: <span class="redBoldText"> ' + data.totalCount + '</span></div><div>Общая стоимость: <span class="redBoldText"> ' + data.totalPrice + ' руб.</span></div></div>'
+        cardOrder.innerHTML =
+            '<div class="container-date-and-time">' +
+            '<div class="items-order date-and-time-items-order">Получено: ' + data.dateTimeIn + ' — ' + data.status + ' </div>' +
+            '</div>' +
+            '<div class="container-row">' +
+            '<div class="container-customer">' +
+            '<div class="items-order name-items-order">Имя: ' + data.firstName + ' </div>' +
+            '<div class="items-order surname-items-order">Фамилия: ' + data.lastName + ' </div>' +
+            '<div class="items-order patronymic-items-order">Отчество: ' + data.middleName + ' </div>' +
+            '<div class="items-order phone-items-order">Телефон: ' + data.phone + ' </div>' +
+            '</div>' +
+            '<div class="container-address">' +
+            '<div class="items-order street-items-order">Улица: ' + data.street + '</div>' +
+            '<div class="items-order home-items-order">Дом: ' + data.house + '</div>' +
+            '<div class="items-order porch-items-order">Подъезд: ' + data.entrance + '</div>' +
+            '<div class="items-order porch-items-order">Этаж: ' + data.floor + '</div>' +
+            '<div class="items-order apartment-items-order">Квартира: ' + data.apartment + '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="name-restaurant">Заведение: ' + data.restName + '</div>' +
+            '<div id="" class="spoiler-items-order-panel spoiler">' +
+            '<div class="title-spoiler">' +
+            '<div class="icon-basket fa fa-shopping-basket"></div>' +
+            '<div class="name-spoiler">Заказанные блюда</div>' +
+            '<div class="icon-spoiler fa fa-chevron-down"></div>' +
+            '</div>' +
+            '<div class="content-spoiler close-spoiler">' + listDish + '</div>' +
+            '</div>' +
+            '<div class="container-count-and-price">' +
+            '<div>Кол-во: <span class="redBoldText"> ' + data.totalCount + '</span></div>' +
+            '<div>Общая стоимость: <span class="redBoldText"> ' + data.totalPrice + ' руб.</span></div>' +
+            '</div>' +
+            '<button type="submit" class="btn-order btn-order_delete" data-id-order="' + data._id + '" data-type-order="delete">Удалить заказ</button>' +
+            '<button type="submit" class="btn-order btn-order_accept" data-id-order="' + data._id + '" data-type-order="accept">Подвердить заказ</button>' +
+            '</div>';
 
-
+        //Вставить новый блок        
         container.insertBefore(cardOrder, container.firstChild);
-        // container.appendChild(cardOrder);
-
+        //Событие на новый элемент
         let spoiler = document.getElementsByClassName("spoiler");
-        spoiler[0].addEventListener("click", spoilerfunc, false);
+        spoiler[0].addEventListener("click", spoilerFunc, false);
+        let btn_order = document.getElementsByClassName("btn-order");
+        btn_order[0].addEventListener("click", btn_orderFunc, false);
+        btn_order[1].addEventListener("click", btn_orderFunc, false);
+
         notif();
     }
 
     function notif() {
-
-        // var audio = new Audio(); // Создаём новый элемент Audio
-        // audio.src = '../Elara.mp3';
-        // audio.play(); // Автоматически запускаем
         function play() {
             var playPromise = document.querySelector('audio').play();
             // In browsers that don’t yet support this functionality,
@@ -73,19 +205,5 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    var acceptOrd = document.getElementsByClassName("acceptOrd");
-    for (let i = 0; i < acceptOrd.length; i++) {
-        acceptOrd[i].addEventListener("click", function() {
-            axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
-                // axios.post('https://voztest.ga/orders/' + this.dataset.idOrder + '/accept', {})
-                .then(function(response) {
-                    console.log(response);
-                })
-                .catch(function(error) {
-                    console.log(error);
-                    console.log(error.response.data);
-                });
-        }, false);
-    }
 
 });

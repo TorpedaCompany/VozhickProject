@@ -397,6 +397,71 @@
     font-size: 15px;
 }
 
+.name-restaurant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.active-admin-side-panel-item-button {
+    border-color: var(--RedColor);
+}
+
+.btn-order {
+    margin: 8px;
+    padding: 5px;
+    position: relative;
+    vertical-align: top;
+    font-size: 14px;
+    color: white;
+    letter-spacing: .3px;
+    text-align: center;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-order:active {
+    top: 1px;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn-order:focus {
+    outline: none;
+}
+
+.btn-order_accept {
+    background: #27ae60;
+    border-bottom: 2px solid #219d55;
+    -webkit-box-shadow: inset 0 -2px #219d55;
+    box-shadow: inset 0 -2px #219d55;
+}
+
+.btn-order_delete {
+    background: #e74c3c;
+    border-bottom: 2px solid #db4334;
+    -webkit-box-shadow: inset 0 -2px #db4334;
+    box-shadow: inset 0 -2px #db4334;
+}
+
+.swal-footer {
+    background-color: rgb(245, 248, 250);
+    margin-top: 32px;
+    border-top: 1px solid #E9EEF1;
+    overflow: hidden;
+}
+
+.swal-btn-delete {
+    background: #e74c3c;
+}
+
+.swal-btn-accept {
+    background: #2ecc71;
+}
+
 @media (max-width: 768px) {
     .main-container-admin {
         flex-direction: column-reverse;
@@ -420,15 +485,4 @@
     .admin-side-panel-item-button>.admin-panel-span-icon {
         font-size: 30px;
     }
-}
-
-.name-restaurant {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.active-admin-side-panel-item-button {
-    border-color: var(--RedColor);
 }

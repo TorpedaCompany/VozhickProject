@@ -145,18 +145,18 @@ app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
     //         });
     //     })
     // })
-    // app.delete('/orders/:id', passport.isAuthenticated, (req, res) => {
-    //     models.orders.findById(req.params.id, function(err, data) {
-    //         if (err)
-    //             return res.status(500).send({ error: err.message });
-    //         if (!data)
-    //             return res.status(404).send({ error: "Not found" });
-    //         data.remove(function(err, data) {
-    //             if (err)
-    //                 return res.status(500).send({ error: err.message });
-    //             else
-    //                 return res.status(200).send(data._id);
-    //         });
-    //     });
-    // })
+app.delete('/orders/:id', passport.isAuthenticated, (req, res) => {
+    models.orders.findById(req.params.id, function(err, data) {
+        if (err)
+            return res.status(500).send({ error: err.message });
+        if (!data)
+            return res.status(404).send({ error: "Not found" });
+        data.remove(function(err, data) {
+            if (err)
+                return res.status(500).send({ error: err.message });
+            else
+                return res.status(200).send(data._id);
+        });
+    });
+})
 module.exports = app;

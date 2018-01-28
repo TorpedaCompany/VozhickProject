@@ -25,51 +25,93 @@ html
             .title-order-panel Новые заказы
             .clearfix.container-items-order-panel
               //- #{dataAdmin}
-              mixin order(item)
-                .main-items-order-panel
-                  .container-date-and-time
-                    .items-order.date-and-time-items-order= "Получено: " + item.dateTimeIn + "  -  " + item.status
-                  .container-row
-                    .container-customer
-                      .items-order.name-items-order= "Имя: " + item.firstName
-                      .items-order.surname-items-order= "Фамилия: " + item.lastName
-                      .items-order.patronymic-items-order= "Отчество: " + item.lastName
-                      .items-order.phone-items-order= "Телефон: " + item.phone
-                    .container-address
-                      .items-order.street-items-order= "Улица: " + item.street
-                      .items-order.home-items-order= "Дом: " + item.house
-                      .items-order.porch-items-order= "Подъезд: " + item.entrance
-                      .items-order.porch-items-order= "Этаж: " + item.floor
-                      .items-order.apartment-items-order= "Квартира: " + item.apartment
-                  .name-restaurant= "Заведение: " + item.restName
-                  .spoiler-items-order-panel.spoiler(id='')
-                    .title-spoiler
-                      .icon-basket.fa.fa-shopping-basket
-                      .name-spoiler Заказанные блюда
-                      .icon-spoiler.fa.fa-chevron-down
-                    .content-spoiler.close-spoiler
-                      mixin dishes(dish)
-                        .container-item-spoiler
-                          .name-dish= dish.name
-                          .count-dish= dish.count
-                      for dish in item.dishes
-                        +dishes(dish)   
-                  .container-count-and-price
-                    div= "Кол-во: "
-                      span.redBoldText= item.totalCount
-                    div= "Общая стоимость: "
-                      span.redBoldText= item.totalPrice + " руб."
-                  button(class="acceptOrd" type='submit' data-id-order= item._id) Подвердить заказ
-              for item, index in dataAdmin
-                +order(item)    
+              mixin orderNew(item)
+                if(item.status == "Новый")
+                  .main-items-order-panel
+                    .container-date-and-time
+                      .items-order.date-and-time-items-order= "Получено: " + item.dateTimeIn + " — " + item.status
+                    .container-row
+                      .container-customer
+                        .items-order.name-items-order= "Имя: " + item.firstName
+                        .items-order.surname-items-order= "Фамилия: " + item.lastName
+                        .items-order.patronymic-items-order= "Отчество: " + item.lastName
+                        .items-order.phone-items-order= "Телефон: " + item.phone
+                      .container-address
+                        .items-order.street-items-order= "Улица: " + item.street
+                        .items-order.home-items-order= "Дом: " + item.house
+                        .items-order.porch-items-order= "Подъезд: " + item.entrance
+                        .items-order.porch-items-order= "Этаж: " + item.floor
+                        .items-order.apartment-items-order= "Квартира: " + item.apartment
+                    .name-restaurant= "Заведение: " + item.restName
+                    .spoiler-items-order-panel.spoiler(id='')
+                      .title-spoiler
+                        .icon-basket.fa.fa-shopping-basket
+                        .name-spoiler Заказанные блюда
+                        .icon-spoiler.fa.fa-chevron-down
+                      .content-spoiler.close-spoiler
+                        mixin dishes(dish)
+                          .container-item-spoiler
+                            .name-dish= dish.name
+                            .count-dish= dish.count
+                        for dish in item.dishes
+                          +dishes(dish)   
+                    .container-count-and-price
+                      div= "Кол-во: "
+                        span.redBoldText= item.totalCount
+                      div= "Общая стоимость: "
+                        span.redBoldText= item.totalPrice + " руб."
+                    button(class="btn-order btn-order_delete" type='submit' data-id-order= item._id data-type-order="delete") Удалить заказ   
+                    button(class="btn-order btn-order_accept" type='submit' data-id-order= item._id data-type-order="accept") Подвердить заказ   
+              for item in dataAdmin
+                +orderNew(item)    
           .container-done-order-panel
             .title-order-panel Выполненные заказы
+            .clearfix.container-items-order-panel
+              mixin orderAccpeted(item)
+                if(item.status == "Принят")
+                  .main-items-order-panel
+                    .container-date-and-time
+                      .items-order.date-and-time-items-order= "Получено: " + item.dateTimeIn + " — " + item.status
+                    .container-row
+                      .container-customer
+                        .items-order.name-items-order= "Имя: " + item.firstName
+                        .items-order.surname-items-order= "Фамилия: " + item.lastName
+                        .items-order.patronymic-items-order= "Отчество: " + item.lastName
+                        .items-order.phone-items-order= "Телефон: " + item.phone
+                      .container-address
+                        .items-order.street-items-order= "Улица: " + item.street
+                        .items-order.home-items-order= "Дом: " + item.house
+                        .items-order.porch-items-order= "Подъезд: " + item.entrance
+                        .items-order.porch-items-order= "Этаж: " + item.floor
+                        .items-order.apartment-items-order= "Квартира: " + item.apartment
+                    .name-restaurant= "Заведение: " + item.restName
+                    .spoiler-items-order-panel.spoiler(id='')
+                      .title-spoiler
+                        .icon-basket.fa.fa-shopping-basket
+                        .name-spoiler Заказанные блюда
+                        .icon-spoiler.fa.fa-chevron-down
+                      .content-spoiler.close-spoiler
+                        mixin dishes(dish)
+                          .container-item-spoiler
+                            .name-dish= dish.name
+                            .count-dish= dish.count
+                        for dish in item.dishes
+                          +dishes(dish)   
+                    .container-count-and-price
+                      div= "Кол-во: "
+                        span.redBoldText= item.totalCount
+                      div= "Общая стоимость: "
+                        span.redBoldText= item.totalPrice + " руб."
+                    button(class="btn-order btn-order_delete" type='submit' data-id-order= item._id data-type-order="delete") Удалить заказ
+              for item in dataAdmin
+                +orderAccpeted(item)    
           .container-users-panel
           .container-money-panel
     script(src='../js/spoiler.js')
     //script(src='../js/plugins/socket.js')
     script(src='../plugins/axios.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js')
+    script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     script(src='../js/push.min.js')
     audio(src='../js/Elara.mp3')
     //- audio(src='../js/Rhea.ogg')
