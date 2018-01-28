@@ -89,13 +89,6 @@ app.post('/orders', (req, res) => {
                         return res.status(500).send({ error: "Некоторые блюда не были обработаны" });
                     else {
                         req.app.io.emit("msg", data);
-                        sendMail(data.email, data.dishes, data.totalPrice, function(callback) {
-                            if (!callback.status) {
-                                logger.error(callback.message);
-                            } else
-                                logger.info(callback.message);
-
-                        });
                         return res.status(200).send("OK");
                     }
                 }
@@ -116,8 +109,16 @@ app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
                 data.save(function(err, data) {
                     if (err)
                         return res.status(500).send({ error: err.message });
-                    else
+                    else {
+                        sendMail(data.email, data.dishes, data.totalPrice, function(callback) {
+                            if (!callback.status) {
+                                logger.error(callback.message);
+                            } else
+                                logger.info(callback.message);
+
+                        });
                         return res.status(200).send(data._id);
+                    }
                 });
             }
 
