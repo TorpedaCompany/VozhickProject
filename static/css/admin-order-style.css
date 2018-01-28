@@ -386,10 +386,6 @@
     width: 100%;
 }
 
-.active-admin-side-panel-item-button {
-    border-color: var(--RedColor);
-}
-
 .btn-order {
     margin: 8px;
     padding: 5px;
@@ -451,7 +447,7 @@
     .admin-side-panel {
         flex-direction: row;
         border: none;
-        height: auto;
+        height: 120px;
         width: 100%;
     }
     .admin-side-panel-logo-container {
@@ -459,12 +455,20 @@
     }
     .admin-side-panel-item-button {
         flex-direction: column;
-        height: auto;
+		justify-content: center;
+		align-items: center;
+        height: 100%;
         border-bottom: 5px solid;
         border-color: #fff;
         border-left: none;
+		text-align: center;
+/*		padding-bottom: 5px;*/
     }
     .admin-side-panel-item-button>.admin-panel-span-icon {
-        font-size: 30px;
+        font-size: 24px;
     }
+}
+
+.active-admin-side-panel-item-button {
+    border-color: var(--RedColor);
 }
