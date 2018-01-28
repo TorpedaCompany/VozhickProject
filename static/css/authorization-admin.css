@@ -1,9 +1,8 @@
-:root{
+:root {
     --Font: 'Roboto', sans-serif;
     --RedColor: #ff501c;
     --GreyColor: #BDBDBD;
     --BlackColor: black;
-    
 }
 
 .main-container-authorization {
@@ -13,6 +12,8 @@
     height: 100%;
     width: 100%;
     position: fixed;
+    background: url("/image/admin/background5-min.jpg") no-repeat 50% 50%;
+    background-size: cover;
 }
 
 .container-authorization {
@@ -20,6 +21,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background: rgba(255, 255, 255, 0.80);
     height: 350px;
     width: 300px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
@@ -34,16 +36,18 @@
     padding: 20px;
     font-family: var(--Font);
     font-weight: 600;
-/*    margin-right: 20px;*/
+    /*    margin-right: 20px;*/
 }
+
 .container-logo-authorization>img {
     width: 90px;
 }
+
 .main-container-input-authorization {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     width: 100%;
     flex: 1;
 }
@@ -51,14 +55,16 @@
 .container-input-authorization {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     width: 100%;
     padding: 5px;
 }
+
 .container-input-authorization>span {
     padding: 10px;
     font-size: 20px;
 }
+
 .main-container-button-authorization {
     display: flex;
     justify-content: center;

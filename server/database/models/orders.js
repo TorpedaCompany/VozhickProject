@@ -25,7 +25,6 @@ let ordersSchema = new mongoose.Schema({
     },
     middleName: {
         type: String,
-        required: [true, "middleNameRequired"],
         maxlength: [32, "tooLongMiddleName"],
         minlength: [3, "tooShortMiddleName"],
         trim: true

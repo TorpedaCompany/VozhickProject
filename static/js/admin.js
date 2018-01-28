@@ -53,8 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         //Переместить блок заказа в другой раздел
                         node.removeChild(this);
                         accepted_ord_container.insertBefore(node, accepted_ord_container.firstChild);
-                    } else {
-                        swal("Заказ не подтвержден");
                     }
                 });
 
@@ -93,8 +91,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             });
                         //НЕ РАБОТАЕТ В IE11
                         node.remove();
-                    } else {
-                        swal("Удаление отменено");
                     }
                 });
 
