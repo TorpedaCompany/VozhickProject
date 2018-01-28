@@ -27,21 +27,19 @@ app.get('/orders/:id', passport.isAuthenticated, (req, res) => {
     });
 })
 app.post('/orders', (req, res) => {
-    models.rests.rests.findOne({ "restName": req.body.restName.trim() }, function(err, data) {
+    let restName = (req.body.restName != undefined) ? req.body.restName.trim() : "none";
+    models.rests.rests.findOne({ "restName": restName }, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
         if (!data)
-            return res.status(404).send({ error: "Not found" });
+            return res.status(404).send({ error: "Ресторан не найден" });
         else {
             if (req.body.dishes.length <= 0)
-                return res.status(500).send({ message: "Блюда не были обработаны" });
+                return res.status(500).send({ error: "Блюда не были обработаны" });
 
             let ordDishes = req.body.dishes;
             let arr = [],
                 arrIngred = [];
-            console.log(ordDishes);
-            console.log("CONST");
-            console.log(data.constructorPancake);
             //Сравнение блюд с клиента с сервером, выборка с сервера
             ordDishes.forEach(function(ord) {
                 if (ord.idDish.split(" ")[0] == "Блинчик" || ord.idDish.split(" ")[0] == "Пицца") {
@@ -64,8 +62,6 @@ app.post('/orders', (req, res) => {
                     }
                 });
             })
-            console.log("-----------------asdasd");
-            console.log(arr);
             let order = new models.orders();
             //Перебор полей с клиента, формирование заказа
             for (key in req.body) {
@@ -90,7 +86,7 @@ app.post('/orders', (req, res) => {
                     return res.status(500).send({ error: err.message });
                 else {
                     if (ordDishes.length != arr.length)
-                        return res.status(500).send({ message: "Некоторые блюда не были обработаны" });
+                        return res.status(500).send({ error: "Некоторые блюда не были обработаны" });
                     else {
                         req.app.io.emit("msg", data);
                         sendMail(data.email, data.dishes, data.totalPrice, function(callback) {
