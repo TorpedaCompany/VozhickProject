@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         }
         if (this.dataset.typeOrder == "delete") {
+            ex();
             swal({
                     title: "Вы хотите удалить данный заказ?",
                     text: "",
@@ -200,6 +201,16 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-
-
+    let ex = document.getElementById("ex");
+    ex.addEventListener('click', function() {
+        axios.get('http://localhost:5000/signout', {})
+            // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
+            .then(function(response) {
+                window.location = "http://localhost:5000/adm"
+                console.log(response);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }, false);
 });

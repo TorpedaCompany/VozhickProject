@@ -16,7 +16,14 @@ app.post('/adm', passport.authenticate('login', {
     failureRedirect: '/adm',
     // failureFlash: true
 }));
-
+app.get('/signout', function(req, res) {
+    // logger.warn("SIGNOUT2");
+    req.logout();
+    res.redirect('/adm');
+    // res.location('back');
+    // res.writeHead(302, { Location: "../adm" })
+    // res.end();
+});
 app.get('/adm/dashboard', passport.isAuthenticated, function(req, res) {
     models.orders.find({}, function(err, data) {
         if (err)

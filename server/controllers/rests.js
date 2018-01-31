@@ -59,27 +59,28 @@ app.get('/rests/:name/constrPancake', (req, res) => {
     });
 })
 app.get('/rests/:name/constrPizza', (req, res) => {
-    models.rests.findOne({ "restName": req.params.name }, function(err, data) {
-        if (err)
-            return res.status(500).send({ error: err.message });
-        if (!data)
-            return res.status(404).send({ error: "Not found" });
-        else {
-            let dataConstr = data.constructorPizza;
-            dataConstr.titles = ["Конструктор пиццы", "Ваша пицца"];
-            dataConstr.restName = data.restName;
-            return res.render('constructor', { "dataConstr": dataConstr }, function(err, html) {
-                if (!err)
-                    res.status(200).send(html);
-                else {
-                    res.status(500).end();
-                    logger.error(err);
-                }
-            });
-        }
-    });
-})
-app.post('/rests', passport.isAuthenticated, (req, res) => {
+        models.rests.findOne({ "restName": req.params.name }, function(err, data) {
+            if (err)
+                return res.status(500).send({ error: err.message });
+            if (!data)
+                return res.status(404).send({ error: "Not found" });
+            else {
+                let dataConstr = data.constructorPizza;
+                dataConstr.titles = ["Конструктор пиццы", "Ваша пицца"];
+                dataConstr.restName = data.restName;
+                return res.render('constructor', { "dataConstr": dataConstr }, function(err, html) {
+                    if (!err)
+                        res.status(200).send(html);
+                    else {
+                        res.status(500).end();
+                        logger.error(err);
+                    }
+                });
+            }
+        });
+    })
+    // app.post('/rests', passport.isAuthenticated, (req, res) => {
+app.post('/rests', (req, res) => {
     let rest = new models.rests();
     for (key in req.body) {
         rest[key] = req.body[key];
