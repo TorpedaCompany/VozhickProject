@@ -1,7 +1,7 @@
 {
     "port": 5000,
-    "mongoUri": "mongodb://clientSite:xQXIcNrA@127.0.0.1:27017/delivery",
-    "mongoUri2": "mongodb://clientSite:xQXIcNrA@178.159.44.211:27017/delivery",
+    "mongoUri2": "mongodb://clientSite:xQXIcNrA@127.0.0.1:27017/delivery",
+    "mongoUri": "mongodb://clientSite:xQXIcNrA@178.159.44.211:27017/delivery",
     "mongoUri3": "mongodb://clientDB:5xQxKjlV@127.0.0.1:27017/delivery",
     "mongoUri4": "mongodb://djoni:01020304@ds245687.mlab.com:45687/mlabdelivery"
 }

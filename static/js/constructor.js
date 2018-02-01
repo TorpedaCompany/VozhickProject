@@ -8,11 +8,12 @@ function Update() {
     var ButtonClearCunstructor = document.getElementById("button-remove-pancake");
     var ButtonPostCunstructor = document.getElementById("button-cart-post");
     var ContainerTitlePage = document.querySelector(".container-title-page");
-	var ElemIdAdtLine = document.querySelector('.ingredients-items').getAttribute('data-id-ingredients');
-	var AdditionalLine = "";
-	var SrcImage = "";
-	console.log(ElemIdAdtLine);
-	console.log(AdditionalLine);
+    var ElemIdAdtLine = document.querySelector('.ingredients-items').getAttribute('data-id-ingredients');
+    var AdditionalLine = "";
+    var SrcImage = "";
+    console.log(ElemIdAdtLine);
+    console.log(AdditionalLine);
+
     function PlusIngridient() {
         let Elem = this;
         let ElemId = Elem.getAttribute('data-id-ingredients');
@@ -49,7 +50,7 @@ function Update() {
 
     ButtonPostCunstructor.addEventListener("click", function() {
         let ActiveIngredientsMy = ContainerCunstructorMy.querySelectorAll('.ingredients-items-active');
-		let NameRest = ContainerTitlePage.getAttribute("data-name-rest-constructor");
+        let NameRest = ContainerTitlePage.getAttribute("data-name-rest-constructor");
         let NameIngredients = '';
         let PriceIngredients = 0;
         let TotalPriceDish = 0;
@@ -58,13 +59,15 @@ function Update() {
         let Price = 0;
         let Input = document.querySelector('.dishCount');
         let CountDish = 0;
-		if(ElemIdAdtLine === "pancake001"){
-			AdditionalLine = "Блинчик";
-			SrcImage = "../image/constructor/constr_pancake.png";
-		}else if(ElemIdAdtLine === "pizza001"){
-			AdditionalLine = "Пицца";
-			SrcImage = "../image/constructor/constr_pizza.png";
-		}
+        // if(ElemIdAdtLine === "pancake001"){
+        // 	AdditionalLine = "Блинчик";
+        // 	SrcImage = "../image/constructor/constr_pancake.png";
+        // }else if(ElemIdAdtLine === "pizza001"){
+        // 	AdditionalLine = "Пицца";
+        // 	SrcImage = "../image/constructor/constr_pizza.png";
+        // }
+        AdditionalLine = "Пицца";
+        AdditionalLine = "Блинчик";
         if (Arr == null) {
             if (ActiveIngredientsMy.length == 0) {
                 swal({
@@ -79,7 +82,7 @@ function Update() {
                     PriceIngredients += parseFloat(Price);
                 }
                 NameIngredients = NameIngredients.slice(0, -1);
-                NameIngredients = AdditionalLine+' (' + NameIngredients + ')';
+                NameIngredients = AdditionalLine + ' (' + NameIngredients + ')';
                 CountDish = Input.value;
                 TotalPriceDish = PriceIngredients * CountDish;
                 Cart.push({
@@ -89,7 +92,7 @@ function Update() {
                     "TotalPriceDish": TotalPriceDish,
                     "CountDish": CountDish,
                     "id": NameIngredients,
-					"NameRest": NameRest
+                    "NameRest": NameRest
                 });
                 var serialObj = JSON.stringify(Cart);
                 localStorage.setItem('Cart', serialObj);
@@ -121,7 +124,7 @@ function Update() {
                     PriceIngredients += parseFloat(Price);
                 }
                 NameIngredients = NameIngredients.slice(0, -1);
-                NameIngredients = AdditionalLine+' (' + NameIngredients + ')';
+                NameIngredients = AdditionalLine + ' (' + NameIngredients + ')';
                 CountDish = Input.value;
                 TotalPriceDish = PriceIngredients * CountDish;
 
@@ -132,7 +135,7 @@ function Update() {
                     "TotalPriceDish": TotalPriceDish,
                     "CountDish": CountDish,
                     "id": NameIngredients,
-					"NameRest": NameRest
+                    "NameRest": NameRest
                 });
                 var serialObj = JSON.stringify(Cart);
                 localStorage.setItem('Cart', serialObj);

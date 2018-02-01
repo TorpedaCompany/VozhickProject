@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             }
             // axios.post('https://voztest.ga/orders', {
-            axios.post('http://127.0.0.1:5000/orders', {
+            axios.post('./orders', {
                     "dishes": Cart,
                     "restName": RestName,
                     "firstName": Name.value,

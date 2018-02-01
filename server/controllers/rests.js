@@ -46,6 +46,7 @@ app.get('/rests/:name/constrPancake', (req, res) => {
             let dataConstr = data.constructorPancake;
             dataConstr.titles = ["Конструктор блинчиков", "Ваш блинчик"];
             dataConstr.restName = data.restName;
+            dataConstr.constrType = "Блинчик";
             return res.render('constructor', { "dataConstr": dataConstr }, function(err, html) {
                 if (!err) {
                     res.status(200).send(html);
@@ -68,6 +69,7 @@ app.get('/rests/:name/constrPizza', (req, res) => {
                 let dataConstr = data.constructorPizza;
                 dataConstr.titles = ["Конструктор пиццы", "Ваша пицца"];
                 dataConstr.restName = data.restName;
+                dataConstr.constrType = "Пицца";
                 return res.render('constructor', { "dataConstr": dataConstr }, function(err, html) {
                     if (!err)
                         res.status(200).send(html);

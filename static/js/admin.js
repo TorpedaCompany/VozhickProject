@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         swal("Заказ был подтвержден!", {
                             icon: "success",
                         });
-                        axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
+                        axios.post('../orders/' + this.dataset.idOrder + '/accept', {})
+                            // axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
                             // axios.post('https://voztest.ga/orders/' + this.dataset.idOrder + '/accept', {})
                             .then(function(response) {
                                 console.log(response);
@@ -58,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         }
         if (this.dataset.typeOrder == "delete") {
-            ex();
             swal({
                     title: "Вы хотите удалить данный заказ?",
                     text: "",
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         swal("Заказ был удален!", {
                             icon: "success",
                         });
-                        axios.delete('http://localhost:5000/orders/' + this.dataset.idOrder, {})
+                        axios.delete('../orders/' + this.dataset.idOrder, {})
                             // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
                             .then(function(response) {
                                 console.log(response);
