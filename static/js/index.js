@@ -74,7 +74,8 @@ function addEventCtgRest() {
 //Функции анимации
 function fadeOut(num) {
     let el = document.querySelector("[data-id-rest='" + num + "']");
-    el.style.opacity = 0.3;
+    // el.style.opacity = 0.3;
+    el.style.display = "none";
     el.style.pointerEvents = "none";
     el.setAttribute("data-rest-display", "hide");
 }
@@ -84,6 +85,7 @@ function fadeIn(el, display) {
     if (hiddenItems.length != 0) {
         for (let i = 0; i < hiddenItems.length; i++) {
             hiddenItems[i].style.opacity = 1;
+            hiddenItems[i].style.display = "block";
             hiddenItems[i].style.pointerEvents = "all";
             // el.style.display = display || "block";
             hiddenItems[i].removeAttribute("data-rest-display");
