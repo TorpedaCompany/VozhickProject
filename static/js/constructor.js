@@ -9,10 +9,8 @@ function Update() {
     var ButtonPostCunstructor = document.getElementById("button-cart-post");
     var ContainerTitlePage = document.querySelector(".container-title-page");
     var ElemIdAdtLine = document.querySelector('.ingredients-items').getAttribute('data-id-ingredients');
-    var AdditionalLine = "";
     var SrcImage = "";
     console.log(ElemIdAdtLine);
-    console.log(AdditionalLine);
 
     function PlusIngridient() {
         let Elem = this;
@@ -51,6 +49,7 @@ function Update() {
     ButtonPostCunstructor.addEventListener("click", function() {
         let ActiveIngredientsMy = ContainerCunstructorMy.querySelectorAll('.ingredients-items-active');
         let NameRest = ContainerTitlePage.getAttribute("data-name-rest-constructor");
+        let TypeConstructorRest = ContainerTitlePage.getAttribute("data-type-rest-constructor");
         let NameIngredients = '';
         let PriceIngredients = 0;
         let TotalPriceDish = 0;
@@ -59,15 +58,13 @@ function Update() {
         let Price = 0;
         let Input = document.querySelector('.dishCount');
         let CountDish = 0;
-        // if(ElemIdAdtLine === "pancake001"){
-        // 	AdditionalLine = "Блинчик";
-        // 	SrcImage = "../image/constructor/constr_pancake.png";
-        // }else if(ElemIdAdtLine === "pizza001"){
-        // 	AdditionalLine = "Пицца";
-        // 	SrcImage = "../image/constructor/constr_pizza.png";
-        // }
-        AdditionalLine = "Пицца";
-        AdditionalLine = "Блинчик";
+        if (TypeConstructorRest === "Блинчик") {
+			SrcImage = "../image/constructor/constr_pancake.png";
+        } else if (TypeConstructorRest === "Пицца") {
+        	SrcImage = "../image/constructor/constr_pizza.png";
+        }
+//        AdditionalLine = "Пицца";
+//        AdditionalLine = "Блинчик";
         if (Arr == null) {
             if (ActiveIngredientsMy.length == 0) {
                 swal({
@@ -82,7 +79,7 @@ function Update() {
                     PriceIngredients += parseFloat(Price);
                 }
                 NameIngredients = NameIngredients.slice(0, -1);
-                NameIngredients = AdditionalLine + ' (' + NameIngredients + ')';
+                NameIngredients = TypeConstructorRest + ' (' + NameIngredients + ')';
                 CountDish = Input.value;
                 TotalPriceDish = PriceIngredients * CountDish;
                 Cart.push({
@@ -124,7 +121,7 @@ function Update() {
                     PriceIngredients += parseFloat(Price);
                 }
                 NameIngredients = NameIngredients.slice(0, -1);
-                NameIngredients = AdditionalLine + ' (' + NameIngredients + ')';
+                NameIngredients = TypeConstructorRest + ' (' + NameIngredients + ')';
                 CountDish = Input.value;
                 TotalPriceDish = PriceIngredients * CountDish;
 

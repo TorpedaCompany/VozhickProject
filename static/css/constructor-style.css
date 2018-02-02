@@ -74,6 +74,7 @@
     flex: 1 20%;
     padding: 10px;
     cursor: pointer;
+	text-align: center;
 }
 .ingredients-items>img {height: 64px; width: 64px;}
 .ingredients-items-hidden {

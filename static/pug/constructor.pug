@@ -3,6 +3,7 @@ html(lang='ru')
 	head
 		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		link(rel='shortcut icon', href='../../image/Logo/ShortcutIcon.png', type='image/png')
 		link(rel='stylesheet', href='../../css/bootstrap.css')
 		link(rel='stylesheet', href='../../css/swal-style.css')
 		link(rel='stylesheet', href='../../css/normalize.css')
@@ -24,7 +25,7 @@ body
 		include hamburger-menu.pug
 		include modal.pug
 		.main-container-constructor
-			.container-title-page(data-name-rest-constructor=dataConstr.restName)
+			.container-title-page(data-name-rest-constructor=dataConstr.restName data-type-rest-constructor=dataConstr.constrType)
 				span= dataConstr.titles[0] + ' - ' + dataConstr.restName
 			.container-constructor
 				.container-constructor-section
