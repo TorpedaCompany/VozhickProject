@@ -49,6 +49,7 @@
 }
 
 .main-container-admin {
+	position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -58,6 +59,22 @@
     background-color: #fff;
     /* box-shadow: 0 0 25px rgba(0, 0, 0, 0.15); */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.exitbutton {
+	position: absolute;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 32px;
+/*	width: 32px;*/
+	top: 0;
+	right: 0;
+	margin: 10px;
+	z-index: 99;
+	font-size: 32px;
+	cursor: pointer;
 }
 
 .admin-side-panel {
