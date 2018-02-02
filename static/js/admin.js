@@ -145,6 +145,8 @@ document.addEventListener("DOMContentLoaded", function() {
             '<div class="items-order porch-items-order">Подъезд: ' + data.entrance + '</div>' +
             '<div class="items-order porch-items-order">Этаж: ' + data.floor + '</div>' +
             '<div class="items-order apartment-items-order">Квартира: ' + data.apartment + '</div>' +
+            '<div class="items-order apartment-items-order">Комментарий: ' + data.comment + '</div>' +
+            '<div class="items-order apartment-items-order">Промокод: ' + data.promocode + '</div>' +
             '</div>' +
             '</div>' +
             '<div class="name-restaurant">Заведение: ' + data.restName + '</div>' +

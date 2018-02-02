@@ -84,10 +84,16 @@ let ordersSchema = new mongoose.Schema({
     },
     driver: String,
     dateTimeOut: Date,
+    promocode: {
+        type: String,
+        maxlength: [15, "tooLongPromocode"],
+        default: ""
+    },
     comment: {
         type: String,
-        maxlength: [90, "tooLongСomment"],
-    }
+        maxlength: [60, "tooLongСomment"],
+        default: ""
+    },
 });
 // Компилируем и Экспортируем модель
 module.exports = mongoose.model('orders', ordersSchema, 'orders');

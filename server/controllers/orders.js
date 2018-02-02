@@ -89,7 +89,7 @@ app.post('/orders', (req, res) => {
                         return res.status(500).send({ error: "Некоторые блюда не были обработаны" });
                     else {
                         req.app.io.emit("msg", data);
-                        return res.status(200).send("OK");
+                        return res.status(200).send("ok");
                     }
                 }
             })
@@ -105,6 +105,7 @@ app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
             if (!data)
                 return res.status(404).send({ error: "Not found" });
             else {
+                console.log(data);
                 data.status = "Принят";
                 data.save(function(err, data) {
                     if (err)

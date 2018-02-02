@@ -20,7 +20,6 @@ html
           .admin-side-panel-item-button(data-tab='2')
             span.admin-panel-span-icon.fa.fa-shopping-cart
             span.admin-panel-span-text Выполненные заказы
-            button(id="ex") EXIT
         .admin-main-panel
           .container-active-order-panel.active-panel
             .title-order-panel Новые заказы
@@ -43,6 +42,8 @@ html
                         .items-order.porch-items-order= "Подъезд: " + item.entrance
                         .items-order.porch-items-order= "Этаж: " + item.floor
                         .items-order.apartment-items-order= "Квартира: " + item.apartment
+                        .items-order.apartment-items-order= "Комментарий: " + item.comment
+                        .items-order.apartment-items-order= "Промокод: " + item.promocode
                     .name-restaurant= "Заведение: " + item.restName
                     .spoiler-items-order-panel.spoiler(id='')
                       .title-spoiler
@@ -85,6 +86,8 @@ html
                         .items-order.porch-items-order= "Подъезд: " + item.entrance
                         .items-order.porch-items-order= "Этаж: " + item.floor
                         .items-order.apartment-items-order= "Квартира: " + item.apartment
+                        .items-order.apartment-items-order= "Комментарий: " + item.comment
+                        .items-order.apartment-items-order= "Промокод: " + item.promocode
                     .name-restaurant= "Заведение: " + item.restName
                     .spoiler-items-order-panel.spoiler(id='')
                       .title-spoiler
