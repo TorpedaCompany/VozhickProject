@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
             for (var i = 0; i < DeleteButton.length; i++) {
                 let IdDish = DeleteButton[i].getAttribute("data-id-dish");
                 let Count = DishCount[i].value;
-                console.log(RestName);
+                // console.log(RestName);
                 Cart.push({
                     "idDish": IdDish,
                     "count": Count
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     "promocode": Promocode.value
                 })
                 .then(function(response) {
-                    console.log(response);
+                    // console.log(response);
                     Cart = [];
                     swal({
                         text: "Ваш заказ отправлен ;)",
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
                 .catch(function(error) {
                     console.log(error);
-                    console.log(error.response.data.error);
+                    // console.log(error.response.data.error);
                     Cart = [];
                     swal({
                         text: "" + error + "\n" + error.response.data.error + "",

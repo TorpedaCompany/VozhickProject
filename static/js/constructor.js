@@ -10,7 +10,7 @@ function Update() {
     var ContainerTitlePage = document.querySelector(".container-title-page");
     var ElemIdAdtLine = document.querySelector('.ingredients-items').getAttribute('data-id-ingredients');
     var SrcImage = "";
-    console.log(ElemIdAdtLine);
+    // console.log(ElemIdAdtLine);
 
     function PlusIngridient() {
         let Elem = this;
@@ -59,12 +59,12 @@ function Update() {
         let Input = document.querySelector('.dishCount');
         let CountDish = 0;
         if (TypeConstructorRest === "Блинчик") {
-			SrcImage = "../image/constructor/constr_pancake.png";
+            SrcImage = "../image/constructor/constr_pancake.png";
         } else if (TypeConstructorRest === "Пицца") {
-        	SrcImage = "../image/constructor/constr_pizza.png";
+            SrcImage = "../image/constructor/constr_pizza.png";
         }
-//        AdditionalLine = "Пицца";
-//        AdditionalLine = "Блинчик";
+        //        AdditionalLine = "Пицца";
+        //        AdditionalLine = "Блинчик";
         if (Arr == null) {
             if (ActiveIngredientsMy.length == 0) {
                 swal({
@@ -93,9 +93,9 @@ function Update() {
                 });
                 var serialObj = JSON.stringify(Cart);
                 localStorage.setItem('Cart', serialObj);
-                console.log(NameIngredients);
-                console.log(PriceIngredients);
-                console.log(Cart);
+                // console.log(NameIngredients);
+                // console.log(PriceIngredients);
+                // console.log(Cart);
                 swal({
                     text: "" + NameIngredients + " добавлена ;)",
                     button: false,
@@ -136,8 +136,8 @@ function Update() {
                 });
                 var serialObj = JSON.stringify(Cart);
                 localStorage.setItem('Cart', serialObj);
-                console.log(NameIngredients);
-                console.log(PriceIngredients);
+                // console.log(NameIngredients);
+                // console.log(PriceIngredients);
 
                 swal({
                     text: "" + NameIngredients + " добавлена ;)",
@@ -158,7 +158,7 @@ function Update() {
                         Arr[i].TotalPriceDish = parseFloat(TotalPriceDish);
                         serialObj = JSON.stringify(Arr);
                         localStorage.setItem('Cart', serialObj);
-                        console.log(JSON.parse(localStorage.getItem('Cart')));
+                        // console.log(JSON.parse(localStorage.getItem('Cart')));
                     }
                 }
             }

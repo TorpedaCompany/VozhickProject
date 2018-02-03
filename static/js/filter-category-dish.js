@@ -19,10 +19,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (Category == "Все") {
             ResetDish();
         } else {
-            console.log(Category);
+            // console.log(Category);
 
-            let a = ContainerDish.querySelectorAll(".rest-card-dish:not([data-category-dish="+Category+"])");
-            //console.log(a);
+            let a = ContainerDish.querySelectorAll(".rest-card-dish:not([data-category-dish=" + Category + "])");
             for (let i = 0; i < a.length; i++) {
                 a[i].classList.add("rest-card-dish-hidden");
             }
