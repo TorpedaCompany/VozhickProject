@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     var ModalAuthorizationOpenTwo = document.getElementById("modal-authorization-open-two");
-//    var ModalAuthorizationOpen = document.getElementById("modal-authorization-open");
+    //    var ModalAuthorizationOpen = document.getElementById("modal-authorization-open");
     var ModalAuthorizationClose = document.getElementById("modal-authorization-close");
     var ModalRegistrationOpen = document.getElementById("modal-registration-open");
     var ModalRegistrationClose = document.getElementById("modal-registration-close");
@@ -74,11 +74,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         ModalAuthorization.classList.add("modal-active");
     });
 
-//    ModalAuthorizationOpen.addEventListener("click", function() {
-//        disableScroll();
-//        Ovelay.classList.add("ovelay-active");
-//        ModalAuthorization.classList.add("modal-active");
-//    });
+    //    ModalAuthorizationOpen.addEventListener("click", function() {
+    //        disableScroll();
+    //        Ovelay.classList.add("ovelay-active");
+    //        ModalAuthorization.classList.add("modal-active");
+    //    });
 
     ModalAuthorizationClose.addEventListener("click", function() {
         enableScroll();
@@ -108,8 +108,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.addEventListener('click', function(e) {
         if (e.target.id == "ovelay" || e.target.parentNode.className == "closeBtn" || e.target.className == "closeBtn") {
             enableScroll();
-            console.log(e.target);
-            console.log(e.target.parentNode.className);
+            // console.log(e.target);
+            // console.log(e.target.parentNode.className);
             ModalAuthorization.classList.remove("modal-active");
             ModalRegistration.classList.remove("modal-active");
             Ovelay.classList.remove("ovelay-active");

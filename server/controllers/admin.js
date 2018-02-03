@@ -7,7 +7,6 @@ const passport = require('passport');
 app.get('/adm', function(req, res) {
     res.render('authAdmin', function(err, html) {
         res.send(html);
-        // console.log(err);
     });
 });
 

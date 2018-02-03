@@ -29,10 +29,7 @@ app.get('/rests/:name', (req, res) => {
             return res.status(404).send({ error: "Not found" });
         else
             return res.render('rest', { dataRest: data }, function(err, html) {
-                console.log(data);
                 res.send(html);
-                // res.send("asd");
-                console.log(err);
             });
     });
 })

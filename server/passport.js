@@ -20,12 +20,12 @@ module.exports = function(passport) {
                         return done(err);
                     // Username does not exist, log the error and redirect back
                     if (!user) {
-                        console.log('User Not Found with user ' + phone);
+                        // console.log('User Not Found with user ' + phone);
                         return done(null, false, req.flash('message', 'User Not found.'));
                     }
                     // User exists but wrong password, log the error
                     if (!isValidPassword(user, password)) {
-                        console.log('Invalid Password');
+                        // console.log('Invalid Password');
                         return done(null, false, req.flash('message', 'Invalid Password')); // redirect back to login page
                     }
                     // User and password both match, return user from done method
@@ -42,14 +42,14 @@ module.exports = function(passport) {
     }
 
     passport.serializeUser(function(user, done) {
-        console.log('serializing user: ');
-        console.log(user);
+        // console.log('serializing user: ');
+        // console.log(user);
         done(null, user._id);
     });
 
     passport.deserializeUser(function(id, done) {
         User.findById(id, function(err, user) {
-            console.log('deserializing user:', user.firstName);
+            // console.log('deserializing user:', user.firstName);
             done(err, user);
         });
     });

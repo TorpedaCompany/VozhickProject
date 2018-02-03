@@ -74,7 +74,7 @@ function CheckVariables() {
                     Arr[i].TotalPriceDish = parseFloat(TotalPriceDish);
                     serialObj = JSON.stringify(Arr);
                     localStorage.setItem('Cart', serialObj);
-                    console.log(JSON.parse(localStorage.getItem('Cart')));
+                    // console.log(JSON.parse(localStorage.getItem('Cart')));
                 }
             }
         }

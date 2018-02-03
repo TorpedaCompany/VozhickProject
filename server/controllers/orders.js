@@ -105,7 +105,6 @@ app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
             if (!data)
                 return res.status(404).send({ error: "Not found" });
             else {
-                console.log(data);
                 data.status = "Принят";
                 data.save(function(err, data) {
                     if (err)

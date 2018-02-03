@@ -39,6 +39,20 @@
 </body>
 <script src="../plugins/axios.min.js"></script>
 <script>
+    function auth() {
+        let ph = document.getElementById("name").value;
+        let pwd = document.getElementById("password").value;
+        axios.post('/adm', {
+                phone: ph,
+                password: pwd
+            })
+            .then(function(response) {
+                window.location.href = "/adm/dashboard";
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
 </script>
 
 </html>

@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function() {
                             // axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
                             // axios.post('https://voztest.ga/orders/' + this.dataset.idOrder + '/accept', {})
                             .then(function(response) {
-                                console.log(response);
+                                // console.log(response);
                             })
                             .catch(function(error) {
                                 console.log(error);
-                                console.log(error.response.data);
+                                // console.log(error.response.data);
                             });
                         //Переместить блок заказа в другой раздел
                         node.removeChild(this);
@@ -84,11 +84,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         axios.delete('../orders/' + this.dataset.idOrder, {})
                             // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
                             .then(function(response) {
-                                console.log(response);
+                                // console.log(response);
                             })
                             .catch(function(error) {
                                 console.log(error);
-                                console.log(error.response.data);
+                                // console.log(error.response.data);
                             });
                         //НЕ РАБОТАЕТ В IE11
                         node.remove();
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 location.replace("../adm");
             })
             .catch(function(error) {
-                console.log(error);
+                // console.log(error);
             });
     }, false);
 });
