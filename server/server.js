@@ -29,12 +29,12 @@ app.use(bodyParser.json())
 
 app.use(session({ //Сессии
     secret: 'mkvGLHUp',
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     key: 'jsessionid',
     cookie: {
-        maxAge: null, //1800000), 
-        expires: null //1800000) 
+        // expires: 1000000 //1800000) 
+        maxAge: 1800000 //1800000), 
     },
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));

@@ -16,13 +16,14 @@ app.post('/adm', passport.authenticate('login', {
     failureRedirect: '/adm',
     // failureFlash: true
 }));
-app.get('/signout', function(req, res) {
-    // logger.warn("SIGNOUT2");
+app.get('/logout', function(req, res) {
+    // req.session.destroy(function() {
+    //     res.clearCookie('jsessionid');
+    //     res.redirect('/');
+    // });
     req.logout();
-    res.redirect('/adm');
-    // res.location('back');
-    // res.writeHead(302, { Location: "../adm" })
-    // res.end();
+    req.session.destroy();
+    res.redirect('/');
 });
 app.get('/adm/dashboard', passport.isAuthenticated, function(req, res) {
     models.orders.find({}, function(err, data) {
@@ -32,7 +33,7 @@ app.get('/adm/dashboard', passport.isAuthenticated, function(req, res) {
             return res.render('admin_orders', { dataAdmin: data }, function(err, html) {
                 if (!err)
                     res.status(200).send(html);
-                logger.error(err);
+                // logger.error(err);
             });
     });
 });

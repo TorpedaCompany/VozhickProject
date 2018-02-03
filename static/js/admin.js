@@ -101,11 +101,6 @@ document.addEventListener("DOMContentLoaded", function() {
         btn_order[i].addEventListener("click", btn_orderFunc, false);
     }
 
-
-
-
-
-
     let socket = io.connect();
     socket.on('msg', function(data) {
         // console.log("in msg admin-panel");
@@ -203,13 +198,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-    let ex = document.getElementById("ex");
-    ex.addEventListener('click', function() {
-        axios.get('http://localhost:5000/signout', {})
+    let logout = document.getElementById("logout");
+    logout.addEventListener('click', function() {
+        axios.get('../logout', {})
             // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
             .then(function(response) {
-                window.location = "http://localhost:5000/adm"
-                console.log(response);
+                // window.location = "../adm";
+                location.replace("../adm");
             })
             .catch(function(error) {
                 console.log(error);
