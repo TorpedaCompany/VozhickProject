@@ -34,6 +34,7 @@ app.use(session({ //Сессии
     key: 'jsessionid',
     cookie: {
         // expires: 1000000 //1800000) 
+        secure: false,
         maxAge: 1800000 //1800000), 
     },
     store: new MongoStore({ mongooseConnection: mongoose.connection })

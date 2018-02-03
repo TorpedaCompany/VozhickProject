@@ -94,3 +94,8 @@
     font-weight: 500;
     font-family: var(--Font);
 }
+
+.input-name-registration,
+.input-surname-registration {
+    background: none;
+}

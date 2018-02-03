@@ -370,8 +370,8 @@ html(lang='ru')
                         p
                       .card-dish-footer
                         .card-dish-info
-                          .dish-grams= item.grams + ' г.'
-                          .dish-price= item.price + ' р.'
+                          .dish-grams= item.grams + ' гр.'
+                          .dish-price= item.price + ' руб.'
                         .card-dish-action
                           .inpMinus -
                           input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
@@ -381,7 +381,7 @@ html(lang='ru')
                 for item, index in dataRest.restDishes
                   +dish(item)
                 if dataRest.restConstructor
-                  if(dataRest.constructorPancake)
+                  if(dataRest.constructorPancake.length > 0)
                     .rest-card-dish-constructor.rest-card-dish
                       .closeBtn
                           i.fa.fa-times(aria-hidden='true')
@@ -393,7 +393,7 @@ html(lang='ru')
                                   .dish-button-constructor
                                       span.fa.fa-cube
                                       | Создать свой
-                  if(dataRest.constructorPizza)
+                  if(dataRest.constructorPizza.length > 0)
                     .rest-card-dish-constructor.rest-card-dish
                       .closeBtn
                           i.fa.fa-times(aria-hidden='true')

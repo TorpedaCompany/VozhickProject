@@ -17,20 +17,23 @@
             <div class="container-logo-authorization"><img src="./image/LogoTest.png"></div>
             <div class="container-title-authorization">Авторизация</div>
             <div class="main-container-input-authorization">
-                <div class="container-input-authorization">
-                    <span class="fa fa-user"></span>
-                    <div class="group">
-                        <input placeholder="Логин" class='input-style input-name-registration' type='text' required>
-                        <span class="bar"></span>
+                <form action="http://localhost:5000/logout" method="GET">
+                    <div class="container-input-authorization">
+                        <span class="fa fa-user"></span>
+                        <div class="group">
+                            <input placeholder="Логин" name="usernameField" class='input-style input-name-registration' type='text' required>
+                            <span class="bar"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="container-input-authorization">
-                    <span class="fa fa-lock"></span>
-                    <div class="group">
-                        <input placeholder="Пароль" id="name" class='input-style input-surname-registration' type='password' required>
-                        <span class="bar"></span>
+                    <div class="container-input-authorization">
+                        <span class="fa fa-lock"></span>
+                        <div class="group">
+                            <input placeholder="Пароль" name="passwordField" class='input-style input-surname-registration' type='password' required>
+                            <span class="bar"></span>
+                        </div>
                     </div>
-                </div>
+                    <button type="submit">SEND</button>
+                </form>
             </div>
             <div class="main-container-button-authorization">
                 <div class="button-admin-authorization">Войти</div>

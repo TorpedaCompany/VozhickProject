@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../image/Logo/ShortcutIcon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/input.css">
+    <link rel="stylesheet" href="../css/authorization-admin.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="main-container-authorization">
+        <div class="container-authorization">
+            <div class="container-logo-authorization"><img src="../image/Logo/LogoTest.png"></div>
+            <div class="container-title-authorization">Авторизация</div>
+            <div class="main-container-input-authorization">
+                <form action="http://localhost:5000/adm" method="post" id="auth">
+                    <div class="container-input-authorization"><span class="fa fa-user"></span>
+                        <div class="group">
+                            <input name="usernameField" placeholder="Логин" type="text" required="" class="input-style input-name-registration"><span class="bar"></span>
+                        </div>
+                    </div>
+                    <div class="container-input-authorization"><span class="fa fa-lock"></span>
+                        <div class="group">
+                            <input name="passwordField" placeholder="Пароль" type="password" required="" class="input-style input-surname-registration"><span class="bar"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="main-container-button-authorization">
+                <button type="submit" form="auth" class="button-admin-authorization">Войти</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../plugins/axios.min.js"></script>
+<script>
+</script>
+
+</html>

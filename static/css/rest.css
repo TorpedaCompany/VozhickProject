@@ -45,6 +45,10 @@
     line-height: 70px;
 }
 
+.rest-caption img {
+    margin-right: 20px;
+}
+
 .rest-filter {
     flex: 0 0 280px;
     max-width: 280px;
@@ -63,12 +67,12 @@
     transition: all .3s ease-out;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 }
+
 .active-filter-item {
-	fill: #ff501c;
+    fill: #ff501c;
 }
-.active-filter-item svg {
-	
-}
+
+.active-filter-item svg {}
 
 .rest-filter .filter-item {
     height: 45px;
@@ -158,6 +162,10 @@
     display: block !important;
 }
 
+.modalDish .card-dish-action {
+    display: none;
+}
+
 .rest-card-dish .closeBtn,
 .rest-card-dish .card-dish-description p {
     display: none;
@@ -220,7 +228,7 @@
     text-align: center;
     align-self: center;
     -webkit-user-select: none;
-	min-width: 150px;
+    min-width: 150px;
 }
 
 .card-dish-action .inpPlus,
@@ -242,9 +250,10 @@
     padding: 0;
     text-align: center;
     border: none;
-	-moz-appearance: textfield;	
-	pointer-events: none;
+    -moz-appearance: textfield;
+    pointer-events: none;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -428,6 +437,6 @@ input::-webkit-inner-spin-button {
     padding-right: 10px;
 }
 
-.rest-card-dish-hidden{
-	display: none;
+.rest-card-dish-hidden {
+    display: none;
 }
