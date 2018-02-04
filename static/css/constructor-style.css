@@ -85,6 +85,7 @@
 }
 .container-constructor-button {
     display: flex;
+	flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
@@ -94,6 +95,12 @@
     .container-constructor-button {
         justify-content: center;
     }
+}
+.container-button {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 5px;
 }
 
 .button-add-pancake {
@@ -139,6 +146,8 @@
     line-height: 40px;
     text-align: center;
     align-self: center;
+	min-width: 150px;
+	padding: 5px;
 }
 
 .card-dish-action .inpPlus,

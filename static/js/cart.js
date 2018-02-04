@@ -5,6 +5,10 @@ function ErrorRestoraunt() {
         text: "В одном заказе может быть только один ресторан(",
         icon: "error",
     });
+	var CardDishContent = document.querySelectorAll(".card-dish-content a");
+	for(var n = 0; n<CardDishContent.length; n++){
+		CardDishContent[n].style.display = "none";
+	}	
 }
 
 function CheckVariables() {
@@ -29,6 +33,7 @@ function CheckVariables() {
             }
         } else {
             ErrorRestoraunt();
+			
         }
     }
 

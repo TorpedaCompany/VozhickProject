@@ -115,7 +115,7 @@ function Update() {
                     Cart.push(Arr[a]);
                 }
                 for (let i = 0; i < ActiveIngredientsMy.length; i++) {
-                    NameIngredients += ActiveIngredientsMy[i].querySelector('.name-ingredients').innerText.concat(',');
+                    NameIngredients += ActiveIngredientsMy[i].querySelector('.name-ingredients').innerText.concat(', ');
                     Price = ActiveIngredientsMy[i].querySelector('.price-ingredients').innerText;
                     Price = Price.substr(0, Price.length - 5);
                     PriceIngredients += parseFloat(Price);

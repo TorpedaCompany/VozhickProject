@@ -29,7 +29,7 @@
     padding-top: 0;
     font-size: 14px;
 }
-.menu-link-footer>li {padding-bottom: 5px;}
+.menu-link-footer>li {padding-bottom: 5px; text-align: center;}
 .menu-link-footer>li>a {text-decoration: underline; cursor: pointer;}
 
 .container-link-footer {
