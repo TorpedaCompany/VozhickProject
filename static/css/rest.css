@@ -19,10 +19,15 @@
 .b-lazy {
     opacity: 0;
     transform: scale(1.1);
-    transition: all 500ms;
+    transition: all .5s;
 }
 
 .b-loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.b-error {
     opacity: 1;
     transform: scale(1);
 }
@@ -427,6 +432,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 25px;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -434,7 +440,7 @@ input::-webkit-inner-spin-button {
 
 .dish-button-constructor {
     height: 40px;
-    width: 180px;
+    width: 190px;
     display: flex;
     justify-content: center;
     align-items: center;

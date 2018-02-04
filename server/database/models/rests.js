@@ -6,7 +6,10 @@ let dishSchema = new mongoose.Schema({
     dishID: {
         type: mongoose.Schema.Types.ObjectId
     },
-    name: String,
+    name: {
+        type: String,
+        required: [true, "dishNameRequired"]
+    },
     category: String,
     img: {
         type: String,
@@ -15,7 +18,10 @@ let dishSchema = new mongoose.Schema({
     description: String,
     composition: String,
     grams: String,
-    price: Number,
+    price: {
+        type: Number,
+        required: [true, "dishPriceRequired"]
+    },
     count: {
         type: Number,
         default: 1
@@ -82,22 +88,6 @@ let restsSchema = new mongoose.Schema({
     },
 
 });
-
-// restsSchema.pre('save', function(next) {
-//     const user = this;
-//     if (this.isModified('password') || this.isNew) {
-//         bCrypt.genSalt(10, (error, salt) => {
-//             if (error) return next(error);
-//             bCrypt.hash(user.password, salt, (error, hash) => {
-//                 if (error) return next(error);
-//                 user.password = hash;
-//                 next();
-//             });
-//         });
-//     } else {
-//         return next();
-//     }
-// });
 
 module.exports = {
         rests: mongoose.model('rests', restsSchema, 'rests'),
