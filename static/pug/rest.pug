@@ -386,25 +386,25 @@ html(lang='ru')
                       .closeBtn
                           i.fa.fa-times(aria-hidden='true')
                       .card-dish-img
-                          img.b-lazy(data-src='../image/constructor/constr_pancake.png', src='../image/rest/rest_placeholder.svg')
+                          img.b-lazy(data-src='../image/constructor/constrPancake.png', src='../image/rest/rest_placeholder.svg')
                       .card-dish-content
                           a(href='../rests/'+dataRest.restName+'/constrPancake')
                               .card-dish-button-constructor
                                   .dish-button-constructor
                                       span.fa.fa-cube
-                                      | Создать свой
+                                      | Создать свой блинчик
                   if(dataRest.constructorPizza.length > 0)
                     .rest-card-dish-constructor.rest-card-dish
                       .closeBtn
                           i.fa.fa-times(aria-hidden='true')
                       .card-dish-img
-                          img.b-lazy(data-src='../image/constructor/constr_pizza.png', src='../image/rest/rest_placeholder.svg')
+                          img.b-lazy(data-src='../image/constructor/constrPizza.png', src='../image/rest/rest_placeholder.svg')
                       .card-dish-content
                           a(href='../rests/'+dataRest.restName+'/constrPizza')
                               .card-dish-button-constructor
                                   .dish-button-constructor
                                       span.fa.fa-cube
-                                      | Создать свой
+                                      | Создать свою пиццу
             else
               .rest-catalog-dish_error Произошла ошибка блюд или блюда отсутствуют :(
     include footer.pug
