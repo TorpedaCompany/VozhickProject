@@ -10,6 +10,10 @@
     max-width: 1200px;
     /*    height: 100px;;*/
     margin: 0 auto;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
 }
 
 .type-restaurant {
@@ -20,6 +24,7 @@
     align-items: center;
     padding: 3%;
     cursor: pointer;
+    -webkit-flex: 1 1 10em
 }
 
 @-moz-document url-prefix() {
