@@ -42,9 +42,9 @@ app.post('/orders', (req, res) => {
                 arrIngred = [];
             //Сравнение блюд с клиента с сервером, выборка с сервера
             ordDishes.forEach(function(ord) {
-                if (ord.idDish.split(" ")[0] == "Блинчик" || ord.idDish.split(" ")[0] == "Пицца") {
+                if (ord.idDish.split(" ")[0] == "Блинчик") {
                     let priceIng = 0;
-                    arrIngred = ord.idDish.substring(9).slice(0, -1).split(",");
+                    arrIngred = ord.idDish.substring(9).slice(0, -1).split(", ");
                     for (let i = 0; i < arrIngred.length; i++)
                         data.constructorPancake.forEach(function(item) {
                             if (item.name == arrIngred[i]) {
@@ -52,12 +52,25 @@ app.post('/orders', (req, res) => {
                             }
                         })
                     ord.name = ord.idDish;
-                    ord.price = priceIng;
+                    ord.price = priceIng.toFixed(2);
+                    arr.push(ord);
+                }
+                if (ord.idDish.split(" ")[0] == "Пицца") {
+                    let priceIng = 0;
+                    arrIngred = ord.idDish.substring(7).slice(0, -1).split(", ");
+                    for (let i = 0; i < arrIngred.length; i++)
+                        data.constructorPizza.forEach(function(item) {
+                            if (item.name == arrIngred[i]) {
+                                priceIng += item.price;
+                            }
+                        })
+                    ord.name = ord.idDish;
+                    ord.price = priceIng.toFixed(2);
                     arr.push(ord);
                 }
                 data.restDishes.forEach(function(obj) {
                     if (obj._id == ord.idDish) {
-                        obj.count = ord.count
+                        obj.count = ord.count;
                         arr.push(obj);
                     }
                 });
@@ -110,6 +123,7 @@ app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
                     if (err)
                         return res.status(500).send({ error: err.message });
                     else {
+                        console.log("Раздел почты");
                         sendMail(data.email, data.dishes, data.totalPrice, function(callback) {
                             if (!callback.status) {
                                 logger.error(callback.message);

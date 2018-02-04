@@ -371,7 +371,7 @@ html(lang='ru')
                       .card-dish-footer
                         .card-dish-info
                           .dish-grams= item.grams + ' гр.'
-                          .dish-price= item.price + ' руб.'
+                          .dish-price= item.price.toFixed(2) + ' руб.'
                         .card-dish-action
                           .inpMinus -
                           input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
