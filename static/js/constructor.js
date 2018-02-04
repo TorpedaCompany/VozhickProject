@@ -78,7 +78,7 @@ function Update() {
                     Price = Price.substr(0, Price.length - 5);
                     PriceIngredients += parseFloat(Price);
                 }
-                NameIngredients = NameIngredients.slice(0, -1);
+                NameIngredients = NameIngredients.slice(0, -2);
                 NameIngredients = TypeConstructorRest + ' (' + NameIngredients + ')';
                 CountDish = Input.value;
                 TotalPriceDish = PriceIngredients * CountDish;
@@ -120,7 +120,7 @@ function Update() {
                     Price = Price.substr(0, Price.length - 5);
                     PriceIngredients += parseFloat(Price);
                 }
-                NameIngredients = NameIngredients.slice(0, -1);
+                NameIngredients = NameIngredients.slice(0, -2);
                 NameIngredients = TypeConstructorRest + ' (' + NameIngredients + ')';
                 CountDish = Input.value;
                 TotalPriceDish = PriceIngredients * CountDish;
