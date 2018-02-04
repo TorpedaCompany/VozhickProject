@@ -48,6 +48,10 @@ let restsSchema = new mongoose.Schema({
         type: String,
         default: '../image/rest/rest_placeholder.svg'
     },
+    restImageNigth: {
+        type: String,
+        default: '../image/rest/rest_placeholder.svg'
+    },
     restConstructor: {
         type: Boolean,
         default: false

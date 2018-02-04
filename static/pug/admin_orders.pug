@@ -63,7 +63,7 @@ html
                       div= "Кол-во: "
                         span.redBoldText= item.totalCount
                       div= "Общая стоимость: "
-                        span.redBoldText= item.totalPrice + " руб."
+                        span.redBoldText= item.totalPrice.toFixed(2) + " руб."
                     button(class="btn-order btn-order_delete" type='submit' data-id-order= item._id data-type-order="delete") Удалить заказ   
                     button(class="btn-order btn-order_accept" type='submit' data-id-order= item._id data-type-order="accept") Подвердить заказ   
               for item in dataAdmin
