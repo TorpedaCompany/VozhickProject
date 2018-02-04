@@ -1,3 +1,3 @@
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function(event) {
+    var bLazy = new Blazy({});
 });
-var bLazy = new Blazy({});
