@@ -92,7 +92,8 @@ app.post('/rests', (req, res) => {
     });
 })
 
-app.post('/rests/:name/dishes', passport.isAuthenticated, (req, res) => {
+// app.post('/rests/:name/dishes', passport.isAuthenticated, (req, res) => {
+app.post('/rests/:name/dishes', (req, res) => {
     models.rests.findOne({ "restName": req.params.name }, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
@@ -109,7 +110,7 @@ app.post('/rests/:name/dishes', passport.isAuthenticated, (req, res) => {
             if (err)
                 return res.status(500).send({ error: err.message });
             else
-                return res.status(200).send(data._id);
+                return res.status(200).send(data);
         });
 
     })

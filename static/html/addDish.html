@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="">
+        <br> Ресторан: <input type="text" id="rest" value="%D0%9F%D0%B0%D1%83%D1%82%D0%B8%D0%BD%D0%B0">
+        <br> Название: <input type="text" id="name" value="">
+        <br> Категория: <input type="text" id="category" value="Суши">
+        <br> Картинка: <input type="text" id="img" value="../image/dishes/">
+        <br> Описание: <input type="text" id="description">
+        <br> Состав: <input type="text" id="composition" value="">
+        <br> Граммы: <input type="text" id="grams" value="">
+        <br> Цена <input type="text" id="price">
+        <br> <input type="text" id="asdvx">
+        <br>
+        <br>
+        <button type="button" id="send" onclick="sendDish()">Отправить</button>
+    </div>
+    <br>
+    <br>
+    <div class="message" id="message"></div>
+
+    <script src="../plugins/axios.min.js"></script>
+    <script>
+        let message = document.getElementById("message");
+        let composition = document.getElementById("composition");
+        composition.onchange = function() {
+            let tmp = composition.value;
+            tmp = tmp.charAt(0).toUpperCase() + tmp.slice(1).toLowerCase();
+            document.getElementById("composition").value = tmp;
+        }
+        let price = document.getElementById("price");
+        price.onchange = function() {
+            document.getElementById("price").value = price.value.replace(",", ".");
+        }
+
+        function sendDish() {
+            let rest = document.getElementById("rest").value;
+            let img = document.getElementById("img").value;
+            let composition = document.getElementById("composition").value;
+
+
+            axios.post('http://localhost:5000/rests/' + rest + '/dishes', {
+                    "name": document.getElementById("name").value,
+                    "category": document.getElementById("category").value,
+                    "img": img,
+                    "description": document.getElementById("description").value,
+                    "composition": composition,
+                    "grams": document.getElementById("grams").value,
+                    "price": document.getElementById("price").value
+                })
+                .then(function(response, error) {
+                    message.innerHTML = "Добавлено: " + response.data.restDishes[response.data.restDishes.length - 1].name;
+                    document.getElementById("name").value = "";
+                    document.getElementById("img").value = "../image/dishes/";
+                    document.getElementById("grams").value = "";
+                    document.getElementById("price").value = "";
+                    document.getElementById("description").value = "";
+                    console.log(response);
+                    // message.innerHTML = "asd: " + error;
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    message.innerHTML = error;
+                })
+        }
+    </script>
+</body>
+
+</html>

@@ -28,7 +28,7 @@ html(lang='ru')
     .rest
       .rest-line
         .rest-main-img
-          img(src='../image/rest/rest_1.jpg', alt='')
+          img.b-lazy(data-src= dataRest.restImage, src='../image/rest/rest_placeholder.svg')
         .rest-caption
           img(src='../image/other_icon/icon-knife.png', alt='')
           |#{dataRest.restName}
