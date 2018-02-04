@@ -162,8 +162,24 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem('InfoUser', serialObj);
             for (var i = 0; i < ArrValueInput.length; i++) {
                 ArrValueInput[i].classList.remove("input-error");
-                ArrValueInput[i].value = "";
+//                ArrValueInput[i].value = "";
             }
+			Name.value = "";
+			Surname.value = "";
+			Patronymic.value = "";
+			Street.value = "";
+			House.value = "";
+			Entrance.value = "";
+			Level.value = "";
+			Apartment.value = "";
+			Phone.value = "";
+			Email.value = "";
+			Comment.value = "";
+			Promocode.value = "";
+			localStorage.removeItem('Cart');
+			ShowCart();
+			TotalCart();
+			CountAndPriceCart();
         } else {
             StringError = StringError.slice(0, -2);
             StringError = 'Поля заполнены не верно (' + StringError + ')';
