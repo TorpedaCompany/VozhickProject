@@ -28,7 +28,7 @@ html(lang='ru')
     .rest
       .rest-line
         .rest-main-img
-          img.b-lazy(data-src= dataRest.restImage, src='../image/rest/rest_placeholder.svg')
+          img.b-lazy(data-src= (new Date().getHours() > 18) ? dataRest.restImageNigth : dataRest.restImage, src='../image/rest/rest_placeholder.svg')
         .rest-caption
           img(src='../image/other_icon/icon-knife.png', alt='')
           |#{dataRest.restName}
