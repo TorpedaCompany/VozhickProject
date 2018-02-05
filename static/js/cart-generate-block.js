@@ -31,6 +31,9 @@ function TotalCart() {
 		for (var i = 0; i < Bly.length; i++) {
 			Price += parseFloat(Bly[i].TotalPriceDish);
 		}
+		if(Price < 20){
+			Price += 2;
+		}
 		StrPrice = "Общая стоимость: " + Price.toFixed(2) + " руб."
 		BlockPriceContainer.innerText = StrPrice;
 	}

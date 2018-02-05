@@ -14,6 +14,9 @@ function CountAndPriceCart() {
 			Price += parseFloat(Arr[i].TotalPriceDish);
 			Count += parseInt(Arr[i].CountDish);
 		}
+		if(Price < 20){
+			Price += 2;
+		}
 		CartPrice.innerText = Price.toFixed(2) + ' руб.';
 		CartCount.innerText = Count;
 	}

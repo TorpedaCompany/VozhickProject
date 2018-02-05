@@ -64,6 +64,10 @@ let restsSchema = new mongoose.Schema({
         type: Array,
         default: []
     },
+	constructorBurrito: {
+        type: Array,
+        default: []
+    },
     restOpenTime: {
         type: String
     },
