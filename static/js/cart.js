@@ -12,6 +12,8 @@ function ErrorRestoraunt() {
 }
 
 function CheckVariables() {
+	var ua = navigator.userAgent;
+	var event = (ua.match(/iPad/i) || ua.match(/iPhone/)) ? "touchstart" : "click";
     var AddCardButton = document.getElementsByClassName("addToCard");
     var i = 0;
     var Cart = [];
@@ -19,7 +21,7 @@ function CheckVariables() {
     var Arr = JSON.parse(localStorage.getItem('Cart'));
     if (Arr == null) {
         for (let i = 0; i < AddCardButton.length; i++) {
-            AddCardButton[i].addEventListener("click", cart, false);
+            AddCardButton[i].addEventListener(event, cart, false);
         }
     } else {
         if (Arr[0].NameRest == NameRest) {
@@ -29,7 +31,7 @@ function CheckVariables() {
             }
 
             for (let i = 0; i < AddCardButton.length; i++) {
-                AddCardButton[i].addEventListener("click", cart, false);
+                AddCardButton[i].addEventListener(event, cart, false);
             }
         } else {
             ErrorRestoraunt();
