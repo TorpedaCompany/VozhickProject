@@ -68,6 +68,19 @@ app.post('/orders', (req, res) => {
                     ord.price = priceIng.toFixed(2);
                     arr.push(ord);
                 }
+                if (ord.idDish.split(" ")[0] == "Буррито") {
+                    let priceIng = 0;
+                    arrIngred = ord.idDish.substring(9).slice(0, -1).split(", ");
+                    for (let i = 0; i < arrIngred.length; i++)
+                        data.constructorBurrito.forEach(function(item) {
+                            if (item.name == arrIngred[i]) {
+                                priceIng += item.price;
+                            }
+                        })
+                    ord.name = ord.idDish;
+                    ord.price = priceIng.toFixed(2);
+                    arr.push(ord);
+                }
                 data.restDishes.forEach(function(obj) {
                     if (obj._id == ord.idDish) {
                         obj.count = ord.count;
@@ -92,7 +105,7 @@ app.post('/orders', (req, res) => {
             })
 
             order.totalCount = arr.length;
-            order.totalPrice = tmpPrice.toFixed(2);
+            order.totalPrice = (tmpPrice > 20) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
             //Сохранение блюда в БД
             order.save(function(err, data) {
                 if (err)

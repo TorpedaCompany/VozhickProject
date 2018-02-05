@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
             '</div>' +
             '<div class="container-count-and-price">' +
             '<div>Кол-во: <span class="redBoldText"> ' + data.totalCount + '</span></div>' +
-            '<div>Общая стоимость: <span class="redBoldText"> ' + data.totalPrice + ' руб.</span></div>' +
+            '<div>Общая стоимость: <span class="redBoldText"> ' + data.totalPrice.toFixed(2) + ' руб.</span></div>' +
             '</div>' +
             '<button type="submit" class="btn-order btn-order_delete" data-id-order="' + data._id + '" data-type-order="delete">Удалить заказ</button>' +
             '<button type="submit" class="btn-order btn-order_accept" data-id-order="' + data._id + '" data-type-order="accept">Подвердить заказ</button>' +
