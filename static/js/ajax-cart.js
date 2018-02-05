@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var Arr = JSON.parse(localStorage.getItem('Cart'));
     var DeleteButton = document.getElementsByClassName("container-button-cancel-eat-cart");
     var DishCount = document.getElementsByClassName("dishCount");
-    var RestName = Arr[0].NameRest;
+    var RestName = '';
     var Name = document.querySelector(".input-name");
     var Surname = document.querySelector(".input-surname");
     var Patronymic = document.querySelector(".input-patronymic");
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function PostAjaxCart() {
         if (Arr == null) {} else {
+			RestName = Arr[0].NameRest;
             for (var i = 0; i < DeleteButton.length; i++) {
                 let IdDish = DeleteButton[i].getAttribute("data-id-dish");
                 let Count = DishCount[i].value;
