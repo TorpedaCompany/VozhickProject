@@ -12,6 +12,7 @@
 	border-radius: 0px;
 	background-color: var(--RedColor);
 }
+
 .swal-button[not:disabled]:hover {
 	background-color: #ff501c;
 }
@@ -22,5 +23,6 @@
 
 .swal-button:focus {
 	outline: none;
+	-webkit-box-shadow: none;
 	box-shadow: none;
 }

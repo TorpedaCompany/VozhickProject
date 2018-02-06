@@ -62,7 +62,9 @@ function Update() {
             SrcImage = "../image/constructor/constr_pancake.png";
         } else if (TypeConstructorRest === "Пицца") {
             SrcImage = "../image/constructor/constr_pizza.png";
-        }
+        }else if (TypeConstructorRest === "Буррито"){
+			SrcImage = "../image/constructor/constr_burrito.png";		  
+		}
         //        AdditionalLine = "Пицца";
         //        AdditionalLine = "Блинчик";
         if (Arr == null) {

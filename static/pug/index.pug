@@ -354,7 +354,7 @@ html(lang='ru')
 						.col-sm-6.col-md-6.col-lg-4(data-id-rest= item._id, data-ctg-rest= item.restCategory)
 							a.rest-item(href='/rests/' + item.restName)
 								.card-img
-									img.b-lazy(data-src= (20 > 18) ? item.restImage : item.restImageNigth, src='../image/rest/rest_placeholder.svg')
+									img.b-lazy(data-src= ( (new Date().getHours() > 18 || new Date().getHours() == 18) || (new Date().getHours() < 8 || new Date().getHours() == 8)  ) ? item.restImageNigth : item.restImage, src='../image/rest/rest_placeholder.svg')
 									.img-text
 										span Перейти к меню
 								.card-title

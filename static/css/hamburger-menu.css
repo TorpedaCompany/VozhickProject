@@ -3,12 +3,22 @@
     z-index: 20;
     position: fixed;
     display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     background-color: #fff;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    -webkit-transition: .2s ease;
+    -o-transition: .2s ease;
     transition: .2s ease;
 }
 .hamburger-menu>a {
@@ -17,9 +27,15 @@
 }
 
 .hamburger-menu-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 50px;
     width: 100%;
     cursor: pointer;
@@ -36,6 +52,8 @@
     padding: 20px;
 }
 .open {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 /*
     visibility: visible;
