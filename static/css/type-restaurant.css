@@ -1,48 +1,72 @@
 .container-type-restaurant {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    max-width: 1200px;
-    /*    height: 100px;;*/
-    margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	max-width: 1200px;
+	/*    height: 100px;;*/
+	margin: 0 auto;
 }
 
 .type-restaurant {
-    display: flex;
-    flex-direction: column;
-    flex: 1 10%;
-    justify-content: center;
-    align-items: center;
-    padding: 3%;
-    cursor: pointer;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 10%;
+	flex: 1 10%;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 3%;
+	cursor: pointer;
 }
 
 @-moz-document url-prefix() {
-    .type-restaurant {
-        padding: 20px;
-    }
+	.type-restaurant {
+		padding: 20px;
+	}
 }
 
 @supports (-ms-ime-align:auto) {
-    .type-restaurant {
-        padding: 20px;
-    }
+	.type-restaurant {
+		padding: 20px;
+	}
 }
 
-.type-restaurant>svg {
-    height: 50px;
+.type-restaurant > svg {
+	height: 50px;
 }
 
-.type-restaurant:hover>svg {
-    fill: #ff501c;
-    transition: .2s ease;
+.type-restaurant:hover > svg {
+	fill: #ff501c;
+	-webkit-transition: .2s ease;
+	-o-transition: .2s ease;
+	transition: .2s ease;
 }
 
-.type-restaurant_active>svg {
-    fill: #ff501c;
+.type-restaurant_active > svg {
+	fill: #ff501c;
 }

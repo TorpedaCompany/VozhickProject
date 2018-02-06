@@ -1,237 +1,373 @@
-
 .container-cart {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-/*    border: 1px solid #e2e3e0;*/
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-    margin: 0 auto;
-    margin-top: 100px;
-    
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	max-width: 1200px;
+	height: auto;
+	/*    border: 1px solid #e2e3e0;*/
+	-webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+	margin: 0 auto;
+	margin-top: 100px;
+
 }
 
 .title-cart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    height: 40px;
-    color: var(--RedColor);
-    font-size: 19px;
-/*    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);*/
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	padding: 10px;
+	height: 40px;
+	color: var(--RedColor);
+	font-size: 19px;
+	/*    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);*/
 }
 
 .main-container-data-cart {
-    display: flex;
-/*    flex-direction: column;*/
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	/*    flex-direction: column;*/
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
+
 .container-button-cart {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	padding: 20px;
 }
+
 .main-eat-container-cart {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 100%;
+	padding: 10px;
 }
 
 .container-eat-cart {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    font-size: 18px;
-    padding: 10px;
-    border: 1px solid #e2e3e0;
-/*    border-bottom: 1px solid;*/
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	font-size: 18px;
+	padding: 10px;
+	border: 1px solid #e2e3e0;
+	/*    border-bottom: 1px solid;*/
 }
+
 .container-image-eat-cart {
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 }
-.container-image-eat-cart>img {
-    height: 50px;
+
+.container-image-eat-cart > img {
+	height: 50px;
 }
+
 .container-name-eat-cart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 20px;
-    flex-grow: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding-left: 20px;
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
 }
+
 .container-price-eat-cart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 150px;
 }
+
 .container-button-eat-cart {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-grow: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
 }
 
 .container-button-cancel-eat-cart {
-    display: inline-block;
-    text-align: center;
-    align-self: center;
-    width: 32px;
-    height: 32px;
+	display: inline-block;
+	text-align: center;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
+	align-self: center;
+	width: 32px;
+	height: 32px;
 	margin-left: 20px;
-    cursor: pointer;
+	cursor: pointer;
 	font-size: 16px;
-    border: 1px solid #e2e3e0;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+	border: 1px solid #e2e3e0;
+	-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 }
-.container-button-cancel-eat-cart>span {
-    font-size: 16px;
+
+.container-button-cancel-eat-cart > span {
+	font-size: 16px;
 }
+
 .container-data-cart {
-    display: flex;
-    flex-direction: column;
-    flex: 1 10%;
-    padding-left: 2%;
-    padding-right: 2%;
-    min-width: 250px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 10%;
+	flex: 1 10%;
+	padding-left: 2%;
+	padding-right: 2%;
+	min-width: 250px;
 }
+
 .button-cart {
-    height: 40px;
-    width: 130px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: #fff;
-    cursor: pointer;
-    margin: 5px;
+	height: 40px;
+	width: 130px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-color: black;
+	color: #fff;
+	cursor: pointer;
+	margin: 5px;
 }
-.button-cart-red{
-    background-color: var(--RedColor);
+
+.button-cart-red {
+	background-color: var(--RedColor);
 }
 
 .card-dish-cart {
-    display: flex;
-/*    height: 260px;*/
-    margin-bottom: 20px;
-    padding: 10px;
-    background: #fff;
-    box-sizing: border-box;
-    border: 1px solid #e2e3e0;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	/*    height: 260px;*/
+	margin-bottom: 20px;
+	padding: 10px;
+	background: #fff;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #e2e3e0;
+	-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 }
 
 .card-dish-cart .card-dish-content-cart {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 0;
 }
 
 .card-dish-cart .card-dish-description-cart {
-    display: flex;
-    align-self: center;
-    vertical-align: middle;
-    padding-top: 5px;
-    font-size: 15px;
-    text-align: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-item-align: center;
+	align-self: center;
+	vertical-align: middle;
+	padding-top: 5px;
+	font-size: 15px;
+	text-align: center;
 }
 
-.card-dish-cart .card-dish-footer-cart{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.card-dish-cart .card-dish-footer-cart {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 }
 
-.card-dish-cart .card-dish-action-cart{
-    height: inherit;
-    line-height: 30px;
-    text-align: center;
-    align-self: center;
+.card-dish-cart .card-dish-action-cart {
+	height: inherit;
+	line-height: 30px;
+	text-align: center;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
+	align-self: center;
 }
 
 .card-dish-cart .card-dish-action-cart .inpPlus,
-.card-dish-cart .card-dish-action-cart .inpMinus{
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-    border: 1px solid #e2e3e0;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
-    cursor: pointer;
+.card-dish-cart .card-dish-action-cart .inpMinus {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	font-size: 16px;
+	border: 1px solid #e2e3e0;
+	-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
 }
 
-.card-dish-action input{
-    display: inline-block;
-    height: inherit;
-    width: 32px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    border: none;
-    -webkit-appearance: none;
+.card-dish-action input {
+	display: inline-block;
+	height: inherit;
+	width: 32px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	border: none;
+	-webkit-appearance: none;
 }
-.card-dish-action
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-    -webkit-appearance: none;
+
+.card-dish-action input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	margin: 0;
+	/* <-- Apparently some margin are still there even though it's hidden */
+	-webkit-appearance: none;
 }
 
 @media (max-width: 590px) {
-    
-    .container-button-cart {
-        justify-content: center;
-    }
-    .container-eat-cart {
-        font-size: 16px;
-        flex-direction: column;
-    }
-    .container-image-eat-cart {
-        padding: 5px;
-    }
-	.container-image-eat-cart>img {
-        height: 30px;
-    }
-    .container-button-eat-cart {
-        width: 100%;
-        padding: 10px;
-        flex-direction: row-reverse;
-    }
-    .container-price-eat-cart {
-        justify-content: flex-end;
-    }
-	.container-button-cancel-eat-cart {
-/*		margin-left: 0;*/
+
+	.container-button-cart {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 	}
-	.container-price-eat-cart{
+	.container-eat-cart {
+		font-size: 16px;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	.container-image-eat-cart {
+		padding: 5px;
+	}
+	.container-image-eat-cart > img {
+		height: 30px;
+	}
+	.container-button-eat-cart {
+		width: 100%;
+		padding: 10px;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: reverse;
+		-ms-flex-direction: row-reverse;
+		flex-direction: row-reverse;
+	}
+	.container-price-eat-cart {
+		-webkit-box-pack: end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+	}
+	.container-button-cancel-eat-cart {
+		/*		margin-left: 0;*/
+	}
+	.container-price-eat-cart {
 		width: auto;
+		-webkit-box-flex: 1;
+		-ms-flex-positive: 1;
 		flex-grow: 1;
 	}
 }
+
 .container-all-price-eat-cart {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    font-size: 18px;
-    padding-bottom: 10px;
-    padding-right: 30px;
-    padding-left: 30px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	font-size: 18px;
+	padding-bottom: 10px;
+	padding-right: 30px;
+	padding-left: 30px;
 }
 
 .input-error {

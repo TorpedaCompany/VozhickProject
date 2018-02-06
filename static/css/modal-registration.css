@@ -1,25 +1,36 @@
-
 .modal-registration {
-    z-index: 35;
-    display: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 500px;
-    width: 360px;
-    background-color: #fff;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+	z-index: 35;
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 500px;
+	width: 360px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .button-registration {
-    width: 150px;
+	width: 150px;
 }
 
 
 .modal-active {
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 }
