@@ -64,9 +64,8 @@ html(lang='en')
       errorElem.innerHTML = str;
       // errorElem.appendChild(newEl);
       }
-
-        localStorage.setItem("date", new Date());
-        document.getElementById("dTime").innerHTML = localStorage.getItem("date");
+        window.localStorage.setItem("date", new Date());
+        document.getElementById("dTime").innerHTML = window.localStorage.getItem("date");
 
       let arrCtgRest = document.querySelectorAll("#ctgRest > div");
       for (let i = 0; i < arrCtgRest.length; i++) {
