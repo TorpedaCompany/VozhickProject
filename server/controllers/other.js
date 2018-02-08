@@ -67,6 +67,7 @@ app.get('/info', function(req, res) {
     });
 });
 
+
 //Должно быть написано в конце всех /
 app.use('*', function(req, res) {
     res.render('404', { data404: null }, function(err, html) {
@@ -79,5 +80,6 @@ app.use('*', function(req, res) {
 
     });
 });
+
 
 module.exports = app;

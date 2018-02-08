@@ -42,7 +42,7 @@
     </div>
     <br>
     <div id="logs">
-        asdfsdf
+        Ошибок нет.
     </div>
     <style>
         .container-type-restaurant {
@@ -72,17 +72,17 @@
         function myOnError(errorMsg, url, lineNumber, column, errorObj) {
             var errorElem = document.getElementById('logs');
             // var newEl = document.createElement("p");
-            errorElem.innerHTML = 'Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber +
+            // var lg = document.createElement('div');
+            var str = "";
+            // console.log(errorMsg);
+            // for (var i = 0; i < 10; i++) {
+            str += 'Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber +
                 ' Column: ' + column + ' StackTrace: ' + errorObj
-                // errorElem.appendChild(newEl);
+                // }
+            errorElem.innerHTML = str;
+            // errorElem.appendChild(newEl);
         }
-
-        var sad = get();
-
-
-
         let arrCtgRest = document.querySelectorAll("#ctgRest > div");
-
         for (let i = 0; i < arrCtgRest.length; i++) {
             arrCtgRest[i].addEventListener("click", function() {
                 alert(this.id);
