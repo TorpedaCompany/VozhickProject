@@ -30,6 +30,7 @@ html(lang='en')
     br
     #logs
       | Ошибок нет.
+    div(id="dTime")
     style.
       .container-type-restaurant {
       /* display: inline-block; */
@@ -63,6 +64,10 @@ html(lang='en')
       errorElem.innerHTML = str;
       // errorElem.appendChild(newEl);
       }
+
+        localStorage.setItem("date", new Date());
+        document.getElementById("dTime").innerHTML = localStorage.getItem("date");
+
       let arrCtgRest = document.querySelectorAll("#ctgRest > div");
       for (let i = 0; i < arrCtgRest.length; i++) {
       arrCtgRest[i].addEventListener("click", function() {

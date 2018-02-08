@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-type-restaurant" id="ctgRest">
+        <div class="col-md-2 type-restaurant" id="Суши">
+            <span>Суши</span>
+        </div>
+        <div class="type-restaurant" id="Бургеры">
+            <span>Бургеры</span>
+        </div>
+        <div class="type-restaurant" id="Пицца">
+            <span>Пицца</span>
+        </div>
+    </div>
+    <hr>
+    <div class="container-type-restaurant2" id="ctgRest2">
+        <div class="type-restaurant" id="Европейская" onclick="alert(this.id)">
+            <span>Европейская</span>
+        </div>
+        <div class="type-restaurant" id="Десерты" onclick="alert(this.id)">
+            <span>Десерты</span>
+        </div>
+    </div>
+    <hr>
+    <div class="container-type-restaurant3" id="ctgRest3">
+        5
+        <div class="type-restaurant" onclick="let x = 5; alert(x)">
+            <span>Кнопка_1</span>
+        </div>
+        2
+        <div class="type-restaurant" onclick="alert (['5','dfgs','562','test'].indexOf('562'))">
+            <span>Кнопка_2</span>
+        </div>
+    </div>
+    <br>
+    <div id="logs">
+        Ошибок нет.
+    </div>
+    <div id="dTime"></div>
+    <style>
+        .container-type-restaurant {
+            /* display: inline-block; */
+        }
+        
+        .type-restaurant {
+            display: inline-block;
+            height: 48px;
+            width: 86px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 48px;
+            /* float: left; */
+            margin: 5px;
+            cursor: pointer;
+        }
+        
+        .type-restaurant:last-child::after {
+            clear: both;
+        }
+    </style>
+
+    <script>
+        window.onerror = myOnError;
+
+        function myOnError(errorMsg, url, lineNumber, column, errorObj) {
+            var errorElem = document.getElementById('logs');
+            // var newEl = document.createElement("p");
+            // var lg = document.createElement('div');
+            var str = "";
+            // console.log(errorMsg);
+            // for (var i = 0; i < 10; i++) {
+            str += 'Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber +
+                ' Column: ' + column + ' StackTrace: ' + errorObj
+                // }
+            errorElem.innerHTML = str;
+            // errorElem.appendChild(newEl);
+        }
+        localStorage.setItem("date", new Date());
+        document.getElementById("dTime").innerHTML = localStorage.getItem("date");
+        let arrCtgRest = document.querySelectorAll("#ctgRest > div");
+        for (let i = 0; i < arrCtgRest.length; i++) {
+            arrCtgRest[i].addEventListener("click", function() {
+                alert(this.id);
+            }, false);
+        }
+    </script>
+</body>
+
+</html>
