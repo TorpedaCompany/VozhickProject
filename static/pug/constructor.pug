@@ -63,6 +63,11 @@ body
 						#button-remove-pancake.button-remove-pancake Очистить
 						#button-cart-post.button-add-pancake Добавить
 		include footer.pug
+	script.
+		window.onerror = myOnError;
+		function myOnError(errorMsg, url, lineNumber, column, errorObj) {
+			alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber +' Column: ' + column + ' StackTrace: ' + errorObj)
+		}
 	script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
 	script(src='../../js/hamburger-menu.js')
 	script(src='../../plugins/lazy/blazy.js')
