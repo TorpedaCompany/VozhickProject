@@ -69,17 +69,17 @@ app.get('/info', function(req, res) {
 
 
 //Должно быть написано в конце всех /
-app.use('*', function(req, res) {
-    res.render('404', { data404: null }, function(err, html) {
-        if (err) {
-            logger.error(err);
-            return res.status(500).res.end()
-        } else {
-            res.send(html);
-        }
+// app.use('*', function(req, res) {
+//     res.render('404', { data404: null }, function(err, html) {
+//         if (err) {
+//             logger.error(err);
+//             return res.status(500).res.end()
+//         } else {
+//             res.send(html);
+//         }
 
-    });
-});
+//     });
+// });
 
 
 module.exports = app;
