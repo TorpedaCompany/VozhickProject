@@ -1,0 +1,71 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Document
+  body
+    #ctgRest.container-type-restaurant
+      .col-md-2.type-restaurant(id='Суши')
+        span Суши
+      .type-restaurant(id='Бургеры')
+        span Бургеры
+      .type-restaurant(id='Пицца')
+        span Пицца
+    hr
+    #ctgRest2.container-type-restaurant2
+      .type-restaurant(id='Европейская', onclick='alert(this.id)')
+        span Европейская
+      .type-restaurant(id='Десерты', onclick='alert(this.id)')
+        span Десерты
+    hr
+    #ctgRest3.container-type-restaurant3
+      | 5
+      .type-restaurant(onclick='let x = 5; alert(x)')
+        span Кнопка_1
+      |         2
+      .type-restaurant(onclick="alert (['5','dfgs','562','test'].indexOf('562'))")
+        span Кнопка_2
+    br
+    #logs
+      | Ошибок нет.
+    style.
+      .container-type-restaurant {
+      /* display: inline-block; */
+      }
+      .type-restaurant {
+      display: inline-block;
+      height: 48px;
+      width: 86px;
+      border: 1px solid black;
+      text-align: center;
+      line-height: 48px;
+      /* float: left; */
+      margin: 5px;
+      cursor: pointer;
+      }
+      .type-restaurant:last-child::after {
+      clear: both;
+      }
+    script.
+      window.onerror = myOnError;
+      function myOnError(errorMsg, url, lineNumber, column, errorObj) {
+      var errorElem = document.getElementById('logs');
+      // var newEl = document.createElement("p");
+      // var lg = document.createElement('div');
+      var str = "";
+      // console.log(errorMsg);
+      // for (var i = 0; i < 10; i++) {
+      str += 'Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber +
+      ' Column: ' + column + ' StackTrace: ' + errorObj
+      // }
+      errorElem.innerHTML = str;
+      // errorElem.appendChild(newEl);
+      }
+      let arrCtgRest = document.querySelectorAll("#ctgRest > div");
+      for (let i = 0; i < arrCtgRest.length; i++) {
+      arrCtgRest[i].addEventListener("click", function() {
+      alert(this.id);
+      }, false);
+      }

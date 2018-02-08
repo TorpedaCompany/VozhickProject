@@ -66,6 +66,15 @@ app.get('/info', function(req, res) {
         }
     });
 });
+app.get('/test', function(req, res) {
+    res.render('test', function(err, html) {
+        if (!err)
+            res.status(200).send(html);
+        else {
+            logger.error(err);
+        }
+    });
+});
 
 
 //Должно быть написано в конце всех /
