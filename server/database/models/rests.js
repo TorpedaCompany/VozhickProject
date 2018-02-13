@@ -18,13 +18,27 @@ let dishSchema = new mongoose.Schema({
     description: String,
     composition: String,
     grams: String,
+    count: {
+        type: Number,
+        default: 1
+    },
     price: {
         type: Number,
         required: [true, "dishPriceRequired"]
     },
-    count: {
-        type: Number,
-        default: 1
+    portions: {
+        status: {
+            type: Boolean,
+            default: false
+        },
+        portionsPrice4: {
+            type: Number,
+            default: 0
+        },
+        portionsPrice8: {
+            type: Number,
+            default: 0
+        }
     }
 })
 
@@ -64,7 +78,7 @@ let restsSchema = new mongoose.Schema({
         type: Array,
         default: []
     },
-	constructorBurrito: {
+    constructorBurrito: {
         type: Array,
         default: []
     },
