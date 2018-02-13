@@ -378,6 +378,8 @@ html(lang='ru')
                           .inpPlus +
                           .addToCard
                             i.fa.fa-inverse.fa-shopping-cart(aria-hidden='true')
+                      if(item.portions.status)
+                        span= "portions.status = true"
                 for item, index in dataRest.restDishes
                   +dish(item)
                 if dataRest.restConstructor

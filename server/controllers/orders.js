@@ -84,6 +84,7 @@ app.post('/orders', (req, res) => {
                 data.restDishes.forEach(function(obj) {
                     if (obj._id == ord.idDish) {
                         obj.count = ord.count;
+                        // if(ord.portions && ())
                         arr.push(obj);
                     }
                 });
