@@ -51,6 +51,7 @@ function CheckVariables() {
 		let ImgDish = ImgDishBlock[0].src;
 		let PriceDish = parseFloat(PriceDishBlock[0].innerText);
 		let CountDish = parseFloat(CountDishBlock[0].value);
+		let Step = CountDishBlock[0].getAttribute('Step');
 		let TotalPriceDish = 0;
 		let CountDishArr = 0;
 		let PriceDish8 = 0;
@@ -61,11 +62,9 @@ function CheckVariables() {
 			if (CountDish % 1 == 0) {
 				TotalPriceDish = PriceDish8 * CountDish;
 				TotalPriceDish = parseFloat(TotalPriceDish);
-				console.log(TotalPriceDish);
 			} else {
 				TotalPriceDish = PriceDish8 * parseInt(CountDish) + PriceDish4;
 				TotalPriceDish = parseFloat(TotalPriceDish);
-				console.log(TotalPriceDish);
 			}
 			Cart.push({
 				"id": IdDish,
@@ -81,7 +80,7 @@ function CheckVariables() {
 			var serialObj = JSON.stringify(Cart);
 			localStorage.setItem('Cart', serialObj);
 			CountAndPriceCart();
-			CountDishBlock[0].value = 1;
+			CountDishBlock[0].value = Step;
 		} else {
 			TotalPriceDish = PriceDish * CountDish;
 			TotalPriceDish = parseFloat(TotalPriceDish);
@@ -98,7 +97,7 @@ function CheckVariables() {
 			var serialObj = JSON.stringify(Cart);
 			localStorage.setItem('Cart', serialObj);
 			CountAndPriceCart();
-			CountDishBlock[0].value = 1;
+			CountDishBlock[0].value = Step;
 		}
 		if (Arr != null) {
 			var length = Arr.length;
@@ -114,11 +113,13 @@ function CheckVariables() {
 							Arr[i].TotalPriceDish = parseFloat(TotalPriceDish);
 							serialObj = JSON.stringify(Arr);
 							localStorage.setItem('Cart', serialObj);
+							CountAndPriceCart();
 						} else {
 							TotalPriceDish = Arr[i].Price8 * parseInt(CountDishArr) + Arr[i].Price4;
 							Arr[i].TotalPriceDish = parseFloat(TotalPriceDish);
 							serialObj = JSON.stringify(Arr);
 							localStorage.setItem('Cart', serialObj);
+							CountAndPriceCart();
 						}
 					} else {
 						CountDishArr = Arr[i].CountDish;
@@ -128,6 +129,7 @@ function CheckVariables() {
 						Arr[i].TotalPriceDish = parseFloat(TotalPriceDish);
 						serialObj = JSON.stringify(Arr);
 						localStorage.setItem('Cart', serialObj);
+						CountAndPriceCart();
 					}
 					// console.log(JSON.parse(localStorage.getItem('Cart')));
 				}
