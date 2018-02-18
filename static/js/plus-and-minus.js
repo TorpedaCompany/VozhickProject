@@ -8,10 +8,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function plus() {
         let Parent = this.parentElement;
         let MyInput = Parent.getElementsByClassName("dishCount");
+        let Step = 0;
         for (let i = 0; i < MyInput.length; i++) {
-            let val = MyInput[i].value;
+            let val = parseFloat(MyInput[i].value);
+			Step = parseFloat(MyInput[i].getAttribute('Step'));
             if (val == 50) {} else {
-                val++;
+                val += Step;
                 MyInput[i].value = val;
 				CountAndPriceCart();
             }
@@ -26,12 +28,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function minus() {
         let Parent = this.parentElement;
         let MyInput = Parent.getElementsByClassName("dishCount");
+		let Step = 0;
         for (let i = 0; i < MyInput.length; i++) {
-            let val = MyInput[i].value;
-            if (val == 1) {} else {
-                val--;
+            let val = parseFloat(MyInput[i].value);
+			Step = parseFloat(MyInput[i].getAttribute('Step'));
+            if (val == Step) {} else {
+                val -= Step;
+				
                 MyInput[i].value = val;
 				CountAndPriceCart();
+//				alert(Step);
             }
         }
     }

@@ -19,22 +19,33 @@ document.addEventListener("DOMContentLoaded", UpdatePlusAndMinus());
 		let CountDishArr = 0;
 		let TotalPriceDish = 0;
 		for (let i = 0; i < MyInput.length; i++) {
-			let val = MyInput[i].value;
+			let val = parseFloat(MyInput[i].value);
+			let Step = parseFloat(MyInput[i].getAttribute('Step'));
 			if (val == 50) {} else {
 				let DishId = this.getAttribute("data-id-dish");
 				let Arr = JSON.parse(localStorage.getItem('Cart'));
 				for (let a = 0; a < Arr.length; a++) {
 					if (Arr[a].id == DishId) {
 						CountDishArr = Arr[a].CountDish;
-						CountDishArr++;
+						CountDishArr += Step;
 						Arr[a].CountDish = CountDishArr;
-						TotalPriceDish = Arr[a].Price * CountDishArr;
-						Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
+						if(MyInput[i].getAttribute("data-portions-status-dish") == "true"){
+							if (CountDishArr % 1 == 0) {
+								TotalPriceDish = Arr[a].Price8 * CountDishArr;
+								Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
+							} else {
+								TotalPriceDish = Arr[a].Price8 * parseInt(CountDishArr) + Arr[a].Price4;
+								Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
+							}
+						}else{
+							TotalPriceDish = Arr[a].Price * CountDishArr;
+							Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
+						}
 					}
 				}
 				serialObj = JSON.stringify(Arr);
 				localStorage.setItem('Cart', serialObj);
-				val++;
+				val += Step;
 				MyInput[i].value = val;
 				CountAndPriceCart();
 				TotalCart();
@@ -49,22 +60,33 @@ document.addEventListener("DOMContentLoaded", UpdatePlusAndMinus());
 		let CountDishArr = 0;
 		let TotalPriceDish = 0;
 		for (let i = 0; i < MyInput.length; i++) {
-			let val = MyInput[i].value;
-			if (val == 1) {} else {
+			let val = parseFloat(MyInput[i].value);
+			let Step = parseFloat(MyInput[i].getAttribute('Step'));
+			if (val == Step) {} else {
 				let DishId = this.getAttribute("data-id-dish");
 				let Arr = JSON.parse(localStorage.getItem('Cart'));
 				for (let a = 0; a < Arr.length; a++) {
 					if (Arr[a].id == DishId) {
 						CountDishArr = Arr[a].CountDish;
-						CountDishArr--;
+						CountDishArr -= Step;
 						Arr[a].CountDish = CountDishArr;
-						TotalPriceDish = Arr[a].TotalPriceDish - Arr[a].Price;
-						Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
+						if(MyInput[i].getAttribute("data-portions-status-dish") == "true"){
+							if (CountDishArr % 1 == 0) {
+								TotalPriceDish = Arr[a].Price8 * CountDishArr;
+								Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
+							} else {
+								TotalPriceDish = Arr[a].Price8 * parseInt(CountDishArr) + Arr[a].Price4;
+								Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
+							}
+						}else{
+							TotalPriceDish = Arr[a].TotalPriceDish - Arr[a].Price;
+							Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
+						}
 					}
 				}
 				serialObj = JSON.stringify(Arr);
 				localStorage.setItem('Cart', serialObj);
-				val--;
+				val -= Step;
 				MyInput[i].value = val;
 				CountAndPriceCart();
 				TotalCart();

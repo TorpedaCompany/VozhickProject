@@ -287,12 +287,13 @@
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-ms-flex-direction: row;
-	flex-direction: row;
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 }
-
+.card-dish-footer-portions-status-true{
+	flex-direction: column;
+}
 .rest-card-dish .card-dish-info {
 	min-width: 85px;
 }
@@ -304,7 +305,21 @@
 .rest-card-dish .card-dish-info .dish-price {
 	font-size: 19px;
 }
-
+.card-dish-info-portions-status-true{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
 .rest-catalog-dish_error {
 	text-align: center;
 	font-size: 16px;
@@ -332,6 +347,10 @@
 	-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 	cursor: pointer;
+}
+.card-dish-action-dop-type .inpPlus,
+.card-dish-action-dop-type .inpMinus {
+	font-size: 14px;
 }
 
 .card-dish-action input {

@@ -179,8 +179,8 @@ body {
     font-size: 24px;
 }
 
-.container-social>span {padding: 5px; color: #ff501c}
-.container-social>img {
+.container-social>a>span {padding: 5px; color: #ff501c}
+.container-social>a>img {
     height: 20px;
     margin: 5px;
 }

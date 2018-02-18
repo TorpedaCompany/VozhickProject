@@ -357,29 +357,50 @@ html(lang='ru')
             if (dataRest && dataRest != undefined)
               #rest-catalog-dish.row.rest-catalog-dish
                 mixin dish(item)
-                  .rest-card-dish(data-category-dish= item.category data-id-dish= item._id)
-                    .closeBtn
-                      i.fa.fa-times(aria-hidden='true')
-                    .card-dish-img
-                      img.b-lazy(data-src= item.img, src='../image/rest/rest_placeholder.svg')
-                    .card-dish-content
-                      .card-dish-description
-                        span= item.name
-                        p= item.description
-                          p= 'Состав: ' + item.composition
-                        p
-                      .card-dish-footer
-                        .card-dish-info
-                          .dish-grams= item.grams + ' гр.'
-                          .dish-price= item.price.toFixed(2) + ' руб.'
-                        .card-dish-action
-                          .inpMinus -
-                          input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
-                          .inpPlus +
-                          .addToCard
-                            i.fa.fa-inverse.fa-shopping-cart(aria-hidden='true')
-                      if(item.portions.status)
-                        span= "portions.status = true"
+                  if(item.portions.status == true)
+                    .rest-card-dish(data-category-dish= item.category data-id-dish= item._id)
+                      .closeBtn
+                        i.fa.fa-times(aria-hidden='true')
+                      .card-dish-img
+                        img.b-lazy(data-src= item.img, src='../image/rest/rest_placeholder.svg')
+                      .card-dish-content
+                        .card-dish-description
+                          span= item.name
+                          p= item.description
+                            p= 'Состав: ' + item.composition
+                          p
+                        .card-dish-footer.card-dish-footer-portions-status-true
+                          .card-dish-info.card-dish-info-portions-status-true
+
+                            .dish-price(data-portions-status= "true" data-portions-price-8= item.portions.portionsPrice8 data-portions-price-4= item.portions.portionsPrice4)= '0.5 - ' + item.portions.portionsPrice4.toFixed(2) + ' / 1 - ' + item.portions.portionsPrice8.toFixed(2) + ' руб.'
+                          .card-dish-action
+                            .inpMinus -
+                            input.dishCount(type='number', step='0.5', min='0.5', max='50', name='dishCount', value='0.5', readonly='')
+                            .inpPlus +
+                            .addToCard
+                              i.fa.fa-inverse.fa-shopping-cart(aria-hidden='true')
+                  if(item.portions.status == false)
+                    .rest-card-dish(data-category-dish= item.category data-id-dish= item._id)
+                      .closeBtn
+                        i.fa.fa-times(aria-hidden='true')
+                      .card-dish-img
+                        img.b-lazy(data-src= item.img, src='../image/rest/rest_placeholder.svg')
+                      .card-dish-content
+                        .card-dish-description
+                          span= item.name
+                          p= item.description
+                            p= 'Состав: ' + item.composition
+                          p
+                        .card-dish-footer
+                          .card-dish-info
+                            .dish-grams= item.grams + ' гр.'
+                            .dish-price(data-portions-status= "false")= item.price.toFixed(2) + ' руб.'
+                          .card-dish-action
+                            .inpMinus -
+                            input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
+                            .inpPlus +
+                            .addToCard
+                              i.fa.fa-inverse.fa-shopping-cart(aria-hidden='true')
                 for item, index in dataRest.restDishes
                   +dish(item)
                 if dataRest.restConstructor
