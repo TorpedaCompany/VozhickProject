@@ -40,6 +40,9 @@ app.post('/orders', (req, res) => {
             let ordDishes = req.body.dishes;
             let arr = [],
                 arrIngred = [];
+
+            console.info(req.body);
+
             //Сравнение блюд с клиента с сервером, выборка с сервера
             ordDishes.forEach(function(ord) {
                 if (ord.idDish.split(" ")[0] == "Блинчик") {
@@ -83,8 +86,14 @@ app.post('/orders', (req, res) => {
                 }
                 data.restDishes.forEach(function(obj) {
                     if (obj._id == ord.idDish) {
+                        //Если блюдо порциями
+                        if (obj.portions.status)
+                            if (ord.count % 1 == 0)
+                                obj.price = obj.portions.portionsPrice8 * ord.count;
+                            else
+                                obj.price = obj.portions.portionsPrice8 * parseInt(ord.count) + obj.portions.portionsPrice4;
+
                         obj.count = ord.count;
-                        // if(ord.portions && ())
                         arr.push(obj);
                     }
                 });
@@ -102,7 +111,10 @@ app.post('/orders', (req, res) => {
             //Подсчет итоговой цены заказа
             let tmpPrice = 0;
             order.dishes.forEach(function(item) {
-                tmpPrice += (parseFloat(item.price) * parseFloat(item.count));
+                if (item.portions.status)
+                    tmpPrice += parseFloat(item.price);
+                else
+                    tmpPrice += (parseFloat(item.price) * parseFloat(item.count));
             })
 
             order.totalCount = arr.length;
