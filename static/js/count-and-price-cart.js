@@ -11,8 +11,11 @@ function CountAndPriceCart() {
 		CartCount.innerText = '0';
 	} else {
 		for (var i = 0; i < Arr.length; i++) {
-			Price += parseFloat(Arr[i].TotalPriceDish);
-			Count += parseInt(Arr[i].CountDish);
+//			if (CountDish % 1 == 0) {
+				Price += parseFloat(Arr[i].TotalPriceDish);
+				Count += parseFloat(Arr[i].CountDish);
+//			} else {}
+			
 		}
 		if(Price < 20){
 			Price += 2;
