@@ -23,10 +23,17 @@ html(lang='ru')
 		include hamburger-menu.pug
 		include modal.pug
 		.wrapper
-			.container-fluid(style='flex: 1;')
-				.row
-					.container-info-delivery
-						| Здесь будет ваша информация о доставке.
-		include footer.pug
+			.div(style='flex: 1;')
+				.container-info-delivery
+					.title-info-delivery Информация о доставке
+					.container-text-info-delivery
+						p Доставка работает с 11:30 до 23:00. Пятница и Суббота с 11:00 до 01:00.
+						p Доставка осуществляется по городу Солигорску.
+						p По поводу достаки в ближайшие населённые пункты, уточните у администратора, по телефону 6750606 (для всех операторов).
+						p Время доставки от 30 минут до 1 часа, в зависимости от загруженности курьеров.
+						p Стоимость доставки составляет 2 рубля.
+						p Если сумма заказа более 20 рублей, доставка осуществляется бесплатно.
+						p Последний заказ принимается за 30 МИНУТ до закрытия.
+			include footer.pug
 		script(src='../js/hamburger-menu.js')
 		script(src='../js/open-modal.js')
