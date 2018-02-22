@@ -2,15 +2,107 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 	width: 100%;
 	max-width: 1200px;
-	height: 100px;
+	height: auto;
+	/* border: 1px solid #e2e3e0; */
 	-webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 	box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-	margin-top: 90px;
-	-webkit-box-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
 	margin: 0 auto;
-	padding-top: 90px;
+	margin-top: 100px;
+}
+
+.title-info-help {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	padding: 10px;
+	height: 40px;
+	color: var(--RedColor);
+	font-size: 19px;
+	text-align: center;
+}
+
+.container-content-help {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.item-content-help {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 10em;
+	flex: 1 10em;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 3%;
+	cursor: pointer;
+	text-align: center;
+}
+
+.item-content-help > .fa {
+	font-size: 46px;
+	padding: 10px;
+}
+
+.container-text-info-help {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: flex-end;
+	-ms-flex-align: flex-end;
+	align-items: flex-end;
+	width: 100%;
+	padding: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	color: #9E9E9E;
 }
