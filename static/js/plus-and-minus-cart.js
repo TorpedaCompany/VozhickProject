@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", UpdatePlusAndMinus());
 							if (CountDishArr % 1 == 0) {
 								TotalPriceDish = Arr[a].Price8 * CountDishArr;
 								Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
+								
 							} else {
 								TotalPriceDish = Arr[a].Price8 * parseInt(CountDishArr) + Arr[a].Price4;
 								Arr[a].TotalPriceDish = parseFloat(TotalPriceDish);
