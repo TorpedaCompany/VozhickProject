@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             target = e.target.parentNode.className || e.srcElement.parentNode.className;
             target_id = e.target.parentNode.Id || e.srcElement.parentNode.Id;
 
-            if (target != "card-dish-action" && target != "addToCard" && target_id != "rest-card-dish-constructor") {
+            if (target != "card-dish-action" && target != "addToCard" && target != "addToCard-disabled" && target_id != "rest-card-dish-constructor") {
                 disableScroll();
                 let cloneDishes = this.cloneNode(true);
                 cloneDishes.classList.add('modalDish');
