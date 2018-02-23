@@ -6,10 +6,12 @@ function ErrorRestoraunt() {
 		text: "В одном заказе может быть только один ресторан(",
 		icon: "error",
 	});
-	var CardDishContent1 = document.querySelectorAll(".card-dish-content");
+	var AddCardButtonError = document.querySelectorAll(".addToCard");
+	//	var CardDishContent1 = document.querySelectorAll(".card-dish-content");
 	var CardDishContent2 = document.querySelectorAll(".card-dish-content a");
-	for (var n = 0; n < CardDishContent1.length; n++) {
-		CardDishContent1[n].style.display = "none";
+	for (var n = 0; n < AddCardButtonError.length; n++) {
+		AddCardButtonError[n].classList.add("addToCard-disabled");
+		//		CardDishContent1[n].style.display = "none";
 	}
 	for (var n = 0; n < CardDishContent2.length; n++) {
 		CardDishContent2[n].style.display = "none";
@@ -49,7 +51,7 @@ function Cart() {
 	let CountDishArr = 0;
 	let PriceDish8 = 0;
 	let PriceDish4 = 0;
-	console.log('IdDish' + IdDish);
+
 	if (Arr == null) {
 		if (PriceDishBlock[0].getAttribute("data-portions-status") == "true") {
 			PriceDish8 = parseFloat(PriceDishBlock[0].getAttribute("data-portions-price-8"));
@@ -187,5 +189,7 @@ function Cart() {
 }
 
 for (let i = 0; i < AddCardButton.length; i++) {
-	AddCardButton[i].addEventListener("click", Cart, false);
+	if (AddCardButton[i].classList.contains("addToCard-disabled")) {} else {
+		AddCardButton[i].addEventListener("click", Cart, false);
+	}
 }
