@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     PostButton.addEventListener("click", function() {
+		if (PostButton.classList.contains("button-cart-post-disabled")) {} else {
         var ArrValueInput = [Name, Surname, Street, Entrance, Apartment, Phone, Email];
         var Status = true;
         var StringError = '';
@@ -189,5 +190,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 icon: "error",
             });
         }
+		        }
     });
 });

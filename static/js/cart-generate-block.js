@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", ShowCart());
 function ShowCart() {
 	var Bly = JSON.parse(localStorage.getItem('Cart'));
 	var BlockContainer = document.getElementById("main-eat-container-cart");
+	var AjaxCardButton = document.getElementById("button-cart-post");
 	var div = '';
 	var PriceDiv = '';
 	if (Bly == null) {
 		BlockContainer.innerHTML = div;
+		AjaxCardButton.classList.add("button-cart-post-disabled");
 	} else {
 		for (var i = 0; i < Bly.length; i++) {
 			if(Bly[i].PortionsStatus == "true"){

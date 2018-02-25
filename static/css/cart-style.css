@@ -390,3 +390,7 @@ input::-webkit-inner-spin-button {
 .input-error {
 	background-color: #ffa5a5;
 }
+
+.button-cart-post-disabled {
+	background-color: #757575;
+}
