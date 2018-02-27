@@ -149,7 +149,7 @@
 
 .ingredients-items > img {
 	height: 64px;
-	width: 64px;
+	width: 94px;
 }
 
 .ingredients-items-hidden {
@@ -236,14 +236,14 @@
 
 .plus-ingredients {
 	position: relative;
-	left: 30px;
+	left: 42px;
 	top: 0;
 	color: var(--RedColor);
 }
 
 .minus-ingredients {
 	position: relative;
-	left: 30px;
+	left: 42px;
 	top: 0;
 	color: var(--RedColor);
 }
