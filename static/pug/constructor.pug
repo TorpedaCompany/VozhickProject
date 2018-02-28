@@ -37,7 +37,7 @@ body
 							mixin ingr(item)  
 								.ingredients-items-plus.ingredients-items(data-id-ingredients= item._id)
 									span.plus-ingredients.fa.fa-plus-square
-									img.b-lazy(data-src= item.img, src='../image/rest/rest_placeholder.svg')
+									img.b-lazy(data-src= item.img, src='../../image/rest/rest_placeholder.svg')
 									span= item.name
 									span= item.price+' руб.'
 							for item, index in dataConstr
@@ -54,6 +54,7 @@ body
 									span.price-ingredients= item.price+' руб.'
 							for item, index in dataConstr
 								+ingr(item)
+				.container-info-constructor *При заказе к стоимости добавляется 1 рубль за коробку
 				.container-constructor-button
 					span Кол-во:
 					.card-dish-action

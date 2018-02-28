@@ -80,6 +80,7 @@ function Update() {
                     Price = Price.substr(0, Price.length - 5);
                     PriceIngredients += parseFloat(Price);
                 }
+				PriceIngredients++;
                 NameIngredients = NameIngredients.slice(0, -2);
                 NameIngredients = TypeConstructorRest + ' (' + NameIngredients + ')';
                 CountDish = parseInt(Input.value);
@@ -87,7 +88,7 @@ function Update() {
                 Cart.push({
                     "Name": NameIngredients,
                     "Image": SrcImage,
-                    "Price": PriceIngredients,
+                    "Price": PriceIngredients.toFixed(2),
                     "TotalPriceDish": TotalPriceDish,
                     "CountDish": CountDish,
                     "PortionsStatus": "false",
@@ -123,6 +124,7 @@ function Update() {
                     Price = Price.substr(0, Price.length - 5);
                     PriceIngredients += parseFloat(Price);
                 }
+				PriceIngredients++;
                 NameIngredients = NameIngredients.slice(0, -2);
                 NameIngredients = TypeConstructorRest + ' (' + NameIngredients + ')';
                 CountDish = parseInt(Input.value);
@@ -131,7 +133,7 @@ function Update() {
                 Cart.push({
                     "Name": NameIngredients,
                     "Image": SrcImage,
-                    "Price": PriceIngredients,
+                    "Price": PriceIngredients.toFixed(2),
                     "TotalPriceDish": TotalPriceDish,
                     "CountDish": CountDish,
 					"PortionsStatus": "false",
