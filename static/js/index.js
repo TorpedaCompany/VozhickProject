@@ -37,6 +37,7 @@ function addEventCtgRest() {
     }
 
     function restCtg() {
+        alert('works!');
         let id_rest = document.querySelectorAll("[data-id-rest]");
         let ctg = [];
         for (i = 0; i < id_rest.length; i++) {
