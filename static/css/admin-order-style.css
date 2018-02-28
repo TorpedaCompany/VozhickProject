@@ -260,6 +260,7 @@
 	-ms-flex-align: center;
 	align-items: center;
 	padding: 12px;
+	margin: 12px;
 	padding-top: 20px;
 	color: var(--RedColor);
 	font-size: 22px;
@@ -406,6 +407,7 @@
 	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	margin: 15px;
+	padding: 15px;
 	position: relative;
 	vertical-align: middle;
 	-ms-flex-item-align: center;
