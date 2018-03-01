@@ -79,11 +79,13 @@ document.addEventListener("DOMContentLoaded", function() {
         var ArrValueInput = [Name, Surname, Street, Entrance, Apartment, Phone, Email];
         var Status = true;
         var StringError = '';
+		console.log(Arr[0].NameRest);
 		if (Arr[0].NameRest == "Пиццерия 'Корица'") {
 			let PriceIf = 0;
 			for (let i = 0; i < Arr.length; i++) {
 				PriceIf += parseFloat(Arr[i].TotalPriceDish);	
 			}
+			console.log(PriceIf);
 			if (PriceIf < 10) {
 				Status = false;
 				StringError += 'Минимальный заказ из Корицы 10 рублей!'.concat(', ');
