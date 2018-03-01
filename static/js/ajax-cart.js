@@ -79,6 +79,16 @@ document.addEventListener("DOMContentLoaded", function() {
         var ArrValueInput = [Name, Surname, Street, Entrance, Apartment, Phone, Email];
         var Status = true;
         var StringError = '';
+		if (Arr[0].NameRest == "Пиццерия 'Корица'") {
+			let PriceIf = 0;
+			for (let i = 0; i < Arr.length; i++) {
+				PriceIf += parseFloat(Arr[i].TotalPriceDish);	
+			}
+			if (PriceIf < 10) {
+				Status = false;
+				StringError += 'Минимальный заказ из Корицы 10 рублей!'.concat(', ');
+			}
+		}
         for (var i = 0; i < ArrValueInput.length; i++) {
             switch (ArrValueInput[i]) {
                 case Name:
@@ -146,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     break;
             }
         }
+
         if (Status != false) {
             InfoUser = {
                 "Name": Name.value,
