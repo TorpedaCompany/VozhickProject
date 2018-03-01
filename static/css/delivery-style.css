@@ -35,7 +35,8 @@
     width: 100%;
     padding: 10px;
     height: 40px;
-    color: var(--RedColor);
+/*    color: var(--RedColor);*/
+    color: #ff501c;
     font-size: 19px;
 	text-align: center;
 }

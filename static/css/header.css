@@ -10,7 +10,8 @@
 html,
 body {
     height: 100%;
-    font-family: var(--Font);
+/*    font-family: var(--Font);*/
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
 
@@ -155,7 +156,8 @@ body {
 }
 
 .menubar-item>span {
-    color: var(--BlackColor);
+/*    color: var(--BlackColor);*/
+    color: black;
 }
 .menubar-item:hover>span {
     color: #ff501c;
@@ -174,7 +176,8 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-family: var(--Font);
+/*    font-family: var(--Font);*/
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 24px;
 }
@@ -243,7 +246,8 @@ body {
 /*    left: 85%;*/
     top: 2px;
 	right: 2px;
-    background-color:  var(--RedColor);
+/*    background-color:  var(--RedColor);*/
+    background-color:  #ff501c;
 	height: 25px;
 	width: 25px;
 	border-radius: 100px;
@@ -269,7 +273,8 @@ body {
     height: 100%;
     cursor: pointer;
 }
-.input-user-button>span {color: var(--BlackColor);}
+/*.input-user-button>span {color: var(--BlackColor);}*/
+.input-user-button>span {color: black;}
 .input-user-button:hover>span {-webkit-transition: .2s ease;-o-transition: .2s ease;transition: .2s ease; color: #ff501c;}
 
 .shopping-cart-button {
@@ -285,7 +290,8 @@ body {
     padding: 10px;
     height: 100%;
     cursor: pointer;
-    background-color: var(--BlackColor);
+/*    background-color: var(--BlackColor);*/
+    background-color: black;
     color: #fff;
     min-width: 100px;
 }

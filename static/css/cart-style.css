@@ -52,7 +52,8 @@
 	width: 100%;
 	padding: 10px;
 	height: 40px;
-	color: var(--RedColor);
+/*	color: var(--RedColor);*/
+	color: #ff501c;
 	font-size: 19px;
 	/*    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);*/
 }
@@ -230,7 +231,8 @@
 }
 
 .button-cart-red {
-	background-color: var(--RedColor);
+/*	background-color: var(--RedColor);*/
+	background-color: #ff501c;
 }
 
 .card-dish-cart {

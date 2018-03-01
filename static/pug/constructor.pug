@@ -25,51 +25,47 @@ body
 		include header.pug
 		include hamburger-menu.pug
 		include modal.pug
-		.main-container-constructor
-			.container-title-page(data-name-rest-constructor=dataConstr.restName data-type-rest-constructor=dataConstr.constrType)
-				span= dataConstr.titles[0] + ' - ' + dataConstr.restName
-			.container-constructor
-				.container-constructor-section
-					.container-ingredients
-						.container-title
-							h4 Ингридиенты
-						#ingredients.container-ingredients-items
-							mixin ingr(item)  
-								.ingredients-items-plus.ingredients-items(data-id-ingredients= item._id)
-									span.plus-ingredients.fa.fa-plus-square
-									img.b-lazy(data-src= item.img, src='../../image/rest/rest_placeholder.svg')
-									span= item.name
-									span= item.price+' руб.'
-							for item, index in dataConstr
-								+ingr(item)
-					.container-my-food
-						.container-title
-							h4= dataConstr.titles[1]
-						#my-ingredients.container-ingredients-items
-							mixin ingr(item)
-								.ingredients-items-minus.ingredients-items.ingredients-items-hidden(data-id-ingredients= item._id)
-									span.minus-ingredients.fa.fa-minus-square
-									img.b-lazy(src=item.img)
-									span.name-ingredients= item.name
-									span.price-ingredients= item.price+' руб.'
-							for item, index in dataConstr
-								+ingr(item)
-				.container-info-constructor *При заказе к стоимости добавляется 1 рубль за коробку
-				.container-constructor-button
-					span Кол-во:
-					.card-dish-action
-						.inpMinus -
-						input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
-						.inpPlus +
-					.container-button
-						#button-remove-pancake.button-remove-pancake Очистить
-						#button-cart-post.button-add-pancake Добавить
+		.div(style='-webkit-box-flex: 1;-ms-flex: 1 0 auto;flex: 1 0 auto')
+			.main-container-constructor
+				.container-title-page(data-name-rest-constructor=dataConstr.restName data-type-rest-constructor=dataConstr.constrType)
+					span= dataConstr.titles[0] + ' - ' + dataConstr.restName
+				.container-constructor
+					.container-constructor-section
+						.container-ingredients
+							.container-title
+								h4 Ингридиенты
+							#ingredients.container-ingredients-items
+								mixin ingr(item)  
+									.ingredients-items-plus.ingredients-items(data-id-ingredients= item._id)
+										span.plus-ingredients.fa.fa-plus-square
+										img.b-lazy(data-src= item.img, src='../../image/rest/rest_placeholder.svg')
+										span= item.name
+										span= item.price+' руб.'
+								for item, index in dataConstr
+									+ingr(item)
+						.container-my-food
+							.container-title
+								h4= dataConstr.titles[1]
+							#my-ingredients.container-ingredients-items
+								mixin ingr(item)
+									.ingredients-items-minus.ingredients-items.ingredients-items-hidden(data-id-ingredients= item._id)
+										span.minus-ingredients.fa.fa-minus-square
+										img.b-lazy(src=item.img)
+										span.name-ingredients= item.name
+										span.price-ingredients= item.price+' руб.'
+								for item, index in dataConstr
+									+ingr(item)
+					.container-info-constructor *При заказе к стоимости добавляется 1 рубль за коробку
+					.container-constructor-button
+						span Кол-во:
+						.card-dish-action
+							.inpMinus -
+							input.dishCount(type='number', step='1', min='1', max='50', name='dishCount', value='1', readonly='')
+							.inpPlus +
+						.container-button
+							#button-remove-pancake.button-remove-pancake Очистить
+							#button-cart-post.button-add-pancake Добавить
 		include footer.pug
-	script.
-		window.onerror = myOnError;
-		function myOnError(errorMsg, url, lineNumber, column, errorObj) {
-			alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber +' Column: ' + column + ' StackTrace: ' + errorObj)
-		}
 	script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
 	script(src='../../js/hamburger-menu.js')
 	script(src='../../plugins/lazy/blazy.js')

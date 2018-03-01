@@ -6,7 +6,8 @@
 }
 
 * {
-	font-family: var(--Font);
+/*	font-family: var(--Font);*/
+	font-family: 'Roboto', sans-serif;
 }
 
 .background {
@@ -92,7 +93,8 @@
 	width: 100%;
 	padding: 20px;
 	/*    padding-bottom: 60px;*/
-	font-family: var(--Font);
+/*	font-family: var(--Font);*/
+	font-family: 'Roboto', sans-serif;
 	font-weight: 600;
 }
 
@@ -116,7 +118,8 @@
 	align-items: center;
 	width: 100%;
 	height: 50px;
-	font-family: var(--Font);
+/*	font-family: var(--Font);*/
+	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
 	padding: 20px;
 	cursor: pointer;
@@ -178,7 +181,8 @@
 	-ms-flex-align: center;
 	align-items: center;
 	padding: 10px;
-	color: var(--RedColor);
+/*	color: var(--RedColor);*/
+	color: #ff501c;
 	font-size: 26px;
 	font-weight: 500;
 }

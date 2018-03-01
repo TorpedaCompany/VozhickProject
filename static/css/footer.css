@@ -13,6 +13,7 @@
 	padding: 0;
 	height: auto;
 	width: 100%;
+	-webkit-box-flex: 0;-ms-flex: 0 0 auto;flex: 0 0 auto;
 }
 
 .container-footer {
@@ -149,7 +150,8 @@
 	-ms-flex-align: center;
 	align-items: center;
 	padding: 20px;
-	background-color: var(--RedColor);
+/*	background-color: var(--RedColor);*/
+	background-color: #ff501c;
 	height: 35px;
 	color: #fff;
 	font-size: 16px;

@@ -13,16 +13,19 @@
 html,
 body {
     height: 100%;
-    font-family: var(--Font);
+/*    font-family: var(--Font);*/
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
 
 .grey {
-    background-color: var(--GreyColor);
+/*    background-color: var(--GreyColor);*/
+    background-color: #BDBDBD;
 }
 
 .red {
-    background-color: var(--RedColor);
+/*    background-color: var(--RedColor);*/
+    background-color: #ff501c;
 }
 
 

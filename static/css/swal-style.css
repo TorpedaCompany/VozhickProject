@@ -10,7 +10,8 @@
 
 .swal-button {
 	border-radius: 0px;
-	background-color: var(--RedColor);
+/*	background-color: var(--RedColor);*/
+	background-color: #ff501c;
 }
 
 .swal-button[not:disabled]:hover {

@@ -59,7 +59,8 @@
 	align-items: center;
 	width: 100%;
 	padding: 20px;
-	font-family: var(--Font);
+/*	font-family: var(--Font);*/
+	font-family: 'Roboto', sans-serif;
 	font-weight: 600;
 	/*    margin-right: 20px;*/
 }
@@ -154,7 +155,8 @@
 	width: 100%;
 	font-size: 22px;
 	font-weight: 500;
-	font-family: var(--Font);
+/*	font-family: var(--Font);*/
+	font-family: 'Roboto', sans-serif;
 }
 
 .input-name-registration,
