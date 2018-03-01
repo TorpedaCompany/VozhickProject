@@ -144,22 +144,27 @@ app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
             if (!data)
                 return res.status(404).send({ error: "Not found" });
             else {
-                data.status = "Принят";
-                data.save(function(err, data) {
-                    if (err)
-                        return res.status(500).send({ error: err.message });
-                    else {
-                        console.log("Раздел почты");
-                        sendMail(data.email, data.dishes, data.totalPrice, function(callback) {
-                            if (!callback.status) {
-                                logger.error(callback.message);
-                            } else
-                                logger.info(callback.message);
+                if (data.status == "Новый") {
+                    data.status = "Принят";
+                    data.save(function(err, data) {
+                        if (err)
+                            return res.status(500).send({ error: err.message });
+                        else {
+                            console.log("Раздел почты");
+                            sendMail(data.email, data.dishes, data.totalPrice, function(callback) {
+                                if (!callback.status) {
+                                    logger.error(callback.message);
+                                } else
+                                    logger.info(callback.message);
 
-                        });
-                        return res.status(200).send(data._id);
-                    }
-                });
+                            });
+                            return res.status(200).send(data._id);
+                        }
+                    });
+                } else {
+                    return res.status(500).send({ message: "Заказ уже принят!" });
+                }
+
             }
 
             // return res.status(200).send(data);

@@ -37,24 +37,28 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 })
                 .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Заказ был подтвержден!", {
-                            icon: "success",
-                        });
-                        axios.post('../orders/' + this.dataset.idOrder + '/accept', {})
-                            // axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
-                            // axios.post('https://voztest.ga/orders/' + this.dataset.idOrder + '/accept', {})
-                            .then(function(response) {
-                                // console.log(response);
-                            })
-                            .catch(function(error) {
-                                console.log(error);
-                                // console.log(error.response.data);
+                    let _this = this;
+                    axios.post('../orders/' + this.dataset.idOrder + '/accept', {})
+                        // axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
+                        // axios.post('https://voztest.ga/orders/' + this.dataset.idOrder + '/accept', {})
+                        .then(function(response) {
+                            console.log(response);
+                            swal("Заказ был подтвержден!", {
+                                icon: "success",
                             });
-                        //Переместить блок заказа в другой раздел
-                        node.removeChild(this);
-                        accepted_ord_container.insertBefore(node, accepted_ord_container.firstChild);
-                    }
+                            //Переместить блок заказа в другой раздел
+                            node.removeChild(_this);
+                            accepted_ord_container.insertBefore(node, accepted_ord_container.firstChild);
+                        })
+                        .catch(function(error) {
+                            swal("Ошибка", {
+                                text: "Возможно заказ уже был подтвержден. Обновите страницу",
+                                icon: "error",
+                            });
+
+                            console.log(error);
+                        });
+
                 });
 
         }
@@ -77,22 +81,23 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                 })
                 .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Заказ был удален!", {
-                            icon: "success",
-                        });
-                        axios.delete('../orders/' + this.dataset.idOrder, {})
-                            // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
-                            .then(function(response) {
-                                // console.log(response);
-                            })
-                            .catch(function(error) {
-                                console.log(error);
-                                // console.log(error.response.data);
+                    axios.delete('../orders/' + this.dataset.idOrder, {})
+                        // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
+                        .then(function(response) {
+                            swal("Заказ был удален!", {
+                                icon: "success",
                             });
-                        //НЕ РАБОТАЕТ В IE11
-                        node.remove();
-                    }
+                            node.remove();
+                        })
+                        .catch(function(error) {
+                            swal("Ошибка", {
+                                text: "Ошибка удаления",
+                                icon: "error",
+                            });
+                        });
+                    //НЕ РАБОТАЕТ В IE11
+
+
                 });
 
         }
@@ -211,3 +216,10 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }, false);
 });
+
+// window.addEventListener("beforeunload", function(e) {
+//     alert("asdasd");
+// }); 
+// window.addEventListener("beforeunload", function (event) {
+//   event.preventDefault();
+// });+
