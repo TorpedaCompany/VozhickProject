@@ -263,7 +263,6 @@
 	-ms-flex-align: center;
 	align-items: center;
 	padding: 12px;
-	margin: 12px;
 	padding-top: 20px;
 /*	color: var(--RedColor);*/
 	color: #ff501c;
@@ -401,6 +400,7 @@
 	flex-wrap: wrap;
 	overflow-x: hidden;
 	overflow-y: auto;
+	padding: 20px;
 }
 
 .main-items-order-panel {
@@ -411,7 +411,6 @@
 	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 	margin: 15px;
-	padding: 15px;
 	position: relative;
 	vertical-align: middle;
 	-ms-flex-item-align: center;
