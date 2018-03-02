@@ -1,6 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 
+    //Раздел принятых заказов
+    let accepted_ord_container = document.querySelector(".container-done-order-panel .container-items-order-panel");
+
+    //-----------------Сокет---------------------
+    let socket = io.connect();
+    //Новый заказ, создание блока.
+    socket.on('new_orders', function(data) {
+        generateOrdBlock(data);
+    });
+    //Заказ был принят
+    socket.on('accept_orders', function(id) {
+
+        let el = document.getElementById(id);
+        if (el) {
+            el.remove();
+            accepted_ord_container.insertBefore(el, accepted_ord_container.firstChild);
+        }
+
+    });
+    //Заказ был удален
+    socket.on('delete_orders', function(id) {
+        let el = document.getElementById(id);
+        if (el) {
+            el.remove();
+        }
+    });
+    //-------------------------------------------
+
     let spoiler = document.getElementsByClassName("spoiler");
     //Функция для открытия спойлера
     function spoilerFunc() {
@@ -11,12 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
         spoiler[i].addEventListener("click", spoilerFunc, false);
     }
 
-    let btn_order = document.getElementsByClassName("btn-order");
-    let accepted_ord_container = document.querySelector(".container-done-order-panel .container-items-order-panel");
     //Функция подтверждения заказа
     function btn_orderFunc() {
-
-        let node = this.parentNode;
 
         if (this.dataset.typeOrder == "accept") {
             swal({
@@ -36,29 +60,27 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     }
                 })
-                .then((willDelete) => {
-                    let _this = this;
-                    axios.post('../orders/' + this.dataset.idOrder + '/accept', {})
-                        // axios.post('http://localhost:5000/orders/' + this.dataset.idOrder + '/accept', {})
-                        // axios.post('https://voztest.ga/orders/' + this.dataset.idOrder + '/accept', {})
-                        .then(function(response) {
-                            console.log(response);
-                            swal("Заказ был подтвержден!", {
-                                icon: "success",
-                            });
-                            //Переместить блок заказа в другой раздел
-                            node.removeChild(_this);
-                            accepted_ord_container.insertBefore(node, accepted_ord_container.firstChild);
-                        })
-                        .catch(function(error) {
-                            swal("Ошибка", {
-                                text: "Возможно заказ уже был подтвержден. Обновите страницу",
-                                icon: "error",
-                            });
+                .then((willAccept) => {
+                    if (willAccept) {
+                        let _this = this;
+                        axios.post('../orders/' + this.dataset.idOrder + '/accept', {})
+                            // axios.post('https://voztest.ga/orders/' + this.dataset.idOrder + '/accept', {})
+                            .then(function(response) {
+                                console.log(response);
+                                swal("Заказ был подтвержден!", {
+                                    icon: "success",
+                                });
+                                //Сокет переместит блок заказа в другой раздел
+                            })
+                            .catch(function(error) {
+                                swal("Ошибка", {
+                                    text: "Возможно заказ уже был подтвержден. Обновите страницу",
+                                    icon: "error",
+                                });
 
-                            console.log(error);
-                        });
-
+                                console.log(error);
+                            });
+                    }
                 });
 
         }
@@ -81,37 +103,33 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                 })
                 .then((willDelete) => {
-                    axios.delete('../orders/' + this.dataset.idOrder, {})
-                        // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
-                        .then(function(response) {
-                            swal("Заказ был удален!", {
-                                icon: "success",
-                            });
-                            node.remove();
-                        })
-                        .catch(function(error) {
-                            swal("Ошибка", {
-                                text: "Ошибка удаления",
-                                icon: "error",
-                            });
-                        });
-                    //НЕ РАБОТАЕТ В IE11
+                    if (willDelete) {
 
-
+                        axios.delete('../orders/' + this.dataset.idOrder, {})
+                            // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
+                            .then(function(response) {
+                                swal("Заказ был удален!", {
+                                    icon: "success",
+                                });
+                                //Сокет удалит заказ
+                            })
+                            .catch(function(error) {
+                                swal("Ошибка", {
+                                    text: "Ошибка удаления",
+                                    icon: "error",
+                                });
+                            });
+                    }
                 });
 
         }
     }
+    let btn_order = document.getElementsByClassName("btn-order");
     for (let i = 0; i < btn_order.length; i++) {
         btn_order[i].addEventListener("click", btn_orderFunc, false);
     }
 
-    let socket = io.connect();
-    socket.on('msg', function(data) {
-        // console.log("in msg admin-panel");
-        // console.log(data);
-        generateOrdBlock(data);
-    });
+
 
     function generateOrdBlock(data) {
         let container = document.querySelector(".container-items-order-panel"),
@@ -128,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         cardOrder = document.createElement('div');
         cardOrder.className = "main-items-order-panel";
+        cardOrder.id = data._id;
         cardOrder.innerHTML =
             '<div class="container-date-and-time">' +
             '<div class="items-order date-and-time-items-order">Получено: ' + data.dateTimeIn + ' — ' + data.status + ' </div>' +
@@ -175,6 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
         btn_order[0].addEventListener("click", btn_orderFunc, false);
         btn_order[1].addEventListener("click", btn_orderFunc, false);
 
+        //Вызов уведомления
         notif();
     }
 
@@ -208,18 +228,8 @@ document.addEventListener("DOMContentLoaded", function() {
         axios.get('../logout', {})
             // axios.delete('https://voztest.ga/orders/' + this.dataset.idOrder, {})
             .then(function(response) {
-                // window.location = "../adm";
                 location.replace("../adm");
             })
-            .catch(function(error) {
-                // console.log(error);
-            });
+            .catch(function(error) {});
     }, false);
 });
-
-// window.addEventListener("beforeunload", function(e) {
-//     alert("asdasd");
-// }); 
-// window.addEventListener("beforeunload", function (event) {
-//   event.preventDefault();
-// });+

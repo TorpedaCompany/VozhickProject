@@ -59,17 +59,16 @@ let io = require('socket.io')(server);
 // app.set('socketio', io);
 app.io = io;
 io.on('connection', function(client) {
-    console.log('Client connected... Слушаю события: [socketTest,msg,orders]');
+    console.log('Client connected... Слушаю события: [new_orders, accept_orders, delete_orders]');
 
-    client.on('socketTest', function(data) {
-        console.log(":ON socketTest " + data);
-        // client.emit('messages', 'Hello from server');
+    client.on('new_orders', function(data) {
+        console.log(":ON new_orders " + data);
     });
-    client.on('msg', function(data) {
-        console.log(":ON msg " + data);
+    client.on('accept_orders', function(data) {
+        console.log(":ON accept_order " + data);
     });
-    client.on('orders', function(data) {
-        console.log(":ON orders1 " + data);
+    client.on('delete_orders', function(data) {
+        console.log(":ON delete_orders " + data);
     });
 });
 

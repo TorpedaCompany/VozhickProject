@@ -30,7 +30,7 @@ html
               //- #{dataAdmin}
               mixin orderNew(item)
                 if(item.status == "Новый")
-                  .main-items-order-panel
+                  .main-items-order-panel(id= item._id)
                     .container-date-and-time
                       .items-order.date-and-time-items-order= "Получено: " + item.dateTimeIn + " — " + item.status
                     .container-row
@@ -74,7 +74,7 @@ html
             .clearfix.container-items-order-panel
               mixin orderAccpeted(item)
                 if(item.status == "Принят")
-                  .main-items-order-panel
+                  .main-items-order-panel(id= item._id)
                     .container-date-and-time
                       .items-order.date-and-time-items-order= "Получено: " + item.dateTimeIn + " — " + item.status
                     .container-row

@@ -127,7 +127,7 @@ app.post('/orders', (req, res) => {
                     if (ordDishes.length != arr.length)
                         return res.status(500).send({ error: "Некоторые блюда не были обработаны" });
                     else {
-                        req.app.io.emit("msg", data);
+                        req.app.io.emit("new_orders", data);
                         return res.status(200).send("ok");
                     }
                 }
@@ -158,6 +158,7 @@ app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
                                     logger.info(callback.message);
 
                             });
+                            req.app.io.emit("accept_orders", data._id);
                             return res.status(200).send(data._id);
                         }
                     });
@@ -196,8 +197,10 @@ app.delete('/orders/:id', passport.isAuthenticated, (req, res) => {
         data.remove(function(err, data) {
             if (err)
                 return res.status(500).send({ error: err.message });
-            else
+            else {
+                req.app.io.emit("delete_orders", data._id);
                 return res.status(200).send(data._id);
+            }
         });
     });
 })
