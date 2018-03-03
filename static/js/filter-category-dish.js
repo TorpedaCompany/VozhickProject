@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
+    var bLazy = new Blazy({});
+
     var FilterButton = document.getElementsByClassName("filter-item");
     var Dish = document.getElementsByClassName("rest-card-dish");
     var Container = document.getElementById("rest-filter-container");
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             for (let i = 0; i < a.length; i++) {
                 a[i].classList.add("rest-card-dish-hidden");
             }
-
+            bLazy.revalidate();
         }
     }
     for (let i = 0; i < FilterButton.length; i++) {
