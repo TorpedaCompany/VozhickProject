@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    let notifBtn = document.getElementById("notifBtn").addEventListener("click", function() {
-        notif();
-    }, false);
-
     //Раздел принятых заказов
     let accepted_ord_container = document.querySelector(".container-done-order-panel .container-items-order-panel");
 
