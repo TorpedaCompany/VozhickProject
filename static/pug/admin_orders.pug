@@ -43,10 +43,10 @@ html
                         .items-order.street-items-order= "Улица: " + item.street
                         .items-order.home-items-order= "Дом: " + item.house
                         .items-order.porch-items-order= "Подъезд: " + item.entrance
-                        .items-order.porch-items-order= "Этаж: " + item.floor
+                        .items-order.level-items-order= "Этаж: " + item.floor
                         .items-order.apartment-items-order= "Квартира: " + item.apartment
-                        .items-order.apartment-items-order= "Комментарий: " + item.comment
-                        .items-order.apartment-items-order= "Промокод: " + item.promocode
+                        .items-order.comment-items-order= "Комментарий: " + item.comment
+                        .items-order.promocode-items-order= "Промокод: " + item.promocode
                     .name-restaurant= "Заведение: " + item.restName
                     .spoiler-items-order-panel.spoiler(id='')
                       .title-spoiler
@@ -67,6 +67,7 @@ html
                         span.redBoldText= item.totalPrice.toFixed(2) + " руб."
                     button(class="btn-order btn-order_delete" type='submit' data-id-order= item._id data-type-order="delete") Удалить заказ   
                     button(class="btn-order btn-order_accept" type='submit' data-id-order= item._id data-type-order="accept") Подвердить заказ   
+                    button(class="btn-order btn-order_copy") Копировать заказ   
               for item in dataAdmin
                 +orderNew(item)    
           .container-done-order-panel
@@ -121,6 +122,8 @@ html
     script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
     script(src='../js/push.min.js')
     audio(src='../js/Elara.mp3')
+    script(src='../plugins/clipboard.js')
+    script(src='../js/script-clipboard.js')
     //- audio(src='../js/Rhea.ogg')
     script(src='../js/admin.js')
     script(src='../js/active-tab-admin.js')

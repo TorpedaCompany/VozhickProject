@@ -162,10 +162,10 @@ document.addEventListener("DOMContentLoaded", function() {
             '<div class="items-order street-items-order">Улица: ' + data.street + '</div>' +
             '<div class="items-order home-items-order">Дом: ' + data.house + '</div>' +
             '<div class="items-order porch-items-order">Подъезд: ' + data.entrance + '</div>' +
-            '<div class="items-order porch-items-order">Этаж: ' + data.floor + '</div>' +
+            '<div class="items-order level-items-order">Этаж: ' + data.floor + '</div>' +
             '<div class="items-order apartment-items-order">Квартира: ' + data.apartment + '</div>' +
-            '<div class="items-order apartment-items-order">Комментарий: ' + data.comment + '</div>' +
-            '<div class="items-order apartment-items-order">Промокод: ' + data.promocode + '</div>' +
+            '<div class="items-order comment-items-order">Комментарий: ' + data.comment + '</div>' +
+            '<div class="items-order promocode-items-order">Промокод: ' + data.promocode + '</div>' +
             '</div>' +
             '</div>' +
             '<div class="name-restaurant">Заведение: ' + data.restName + '</div>' +
@@ -183,6 +183,7 @@ document.addEventListener("DOMContentLoaded", function() {
             '</div>' +
             '<button type="submit" class="btn-order btn-order_delete" data-id-order="' + data._id + '" data-type-order="delete">Удалить заказ</button>' +
             '<button type="submit" class="btn-order btn-order_accept" data-id-order="' + data._id + '" data-type-order="accept">Подвердить заказ</button>' +
+            '<button class="btn-order btn-order_copy">Копировать заказ</button>' +
             '</div>';
 
         //Вставить новый блок        

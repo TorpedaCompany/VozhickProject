@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", CheckVariables());
 var AddCardButton = document.querySelectorAll(".addToCard");
 
-function ErrorRestoraunt() {
+function ErrorRestoraunt(ErrorMessage) {
 	swal({
-		text: "В одном заказе может быть только один ресторан(",
+//		text: "В одном заказе может быть только один ресторан(",
+		text: ErrorMessage,
 		icon: "error",
 	});
 	var AddCardButtonError = document.querySelectorAll(".addToCard");
@@ -19,14 +20,25 @@ function ErrorRestoraunt() {
 }
 
 function CheckVariables() {
+//	var Hours = new Date().getHours();
+//	var RestOpen = document.querySelector(".rest-caption").getAttribute("data-opentime-rest").slice(0, -3);
+//	var RestClose = document.querySelector(".rest-caption").getAttribute("data-closetime-rest").slice(0, -3);
+//	var ErrorMessage = "";
+//	if(Hours < parseInt(RestOpen)){
+//		ErrorMessage = "Ресторан ещё закрыт";
+//		ErrorRestoraunt(ErrorMessage);
+//	}else if(Hours >= parseInt(RestClose)){
+//		ErrorMessage = "Ресторан уже закрыт";
+//		ErrorRestoraunt(ErrorMessage);
+//	}else{}
 	var Arr = JSON.parse(localStorage.getItem('Cart'));
 	var NameRest = document.querySelector(".rest-caption").innerText;
 	if (Arr == null) {} else {
 		if (Arr[0].NameRest == NameRest) {} else {
-			ErrorRestoraunt();
+			ErrorMessage = "В одном заказе может быть только один ресторан(";
+			ErrorRestoraunt(ErrorMessage);
 		}
 	}
-
 }
 
 function Cart() {

@@ -30,7 +30,7 @@ html(lang='ru')
       .rest-line
         .rest-main-img
           img.b-lazy(data-src= ( (new Date().getHours() > 18 || new Date().getHours() == 18) || (new Date().getHours() < 8 || new Date().getHours() == 8)  ) ? dataRest.restImageNigth : dataRest.restImage, src='../image/rest/rest_placeholder.svg')
-        .rest-caption
+        .rest-caption(data-opentime-rest= dataRest.restOpenTime, data-closetime-rest= dataRest.restCloseTime)
           img(src='../image/other_icon/icon-knife.png', alt='')
           |#{dataRest.restName}
       .container-fluid.rest-container
