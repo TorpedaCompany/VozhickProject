@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    let notifBtn = document.getElementById("notifBtn").addEventListener("click", function() {
+        notif();
+    }, false);
 
     //Раздел принятых заказов
     let accepted_ord_container = document.querySelector(".container-done-order-panel .container-items-order-panel");
@@ -199,6 +202,16 @@ document.addEventListener("DOMContentLoaded", function() {
         notif();
     }
 
+
+    // Push.config({
+    //     serviceWorker: './serviceWorker.min.js', // Sets a custom service worker script
+    //     fallback: function(payload) {
+    //         // Code that executes on browsers with no notification support
+    //         // "payload" is an object containing the 
+    //         // title, body, tag, and icon of the notification 
+    //     }
+    // });
+
     function notif() {
         function play() {
             var playPromise = document.querySelector('audio').play();
@@ -221,7 +234,8 @@ document.addEventListener("DOMContentLoaded", function() {
             onClick: function() {
                 window.focus();
                 this.close();
-            }
+            },
+            vibrate: [200, 100, 200, 100, 200, 100, 200]
         });
     }
     let logout = document.getElementById("logout");

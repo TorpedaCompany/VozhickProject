@@ -70,6 +70,9 @@ function selectCtg() {
             }
         })
     }
+
+    bLazy.revalidate();
+
     return false;
 }
 
