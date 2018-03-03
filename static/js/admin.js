@@ -202,9 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
         notif();
     }
 
-
-    Push.config({ serviceWorker: '../../serviceWorker.min.js' });
-    console.log(Push);
+    Push.config({ serviceWorker: '/serviceWorker.min.js' });
 
     function notif() {
         function play() {
