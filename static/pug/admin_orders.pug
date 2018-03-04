@@ -39,6 +39,9 @@ html
                         .items-order.surname-items-order= "Фамилия: " + item.lastName
                         .items-order.patronymic-items-order= "Отчество: " + item.lastName
                         .items-order.phone-items-order= "Телефон: " + item.phone
+                        .items-order.paymentMethod-items-order
+                          if(item.paymentMethod)
+                            b Оплата картой
                       .container-address
                         .items-order.street-items-order= "Улица: " + item.street
                         .items-order.home-items-order= "Дом: " + item.house
@@ -90,8 +93,8 @@ html
                         .items-order.porch-items-order= "Подъезд: " + item.entrance
                         .items-order.porch-items-order= "Этаж: " + item.floor
                         .items-order.apartment-items-order= "Квартира: " + item.apartment
-                        .items-order.apartment-items-order= "Комментарий: " + item.comment
-                        .items-order.apartment-items-order= "Промокод: " + item.promocode
+                        .items-order.comment-items-order= "Комментарий: " + item.comment
+                        .items-order.promocode-items-order= "Промокод: " + item.promocode
                     .name-restaurant= "Заведение: " + item.restName
                     .spoiler-items-order-panel.spoiler(id='')
                       .title-spoiler

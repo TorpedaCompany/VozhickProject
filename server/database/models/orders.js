@@ -94,6 +94,10 @@ let ordersSchema = new mongoose.Schema({
         maxlength: [60, "tooLongСomment"],
         default: ""
     },
+    paymentMethod: {
+        type: Boolean,
+        default: false
+    }
 });
 // Компилируем и Экспортируем модель
 module.exports = mongoose.model('orders', ordersSchema, 'orders');

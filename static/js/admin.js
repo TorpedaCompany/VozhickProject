@@ -146,6 +146,8 @@ document.addEventListener("DOMContentLoaded", function() {
         cardOrder = document.createElement('div');
         cardOrder.className = "main-items-order-panel";
         cardOrder.id = data._id;
+        data.paymentMethod = (data.paymentMethod) ? "Оплата картой" : "";
+
         cardOrder.innerHTML =
             '<div class="container-date-and-time">' +
             '<div class="items-order date-and-time-items-order">Получено: ' + data.dateTimeIn + ' — ' + data.status + ' </div>' +
@@ -156,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
             '<div class="items-order surname-items-order">Фамилия: ' + data.lastName + ' </div>' +
             '<div class="items-order patronymic-items-order">Отчество: ' + data.middleName + ' </div>' +
             '<div class="items-order phone-items-order">Телефон: ' + data.phone + ' </div>' +
+            '<div class="items-order paymentMethod-items-order"><b>' + data.paymentMethod + '</b></div>' +
             '</div>' +
             '<div class="container-address">' +
             '<div class="items-order street-items-order">Улица: ' + data.street + '</div>' +
