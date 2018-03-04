@@ -31,9 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		if (Arr == null) {} else {
 			if (Arr[0].NameRest == "Суши №1") {
 				document.querySelector(".container-input-checkbox-cart").classList.add("container-input-checkbox-cart-active");
-				if (CheckBox.checked) {
-					PaymentMethod = true;
-				} else {}
 			} else {}
 		}
 	}
@@ -41,6 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function PostAjaxCart() {
 		if (Arr == null) {} else {
+			if (CheckBox.checked) {
+				PaymentMethod = true;
+			} else {}
+			console.log(PaymentMethod);
 			RestName = Arr[0].NameRest;
 			for (var i = 0; i < DeleteButton.length; i++) {
 				let IdDish = DeleteButton[i].getAttribute("data-id-dish");
