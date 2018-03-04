@@ -396,3 +396,56 @@ input::-webkit-inner-spin-button {
 .button-cart-post-disabled {
 	background-color: #757575;
 }
+
+
+.container-input-checkbox-cart {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: none;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	padding: 5px;
+}
+
+.container-input-checkbox-cart-active {
+	display: flex;
+}
+
+.checkbox {
+	display: none;
+}
+
+.checkbox-custom {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	border: 2px solid black;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.checkbox-custom,
+.label {
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.checkbox:checked + .checkbox-custom::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	bottom: 3px;
+	left: 3px;
+	background: black;
+}

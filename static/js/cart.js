@@ -20,44 +20,36 @@ function ErrorRestoraunt(ErrorMessage) {
 }
 
 function CheckVariables() {
-//	var Hours = new Date().getHours();
-//	var RestOpen = document.querySelector(".rest-caption").getAttribute("data-opentime-rest").slice(0, -3);
-//	var RestClose = document.querySelector(".rest-caption").getAttribute("data-closetime-rest").slice(0, -3);
-	var ErrorMessage = "";
-//	if(Hours < parseInt(RestOpen)){
-//		ErrorMessage = "Ресторан ещё закрыт";
-//		ErrorRestoraunt(ErrorMessage);
-//	}else if(Hours >= parseInt(RestClose)){
-//		ErrorMessage = "Ресторан уже закрыт";
-//		ErrorRestoraunt(ErrorMessage);
-//	}else{}
 	var Arr = JSON.parse(localStorage.getItem('Cart'));
 	var NameRest = document.querySelector(".rest-caption").innerText;
+	var Hours = new Date().getHours();
+	var Minutes = new Date().getMinutes();
+	//	var Hours = "22:30";
+	var Time = Hours + ":" + Minutes;
+	var RestOpen = document.querySelector(".rest-caption").getAttribute("data-opentime-rest");
+	var RestClose = document.querySelector(".rest-caption").getAttribute("data-closetime-rest");
+	var ErrorMessage = "";
+	var Day = new Date().getDay();
+	if (Day == 5 || Day == 6) {
+		if (NameRest != "Фальварак") {
+			RestClose == "23:30";
+		}
+	}
+	if (Time < RestOpen) {
+		ErrorMessage = "Ресторан ещё закрыт";
+		ErrorRestoraunt(ErrorMessage);
+	} else if (Time >= RestClose) {
+		ErrorMessage = "Ресторан уже закрыт";
+		ErrorRestoraunt(ErrorMessage);
+	} else {
+		console.log("Ресторан открыт");
+	}
 	if (Arr == null) {} else {
 		if (Arr[0].NameRest == NameRest) {} else {
 			ErrorMessage = "В одном заказе может быть только один ресторан(";
 			ErrorRestoraunt(ErrorMessage);
 		}
 	}
-    //	var Hours = new Date().getHours();
-    //	var RestOpen = document.querySelector(".rest-caption").getAttribute("data-opentime-rest").slice(0, -3);
-    //	var RestClose = document.querySelector(".rest-caption").getAttribute("data-closetime-rest").slice(0, -3);
-    var ErrorMessage = "";
-    //	if(Hours < parseInt(RestOpen)){
-    //		ErrorMessage = "Ресторан ещё закрыт";
-    //		ErrorRestoraunt(ErrorMessage);
-    //	}else if(Hours >= parseInt(RestClose)){
-    //		ErrorMessage = "Ресторан уже закрыт";
-    //		ErrorRestoraunt(ErrorMessage);
-    //	}else{}
-    var Arr = JSON.parse(localStorage.getItem('Cart'));
-    var NameRest = document.querySelector(".rest-caption").innerText;
-    if (Arr == null) {} else {
-        if (Arr[0].NameRest == NameRest) {} else {
-            ErrorMessage = "В одном заказе может быть только один ресторан(";
-            ErrorRestoraunt(ErrorMessage);
-        }
-    }
 }
 
 function Cart() {
