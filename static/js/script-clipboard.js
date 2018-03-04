@@ -5,6 +5,7 @@ new ClipboardJS('.btn-order_copy', {
 		let Surname = Parent.querySelector(".container-row > .container-customer > .surname-items-order").innerText;
 		let Patronymic = Parent.querySelector(".container-row > .container-customer > .patronymic-items-order").innerText;
 		let Phone = Parent.querySelector(".container-row > .container-customer > .phone-items-order").innerText;
+		let PaymentMethod = Parent.querySelector(".container-row > .container-customer > .paymentMethod-items-order").innerText;
 		let Street = Parent.querySelector(".container-row > .container-address > .street-items-order").innerText;
 		let Home = Parent.querySelector(".container-row > .container-address > .home-items-order").innerText;
 		let Porch = Parent.querySelector(".container-row > .container-address > .porch-items-order").innerText;
@@ -18,7 +19,7 @@ new ClipboardJS('.btn-order_copy', {
 		for(let i = 0; i < NameDish.length; i++){
 			Dish += 'Блюдо: ' +NameDish[i].innerText+ '/ Количество: ' +CountDish[i].innerText+ '\n';
 		}
-		let DataText = Name+ ', ' +Surname+ ', ' +Patronymic+ '\n' +Phone+ '\n' +Street+ ', ' +Home+ ', ' +Porch+ ', ' +Level+ ', ' +Apartment+ '\n' +Comment+ ', ' +Promocode+ '\n' +Dish;
+		let DataText = Name+ ', ' +Surname+ ', ' +Patronymic+ '\n' +Phone+ '\n' +PaymentMethod+ '\n' +Street+ ', ' +Home+ ', ' +Porch+ ', ' +Level+ ', ' +Apartment+ '\n' +Comment+ ', ' +Promocode+ '\n' +Dish;
         return DataText;
     }
 });
