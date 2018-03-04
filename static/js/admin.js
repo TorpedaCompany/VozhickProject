@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    let notifBtn = document.getElementById("notifBtn").addEventListener("click", function() {
-        notif();
-    }, false);
-
     //Раздел принятых заказов
     let accepted_ord_container = document.querySelector(".container-done-order-panel .container-items-order-panel");
 
@@ -202,15 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
         notif();
     }
 
-
-    // Push.config({
-    //     serviceWorker: './serviceWorker.min.js', // Sets a custom service worker script
-    //     fallback: function(payload) {
-    //         // Code that executes on browsers with no notification support
-    //         // "payload" is an object containing the 
-    //         // title, body, tag, and icon of the notification 
-    //     }
-    // });
+    Push.config({ serviceWorker: '/serviceWorker.min.js' });
 
     function notif() {
         function play() {
