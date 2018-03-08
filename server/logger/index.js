@@ -4,14 +4,29 @@ const util = require('util'); //util.inspect()
 const path = require('path'); //path.relative() path.sep
 const projectname = require('../../package').name; //package.json -> project name
 
-module.exports = class Logger // Класс логера :)
+module.exports = class Logger // Класс логера 
     {
         constructor() {
             function generateLogFunction(level, color = 'white') // Функция генератор функий логгера :)
             {
                 return function(message, meta) {
+
+                    var date = new Date();
+                    var dd = date.getDate();
+                    if (dd < 10) dd = '0' + dd;
+                    var mm = date.getMonth() + 1;
+                    if (mm < 10) mm = '0' + mm;
+                    var yy = date.getFullYear() % 100;
+                    if (yy < 10) yy = '0' + yy;
+                    var hh = date.getHours();
+                    var min = date.getMinutes();
+                    if (min < 10) min = '0' + min;
+                    var ss = date.getSeconds();
+                    if (ss < 10) ss = '0' + ss;
+                    var dateTime = '[' + dd + '-' + mm + '-' + yy + ' ' + hh + ':' + min + ':' + ss + ']';
+
                     //var d = Date.now(); // Будем потом записовать время вызова
-                    var mes = this.module + " -- ";
+                    var mes = dateTime + ' ' + this.module + " -- ";
                     mes += level + " -- ";
                     mes += message; // прицепить сообщение
                     if (meta) mes += "  " + util.inspect(meta) + " "; // Записать доп инфу (Object||Error)

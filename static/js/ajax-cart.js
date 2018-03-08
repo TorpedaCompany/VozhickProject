@@ -80,11 +80,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     });
                 })
                 .catch(function(error) {
-                    console.log(error);
+                    // console.log(error);
                     // console.log(error.response.data.error);
                     Cart = [];
                     swal({
-                        text: "" + error + "\n" + error.response.data.error + "",
+                        text: error.response.data.error,
                         icon: "error",
                     });
                 });

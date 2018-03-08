@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 // Информация о заказе: 
 // Заказчик 
 // Из какого ресторана 
@@ -7,68 +8,69 @@ const mongoose = require('mongoose');
 // Время заказа 
 // Каким водителем был выполнен 
 
+
+
 let ordersSchema = new mongoose.Schema({
     // client: String,
     firstName: {
         type: String,
-        required: [true, "firstNameRequired"],
-        maxlength: [32, "tooLongFirstName"],
-        minlength: [3, "tooShortFirstName"],
+        required: [true, "Необходимо указать Имя"],
+        maxlength: [40, "Слишком длинное Имя"],
+        minlength: [2, "Короткое Имя"],
         trim: true,
     },
     lastName: {
         type: String,
-        required: [true, "lastNameRequired"],
-        maxlength: [32, "tooLongLastName"],
-        minlength: [3, "tooShortLastName"],
+        required: [true, "Необходимо указать Фамилию"],
+        maxlength: [40, "Слишком длинная Фамилия"],
+        minlength: [2, "Короткая Фамилия"],
         trim: true
     },
     middleName: {
         type: String,
-        maxlength: [32, "tooLongMiddleName"],
-        minlength: [3, "tooShortMiddleName"],
+        maxlength: [40, "Слишком длинное Отчество"],
         trim: true
     },
     phone: {
         type: String,
-        required: [true, "phoneRequired"],
+        required: [true, "Необходимо указать телефон"],
         maxlength: [14, "tooLongPhone"],
         minlength: [7, "tooShortPhone"],
-        match: [/^\+375[0-9]{2}[0-9]{7}$/, "phoneIncorrect"],
+        match: [/^\+375[0-9]{2}[0-9]{7}$/, "Неверный формат телефона"],
         trim: true,
         unique: false
     },
     email: {
         type: String,
-        required: [true, "emailRequired"],
-        match: [/@/, "emailIncorrect"],
+        required: [true, "Необходимо указать Email"],
+        match: [/@/, "Неверный Email"],
         trim: true
     },
     street: {
         type: String,
-        maxlength: [25, "tooLongStreet"],
-        minlength: [4, "tooShortStreet"],
+        maxlength: [35, "Слишком длинное название улицы"],
+        minlength: [2, "Короткое название улицы"],
     },
     entrance: {
         type: Number,
-        max: [999, "tooBigNumberEntrance"],
-        min: [0, "incorrectNumEntrance"],
+        max: [999, "Неверный номер подъезда"],
+        min: [0, "Неверный номер подъезда"],
         trim: true
     },
     house: {
         type: String,
-        max: [999, "tooBigNumberFloor"],
-        min: [0, "incorrectNumFloor"],
+        max: [999, "Неверный номер дома"],
+        min: [0, "Неверный номер дома"],
     },
     floor: {
         type: Number,
-        max: [999, "tooBigNumberFloor"],
-        min: [0, "incorrectNumFloor"],
+        max: [999, "Неверный номер этажа"],
+        min: [0, "Неверный номер этажа"],
     },
     apartment: {
         type: Number,
-        max: [999, "tooBigNumberApartment"],
-        min: [0, "incorrectNumApartment"],
+        max: [999, "Неверный номер квартиры"],
+        min: [0, "Неверный номер квартиры"],
     },
     dateTimeIn: {
         type: String,
@@ -86,12 +88,12 @@ let ordersSchema = new mongoose.Schema({
     dateTimeOut: Date,
     promocode: {
         type: String,
-        maxlength: [15, "tooLongPromocode"],
+        maxlength: [30, "Слишком длинный промокод"],
         default: ""
     },
     comment: {
         type: String,
-        maxlength: [60, "tooLongСomment"],
+        maxlength: [60, "Слишком длинный комментарий"],
         default: ""
     },
     paymentMethod: {

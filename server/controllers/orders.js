@@ -41,7 +41,6 @@ app.post('/orders', (req, res) => {
             let arr = [],
                 arrIngred = [];
 
-            console.info(req.body);
 
             //Сравнение блюд с клиента с сервером, выборка с сервера
             ordDishes.forEach(function(ord) {
@@ -101,19 +100,23 @@ app.post('/orders', (req, res) => {
             })
             let order = new models.orders();
             //Перебор полей с клиента, формирование заказа
+            // console.info("---------------------body");
+            // console.info(req.body);
             for (key in req.body) {
                 if (key != "dishes") {
                     order[key] = req.body[key];
                 }
             }
+            // console.info("---------------------order");
+            // console.info(order);
             //Добавить проверенные блюда в заказ
             order.dishes = arr;
 
             //Подсчет итоговой цены заказа
             let tmpPrice = 0;
             order.dishes.forEach(function(item) {
-                console.log('portion status :');
-                console.log(item);
+                // console.log('portion status :');
+                // console.log(item);
 
                 //Костыль, нужно переделать логику конструктора
 
@@ -147,15 +150,32 @@ app.post('/orders', (req, res) => {
             //Установить дату/время заказа
             order.dateTimeIn = new Date().toLocaleDateString() + "  " + new Date().toLocaleTimeString();
 
-            //Сохранение блюда в БД
+            //Сохранение заказа в БД
             order.save(function(err, data) {
-                if (err)
-                    return res.status(500).send({ error: err.message });
-                else {
+                if (err) {
+                    let msg = '';
+                    if (err.name == 'ValidationError') {
+                        for (field in err.errors) {
+                            msg += err.errors[field].message + '; ';
+                        }
+                        return res.status(406).send({ error: msg });
+                    }
+                    logger.error(err.message);
+                    return res.status(500).send({ error: "Ошибка сервера" });
+                } else {
                     if (ordDishes.length != arr.length)
                         return res.status(500).send({ error: "Некоторые блюда не были обработаны" });
                     else {
                         req.app.io.emit("new_orders", data);
+
+                        // sendMail.manager(function(callback) {
+                        //     if (!callback.status) {
+                        //         logger.error(callback.message);
+                        //     } else
+                        //         logger.info(callback.message);
+                        // });
+
+                        logger.info("Поступил новый заказ");
                         return res.status(200).send("ok");
                     }
                 }
@@ -178,13 +198,12 @@ app.post('/orders/:id/accept', passport.isAuthenticated, (req, res) => {
                         if (err)
                             return res.status(500).send({ error: err.message });
                         else {
-                            console.log("Раздел почты");
-                            sendMail(data.email, data.dishes, data.totalPrice, function(callback) {
+                            //Отправка почты
+                            sendMail.client(data.email, data.dishes, data.totalPrice, function(callback) {
                                 if (!callback.status) {
                                     logger.error(callback.message);
                                 } else
                                     logger.info(callback.message);
-
                             });
                             req.app.io.emit("accept_orders", data._id);
                             return res.status(200).send(data._id);
