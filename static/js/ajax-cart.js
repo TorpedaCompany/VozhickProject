@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var ArrValueInput = [Name, Surname, Street, Entrance, Apartment, Phone, Email];
             var Status = true;
             var StringError = '';
+            Arr = JSON.parse(localStorage.getItem('Cart'));
             if (Arr[0].NameRest == "Пиццерия 'Корица'") {
                 let PriceIf = 0;
                 for (let i = 0; i < Arr.length; i++) {

@@ -11,6 +11,7 @@ function Update() {
     var ElemIdAdtLine = document.querySelector('.ingredients-items').getAttribute('data-id-ingredients');
     var SrcImage = "";
     // console.log(ElemIdAdtLine);
+    var bLazy = new Blazy({});
 
     function PlusIngridient() {
         let Elem = this;
@@ -62,9 +63,9 @@ function Update() {
             SrcImage = "../image/constructor/constr_pancake.png";
         } else if (TypeConstructorRest === "Пицца") {
             SrcImage = "../image/constructor/constr_pizza.png";
-        }else if (TypeConstructorRest === "Буррито"){
-			SrcImage = "../image/constructor/constr_burrito.png";		  
-		}
+        } else if (TypeConstructorRest === "Буррито") {
+            SrcImage = "../image/constructor/constr_burrito.png";
+        }
         //        AdditionalLine = "Пицца";
         //        AdditionalLine = "Блинчик";
         if (Arr == null) {
@@ -80,7 +81,7 @@ function Update() {
                     Price = Price.substr(0, Price.length - 5);
                     PriceIngredients += parseFloat(Price);
                 }
-				PriceIngredients++;
+                PriceIngredients++;
                 NameIngredients = NameIngredients.slice(0, -2);
                 NameIngredients = TypeConstructorRest + ' (' + NameIngredients + ')';
                 CountDish = parseInt(Input.value);
@@ -124,7 +125,7 @@ function Update() {
                     Price = Price.substr(0, Price.length - 5);
                     PriceIngredients += parseFloat(Price);
                 }
-				PriceIngredients++;
+                PriceIngredients++;
                 NameIngredients = NameIngredients.slice(0, -2);
                 NameIngredients = TypeConstructorRest + ' (' + NameIngredients + ')';
                 CountDish = parseInt(Input.value);
@@ -136,7 +137,7 @@ function Update() {
                     "Price": PriceIngredients.toFixed(2),
                     "TotalPriceDish": TotalPriceDish,
                     "CountDish": CountDish,
-					"PortionsStatus": "false",
+                    "PortionsStatus": "false",
                     "id": NameIngredients,
                     "NameRest": NameRest
                 });

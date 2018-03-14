@@ -64,22 +64,23 @@ app.post('/orders', (req, res) => {
                     for (let i = 0; i < arrIngred.length; i++)
                         data.constructorPizza.forEach(function(item) {
                             if (item.name == arrIngred[i]) {
-                                priceIng += item.price;
+                                priceIng += parseFloat(item.price);
                             }
                         })
                     ord.name = ord.idDish;
-                    ord.price = priceIng.toFixed(2);
+                    ord.price = (parseFloat(priceIng) + 1).toFixed(2);
                     arr.push(ord);
                 }
                 if (ord.idDish.split(" ")[0] == "Буррито") {
                     let priceIng = 0;
                     arrIngred = ord.idDish.substring(9).slice(0, -1).split(", ");
-                    for (let i = 0; i < arrIngred.length; i++)
+                    for (let i = 0; i < arrIngred.length; i++) {
                         data.constructorBurrito.forEach(function(item) {
                             if (item.name == arrIngred[i]) {
                                 priceIng += item.price;
                             }
                         })
+                    }
                     ord.name = ord.idDish;
                     ord.price = priceIng.toFixed(2);
                     arr.push(ord);
@@ -111,10 +112,32 @@ app.post('/orders', (req, res) => {
             //Подсчет итоговой цены заказа
             let tmpPrice = 0;
             order.dishes.forEach(function(item) {
-                if (item.portions.status)
+                console.log('portion status :');
+                console.log(item);
+
+                //Костыль, нужно переделать логику конструктора
+
+                try {
+
+                    if (item.portions.status)
+                        tmpPrice += parseFloat(item.price);
+                    else
+                        tmpPrice += (parseFloat(item.price) * parseFloat(item.count));
+
+                } catch (err) {
+                    logger.warn('Обработана ошибка: Cannot read property status of undefined ');
                     tmpPrice += parseFloat(item.price);
-                else
-                    tmpPrice += (parseFloat(item.price) * parseFloat(item.count));
+
+                }
+
+                // if (!typeof item.portions.status === 'undefined') {
+                //     if (item.portions.status)
+                //         tmpPrice += parseFloat(item.price);
+                //     else
+                //         tmpPrice += (parseFloat(item.price) * parseFloat(item.count));
+                // } else {
+                //     tmpPrice += parseFloat(item.price);
+                // }
             })
 
             order.totalCount = arr.length;
