@@ -40,7 +40,7 @@ function CheckVariables() {
         ErrorRestoraunt(ErrorMessage);
     } else if (Time >= RestClose) {
         ErrorMessage = "Ресторан уже закрыт";
-        // ErrorRestoraunt(ErrorMessage);
+        ErrorRestoraunt(ErrorMessage);
     } else {
         console.log("Ресторан открыт");
     }
