@@ -142,6 +142,10 @@ app.post('/orders', (req, res) => {
 
             order.totalCount = arr.length;
             order.totalPrice = (tmpPrice > 20) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
+
+            //Установить дату/время заказа
+            order.dateTimeIn = new Date().toLocaleDateString() + "  " + new Date().toLocaleTimeString();
+
             //Сохранение блюда в БД
             order.save(function(err, data) {
                 if (err)
