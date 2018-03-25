@@ -18,7 +18,9 @@ function CountAndPriceCart() {
 			
 		}
 		if(Price < 20){
-			Price += 2;
+			if(Arr[0].NameRest != "Пиццерия 'Корица'"){
+				Price += 2;
+			}
 		}
 		CartPrice.innerText = Price.toFixed(2) + ' руб.';
 		CartCount.innerText = Count;

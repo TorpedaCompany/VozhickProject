@@ -38,7 +38,9 @@ function TotalCart() {
 			Price += parseFloat(Bly[i].TotalPriceDish);
 		}
 		if(Price < 20){
-			Price += 2;
+			if(Bly[0].NameRest != "Пиццерия 'Корица'"){
+				Price += 2;
+			}
 		}
 		StrPrice = "Общая стоимость: " + Price.toFixed(2) + " руб."
 		BlockPriceContainer.innerText = StrPrice;
