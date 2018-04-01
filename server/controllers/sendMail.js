@@ -3,8 +3,11 @@ const logger = new Logger();
 const path = require('path');
 const config = require('../config');
 const email = require("emailjs");
-module.exports = function(mailTo, dishes, totalPrice, callback) {
-    var server = email.server.connect({
+var fs = require('fs');
+const sendMail = {};
+
+sendMail.client = function(mailTo, dishes, totalPrice, callback) {
+    let server = email.server.connect({
         user: config.email.user,
         password: config.email.pwd,
         host: config.email.host,
@@ -43,3 +46,41 @@ module.exports = function(mailTo, dishes, totalPrice, callback) {
             }
         });
 }
+sendMail.manager = function(callback) {
+    let server = email.server.connect({
+        user: config.email.user,
+        password: config.email.pwd,
+        host: config.email.host,
+        ssl: true
+    });
+
+    let htmlPage = fs.readFileSync(path.join(__dirname, '../../static/email.html'));
+    return server.send({
+            text: "Новый заказ",
+            from: config.email.user,
+            to: config.emailManager,
+            cc: "",
+            subject: "Заказ",
+            attachment: {
+                data: htmlPage,
+                alternative: true,
+                related: [{
+                    path: path.join(__dirname, "../../static/image/Logo/LogoTest.png"),
+                    type: "image/jpeg",
+                    name: "logo.jpg",
+                    headers: { "Content-ID": "<my-image>" }
+                }]
+            }
+        },
+        function(err, message) {
+            if (!err) {
+                // logger.info("Cообщение отправлено: " + mailTo);
+                callback({ "status": true, "message": "Cообщение отправлено менеджеру: " + config.emailManager });
+
+            } else {
+                // logger.error(err);
+                callback({ "status": false, "message": "Cообщение менеджеру не отправлено: " + config.emailManager, "error": err });
+            }
+        });
+}
+module.exports = sendMail;

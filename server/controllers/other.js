@@ -3,6 +3,7 @@ const logger = new Logger();
 const path = require('path');
 let app = new(require('express').Router)();
 const models = require('../database/models');
+const sendMail = require('./sendMail');
 // const passport = require('passport');
 
 app.get('/', (req, res) => {
@@ -66,15 +67,17 @@ app.get('/info', function(req, res) {
         }
     });
 });
-app.get('/test', function(req, res) {
-    res.render('test', function(err, html) {
-        if (!err)
-            res.status(200).send(html);
-        else {
-            logger.error(err);
-        }
-    });
-});
+
+
+// app.get('/test', function(req, res) {
+//     sendMail.manager(function(callback) {
+//         if (!callback.status) {
+//             logger.error(callback.message);
+//         } else
+//             logger.info(callback.message);
+//     });
+//    res.end();
+// });
 
 
 //Должно быть написано в конце всех /
