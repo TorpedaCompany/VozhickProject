@@ -33,7 +33,7 @@ app.get('/adm/dashboard', passport.isAuthenticated, function(req, res) {
         if (err)
             return res.status(500).send({ error: err });
         else
-            return res.render('admin_orders', { dataAdmin: data }, function(err, html) {
+            return res.render('admin_orders', { dataAdmin: data.reverse() }, function(err, html) {
                 if (!err)
                     res.status(200).send(html);
                 // logger.error(err);
