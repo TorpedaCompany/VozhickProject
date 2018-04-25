@@ -11,15 +11,21 @@ function CountAndPriceCart() {
 		CartCount.innerText = '0';
 	} else {
 		for (var i = 0; i < Arr.length; i++) {
-//			if (CountDish % 1 == 0) {
-				Price += parseFloat(Arr[i].TotalPriceDish);
-				Count += parseFloat(Arr[i].CountDish);
-//			} else {}
-			
+			//			if (CountDish % 1 == 0) {
+			Price += parseFloat(Arr[i].TotalPriceDish);
+			Count += parseFloat(Arr[i].CountDish);
+			//			} else {}
+
 		}
-		if(Price < 20){
-			if(Arr[0].NameRest != "Пиццерия 'Корица'"){
+		if (Arr[0].NameRest === "Огонь") {
+			if (Price < 10) {
 				Price += 2;
+			}
+		} else {
+			if (Price < 20) {
+				if (Arr[0].NameRest != "Пиццерия 'Корица'") {
+					Price += 2;
+				}
 			}
 		}
 		CartPrice.innerText = Price.toFixed(2) + ' руб.';
