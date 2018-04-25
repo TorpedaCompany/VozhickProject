@@ -145,7 +145,12 @@ app.post('/orders', (req, res) => {
 
             order.totalCount = arr.length;
             // order.totalPrice = (tmpPrice > 20) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
-            order.totalPrice = ((tmpPrice > 20) || (restName == "Пиццерия 'Корица'")) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
+
+            if (restName == "Огонь") {
+                order.totalPrice = (tmpPrice > 10) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
+            } else {
+                order.totalPrice = ((tmpPrice > 20) || (restName == "Пиццерия 'Корица'")) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
+            }
 
             //Установить дату/время заказа
             order.dateTimeIn = new Date().toLocaleDateString() + "  " + new Date().toLocaleTimeString();
