@@ -149,7 +149,7 @@ app.post('/orders', (req, res) => {
             if (restName == "Огонь") {
                 order.totalPrice = (tmpPrice > 10) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
             } else {
-                order.totalPrice = ((tmpPrice > 20) || (restName == "Пиццерия 'Корица'")) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
+                order.totalPrice = ((tmpPrice > 20) || (restName == "Шаурум")) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
             }
 
             //Установить дату/время заказа

@@ -50,10 +50,10 @@ function CheckVariables() {
             ErrorRestoraunt(ErrorMessage);
         }
     }
-    if (NameRest === "Суши №1") {
-        ErrorMessage = "Ресторан закрыт на обновление меню";
-        ErrorRestoraunt(ErrorMessage);
-    }
+    // if (NameRest === "Суши №1") {
+    //     ErrorMessage = "Ресторан закрыт на обновление меню";
+    //     ErrorRestoraunt(ErrorMessage);
+    // }
 }
 
 function Cart() {

@@ -43,7 +43,7 @@ function TotalCart() {
 			}
 		} else {
 			if (Price < 20) {
-				if (Bly[0].NameRest != "Пиццерия 'Корица'") {
+				if (Bly[0].NameRest != "Шаурум") {
 					Price += 2;
 				}
 			}

@@ -23,7 +23,7 @@ function CountAndPriceCart() {
 			}
 		} else {
 			if (Price < 20) {
-				if (Arr[0].NameRest != "Пиццерия 'Корица'") {
+				if (Arr[0].NameRest != "Шаурум") {
 					Price += 2;
 				}
 			}

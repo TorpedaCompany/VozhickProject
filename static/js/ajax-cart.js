@@ -97,14 +97,14 @@ document.addEventListener("DOMContentLoaded", function() {
             var Status = true;
             var StringError = '';
             Arr = JSON.parse(localStorage.getItem('Cart'));
-            if (Arr[0].NameRest == "Пиццерия 'Корица'") {
+            if (Arr[0].NameRest == "Шаурум") {
                 let PriceIf = 0;
                 for (let i = 0; i < Arr.length; i++) {
                     PriceIf += parseFloat(Arr[i].TotalPriceDish);
                 }
                 if (PriceIf < 10) {
                     Status = false;
-                    StringError += 'Минимальный заказ из Корицы 10 рублей!'.concat(', ');
+                    StringError += 'Минимальный заказ из Шаурума 10 рублей!'.concat(', ');
                 }
             }
             for (var i = 0; i < ArrValueInput.length; i++) {
