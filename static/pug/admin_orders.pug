@@ -23,6 +23,13 @@ html
           .admin-side-panel-item-button(data-tab='2')
             span.admin-panel-span-icon.fa.fa-shopping-cart
             span.admin-panel-span-text Выполненные заказы
+          .admin-side-panel-item-button(data-tab='3')
+            span.admin-panel-span-icon.fa.fa-clipboard-list
+            span.admin-panel-span-text Изменение блюд:
+          mixin restsList(rest)
+            p.admin-panel-span-text=rest.restName
+          for rest in restsList
+            +restsList(rest) 
         .admin-main-panel
           .container-active-order-panel.active-panel
             .title-order-panel Новые заказы

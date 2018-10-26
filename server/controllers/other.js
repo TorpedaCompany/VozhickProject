@@ -7,7 +7,7 @@ const sendMail = require('./sendMail');
 // const passport = require('passport');
 
 app.get('/', (req, res) => {
-    models.rests.rests.find({}, function(err, data) {
+    models.rests.find({}, function(err, data) {
         if (err)
             return res.status(500).send({ error: err });
         else {
