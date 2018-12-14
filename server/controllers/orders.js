@@ -28,7 +28,7 @@ app.get('/orders/:id', passport.isAuthenticated, (req, res) => {
 })
 app.post('/orders', (req, res) => {
     let restName = (req.body.restName != undefined) ? req.body.restName.trim() : "none";
-    models.rests.findOne({ "restName": restName }, function(err, data) {
+    models.rests.rests.findOne({ "restName": restName }, function(err, data) {
         if (err)
             return res.status(500).send({ error: err.message });
         if (!data)
