@@ -13,18 +13,18 @@
 html,
 body {
     height: 100%;
-/*    font-family: var(--Font);*/
+    /*    font-family: var(--Font);*/
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
 
 .grey {
-/*    background-color: var(--GreyColor);*/
+    /*    background-color: var(--GreyColor);*/
     background-color: #BDBDBD;
 }
 
 .red {
-/*    background-color: var(--RedColor);*/
+    /*    background-color: var(--RedColor);*/
     background-color: #ff501c;
 }
 
@@ -55,7 +55,7 @@ a:hover {
 
 .slider {
     padding-top: 90px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     cursor: pointer;
 }
 
@@ -70,7 +70,7 @@ a:hover {
 */
 
 .swiper-container {
-	display: none;
+    display: none;
     margin-left: auto;
     margin-right: auto;
 }
