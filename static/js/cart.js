@@ -3,7 +3,6 @@ var AddCardButton = document.querySelectorAll(".addToCard");
 
 function ErrorRestoraunt(ErrorMessage) {
     swal({
-        //		text: "В одном заказе может быть только один ресторан(",
         text: ErrorMessage,
         icon: "error",
     });
@@ -24,16 +23,27 @@ function CheckVariables() {
     var NameRest = document.querySelector(".rest-caption").innerText;
     var Hours = new Date().getHours();
     var Minutes = new Date().getMinutes();
-    //	var Hours = "22:30";
-    var Time = Hours + ":" + Minutes;
+	var Time = Hours + ":" + Minutes;
     var RestOpen = document.querySelector(".rest-caption").getAttribute("data-opentime-rest");
     var RestClose = document.querySelector(".rest-caption").getAttribute("data-closetime-rest");
     var ErrorMessage = "";
     var Day = new Date().getDay();
     if (Day == 5 || Day == 6) {
-        if (NameRest != "Фальварак") {
-            RestClose == "23:30";
-        }
+		if (NameRest == "Суши №1" || NameRest == "Огонь") {
+			RestOpen = "12:00"
+			RestClose = "23:30";
+		}else if (NameRest == "Паутина" || NameRest == "Шансон") {
+			RestOpen = "12:00"
+			RestClose = "00:30";
+		}else if (NameRest == "Фальварак") {
+			RestOpen = "12:00"
+			RestClose = "23:30";
+		}
+		// if (NameRest != "Фальварак") {
+        //     RestClose == "23:30";
+		// } else if (NameRest === "Шансон"){
+		// 	RestClose == "05:30";
+		// } 
     }
     if (Time < RestOpen) {
         ErrorMessage = "Ресторан ещё закрыт";
@@ -126,7 +136,7 @@ function Cart() {
     } else {
         for (let a = 0; a < Arr.length; a++) {
             Cart.push(Arr[a]);
-            console.log(Arr[a]);
+            // console.log(Arr[a]);
         }
         for (let i = 0; i < Arr.length; i++) {
             if (Arr[i].id === IdDish) {

@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function IfCheckBox() {
         if (Arr != null) {
-            if (Arr[0].NameRest == "Суши №1") {
+            if (Arr[0].NameRest == "Суши №1" || Arr[0].NameRest == "Шансон") {
                 document.querySelector(".container-input-checkbox-cart").classList.add("container-input-checkbox-cart-active");
             }
         }

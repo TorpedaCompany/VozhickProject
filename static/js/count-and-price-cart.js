@@ -21,6 +21,10 @@ function CountAndPriceCart() {
 			if (Price < 10) {
 				Price += 2;
 			}
+		} else if(Arr[0].NameRest === "Шансон"){
+			if (Price < 15) {
+				Price += 2;
+			}
 		} else {
 			if (Price < 20) {
 				if (Arr[0].NameRest != "Шаурум") {

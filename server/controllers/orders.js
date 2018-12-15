@@ -147,8 +147,10 @@ app.post('/orders', (req, res) => {
             // order.totalPrice = (tmpPrice > 20) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
 
             if (restName == "Огонь") {
-                order.totalPrice = (tmpPrice > 10) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
-            } else {
+                order.totalPrice = (tmpPrice < 10) ? (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2) : tmpPrice.toFixed(2);
+            }else if(restName == "Шансон") {
+				order.totalPrice = (tmpPrice < 15) ? (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2) : tmpPrice.toFixed(2);
+			} else {
                 order.totalPrice = ((tmpPrice > 20) || (restName == "Шаурум")) ? tmpPrice.toFixed(2) : (parseFloat(tmpPrice) + parseFloat(2)).toFixed(2);
             }
 

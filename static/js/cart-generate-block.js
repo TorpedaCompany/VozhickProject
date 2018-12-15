@@ -26,29 +26,46 @@ function ShowCart() {
 }
 
 function TotalCart() {
-	let Bly = JSON.parse(localStorage.getItem('Cart'));
+	let CartJSON = JSON.parse(localStorage.getItem('Cart'));
 	var StrPrice = '';
 	let BlockPriceContainer = document.getElementById("container-all-price-eat-cart");
+	let PaymentDeliveryContainer = document.querySelector(".payment-delivery");
+	// console.log(PaymentDeliveryContainer);
 	let Price = 0;
-	if (Bly == null) {
+	var NotificationPaymentDelivery = 'В стоимость включена доставка 2 рубля';
+	if (CartJSON == null) {
 		StrPrice = "Общая стоимость: 0 руб."
 		BlockPriceContainer.innerText = StrPrice;
 	} else {
-		for (var i = 0; i < Bly.length; i++) {
-			Price += parseFloat(Bly[i].TotalPriceDish);
+		for (var i = 0; i < CartJSON.length; i++) {
+			Price += parseFloat(CartJSON[i].TotalPriceDish);
 		}
-		if (Bly[0].NameRest === "Огонь") {
+		if (CartJSON[0].NameRest === "Огонь") {
 			if (Price < 10) {
 				Price += 2;
+				NotificationPaymentDelivery = 'В стоимость включена доставка 2 рубля';
+			}else{
+				NotificationPaymentDelivery = 'Доставка бесплатна';
+			}
+		}else if(CartJSON[0].NameRest === "Шансон"){
+			if (Price < 15) {
+				Price += 2;
+				NotificationPaymentDelivery = 'В стоимость включена доставка 2 рубля';
+			}else{
+				NotificationPaymentDelivery = 'Доставка бесплатна';
 			}
 		} else {
 			if (Price < 20) {
-				if (Bly[0].NameRest != "Шаурум") {
+				if (CartJSON[0].NameRest != "Шаурум") {
 					Price += 2;
+					NotificationPaymentDelivery = 'В стоимость включена доставка 2 рубля';
+				}else{
+					NotificationPaymentDelivery = 'Доставка бесплатна';
 				}
 			}
 		}
 		StrPrice = "Общая стоимость: " + Price.toFixed(2) + " руб."
 		BlockPriceContainer.innerText = StrPrice;
+		PaymentDeliveryContainer.innerText = NotificationPaymentDelivery;
 	}
 }

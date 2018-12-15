@@ -49,7 +49,7 @@ initPassport(passport);
 app.use(require('./database/rt')); //время выполения запросов
 require('./database/dbinit'); // Инициализация датабазы
 
-//app.use(express.static(path.join(__dirname, '../static')))
+app.use(express.static(path.join(__dirname, '../static')))
 
 app.set('views', __dirname + '/../static/pug')
 app.set('view engine', 'pug')
