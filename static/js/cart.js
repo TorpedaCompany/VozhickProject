@@ -34,7 +34,7 @@ function CheckVariables() {
 			RestClose = "23:30";
 		}else if (NameRest == "Паутина" || NameRest == "Шансон") {
 			RestOpen = "12:00"
-			RestClose = "00:30";
+			// RestClose = "1:30";
 		}else if (NameRest == "Фальварак") {
 			RestOpen = "12:00"
 			RestClose = "23:30";
