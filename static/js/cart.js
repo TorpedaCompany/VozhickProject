@@ -34,16 +34,11 @@ function CheckVariables() {
 			RestClose = "23:30";
 		}else if (NameRest == "Паутина" || NameRest == "Шансон") {
 			RestOpen = "12:00"
-			// RestClose = "1:30";
+			RestClose = "00:30";
 		}else if (NameRest == "Фальварак") {
 			RestOpen = "12:00"
 			RestClose = "23:30";
 		}
-		// if (NameRest != "Фальварак") {
-        //     RestClose == "23:30";
-		// } else if (NameRest === "Шансон"){
-		// 	RestClose == "05:30";
-		// } 
     }
     if (Time < RestOpen) {
         ErrorMessage = "Ресторан ещё закрыт";
@@ -52,7 +47,7 @@ function CheckVariables() {
         ErrorMessage = "Ресторан уже закрыт";
         ErrorRestoraunt(ErrorMessage);
     } else {
-        console.log("Ресторан открыт");
+        // console.log("Ресторан открыт");
     }
     if (Arr == null) {} else {
         if (Arr[0].NameRest == NameRest) {} else {
