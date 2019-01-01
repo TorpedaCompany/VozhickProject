@@ -54,7 +54,9 @@ function CheckVariables() {
             ErrorMessage = "В одном заказе может быть только один ресторан(";
             ErrorRestoraunt(ErrorMessage);
         }
-    }
+	}
+	ErrorMessage = "Извините, но сейчас мы не работаем, приходите 4 числа ;)";
+    ErrorRestoraunt(ErrorMessage);
     // if (NameRest === "Суши №1") {
     //     ErrorMessage = "Ресторан закрыт на обновление меню";
     //     ErrorRestoraunt(ErrorMessage);

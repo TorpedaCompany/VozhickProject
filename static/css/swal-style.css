@@ -14,8 +14,8 @@
 	background-color: #ff501c;
 }
 
-.swal-button[not:disabled]:hover {
-	background-color: #ff501c;
+.swal-button:hover {
+	background-color: #ff501c !important;
 }
 
 .swal-button:active {
